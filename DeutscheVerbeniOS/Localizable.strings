@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  DeutscheVerbeniOS
+
+  Created by xengar on 2018-08-09.
+  Copyright © 2018 xengar. All rights reserved.
+*/
+
+"Verbs" = "Verbs";
+"Settings" = "Settings";
+"General" = "General";
+"Definition" = "Definition";
+"Examples" = "Examples";
+"Show verb definition" = "Show verb definition";
+"Language" = "Language";
+"Verb translation" = "Verb translation";
+"Show verbs" = "Show verbs";
+"Group" = "Group";
+"Sort" = "Sort";
+"Most common" = "Most common";
+"Cancel" = "Cancel";
+"1er groupe" = "1er groupe";
+"2e groupe" = "2e groupe";
+"3e groupe" = "3e groupe";
+"All" = "All";
+"None" = "None";
+"Alphabet" = "Alphabet";
+"25 most common" = "25 most common";
+"50 most common" = "50 most common";
+"100 most common" = "100 most common";
+"300 most common" = "300 most common";
+"500 most common" = "500 most common";

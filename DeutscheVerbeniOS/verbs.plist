@@ -1,0 +1,1539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>verbs</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>ta</key>
+			<integer>1</integer>
+			<key>in</key>
+			<string>être</string>
+			<key>img</key>
+			<string>etre</string>
+			<key>s1</key>
+			<string>Je pense, donc je suis.</string>
+			<key>s2</key>
+			<string>Les érables sont magnifiques.</string>
+			<key>s3</key>
+			<string>Ils seront à Paris en mai.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Exister, avoir une réalité. Le verbe être établit la relation entre le sujet et l’attribut. Se situer. Se trouver. Appartenir. S’occuper à. Tendre vers. Faire partie de. Venir de, être originaire de. Donner son soutien à. AUXILIAIRE DE CONJUGAISON. AUXILIAIRE DE TEMPS.</string>
+			<key>no</key>
+			<string>I</string>
+			<key>tren</key>
+			<string>be</string>
+			<key>tres</key>
+			<string>estar</string>
+			<key>trpt</key>
+			<string>ser</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>ta</key>
+			<integer>2</integer>
+			<key>in</key>
+			<string>avoir</string>
+			<key>img</key>
+			<string>avoir</string>
+			<key>s1</key>
+			<string>Laurence a une bicyclette.</string>
+			<key>s2</key>
+			<string>Nous avons eu ce voilier à bon compte.</string>
+			<key>s3</key>
+			<string>Catherine a le premier prix! Martin espère avoir une bourse afin de poursuivre ses études.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Posséder. Acquérir, se procurer. Obtenir. Éprouver. Être de telle manière, présenter une caractéristique. Comporter. Tromper, rouler quelqu’un. AUXILIAIRE DE CONJUGAISON.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>have</string>
+			<key>tres</key>
+			<string>tener</string>
+			<key>trpt</key>
+			<string>ter</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>2</integer>
+			<key>ta</key>
+			<integer>67</integer>
+			<key>in</key>
+			<string>faire</string>
+			<key>img</key>
+			<string>faire</string>
+			<key>s1</key>
+			<string>Deux et deux font quatre.</string>
+			<key>s2</key>
+			<string>Elle faisait celle qui n’entend pas.</string>
+			<key>s3</key>
+			<string>Trois et quatre font sept.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Créer, produire. Accomplir, exécuter. Former, composer. Jouer le rôle de. Égaler. Agir. Gagner, se procurer. Arriver, venir à être. Devenir. S’habituer. S’accomplir, se réaliser. Verbe semi-auxiliaire</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>make</string>
+			<key>tres</key>
+			<string>hacer</string>
+			<key>trpt</key>
+			<string>fazer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>3</integer>
+			<key>ta</key>
+			<integer>84</integer>
+			<key>in</key>
+			<string>dire</string>
+			<key>img</key>
+			<string>dire</string>
+			<key>s1</key>
+			<string>Je vous dis merci.</string>
+			<key>s2</key>
+			<string>Elle me dit de venir.</string>
+			<key>s3</key>
+			<string>Ils se sont dits heureux de ce dénouement.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Exprimer par la parole. Inviter à, demander. Penser. Prétendre. Se déclarer. Être employé, en parlant d’un mot, d’une expression.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>say</string>
+			<key>tres</key>
+			<string>decir</string>
+			<key>trpt</key>
+			<string>dizer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>4</integer>
+			<key>ta</key>
+			<integer>45</integer>
+			<key>in</key>
+			<string>pouvoir</string>
+			<key>img</key>
+			<string>pouvoir</string>
+			<key>s1</key>
+			<string>C’est formidable, Fanny peut dessiner à l’ordinateur! Si tu le peux, viens me voir.</string>
+			<key>s2</key>
+			<string>La directrice peut décider de fermer l’école s’il y a une tempête de neige.</string>
+			<key>s3</key>
+			<string>Prends un parapluie, il peut pleuvoir aujourd’hui!</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Avoir la possibilité, le droit de faire quelque chose. Être capable de faire quelque chose. Avoir l’autorité de, être en mesure de. Verbe impersonnel: Il est possible que.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>can</string>
+			<key>tres</key>
+			<string>poder</string>
+			<key>trpt</key>
+			<string>poder</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>5</integer>
+			<key>ta</key>
+			<integer>23</integer>
+			<key>in</key>
+			<string>aller</string>
+			<key>img</key>
+			<string>aller</string>
+			<key>s1</key>
+			<string>Nous allons au parc.</string>
+			<key>s2</key>
+			<string>Comment ça va? Je vais mieux depuis que je suis en vacances.</string>
+			<key>s3</key>
+			<string>Mon nouveau vélo va très vite.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Se déplacer en s’éloignant du lieu où l’on se trouve. Se sentir. Convenir. Marcher, fonctionner, en parlant d’une chose.</string>
+			<key>no</key>
+			<string>I, être</string>
+			<key>tren</key>
+			<string>go</string>
+			<key>tres</key>
+			<string>ir</string>
+			<key>trpt</key>
+			<string>ir</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>6</integer>
+			<key>ta</key>
+			<integer>41</integer>
+			<key>in</key>
+			<string>voir</string>
+			<key>img</key>
+			<string>voir</string>
+			<key>s1</key>
+			<string>Je vois que tu travailles fort.</string>
+			<key>s2</key>
+			<string>Elle ne peut plus la voir, elle est si désagréable.</string>
+			<key>s3</key>
+			<string>Nous avons vu tous les châteaux de la Loire.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Percevoir par la vue. Être témoin d’un évènement. Visiter, parcourir. Se trouver en présence de. Constater. Supporter. Veiller à. Apercevoir sa propre image. Se regarder, se rencontrer. Être aperçu, être visible. Se trouver.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>see</string>
+			<key>tres</key>
+			<string>ver</string>
+			<key>trpt</key>
+			<string>ver</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>7</integer>
+			<key>ta</key>
+			<integer>43</integer>
+			<key>in</key>
+			<string>savoir</string>
+			<key>img</key>
+			<string>savoir</string>
+			<key>s1</key>
+			<string>Elle sait répartir les tâches, tu sais écouter.</string>
+			<key>s2</key>
+			<string>Il sait une petite clairière dans la forêt.</string>
+			<key>s3</key>
+			<string>Je saurai terminer ce long travail.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Avoir la connaissance de, posséder une science ou un art. Pouvoir, avoir la possibilité de. Être apte à, avoir le talent, la force de faire quelque chose. Connaître l’existence de. Connaître sa situation. Être su.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>know</string>
+			<key>tres</key>
+			<string>conocer</string>
+			<key>trpt</key>
+			<string>saber</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>8</integer>
+			<key>ta</key>
+			<integer>50</integer>
+			<key>in</key>
+			<string>vouloir</string>
+			<key>img</key>
+			<string>vouloir</string>
+			<key>s1</key>
+			<string>Acceptez-vous de prendre Tristan comme époux? – Oui, je le veux.</string>
+			<key>s2</key>
+			<string>Combien voulez-vous pour ce voilier?</string>
+			<key>s3</key>
+			<string>Ils voudraient gagner le gros lot.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Manifester sa volonté. Souhaiter. Accepter. Demander. Prétendre avoir telle qualité, tel caractère. Se souhaiter mutuellement quelque chose.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>want</string>
+			<key>tres</key>
+			<string>querer</string>
+			<key>trpt</key>
+			<string>querer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>9</integer>
+			<key>ta</key>
+			<integer>24</integer>
+			<key>in</key>
+			<string>venir</string>
+			<key>img</key>
+			<string>venir</string>
+			<key>s1</key>
+			<string>Elle viendra nous voir demain.</string>
+			<key>s2</key>
+			<string>Ces belles pivoines viennent de la campagne.</string>
+			<key>s3</key>
+			<string>Cela ne m’était pas venu à l’esprit.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Se transporter d’un lieu à un autre. Provenir de. Atteindre, parvenir. Naître, être produit. Vienne, viennent . Placé en début de phrase, le verbe au subjonctif exprime un souhait dans un registre littéraire.</string>
+			<key>no</key>
+			<string>I, être</string>
+			<key>tren</key>
+			<string>come</string>
+			<key>tres</key>
+			<string>venir</string>
+			<key>trpt</key>
+			<string>vir</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>10</integer>
+			<key>ta</key>
+			<integer>48</integer>
+			<key>in</key>
+			<string>falloir</string>
+			<key>img</key>
+			<string>falloir</string>
+			<key>s1</key>
+			<string>Il faut que tu viennes nous voir.</string>
+			<key>s2</key>
+			<string>Il s’en faut de 100 $ pour que l’objectif soit atteint.</string>
+			<key>s3</key>
+			<string>Il faut manger trois fois par jour.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Être nécessaire. Manquer.</string>
+			<key>no</key>
+			<string>T, imp</string>
+			<key>tren</key>
+			<string>have to</string>
+			<key>tres</key>
+			<string>tener que</string>
+			<key>trpt</key>
+			<string>ter que</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>11</integer>
+			<key>ta</key>
+			<integer>44</integer>
+			<key>in</key>
+			<string>devoir</string>
+			<key>img</key>
+			<string>falloir</string>
+			<key>s1</key>
+			<string>Il lui doit sa situation.</string>
+			<key>s2</key>
+			<string>Ils doivent la vérité à leurs parents.</string>
+			<key>s3</key>
+			<string>Bien mise comme il se doit.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Avoir à payer (une somme d’argent). Avoir une obligation de reconnaissance à l’égard de quelqu’un, de quelque chose. Être obligé à (quelque chose), avoir des devoirs envers (quelqu’un). Être moralement obligé de. Verbe impersonnel: Comme il convient.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>have to</string>
+			<key>tres</key>
+			<string>tener que</string>
+			<key>trpt</key>
+			<string>dever</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>12</integer>
+			<key>ta</key>
+			<integer>74</integer>
+			<key>in</key>
+			<string>croire</string>
+			<key>img</key>
+			<string>croire</string>
+			<key>s1</key>
+			<string>Je la crois compétente et remplie d’initiative.</string>
+			<key>s2</key>
+			<string>Croyez-vous aux fantômes? « Parmi mon désespoir je croyais encore à l’espérance »</string>
+			<key>s3</key>
+			<string>Je crois ces paroles.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Considérer comme vrai, comme fiable. Tenir pour. Avoir confiance en quelqu’un, quelque chose, s’y fier. Tenir pour certaine l’existence de quelqu’un, avec une nuance de foi et d’amour. Penser que quelque chose est vraisemblable, sans en être sûr. Avoir la foi. S’imaginer être.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>believe</string>
+			<key>tres</key>
+			<string>creer</string>
+			<key>trpt</key>
+			<string>acreditar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>13</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>trouver</string>
+			<key>img</key>
+			<string>trouver</string>
+			<key>s1</key>
+			<string>J’ai trouvé un travail intéressant.</string>
+			<key>s2</key>
+			<string>Ils ont trouvé ce film très amusant.</string>
+			<key>s3</key>
+			<string>Il se trouve que vous avez tout à fait raison.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Découvrir ce que l’on cherchait. Inventer. Obtenir. Estimer, juger. Être situé en tel lieu. Se sentir. Verbe impersonnel: Il arrive que.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>find</string>
+			<key>tres</key>
+			<string>encontrar</string>
+			<key>trpt</key>
+			<string>encontrar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>14</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>donner</string>
+			<key>img</key>
+			<string>donner</string>
+			<key>s1</key>
+			<string>Les analyses n’ont rien donné.</string>
+			<key>s2</key>
+			<string>Vous m’avez donné bien du plaisir.</string>
+			<key>s3</key>
+			<string>Donnez-moi votre nom et vos coordonnées.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Mettre en la possession de (quelqu’un). Faire don de, accorder. Procurer, fournir. Communiquer. Produire. Causer, susciter. Attribuer. Heurter. Être orienté vers, situé sur. Faire le don de soi. S’attribuer faussement. Se faire à soi-même. Être bon marché.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>give</string>
+			<key>tres</key>
+			<string>dar</string>
+			<key>trpt</key>
+			<string>dar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>15</integer>
+			<key>ta</key>
+			<integer>59</integer>
+			<key>in</key>
+			<string>prendre</string>
+			<key>img</key>
+			<string>prendre</string>
+			<key>s1</key>
+			<string>Prendre quelqu’un pour un fou.</string>
+			<key>s2</key>
+			<string>Prends la crème glacée aux pistaches, elle est très bonne.</string>
+			<key>s3</key>
+			<string>Prenez les moyens, les précautions qui s’imposent.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Saisir. Absorber de la nourriture, une boisson. Contracter une maladie. Choisir. Utiliser. Considérer comme. Choisir un chemin, une direction. Épaissir. Amorcer la combustion, en parlant d’un feu. Réussir. S’enraciner. Se saisir réciproquement. Se laisser captiver, séduire. S’accrocher.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>take</string>
+			<key>tres</key>
+			<string>tomar</string>
+			<key>trpt</key>
+			<string>tomar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>16</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>parler</string>
+			<key>img</key>
+			<string>dire</string>
+			<key>s1</key>
+			<string>Marie-Ève parle avec ses amis tous les soirs.</string>
+			<key>s2</key>
+			<string>Les chiffres parlent d’eux-mêmes.</string>
+			<key>s3</key>
+			<string>Ils n’ont pas réussi à la faire parler.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Faire usage d’une langue. Exprimer sa pensée, ses sentiments. S’adresser à quelqu’un. Articuler des mots. S’exprimer. Converser. Traduire quelque chose. Dévoiler (quelque chose que l’on veut garder secret). Être parlé. S’adresser la parole.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>speak</string>
+			<key>tres</key>
+			<string>hablar</string>
+			<key>trpt</key>
+			<string>conversar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>17</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>aimer</string>
+			<key>img</key>
+			<string>aimer</string>
+			<key>s1</key>
+			<string>Il l’aime à la folie.</string>
+			<key>s2</key>
+			<string>Aimer la lecture.</string>
+			<key>s3</key>
+			<string>Laurence aime son frère.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Éprouver de l’affection, de la tendresse, de la sympathie pour quelqu’un. Être amoureux de quelqu’un. Avoir du goût pour quelque chose. Éprouver une affection, un amour mutuels.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>like, love</string>
+			<key>tres</key>
+			<string>querer, gustar</string>
+			<key>trpt</key>
+			<string>amor, gostar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>18</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>passer</string>
+			<key>img</key>
+			<string>passer</string>
+			<key>s1</key>
+			<string>Je passerai mon examen de français le 20 mai.</string>
+			<key>s2</key>
+			<string>Julien a passé l’été à la campagne.</string>
+			<key>s3</key>
+			<string>Passe-moi ton dictionnaire!</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Traverser. Prêter. Employer (du temps). Mettre sur soi. Subir une épreuve. Aller quelque part en traversant un lieu. Disparaître, s’écouler. Être admis, réussir. Ne pas insister sur, feindre de ne pas voir, entendre. Être diffusé (à la télévision, au cinéma). Avoir lieu. S’écouler. Se prêter. Se priver de.</string>
+			<key>no</key>
+			<string>I, T, être ou avoir</string>
+			<key>tren</key>
+			<string>pass</string>
+			<key>tres</key>
+			<string>pasar</string>
+			<key>trpt</key>
+			<string>passar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>19</integer>
+			<key>ta</key>
+			<integer>61</integer>
+			<key>in</key>
+			<string>mettre</string>
+			<key>img</key>
+			<string>mettre</string>
+			<key>s1</key>
+			<string>Il a mis son argent à la banque.</string>
+			<key>s2</key>
+			<string>Il s’est mis à chanter.</string>
+			<key>s3</key>
+			<string>Elle a mis à profit son français, sa seconde langue un peu rouillée, qui lui est rapidement revenu en tête et qui s&apos;est avéré très utile.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Placer quelqu’un, quelque chose dans un lieu déterminé. Se placer. Se mettre + infinitif. Commencer à.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>put</string>
+			<key>tres</key>
+			<string>poner</string>
+			<key>trpt</key>
+			<string>colocar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>20</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>demander</string>
+			<key>img</key>
+			<string>demander</string>
+			<key>s1</key>
+			<string>Combien demandez-vous (et non *chargez-vous)?</string>
+			<key>s2</key>
+			<string>« Quand la fête a-t-elle lieu? » demanda Antoine .</string>
+			<key>s3</key>
+			<string>Cette recherche demande beaucoup de temps et d’argent.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Exprimer le désir que l’on a de quelque chose. Fixer un prix. Interroger. Nécessiter. Exiger. S’interroger.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>request</string>
+			<key>tres</key>
+			<string>pedir</string>
+			<key>trpt</key>
+			<string>perguntar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>21</integer>
+			<key>ta</key>
+			<integer>24</integer>
+			<key>in</key>
+			<string>tenir</string>
+			<key>img</key>
+			<string>tenir</string>
+			<key>s1</key>
+			<string>Cet acteur a bien tenu son rôle .</string>
+			<key>s2</key>
+			<string>L’ombre de cet arbre tient la maison au frais.</string>
+			<key>s3</key>
+			<string>Je crois que vous tenez là une très bonne idée.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Avoir entre les mains. Maintenir. Détenir, posséder. Exercer une activité. Être lié par un sentiment durable. Vouloir fermement. Ressembler. Être attaché, lié à quelque chose. Résister. S’accrocher. Se prendre l’un l’autre. Être en un lieu. Demeurer en un certain état. Se considérer.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>hold</string>
+			<key>tres</key>
+			<string>sujetar</string>
+			<key>trpt</key>
+			<string>manter</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>22</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>sembler</string>
+			<key>img</key>
+			<string>apparaitre</string>
+			<key>s1</key>
+			<string>Il me semble avoir entendu cela.</string>
+			<key>s2</key>
+			<string>Il semble qu’il fera beau demain.</string>
+			<key>s3</key>
+			<string>Il semble qu&apos;elle ne veuille pas venir.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Paraître, avoir l’air. Verbe impersonnel: Il me semble + infinitif. Je crois. Il semble que + indicatif ou conditionnel. Il est évident, probable que.</string>
+			<key>no</key>
+			<string>I</string>
+			<key>tren</key>
+			<string>seem</string>
+			<key>tres</key>
+			<string>parecer</string>
+			<key>trpt</key>
+			<string>parecer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>23</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>laisser</string>
+			<key>img</key>
+			<string>liberer</string>
+			<key>s1</key>
+			<string>J’ai laissé ma bicyclette et j’ai préféré marcher.</string>
+			<key>s2</key>
+			<string>Il a laissé sa fortune à ses petits-enfants.</string>
+			<key>s3</key>
+			<string>La traductrice a laissé certains mots anglais dans son texte.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Quitter. Ne pas prendre. Transmettre. Ne pas supprimer. Ne pas empêcher. Être l’objet d’une action.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>leave</string>
+			<key>tres</key>
+			<string>dejar</string>
+			<key>trpt</key>
+			<string>deixar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>24</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>rester</string>
+			<key>img</key>
+			<string>rester</string>
+			<key>s1</key>
+			<string>Ils sont partis, elle est restée.</string>
+			<key>s2</key>
+			<string>Les paroles s’envolent, les écrits restent.</string>
+			<key>s3</key>
+			<string>Un problème reste: nous n’avons plus d’argent.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>Demeurer dans un lieu. Continuer d’être. Se maintenir, persister. Habiter, résider en un lieu.</string>
+			<key>no</key>
+			<string>I, être</string>
+			<key>tren</key>
+			<string>stay</string>
+			<key>tres</key>
+			<string>quedarse</string>
+			<key>trpt</key>
+			<string>ficar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>25</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>penser</string>
+			<key>img</key>
+			<string>penser</string>
+			<key>s1</key>
+			<string>Je pense voyager sous peu.</string>
+			<key>s2</key>
+			<string>Elle pense qu’il viendra, elle ne pense pas qu’il vienne.</string>
+			<key>s3</key>
+			<string>Je pense à toi.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Croire, avoir l’idée de, que. Avoir l’intention de. Ne pas oublier. Réfléchir.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>think</string>
+			<key>tres</key>
+			<string>pensar</string>
+			<key>trpt</key>
+			<string>pensar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>26</integer>
+			<key>ta</key>
+			<integer>58</integer>
+			<key>in</key>
+			<string>entendre</string>
+			<key>img</key>
+			<string>entendre</string>
+			<key>s1</key>
+			<string>J’entends bien être présente.</string>
+			<key>s2</key>
+			<string>Parlez plus fort, je ne vous entends pas bien.</string>
+			<key>s3</key>
+			<string>Ils n’entendent rien au latin.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Percevoir le son. Comprendre. Vouloir. Être compétent dans un domaine. S’accorder, sympathiser.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>hear</string>
+			<key>tres</key>
+			<string>escuchar</string>
+			<key>trpt</key>
+			<string>ouvir</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>27</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>regarder</string>
+			<key>img</key>
+			<string>voir</string>
+			<key>s1</key>
+			<string>Nous allons regarder cette question.</string>
+			<key>s2</key>
+			<string>Cette décision ne vous regarde pas.</string>
+			<key>s3</key>
+			<string>Elle regarde les enfants qui s’amusent.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Observer. Considérer. Considérer comme. Concerner. Tenir compte de, prêter attention à. Être face à face et se voir.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>watch</string>
+			<key>tres</key>
+			<string>ver</string>
+			<key>trpt</key>
+			<string>ver</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>28</integer>
+			<key>ta</key>
+			<integer>58</integer>
+			<key>in</key>
+			<string>répondre</string>
+			<key>img</key>
+			<string>repondre</string>
+			<key>s1</key>
+			<string>Je réponds de cette personne, elle est fiable.</string>
+			<key>s2</key>
+			<string>Elle a répondu « oui ».</string>
+			<key>s3</key>
+			<string>Ce logiciel répond à nos besoins.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Faire une réponse à ce qui est dit ou écrit. Donner une réponse à quelqu’un, à quelque chose. Être conforme à. Se porter garant de, être la caution de. Donner une réponse. Correspondre, être en harmonie. Échanger une réponse.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>reply</string>
+			<key>tres</key>
+			<string>responder</string>
+			<key>trpt</key>
+			<string>resposta</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>29</integer>
+			<key>ta</key>
+			<integer>58</integer>
+			<key>in</key>
+			<string>rendre</string>
+			<key>img</key>
+			<string>retourner</string>
+			<key>s1</key>
+			<string>Elle lui a rendu ce qu’elle lui avait emprunté.</string>
+			<key>s2</key>
+			<string>Cette décision le rendit fou de rage.</string>
+			<key>s3</key>
+			<string>Le roi est accusé de trahison et rendu responsable de la désorganisation de l&apos;armée.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Remettre à quelqu’un ce qui lui est dû. Faire passer quelqu’un, quelque chose à un nouvel état. Se livrer. Aller à un endroit défini.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>return</string>
+			<key>tres</key>
+			<string>hacer</string>
+			<key>trpt</key>
+			<string>fazer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>30</integer>
+			<key>ta</key>
+			<integer>69</integer>
+			<key>in</key>
+			<string>connaître</string>
+			<key>img</key>
+			<string>savoir</string>
+			<key>s1</key>
+			<string>Il connaît la région comme le fond de sa poche.</string>
+			<key>s2</key>
+			<string>Tu connais ce champion de tennis?</string>
+			<key>s3</key>
+			<string>Il a connu une autre femme avant Brigitte!</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Être informé de quelque chose, savoir. Avoir des relations avec (une personne). Avoir une bonne connaissance de soi, de ses aptitudes, de ses limites. S’y connaître . Être compétent en quelque chose.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>know</string>
+			<key>tres</key>
+			<string>conocer</string>
+			<key>trpt</key>
+			<string>conhecer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>31</integer>
+			<key>ta</key>
+			<integer>69</integer>
+			<key>in</key>
+			<string>paraître</string>
+			<key>img</key>
+			<string>apparaitre</string>
+			<key>s1</key>
+			<string>Martine a paru contente.</string>
+			<key>s2</key>
+			<string>Éloi ne paraît pas ses 50 ans.</string>
+			<key>s3</key>
+			<string>Il paraît, il paraîtrait qu’il a gagné le gros lot.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Devenir visible. Sembler, avoir l’apparence de. Sembler avoir tel âge. Être publié. Verbe impersonnel: Il semble que, on dit que.</string>
+			<key>no</key>
+			<string>I, être ou avoir</string>
+			<key>tren</key>
+			<string>look</string>
+			<key>tres</key>
+			<string>parecer</string>
+			<key>trpt</key>
+			<string>olhar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>32</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>arriver</string>
+			<key>img</key>
+			<string>atterrir</string>
+			<key>s1</key>
+			<string>Joël est arrivé à la maison.</string>
+			<key>s2</key>
+			<string>La récréation arrive dans quelques minutes.</string>
+			<key>s3</key>
+			<string>Un accident est arrivé.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Parvenir à destination. Approcher, avoir lieu bientôt. Avoir lieu. Il arrive que . Parfois. Arriver à + infinitif. Parvenir.</string>
+			<key>no</key>
+			<string>I, être</string>
+			<key>tren</key>
+			<string>arrive</string>
+			<key>tres</key>
+			<string>arrivar, obtener</string>
+			<key>trpt</key>
+			<string>obter</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>33</integer>
+			<key>ta</key>
+			<integer>26</integer>
+			<key>in</key>
+			<string>sentir</string>
+			<key>img</key>
+			<string>sentir</string>
+			<key>s1</key>
+			<string>La cuisine sent le brûlé.</string>
+			<key>s2</key>
+			<string>Elle sent une douleur lancinante à une jambe.</string>
+			<key>s3</key>
+			<string>Tu sens que tu as raison, je sens qu’on me cache quelque chose.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Percevoir par les sens. Avoir conscience. Répandre une odeur. Avoir une odeur désagréable. Avoir une certaine odeur. Éprouver un sentiment, une impression. Se sentir + infinitif. Avoir conscience de quelque chose.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>feel</string>
+			<key>tres</key>
+			<string>sentir</string>
+			<key>trpt</key>
+			<string>sentir</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>34</integer>
+			<key>ta</key>
+			<integer>58</integer>
+			<key>in</key>
+			<string>attendre</string>
+			<key>img</key>
+			<string>attendre</string>
+			<key>s1</key>
+			<string>Attends, réfléchis un peu avant de répondre.</string>
+			<key>s2</key>
+			<string>Il attend un appel téléphonique.</string>
+			<key>s3</key>
+			<string>J’attends un ami.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Rester en un lieu pour la venue de quelqu’un, de quelque chose. Compter sur. Remettre à plus tard. Attendre après quelqu’un . Languir d’impatience. Attendre après quelque chose . En avoir besoin. Prévoir.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>expect</string>
+			<key>tres</key>
+			<string>esperar</string>
+			<key>trpt</key>
+			<string>esperar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>35</integer>
+			<key>ta</key>
+			<integer>82</integer>
+			<key>in</key>
+			<string>vivre</string>
+			<key>img</key>
+			<string>etre</string>
+			<key>s1</key>
+			<string>Les inquiétudes qu’il a vécues.</string>
+			<key>s2</key>
+			<string>Ils vivent à la campagne.</string>
+			<key>s3</key>
+			<string>Vivre sa vie comme on l’entend.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Profiter de l’existence. Ressentir. Être en vie. Avoir une vie qui s’étend sur une certaine période. Habiter. Être vécu.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>live</string>
+			<key>tres</key>
+			<string>vivir</string>
+			<key>trpt</key>
+			<string>viver</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>36</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>chercher</string>
+			<key>img</key>
+			<string>chercher</string>
+			<key>s1</key>
+			<string>Il cherche à tromper son ennui.</string>
+			<key>s2</key>
+			<string>Cherche-t-il des ennuis?</string>
+			<key>s3</key>
+			<string>Ils cherchent la solution de l’énigme.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>S’efforcer de trouver, de découvrir ce qu’on a perdu, ce qu’on ne voit pas. Tâcher, tenter de. Susciter, provoquer. Essayer de se trouver l’un l’autre.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>search</string>
+			<key>tres</key>
+			<string>buscar</string>
+			<key>trpt</key>
+			<string>procurar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>37</integer>
+			<key>ta</key>
+			<integer>59</integer>
+			<key>in</key>
+			<string>comprendre</string>
+			<key>img</key>
+			<string>comprendre</string>
+			<key>s1</key>
+			<string>Je dois donc comprendre que vous ne reviendrez plus.</string>
+			<key>s2</key>
+			<string>Je comprends que vous soyez inquiète.</string>
+			<key>s3</key>
+			<string>Cette étude comprend plusieurs chapitres.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Saisir le sens de quelque chose. Prendre conscience. Trouver naturel. Comporter, être composé de. S’accorder, être sur la même longueur d’onde.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>understand</string>
+			<key>tres</key>
+			<string>entender</string>
+			<key>trpt</key>
+			<string>entender</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>38</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>porter</string>
+			<key>img</key>
+			<string>prendre</string>
+			<key>s1</key>
+			<string>Saviez-vous que l&apos;obligation de porter secours ou assistance existe.</string>
+			<key>s2</key>
+			<string>Les professionnels de la santé ont répété plusieurs fois que ce n&apos;est pas bon pour les enfants de porter des cartables très lourds.</string>
+			<key>s3</key>
+			<string>Il porte un pantalon démodé et une veste usée.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Tenir, soutenir. Transporter. Avoir sur soi. Apporter. Avoir pour objet. Être en bonne ou en mauvaise santé. Être porté, en parlant d’un vêtement, d’une mode. Se diriger vers.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>carry</string>
+			<key>tres</key>
+			<string>llevar</string>
+			<key>trpt</key>
+			<string>levar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>39</integer>
+			<key>ta</key>
+			<integer>24</integer>
+			<key>in</key>
+			<string>devenir</string>
+			<key>img</key>
+			<string>devenir</string>
+			<key>s1</key>
+			<string>Ils sont devenus des adultes maintenant.</string>
+			<key>s2</key>
+			<string>La jeune femme devient animatrice sur NRJ12.</string>
+			<key>s3</key>
+			<string>Avec la recette perdue de son père, elle devient millionnaire.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Passer d’un état à un autre.</string>
+			<key>no</key>
+			<string>I, être</string>
+			<key>tren</key>
+			<string>become</string>
+			<key>tres</key>
+			<string>volverse</string>
+			<key>trpt</key>
+			<string>começar a ser</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>40</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>entrer</string>
+			<key>img</key>
+			<string>entrer</string>
+			<key>s1</key>
+			<string>Entrer une aiguille dans une veine, une clé dans une serrure.</string>
+			<key>s2</key>
+			<string>Il entre en action.</string>
+			<key>s3</key>
+			<string>Elle entre dans l’adolescence.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Introduire. Saisir, enregistrer sur un support. Pénétrer. Être compris dans. Commencer à faire quelque chose. Passer à une nouvelle étape.</string>
+			<key>no</key>
+			<string>I, T, être ou avoir</string>
+			<key>tren</key>
+			<string>enter</string>
+			<key>tres</key>
+			<string>entrar</string>
+			<key>trpt</key>
+			<string>entrar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>41</integer>
+			<key>ta</key>
+			<integer>24</integer>
+			<key>in</key>
+			<string>retenir</string>
+			<key>img</key>
+			<string>retenir</string>
+			<key>s1</key>
+			<string>Elle a retenu son visage, son nom.</string>
+			<key>s2</key>
+			<string>Elle retient un enfant pour qu’il ne tombe pas.</string>
+			<key>s3</key>
+			<string>Il a retenu un ami à dîner.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Maintenir en place, contenir. Contenir. Faire demeurer. Garder dans sa mémoire. Se raccrocher à quelque chose pour ne pas tomber. Réprimer une envie.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>retain</string>
+			<key>tres</key>
+			<string>conservar</string>
+			<key>trpt</key>
+			<string>reter</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>42</integer>
+			<key>ta</key>
+			<integer>86</integer>
+			<key>in</key>
+			<string>écrire</string>
+			<key>img</key>
+			<string>ecrire</string>
+			<key>s1</key>
+			<string>Il m’a écrit qu’il viendrait.</string>
+			<key>s2</key>
+			<string>Comment écris-tu ce nom? Son nom s’écrit avec deux l.</string>
+			<key>s3</key>
+			<string>Vous devez écrire un article sur un sujet politique.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Tracer les caractères d’un système d’écriture. Orthographier. Composer. Communiquer par écrit avec quelqu’un. Exprimer sa pensée à l’aide de l’écriture. S’orthographier. Correspondre avec quelqu’un, s’envoyer des lettres, des courriels.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>write</string>
+			<key>tres</key>
+			<string>escribir</string>
+			<key>trpt</key>
+			<string>escrever</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>43</integer>
+			<key>ta</key>
+			<integer>12</integer>
+			<key>in</key>
+			<string>appeler</string>
+			<key>img</key>
+			<string>appeler</string>
+			<key>s1</key>
+			<string>Appelez-moi ce soir.</string>
+			<key>s2</key>
+			<string>Cette décision appelle des frais considérables.</string>
+			<key>s3</key>
+			<string>Il faut appeler le médecin.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Donner un nom à. Faire venir quelqu’un. Entrer en communication téléphonique avec quelqu’un. Entraîner. Recourir à une juridiction supérieure contre la sentence prononcée par une juridiction inférieure. S’en remettre à. Se nommer.</string>
+			<key>no</key>
+			<string>T, Ti</string>
+			<key>tren</key>
+			<string>call</string>
+			<key>tres</key>
+			<string>llamar</string>
+			<key>trpt</key>
+			<string>chamada</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>44</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>tomber</string>
+			<key>img</key>
+			<string>tomber</string>
+			<key>s1</key>
+			<string>La petite fille est tombée de la balançoire.</string>
+			<key>s2</key>
+			<string>Il est tombé amoureux de Céline</string>
+			<key>s3</key>
+			<string>Votre appareil vient de tomber dans l&apos;eau.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Être entraîné de haut en bas. Tomber + adjectif ou nom. Devenir subitement (amoureux, malade, etc.).</string>
+			<key>no</key>
+			<string>I, T, être ou avoir</string>
+			<key>tren</key>
+			<string>fall</string>
+			<key>tres</key>
+			<string>caerse</string>
+			<key>trpt</key>
+			<string>cair</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>45</integer>
+			<key>ta</key>
+			<integer>59</integer>
+			<key>in</key>
+			<string>reprendre</string>
+			<key>img</key>
+			<string>resumer</string>
+			<key>s1</key>
+			<string>Je vous prie de m’excuser, mais je dois reprendre mon travail.</string>
+			<key>s2</key>
+			<string>Il existe plusieurs moyens d&apos;aider votre enfant lorsqu&apos;on lui annonce qu&apos;il devra reprendre son année.</string>
+			<key>s3</key>
+			<string>Reprendrez-vous un peu de gigot?</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Prendre de nouveau. Continuer une activité interrompue. Réprimander. Recommencer. Se ressaisir, se corriger.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>resume</string>
+			<key>tres</key>
+			<string>retomar</string>
+			<key>trpt</key>
+			<string>resumo</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>46</integer>
+			<key>ta</key>
+			<integer>8</integer>
+			<key>in</key>
+			<string>commencer</string>
+			<key>img</key>
+			<string>commencer</string>
+			<key>s1</key>
+			<string>Il commence ses devoirs à 16 heures.</string>
+			<key>s2</key>
+			<string>Le paragraphe qui commence le chapitre.</string>
+			<key>s3</key>
+			<string>Les chatons vont commencer à s&apos;intéresser à la nourriture maintenant ou la semaine prochaine.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Entreprendre. Être au commencement de. Commencer + à . Se mettre à. Débuter. Commencer + par . Ce tour insiste sur l’ordre d’une suite d’actions ou d’états.</string>
+			<key>no</key>
+			<string>I, T, Ti</string>
+			<key>tren</key>
+			<string>begin</string>
+			<key>tres</key>
+			<string>empezar</string>
+			<key>trpt</key>
+			<string>iniciar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>47</integer>
+			<key>ta</key>
+			<integer>81</integer>
+			<key>in</key>
+			<string>suivre</string>
+			<key>img</key>
+			<string>suivre</string>
+			<key>s1</key>
+			<string>Elle suit les variations de la Bourse.</string>
+			<key>s2</key>
+			<string>La rentrée aura lieu le jeudi qui suit la fête du Travail.</string>
+			<key>s3</key>
+			<string>Il s&apos;en est suivi des difficultés et des licenciements dans le secteur pétrolier.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Venir après, par rapport au lieu, au temps, au rang, etc. Marcher sur les pas de quelqu’un. S’intéresser à quelqu’un, à quelque chose. Assister régulièrement à quelque chose. Se succéder. Verbe impersonnel: Résulter.</string>
+			<key>no</key>
+			<string>I, T</string>
+			<key>tren</key>
+			<string>follow</string>
+			<key>tres</key>
+			<string>seguir</string>
+			<key>trpt</key>
+			<string>seguir</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>48</integer>
+			<key>ta</key>
+			<integer>7</integer>
+			<key>in</key>
+			<string>montrer</string>
+			<key>img</key>
+			<string>montrer</string>
+			<key>s1</key>
+			<string>Elle ne voulait pas lui montrer sa déception.</string>
+			<key>s2</key>
+			<string>Il lui montre comment programmer.</string>
+			<key>s3</key>
+			<string>Montrez-moi vos skis.</string>
+			<key>gr</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>2</integer>
+			<key>de</key>
+			<string>Faire voir. Faire connaître. Enseigner. Se révéler.</string>
+			<key>no</key>
+			<string>T</string>
+			<key>tren</key>
+			<string>show</string>
+			<key>tres</key>
+			<string>mostrar</string>
+			<key>trpt</key>
+			<string>mostrar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>49</integer>
+			<key>ta</key>
+			<integer>26</integer>
+			<key>in</key>
+			<string>partir</string>
+			<key>img</key>
+			<string>quitter</string>
+			<key>s1</key>
+			<string>Partiras-tu à la campagne cet été? Elle est partie en voyage.</string>
+			<key>s2</key>
+			<string>« Rien ne sert de courir: il faut partir à point »</string>
+			<key>s3</key>
+			<string>Cet avion part de Montréal pour aller à Paris.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>3</integer>
+			<key>de</key>
+			<string>Quitter un lieu. Prendre le départ, se mettre en marche. Se déclencher, en parlant d’une arme à feu; jaillir, en parlant d’un projectile. Avoir pour point de départ. Disparaître.</string>
+			<key>no</key>
+			<string>I, être</string>
+			<key>tren</key>
+			<string>go</string>
+			<key>tres</key>
+			<string>marcharse, irse</string>
+			<key>trpt</key>
+			<string>deixar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>50</integer>
+			<key>ta</key>
+			<integer>35</integer>
+			<key>in</key>
+			<string>mourir</string>
+			<key>img</key>
+			<string>mourir</string>
+			<key>s1</key>
+			<string>Je meurs de faim.</string>
+			<key>s2</key>
+			<string>Il était déjà mort quand le médecin est arrivé.</string>
+			<key>s3</key>
+			<string>Je sens que quelqu&apos;un va mourir.</string>
+			<key>gr</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>3</integer>
+			<key>de</key>
+			<string>Cesser de vivre. Par exagération, éprouver fortement une sensation. Être sur le point de mourir.</string>
+			<key>no</key>
+			<string>I, être</string>
+			<key>tren</key>
+			<string>die</string>
+			<key>tres</key>
+			<string>morir</string>
+			<key>trpt</key>
+			<string>morrer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
