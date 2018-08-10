@@ -213,8 +213,8 @@ class VerbDetailsViewController: UIViewController {
         var isRestrictedLikeFrire = false
         var isImpersonnel = false
         
-        if (!c.infinitivePresent.isEmpty
-            && !c.infinitivePresent.elementsEqual(verb.infinitive)) {
+        if (!c.infinitivPrasens.isEmpty
+            && !c.infinitivPrasens.elementsEqual(verb.infinitive)) {
             // if we need, conjugate the verb model.
             
             var isEtre = false
@@ -312,11 +312,11 @@ class VerbDetailsViewController: UIViewController {
     
     private func setParticipePasseAsInvariable(_ c : Conjugation) {
         // TODO: Ensure conjugations are invariable
-        if (c.participePasse1.contains("(") ) {
-            var token = c.participePasse1.components(separatedBy: "(")
-            c.participePasse1 = "\(token[0])(invar.)"
+        if (c.partizipPerfekt.contains("(") ) {
+            var token = c.partizipPerfekt.components(separatedBy: "(")
+            c.partizipPerfekt = "\(token[0])(invar.)"
         } else {
-            c.participePasse1 = c.participePasse1 + " (invar.)"
+            c.partizipPerfekt = c.partizipPerfekt + " (invar.)"
         }
     }
     
@@ -333,43 +333,43 @@ class VerbDetailsViewController: UIViewController {
             if (verbInfinitive.contains("maudire")) {
                 old = "maudi"
                 new = "maudit"
-                c.participePasse1 = "maudit (e)"
+                c.partizipPerfekt = "maudit (e)"
             }
         case 46: // mouvoir
             if (verbInfinitive.contains("promouvoir")) {
                 old = "promû"
                 new = "promu"
-                c.participePasse1 = "promu (u, ue, us, ues)"
+                c.partizipPerfekt = "promu (u, ue, us, ues)"
             } else if (verbInfinitive.contains("émouvoir")) {
                 old = "émû"
                 new = "ému"
-                c.participePasse1 = "ému (u, ue, us, ues)"
+                c.partizipPerfekt = "ému (u, ue, us, ues)"
             }
         case 77: // conclure
             if (verbInfinitive.contains("inclure")) {
                 old = "inclu"
                 new = "inclus"
-                c.participePasse1 = "inclus (e, es)"
+                c.partizipPerfekt = "inclus (e, es)"
             } else if (verbInfinitive.contains("occlure")) {
                 old = "occlu"
                 new = "occlus"
-                c.participePasse1 = "occlus (e, es)"
+                c.partizipPerfekt = "occlus (e, es)"
             }
         case 78: // absoudre
             if (verbInfinitive.contains("résoudre")) {
                 old = "résous"
                 new = "résolu"
-                c.participePasse1 = "résolu (u, ue, us, ues)"
+                c.partizipPerfekt = "résolu (u, ue, us, ues)"
             }
         case 87: // confire
             if (verbInfinitive.contains("circoncire")) {
                 old = "circoncit"
                 new = "circoncis"
-                c.participePasse1 = "circoncis"
+                c.partizipPerfekt = "circoncis"
             } else if (verbInfinitive.contains("suffire")) {
                 old = "suffit"
                 new = "suffi"
-                c.participePasse1 = "suffi"
+                c.partizipPerfekt = "suffi"
             }
         default:
             break
@@ -381,7 +381,7 @@ class VerbDetailsViewController: UIViewController {
     }
     
     private func replaceParticipePasse(_ c : Conjugation, _ old : String, _ new : String) {
-        c.infinitivePasse = c.infinitivePasse.replacingOccurrences(of: old, with: new)
+        c.infinitivPerfekt = c.infinitivPerfekt.replacingOccurrences(of: old, with: new)
         
         c.participePasse2 = c.participePasse2.replacingOccurrences(of: old, with: new)
         c.gerondifPasse = c.gerondifPasse.replacingOccurrences(of: old, with: new)
@@ -390,54 +390,54 @@ class VerbDetailsViewController: UIViewController {
         c.imperatifPasseNous = c.imperatifPasseNous.replacingOccurrences(of: old, with: new)
         c.imperatifPasseVous = c.imperatifPasseVous.replacingOccurrences(of: old, with: new)
         
-        c.indicatifPasseComposeJe = c.indicatifPasseComposeJe.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseComposeTu = c.indicatifPasseComposeTu.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseComposeIl = c.indicatifPasseComposeIl.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseComposeNous = c.indicatifPasseComposeNous.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseComposeVous = c.indicatifPasseComposeVous.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseComposeIls = c.indicatifPasseComposeIls.replacingOccurrences(of: old, with: new)
+        c.indikativPrateritumIch = c.indikativPrateritumIch.replacingOccurrences(of: old, with: new)
+        c.indikativPrateritumDu = c.indikativPrateritumDu.replacingOccurrences(of: old, with: new)
+        c.indikativPrateritumEr = c.indikativPrateritumEr.replacingOccurrences(of: old, with: new)
+        c.indikativPrateritumWir = c.indikativPrateritumWir.replacingOccurrences(of: old, with: new)
+        c.indikativPrateritumIhr = c.indikativPrateritumIhr.replacingOccurrences(of: old, with: new)
+        c.indikativPrateritumSie = c.indikativPrateritumSie.replacingOccurrences(of: old, with: new)
         
-        c.indicatifPlusQueParfaitJe = c.indicatifPlusQueParfaitJe.replacingOccurrences(of: old, with: new)
-        c.indicatifPlusQueParfaitTu = c.indicatifPlusQueParfaitTu.replacingOccurrences(of: old, with: new)
-        c.indicatifPlusQueParfaitIl = c.indicatifPlusQueParfaitIl.replacingOccurrences(of: old, with: new)
-        c.indicatifPlusQueParfaitNous = c.indicatifPlusQueParfaitNous.replacingOccurrences(of: old, with: new)
-        c.indicatifPlusQueParfaitVous = c.indicatifPlusQueParfaitVous.replacingOccurrences(of: old, with: new)
-        c.indicatifPlusQueParfaitIls = c.indicatifPlusQueParfaitIls.replacingOccurrences(of: old, with: new)
+        c.indikativPlusquamperfektIch = c.indikativPlusquamperfektIch.replacingOccurrences(of: old, with: new)
+        c.indikativPlusquamperfektDu = c.indikativPlusquamperfektDu.replacingOccurrences(of: old, with: new)
+        c.indikativPlusquamperfektEr = c.indikativPlusquamperfektEr.replacingOccurrences(of: old, with: new)
+        c.indikativPlusquamperfektWir = c.indikativPlusquamperfektWir.replacingOccurrences(of: old, with: new)
+        c.indikativPlusquamperfektIhr = c.indikativPlusquamperfektIhr.replacingOccurrences(of: old, with: new)
+        c.indikativPlusquamperfektSie = c.indikativPlusquamperfektSie.replacingOccurrences(of: old, with: new)
         
-        c.indicatifPasseAnterieurJe = c.indicatifPasseAnterieurJe.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseAnterieurTu = c.indicatifPasseAnterieurTu.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseAnterieurIl = c.indicatifPasseAnterieurIl.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseAnterieurNous = c.indicatifPasseAnterieurNous.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseAnterieurVous = c.indicatifPasseAnterieurVous.replacingOccurrences(of: old, with: new)
-        c.indicatifPasseAnterieurIls = c.indicatifPasseAnterieurIls.replacingOccurrences(of: old, with: new)
+        c.indikativFutur2Ich = c.indikativFutur2Ich.replacingOccurrences(of: old, with: new)
+        c.indikativFutur2Du = c.indikativFutur2Du.replacingOccurrences(of: old, with: new)
+        c.indikativFutur2Er = c.indikativFutur2Er.replacingOccurrences(of: old, with: new)
+        c.indikativFutur2Wir = c.indikativFutur2Wir.replacingOccurrences(of: old, with: new)
+        c.indikativFutur2Ihr = c.indikativFutur2Ihr.replacingOccurrences(of: old, with: new)
+        c.indikativFutur2Sie = c.indikativFutur2Sie.replacingOccurrences(of: old, with: new)
         
-        c.indicatifFuturAnterieurJe = c.indicatifFuturAnterieurJe.replacingOccurrences(of: old, with: new)
-        c.indicatifFuturAnterieurTu = c.indicatifFuturAnterieurTu.replacingOccurrences(of: old, with: new)
-        c.indicatifFuturAnterieurIl = c.indicatifFuturAnterieurIl.replacingOccurrences(of: old, with: new)
-        c.indicatifFuturAnterieurNous = c.indicatifFuturAnterieurNous.replacingOccurrences(of: old, with: new)
-        c.indicatifFuturAnterieurVous = c.indicatifFuturAnterieurVous.replacingOccurrences(of: old, with: new)
-        c.indicatifFuturAnterieurIls = c.indicatifFuturAnterieurIls.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1PerfektIch = c.konjunktiv1PerfektIch.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1PerfektDu = c.konjunktiv1PerfektDu.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1PerfektEr = c.konjunktiv1PerfektEr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1PerfektWir = c.konjunktiv1PerfektWir.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1PerfektIhr = c.konjunktiv1PerfektIhr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1PerfektSie = c.konjunktiv1PerfektSie.replacingOccurrences(of: old, with: new)
         
-        c.conditionnelPasseJe = c.conditionnelPasseJe.replacingOccurrences(of: old, with: new)
-        c.conditionnelPasseTu = c.conditionnelPasseTu.replacingOccurrences(of: old, with: new)
-        c.conditionnelPasseIl = c.conditionnelPasseIl.replacingOccurrences(of: old, with: new)
-        c.conditionnelPasseNous = c.conditionnelPasseNous.replacingOccurrences(of: old, with: new)
-        c.conditionnelPasseVous = c.conditionnelPasseVous.replacingOccurrences(of: old, with: new)
-        c.conditionnelPasseIls = c.conditionnelPasseIls.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Ich = c.konjunktiv2Futur2Ich.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Du = c.konjunktiv2Futur2Du.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Er = c.konjunktiv2Futur2Er.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Wir = c.konjunktiv2Futur2Wir.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Ihr = c.konjunktiv2Futur2Ihr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Sie = c.konjunktiv2Futur2Sie.replacingOccurrences(of: old, with: new)
         
-        c.subjonctifPasseJe = c.subjonctifPasseJe.replacingOccurrences(of: old, with: new)
-        c.subjonctifPasseTu = c.subjonctifPasseTu.replacingOccurrences(of: old, with: new)
-        c.subjonctifPasseIl = c.subjonctifPasseIl.replacingOccurrences(of: old, with: new)
-        c.subjonctifPasseNous = c.subjonctifPasseNous.replacingOccurrences(of: old, with: new)
-        c.subjonctifPasseVous = c.subjonctifPasseVous.replacingOccurrences(of: old, with: new)
-        c.subjonctifPasseIls = c.subjonctifPasseIls.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur2Ich = c.konjunktiv1Futur2Ich.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur2Du = c.konjunktiv1Futur2Du.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur2Er = c.konjunktiv1Futur2Er.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur2Wir = c.konjunktiv1Futur2Wir.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur2Ihr = c.konjunktiv1Futur2Ihr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur2Sie = c.konjunktiv1Futur2Sie.replacingOccurrences(of: old, with: new)
         
-        c.subjonctifPlusQueParfaitJe = c.subjonctifPlusQueParfaitJe.replacingOccurrences(of: old, with: new)
-        c.subjonctifPlusQueParfaitTu = c.subjonctifPlusQueParfaitTu.replacingOccurrences(of: old, with: new)
-        c.subjonctifPlusQueParfaitIl = c.subjonctifPlusQueParfaitIl.replacingOccurrences(of: old, with: new)
-        c.subjonctifPlusQueParfaitNous = c.subjonctifPlusQueParfaitNous.replacingOccurrences(of: old, with: new)
-        c.subjonctifPlusQueParfaitVous = c.subjonctifPlusQueParfaitVous.replacingOccurrences(of: old, with: new)
-        c.subjonctifPlusQueParfaitIls = c.subjonctifPlusQueParfaitIls.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2PlusquamperfektIch = c.konjunktiv2PlusquamperfektIch.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2PlusquamperfektDu = c.konjunktiv2PlusquamperfektDu.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2PlusquamperfektEr = c.konjunktiv2PlusquamperfektEr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2PlusquamperfektWir = c.konjunktiv2PlusquamperfektWir.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2PlusquamperfektIhr = c.konjunktiv2PlusquamperfektIhr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2PlusquamperfektSie = c.konjunktiv2PlusquamperfektSie.replacingOccurrences(of: old, with: new)
     }
     
     /**
@@ -448,7 +448,7 @@ class VerbDetailsViewController: UIViewController {
             if (verbInfinitive.contains("contredire") || verbInfinitive.contains("dédire")
                 || verbInfinitive.contains("interdire") || verbInfinitive.contains("médire")
                 || verbInfinitive.contains("prédire")) {
-                c.indicatifPresentVous = c.indicatifPresentVous.replacingOccurrences(of: "dites", with: "disez")
+                c.indikativPrasensIhr = c.indikativPrasensIhr.replacingOccurrences(of: "dites", with: "disez")
             }
         }
     }
@@ -460,193 +460,193 @@ class VerbDetailsViewController: UIViewController {
         if (c.id == 73 && !verbInfinitive.elementsEqual("croître")) {
             // NOTE: all verbes, except croître : accroître, décroître, recroître
             // conjugate without some accents
-            c.indicatifPresentJe = c.indicatifPresentJe.replacingOccurrences(of: "î", with: "i")
-            c.indicatifPresentTu = c.indicatifPresentTu.replacingOccurrences(of: "î", with: "i")
+            c.indikativPrasensIch = c.indikativPrasensIch.replacingOccurrences(of: "î", with: "i")
+            c.indikativPrasensDu = c.indikativPrasensDu.replacingOccurrences(of: "î", with: "i")
             
-            c.indicatifPasseSimpleJe = c.indicatifPasseSimpleJe.replacingOccurrences(of: "û", with: "u")
-            c.indicatifPasseSimpleTu = c.indicatifPasseSimpleTu.replacingOccurrences(of: "û", with: "u")
-            c.indicatifPasseSimpleIl = c.indicatifPasseSimpleIl.replacingOccurrences(of: "û", with: "u")
-            c.indicatifPasseSimpleIls = c.indicatifPasseSimpleIls.replacingOccurrences(of: "û", with: "u")
+            c.indikativFutur1Ich = c.indikativFutur1Ich.replacingOccurrences(of: "û", with: "u")
+            c.indikativFutur1Du = c.indikativFutur1Du.replacingOccurrences(of: "û", with: "u")
+            c.indikativFutur1Er = c.indikativFutur1Er.replacingOccurrences(of: "û", with: "u")
+            c.indikativFutur1Sie = c.indikativFutur1Sie.replacingOccurrences(of: "û", with: "u")
             
-            c.indicatifImperfaitJe = c.indicatifImperfaitJe.replacingOccurrences(of: "û", with: "u")
-            c.indicatifImperfaitTu = c.indicatifImperfaitTu.replacingOccurrences(of: "û", with: "u")
-            c.indicatifImperfaitNous = c.indicatifImperfaitNous.replacingOccurrences(of: "û", with: "u")
-            c.indicatifImperfaitVous = c.indicatifImperfaitVous.replacingOccurrences(of: "û", with: "u")
-            c.indicatifImperfaitIls = c.indicatifImperfaitIls.replacingOccurrences(of: "û", with: "u")
+            c.indikativPerfektIch = c.indikativPerfektIch.replacingOccurrences(of: "û", with: "u")
+            c.indikativPerfektDu = c.indikativPerfektDu.replacingOccurrences(of: "û", with: "u")
+            c.indikativPerfektWir = c.indikativPerfektWir.replacingOccurrences(of: "û", with: "u")
+            c.indikativPerfektIhr = c.indikativPerfektIhr.replacingOccurrences(of: "û", with: "u")
+            c.indikativPerfektSie = c.indikativPerfektSie.replacingOccurrences(of: "û", with: "u")
             
-            c.imperatifPresentTu = c.imperatifPresentTu.replacingOccurrences(of: "î", with: "i")
+            c.imperativDu = c.imperativDu.replacingOccurrences(of: "î", with: "i")
             c.imperatifPasseTu = c.imperatifPasseTu.replacingOccurrences(of: "crû", with: "cru")
             c.imperatifPasseNous = c.imperatifPasseNous.replacingOccurrences(of: "crû", with: "cru")
             c.imperatifPasseVous = c.imperatifPasseVous.replacingOccurrences(of: "crû", with: "cru")
             
-            c.infinitivePasse = c.infinitivePasse.replacingOccurrences(of: "crû", with: "cru")
-            c.participePasse1 = c.participePasse1.replacingOccurrences(of: "crû", with: "cru")
+            c.infinitivPerfekt = c.infinitivPerfekt.replacingOccurrences(of: "crû", with: "cru")
+            c.partizipPerfekt = c.partizipPerfekt.replacingOccurrences(of: "crû", with: "cru")
             c.participePasse2 = c.participePasse2.replacingOccurrences(of: "crû", with: "cru")
             c.gerondifPasse = c.gerondifPasse.replacingOccurrences(of: "crû", with: "cru")
             
-            c.indicatifPasseComposeJe = c.indicatifPasseComposeJe.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseComposeTu = c.indicatifPasseComposeTu.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseComposeIl = c.indicatifPasseComposeIl.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseComposeNous = c.indicatifPasseComposeNous.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseComposeVous = c.indicatifPasseComposeVous.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseComposeIls = c.indicatifPasseComposeIls.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPrateritumIch = c.indikativPrateritumIch.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPrateritumDu = c.indikativPrateritumDu.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPrateritumEr = c.indikativPrateritumEr.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPrateritumWir = c.indikativPrateritumWir.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPrateritumIhr = c.indikativPrateritumIhr.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPrateritumSie = c.indikativPrateritumSie.replacingOccurrences(of: "crû", with: "cru")
             
-            c.indicatifPlusQueParfaitJe = c.indicatifPlusQueParfaitJe.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPlusQueParfaitTu = c.indicatifPlusQueParfaitTu.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPlusQueParfaitIl = c.indicatifPlusQueParfaitIl.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPlusQueParfaitNous = c.indicatifPlusQueParfaitNous.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPlusQueParfaitVous = c.indicatifPlusQueParfaitVous.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPlusQueParfaitIls = c.indicatifPlusQueParfaitIls.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPlusquamperfektIch = c.indikativPlusquamperfektIch.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPlusquamperfektDu = c.indikativPlusquamperfektDu.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPlusquamperfektEr = c.indikativPlusquamperfektEr.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPlusquamperfektWir = c.indikativPlusquamperfektWir.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPlusquamperfektIhr = c.indikativPlusquamperfektIhr.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativPlusquamperfektSie = c.indikativPlusquamperfektSie.replacingOccurrences(of: "crû", with: "cru")
             
-            c.indicatifPasseAnterieurJe = c.indicatifPasseAnterieurJe.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseAnterieurTu = c.indicatifPasseAnterieurTu.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseAnterieurIl = c.indicatifPasseAnterieurIl.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseAnterieurNous = c.indicatifPasseAnterieurNous.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseAnterieurVous = c.indicatifPasseAnterieurVous.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifPasseAnterieurIls = c.indicatifPasseAnterieurIls.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativFutur2Ich = c.indikativFutur2Ich.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativFutur2Du = c.indikativFutur2Du.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativFutur2Er = c.indikativFutur2Er.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativFutur2Wir = c.indikativFutur2Wir.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativFutur2Ihr = c.indikativFutur2Ihr.replacingOccurrences(of: "crû", with: "cru")
+            c.indikativFutur2Sie = c.indikativFutur2Sie.replacingOccurrences(of: "crû", with: "cru")
             
-            c.indicatifFuturAnterieurJe = c.indicatifFuturAnterieurJe.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifFuturAnterieurTu = c.indicatifFuturAnterieurTu.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifFuturAnterieurIl = c.indicatifFuturAnterieurIl.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifFuturAnterieurNous = c.indicatifFuturAnterieurNous.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifFuturAnterieurVous = c.indicatifFuturAnterieurVous.replacingOccurrences(of: "crû", with: "cru")
-            c.indicatifFuturAnterieurIls = c.indicatifFuturAnterieurIls.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1PerfektIch = c.konjunktiv1PerfektIch.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1PerfektDu = c.konjunktiv1PerfektDu.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1PerfektEr = c.konjunktiv1PerfektEr.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1PerfektWir = c.konjunktiv1PerfektWir.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1PerfektIhr = c.konjunktiv1PerfektIhr.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1PerfektSie = c.konjunktiv1PerfektSie.replacingOccurrences(of: "crû", with: "cru")
             
-            c.conditionnelPasseJe = c.conditionnelPasseJe.replacingOccurrences(of: "crû", with: "cru")
-            c.conditionnelPasseTu = c.conditionnelPasseTu.replacingOccurrences(of: "crû", with: "cru")
-            c.conditionnelPasseIl = c.conditionnelPasseIl.replacingOccurrences(of: "crû", with: "cru")
-            c.conditionnelPasseNous = c.conditionnelPasseNous.replacingOccurrences(of: "crû", with: "cru")
-            c.conditionnelPasseVous = c.conditionnelPasseVous.replacingOccurrences(of: "crû", with: "cru")
-            c.conditionnelPasseIls = c.conditionnelPasseIls.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2Futur2Ich = c.konjunktiv2Futur2Ich.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2Futur2Du = c.konjunktiv2Futur2Du.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2Futur2Er = c.konjunktiv2Futur2Er.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2Futur2Wir = c.konjunktiv2Futur2Wir.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2Futur2Ihr = c.konjunktiv2Futur2Ihr.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2Futur2Sie = c.konjunktiv2Futur2Sie.replacingOccurrences(of: "crû", with: "cru")
             
-            c.subjonctifImperfaitJe = c.subjonctifImperfaitJe.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifImperfaitTu = c.subjonctifImperfaitTu.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifImperfaitNous = c.subjonctifImperfaitNous.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifImperfaitVous = c.subjonctifImperfaitVous.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifImperfaitIls = c.subjonctifImperfaitIls.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PrateritumIch = c.konjunktiv2PrateritumIch.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PrateritumDu = c.konjunktiv2PrateritumDu.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PrateritumWir = c.konjunktiv2PrateritumWir.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PrateritumIhr = c.konjunktiv2PrateritumIhr.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PrateritumSie = c.konjunktiv2PrateritumSie.replacingOccurrences(of: "crû", with: "cru")
             
-            c.subjonctifPasseJe = c.subjonctifPasseJe.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPasseTu = c.subjonctifPasseTu.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPasseIl = c.subjonctifPasseIl.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPasseNous = c.subjonctifPasseNous.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPasseVous = c.subjonctifPasseVous.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPasseIls = c.subjonctifPasseIls.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1Futur2Ich = c.konjunktiv1Futur2Ich.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1Futur2Du = c.konjunktiv1Futur2Du.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1Futur2Er = c.konjunktiv1Futur2Er.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1Futur2Wir = c.konjunktiv1Futur2Wir.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1Futur2Ihr = c.konjunktiv1Futur2Ihr.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv1Futur2Sie = c.konjunktiv1Futur2Sie.replacingOccurrences(of: "crû", with: "cru")
             
-            c.subjonctifPlusQueParfaitJe = c.subjonctifPlusQueParfaitJe.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPlusQueParfaitTu = c.subjonctifPlusQueParfaitTu.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPlusQueParfaitIl = c.subjonctifPlusQueParfaitIl.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPlusQueParfaitNous = c.subjonctifPlusQueParfaitNous.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPlusQueParfaitVous = c.subjonctifPlusQueParfaitVous.replacingOccurrences(of: "crû", with: "cru")
-            c.subjonctifPlusQueParfaitIls = c.subjonctifPlusQueParfaitIls.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PlusquamperfektIch = c.konjunktiv2PlusquamperfektIch.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PlusquamperfektDu = c.konjunktiv2PlusquamperfektDu.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PlusquamperfektEr = c.konjunktiv2PlusquamperfektEr.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PlusquamperfektWir = c.konjunktiv2PlusquamperfektWir.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PlusquamperfektIhr = c.konjunktiv2PlusquamperfektIhr.replacingOccurrences(of: "crû", with: "cru")
+            c.konjunktiv2PlusquamperfektSie = c.konjunktiv2PlusquamperfektSie.replacingOccurrences(of: "crû", with: "cru")
         }
         else if (c.id == 20 && verbInfinitive.contains("amuïr")) {
             // Restore circunflex accent
-            c.indicatifPresentJe = c.indicatifPresentJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPresentTu = c.indicatifPresentTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPresentIl = c.indicatifPresentIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPresentNous = c.indicatifPresentNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPresentVous = c.indicatifPresentVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPresentIls = c.indicatifPresentIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrasensIch = c.indikativPrasensIch.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrasensDu = c.indikativPrasensDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrasensEr = c.indikativPrasensEr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrasensWir = c.indikativPrasensWir.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrasensIhr = c.indikativPrasensIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrasensSie = c.indikativPrasensSie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.indicatifPasseComposeJe = c.indicatifPasseComposeJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseComposeTu = c.indicatifPasseComposeTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseComposeIl = c.indicatifPasseComposeIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseComposeNous = c.indicatifPasseComposeNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseComposeVous = c.indicatifPasseComposeVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseComposeIls = c.indicatifPasseComposeIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrateritumIch = c.indikativPrateritumIch.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrateritumDu = c.indikativPrateritumDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrateritumEr = c.indikativPrateritumEr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrateritumWir = c.indikativPrateritumWir.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrateritumIhr = c.indikativPrateritumIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPrateritumSie = c.indikativPrateritumSie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.indicatifImperfaitJe = c.indicatifImperfaitJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifImperfaitTu = c.indicatifImperfaitTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifImperfaitIl = c.indicatifImperfaitIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifImperfaitNous = c.indicatifImperfaitNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifImperfaitVous = c.indicatifImperfaitVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifImperfaitIls = c.indicatifImperfaitIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPerfektIch = c.indikativPerfektIch.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPerfektDu = c.indikativPerfektDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPerfektEr = c.indikativPerfektEr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPerfektWir = c.indikativPerfektWir.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPerfektIhr = c.indikativPerfektIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPerfektSie = c.indikativPerfektSie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.indicatifPlusQueParfaitJe = c.indicatifPlusQueParfaitJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPlusQueParfaitTu = c.indicatifPlusQueParfaitTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPlusQueParfaitIl = c.indicatifPlusQueParfaitIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPlusQueParfaitNous = c.indicatifPlusQueParfaitNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPlusQueParfaitVous = c.indicatifPlusQueParfaitVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPlusQueParfaitIls = c.indicatifPlusQueParfaitIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPlusquamperfektIch = c.indikativPlusquamperfektIch.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPlusquamperfektDu = c.indikativPlusquamperfektDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPlusquamperfektEr = c.indikativPlusquamperfektEr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPlusquamperfektWir = c.indikativPlusquamperfektWir.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPlusquamperfektIhr = c.indikativPlusquamperfektIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativPlusquamperfektSie = c.indikativPlusquamperfektSie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.indicatifPasseSimpleJe = c.indicatifPasseSimpleJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseSimpleTu = c.indicatifPasseSimpleTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseSimpleIl = c.indicatifPasseSimpleIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseSimpleIls = c.indicatifPasseSimpleIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur1Ich = c.indikativFutur1Ich.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur1Du = c.indikativFutur1Du.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur1Er = c.indikativFutur1Er.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur1Sie = c.indikativFutur1Sie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.indicatifPasseAnterieurJe = c.indicatifPasseAnterieurJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseAnterieurTu = c.indicatifPasseAnterieurTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseAnterieurIl = c.indicatifPasseAnterieurIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseAnterieurNous = c.indicatifPasseAnterieurNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseAnterieurVous = c.indicatifPasseAnterieurVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifPasseAnterieurIls = c.indicatifPasseAnterieurIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur2Ich = c.indikativFutur2Ich.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur2Du = c.indikativFutur2Du.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur2Er = c.indikativFutur2Er.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur2Wir = c.indikativFutur2Wir.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur2Ihr = c.indikativFutur2Ihr.replacingOccurrences(of: "amui", with: "amuï")
+            c.indikativFutur2Sie = c.indikativFutur2Sie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.indicatifFuturSimpleJe = c.indicatifFuturSimpleJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturSimpleTu = c.indicatifFuturSimpleTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturSimpleIl = c.indicatifFuturSimpleIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturSimpleNous = c.indicatifFuturSimpleNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturSimpleVous = c.indicatifFuturSimpleVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturSimpleIls = c.indicatifFuturSimpleIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PrasensIch = c.konjunktiv1PrasensIch.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PrasensDu = c.konjunktiv1PrasensDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PrasensEr = c.konjunktiv1PrasensEr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PrasensWir = c.konjunktiv1PrasensWir.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PrasensIhr = c.konjunktiv1PrasensIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PrasensSie = c.konjunktiv1PrasensSie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.indicatifFuturAnterieurJe = c.indicatifFuturAnterieurJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturAnterieurTu = c.indicatifFuturAnterieurTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturAnterieurIl = c.indicatifFuturAnterieurIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturAnterieurNous = c.indicatifFuturAnterieurNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturAnterieurVous = c.indicatifFuturAnterieurVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.indicatifFuturAnterieurIls = c.indicatifFuturAnterieurIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PerfektIch = c.konjunktiv1PerfektIch.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PerfektDu = c.konjunktiv1PerfektDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PerfektEr = c.konjunktiv1PerfektEr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PerfektWir = c.konjunktiv1PerfektWir.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PerfektIhr = c.konjunktiv1PerfektIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1PerfektSie = c.konjunktiv1PerfektSie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.conditionnelPresentJe = c.conditionnelPresentJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPresentTu = c.conditionnelPresentTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPresentIl = c.conditionnelPresentIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPresentNous = c.conditionnelPresentNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPresentVous = c.conditionnelPresentVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPresentIls = c.conditionnelPresentIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur1Ich = c.konjunktiv2Futur1Ich.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur1Du = c.konjunktiv2Futur1Du.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur1Er = c.konjunktiv2Futur1Er.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur1Wir = c.konjunktiv2Futur1Wir.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur1Ihr = c.konjunktiv2Futur1Ihr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur1Sie = c.konjunktiv2Futur1Sie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.conditionnelPasseJe = c.conditionnelPasseJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPasseTu = c.conditionnelPasseTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPasseIl = c.conditionnelPasseIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPasseNous = c.conditionnelPasseNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPasseVous = c.conditionnelPasseVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.conditionnelPasseIls = c.conditionnelPasseIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur2Ich = c.konjunktiv2Futur2Ich.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur2Du = c.konjunktiv2Futur2Du.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur2Er = c.konjunktiv2Futur2Er.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur2Wir = c.konjunktiv2Futur2Wir.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur2Ihr = c.konjunktiv2Futur2Ihr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2Futur2Sie = c.konjunktiv2Futur2Sie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.subjonctifPresentJe = c.subjonctifPresentJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPresentTu = c.subjonctifPresentTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPresentIl = c.subjonctifPresentIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPresentNous = c.subjonctifPresentNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPresentVous = c.subjonctifPresentVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPresentIls = c.subjonctifPresentIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur1Ich = c.konjunktiv1Futur1Ich.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur1Du = c.konjunktiv1Futur1Du.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur1Er = c.konjunktiv1Futur1Er.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur1Wir = c.konjunktiv1Futur1Wir.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur1Ihr = c.konjunktiv1Futur1Ihr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur1Sie = c.konjunktiv1Futur1Sie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.subjonctifPasseJe = c.subjonctifPasseJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPasseTu = c.subjonctifPasseTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPasseIl = c.subjonctifPasseIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPasseNous = c.subjonctifPasseNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPasseVous = c.subjonctifPasseVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPasseIls = c.subjonctifPasseIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur2Ich = c.konjunktiv1Futur2Ich.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur2Du = c.konjunktiv1Futur2Du.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur2Er = c.konjunktiv1Futur2Er.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur2Wir = c.konjunktiv1Futur2Wir.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur2Ihr = c.konjunktiv1Futur2Ihr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv1Futur2Sie = c.konjunktiv1Futur2Sie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.subjonctifImperfaitJe = c.subjonctifImperfaitJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifImperfaitTu = c.subjonctifImperfaitTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifImperfaitIl = c.subjonctifImperfaitIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifImperfaitNous = c.subjonctifImperfaitNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifImperfaitVous = c.subjonctifImperfaitVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifImperfaitIls = c.subjonctifImperfaitIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PrateritumIch = c.konjunktiv2PrateritumIch.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PrateritumDu = c.konjunktiv2PrateritumDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PrateritumEr = c.konjunktiv2PrateritumEr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PrateritumWir = c.konjunktiv2PrateritumWir.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PrateritumIhr = c.konjunktiv2PrateritumIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PrateritumSie = c.konjunktiv2PrateritumSie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.subjonctifPlusQueParfaitJe = c.subjonctifPlusQueParfaitJe.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPlusQueParfaitTu = c.subjonctifPlusQueParfaitTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPlusQueParfaitIl = c.subjonctifPlusQueParfaitIl.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPlusQueParfaitNous = c.subjonctifPlusQueParfaitNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPlusQueParfaitVous = c.subjonctifPlusQueParfaitVous.replacingOccurrences(of: "amui", with: "amuï")
-            c.subjonctifPlusQueParfaitIls = c.subjonctifPlusQueParfaitIls.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PlusquamperfektIch = c.konjunktiv2PlusquamperfektIch.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PlusquamperfektDu = c.konjunktiv2PlusquamperfektDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PlusquamperfektEr = c.konjunktiv2PlusquamperfektEr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PlusquamperfektWir = c.konjunktiv2PlusquamperfektWir.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PlusquamperfektIhr = c.konjunktiv2PlusquamperfektIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.konjunktiv2PlusquamperfektSie = c.konjunktiv2PlusquamperfektSie.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.imperatifPresentTu = c.imperatifPresentTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.imperatifPresentNous = c.imperatifPresentNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.imperatifPresentVous = c.imperatifPresentVous.replacingOccurrences(of: "amui", with: "amuï")
+            c.imperativDu = c.imperativDu.replacingOccurrences(of: "amui", with: "amuï")
+            c.imperativIhr = c.imperativIhr.replacingOccurrences(of: "amui", with: "amuï")
+            c.imperativSie = c.imperativSie.replacingOccurrences(of: "amui", with: "amuï")
             c.imperatifPasseTu = c.imperatifPasseTu.replacingOccurrences(of: "amui", with: "amuï")
             c.imperatifPasseNous = c.imperatifPasseNous.replacingOccurrences(of: "amui", with: "amuï")
             c.imperatifPasseVous = c.imperatifPasseVous.replacingOccurrences(of: "amui", with: "amuï")
             
-            c.infinitivePasse = c.infinitivePasse.replacingOccurrences(of: "amui", with: "amuï")
-            c.participePresent = c.participePresent.replacingOccurrences(of: "amui", with: "amuï")
-            c.participePasse1 = c.participePasse1.replacingOccurrences(of: "amui", with: "amuï")
+            c.infinitivPerfekt = c.infinitivPerfekt.replacingOccurrences(of: "amui", with: "amuï")
+            c.partizipPrasens = c.partizipPrasens.replacingOccurrences(of: "amui", with: "amuï")
+            c.partizipPerfekt = c.partizipPerfekt.replacingOccurrences(of: "amui", with: "amuï")
             c.participePasse2 = c.participePasse2.replacingOccurrences(of: "amui", with: "amuï")
             c.gerondifPresent = c.gerondifPresent.replacingOccurrences(of: "amui", with: "amuï")
             c.gerondifPasse = c.gerondifPasse.replacingOccurrences(of: "amui", with: "amuï")
@@ -1100,70 +1100,70 @@ class VerbDetailsViewController: UIViewController {
      */
     private func replaceRadicals(_ c : Conjugation, _ modelR : [String], _ verbR : [String], _ verbInfinitive : String) {
         
-        c.infinitivePresent = verbInfinitive
-        c.participePresent = replaceRadical(c.participePresent, modelR, verbR)
+        c.infinitivPrasens = verbInfinitive
+        c.partizipPrasens = replaceRadical(c.partizipPrasens, modelR, verbR)
         c.gerondifPresent = replaceRadical(c.gerondifPresent, modelR, verbR)
         
-        c.imperatifPresentTu = replaceRadical(c.imperatifPresentTu, modelR, verbR)
-        c.imperatifPresentNous = replaceRadical(c.imperatifPresentNous, modelR, verbR)
-        c.imperatifPresentVous = replaceRadical(c.imperatifPresentVous, modelR, verbR)
+        c.imperativDu = replaceRadical(c.imperativDu, modelR, verbR)
+        c.imperativIhr = replaceRadical(c.imperativIhr, modelR, verbR)
+        c.imperativSie = replaceRadical(c.imperativSie, modelR, verbR)
         
-        c.indicatifPresentJe = replaceRadical(c.indicatifPresentJe, modelR, verbR)
-        c.indicatifPresentTu = replaceRadical(c.indicatifPresentTu, modelR, verbR)
-        c.indicatifPresentIl = replaceRadical(c.indicatifPresentIl, modelR, verbR)
-        c.indicatifPresentNous = replaceRadical(c.indicatifPresentNous, modelR, verbR)
-        c.indicatifPresentVous = replaceRadical(c.indicatifPresentVous, modelR, verbR)
-        c.indicatifPresentIls = replaceRadical(c.indicatifPresentIls, modelR, verbR)
+        c.indikativPrasensIch = replaceRadical(c.indikativPrasensIch, modelR, verbR)
+        c.indikativPrasensDu = replaceRadical(c.indikativPrasensDu, modelR, verbR)
+        c.indikativPrasensEr = replaceRadical(c.indikativPrasensEr, modelR, verbR)
+        c.indikativPrasensWir = replaceRadical(c.indikativPrasensWir, modelR, verbR)
+        c.indikativPrasensIhr = replaceRadical(c.indikativPrasensIhr, modelR, verbR)
+        c.indikativPrasensSie = replaceRadical(c.indikativPrasensSie, modelR, verbR)
         
-        c.indicatifImperfaitJe = replaceRadical(c.indicatifImperfaitJe, modelR, verbR)
-        c.indicatifImperfaitTu = replaceRadical(c.indicatifImperfaitTu, modelR, verbR)
-        c.indicatifImperfaitIl = replaceRadical(c.indicatifImperfaitIl, modelR, verbR)
-        c.indicatifImperfaitNous = replaceRadical(c.indicatifImperfaitNous, modelR, verbR)
-        c.indicatifImperfaitVous = replaceRadical(c.indicatifImperfaitVous, modelR, verbR)
-        c.indicatifImperfaitIls = replaceRadical(c.indicatifImperfaitIls, modelR, verbR)
+        c.indikativPerfektIch = replaceRadical(c.indikativPerfektIch, modelR, verbR)
+        c.indikativPerfektDu = replaceRadical(c.indikativPerfektDu, modelR, verbR)
+        c.indikativPerfektEr = replaceRadical(c.indikativPerfektEr, modelR, verbR)
+        c.indikativPerfektWir = replaceRadical(c.indikativPerfektWir, modelR, verbR)
+        c.indikativPerfektIhr = replaceRadical(c.indikativPerfektIhr, modelR, verbR)
+        c.indikativPerfektSie = replaceRadical(c.indikativPerfektSie, modelR, verbR)
         
-        c.indicatifPasseSimpleJe = replaceRadical(c.indicatifPasseSimpleJe, modelR, verbR)
-        c.indicatifPasseSimpleTu = replaceRadical(c.indicatifPasseSimpleTu, modelR, verbR)
-        c.indicatifPasseSimpleIl = replaceRadical(c.indicatifPasseSimpleIl, modelR, verbR)
-        c.indicatifPasseSimpleNous = replaceRadical(c.indicatifPasseSimpleNous, modelR, verbR)
-        c.indicatifPasseSimpleVous = replaceRadical(c.indicatifPasseSimpleVous, modelR, verbR)
-        c.indicatifPasseSimpleIls = replaceRadical(c.indicatifPasseSimpleIls, modelR, verbR)
+        c.indikativFutur1Ich = replaceRadical(c.indikativFutur1Ich, modelR, verbR)
+        c.indikativFutur1Du = replaceRadical(c.indikativFutur1Du, modelR, verbR)
+        c.indikativFutur1Er = replaceRadical(c.indikativFutur1Er, modelR, verbR)
+        c.indikativFutur1Wir = replaceRadical(c.indikativFutur1Wir, modelR, verbR)
+        c.indikativFutur1Ihr = replaceRadical(c.indikativFutur1Ihr, modelR, verbR)
+        c.indikativFutur1Sie = replaceRadical(c.indikativFutur1Sie, modelR, verbR)
         
-        c.indicatifFuturSimpleJe = replaceRadical(c.indicatifFuturSimpleJe, modelR, verbR)
-        c.indicatifFuturSimpleTu = replaceRadical(c.indicatifFuturSimpleTu, modelR, verbR)
-        c.indicatifFuturSimpleIl = replaceRadical(c.indicatifFuturSimpleIl, modelR, verbR)
-        c.indicatifFuturSimpleNous = replaceRadical(c.indicatifFuturSimpleNous, modelR, verbR)
-        c.indicatifFuturSimpleVous = replaceRadical(c.indicatifFuturSimpleVous, modelR, verbR)
-        c.indicatifFuturSimpleIls = replaceRadical(c.indicatifFuturSimpleIls, modelR, verbR)
+        c.konjunktiv1PrasensIch = replaceRadical(c.konjunktiv1PrasensIch, modelR, verbR)
+        c.konjunktiv1PrasensDu = replaceRadical(c.konjunktiv1PrasensDu, modelR, verbR)
+        c.konjunktiv1PrasensEr = replaceRadical(c.konjunktiv1PrasensEr, modelR, verbR)
+        c.konjunktiv1PrasensWir = replaceRadical(c.konjunktiv1PrasensWir, modelR, verbR)
+        c.konjunktiv1PrasensIhr = replaceRadical(c.konjunktiv1PrasensIhr, modelR, verbR)
+        c.konjunktiv1PrasensSie = replaceRadical(c.konjunktiv1PrasensSie, modelR, verbR)
         
-        c.conditionnelPresentJe = replaceRadical(c.conditionnelPresentJe, modelR, verbR)
-        c.conditionnelPresentTu = replaceRadical(c.conditionnelPresentTu, modelR, verbR)
-        c.conditionnelPresentIl = replaceRadical(c.conditionnelPresentIl, modelR, verbR)
-        c.conditionnelPresentNous = replaceRadical(c.conditionnelPresentNous, modelR, verbR)
-        c.conditionnelPresentVous = replaceRadical(c.conditionnelPresentVous, modelR, verbR)
-        c.conditionnelPresentIls = replaceRadical(c.conditionnelPresentIls, modelR, verbR)
+        c.konjunktiv2Futur1Ich = replaceRadical(c.konjunktiv2Futur1Ich, modelR, verbR)
+        c.konjunktiv2Futur1Du = replaceRadical(c.konjunktiv2Futur1Du, modelR, verbR)
+        c.konjunktiv2Futur1Er = replaceRadical(c.konjunktiv2Futur1Er, modelR, verbR)
+        c.konjunktiv2Futur1Wir = replaceRadical(c.konjunktiv2Futur1Wir, modelR, verbR)
+        c.konjunktiv2Futur1Ihr = replaceRadical(c.konjunktiv2Futur1Ihr, modelR, verbR)
+        c.konjunktiv2Futur1Sie = replaceRadical(c.konjunktiv2Futur1Sie, modelR, verbR)
         
-        c.subjonctifPresentJe = replaceRadical(c.subjonctifPresentJe, modelR, verbR)
-        c.subjonctifPresentTu = replaceRadical(c.subjonctifPresentTu, modelR, verbR)
-        c.subjonctifPresentIl = replaceRadical(c.subjonctifPresentIl, modelR, verbR)
-        c.subjonctifPresentNous = replaceRadical(c.subjonctifPresentNous, modelR, verbR)
-        c.subjonctifPresentVous = replaceRadical(c.subjonctifPresentVous, modelR, verbR)
-        c.subjonctifPresentIls = replaceRadical(c.subjonctifPresentIls, modelR, verbR)
+        c.konjunktiv1Futur1Ich = replaceRadical(c.konjunktiv1Futur1Ich, modelR, verbR)
+        c.konjunktiv1Futur1Du = replaceRadical(c.konjunktiv1Futur1Du, modelR, verbR)
+        c.konjunktiv1Futur1Er = replaceRadical(c.konjunktiv1Futur1Er, modelR, verbR)
+        c.konjunktiv1Futur1Wir = replaceRadical(c.konjunktiv1Futur1Wir, modelR, verbR)
+        c.konjunktiv1Futur1Ihr = replaceRadical(c.konjunktiv1Futur1Ihr, modelR, verbR)
+        c.konjunktiv1Futur1Sie = replaceRadical(c.konjunktiv1Futur1Sie, modelR, verbR)
         
-        c.subjonctifImperfaitJe = replaceRadical(c.subjonctifImperfaitJe, modelR, verbR)
-        c.subjonctifImperfaitTu = replaceRadical(c.subjonctifImperfaitTu, modelR, verbR)
-        c.subjonctifImperfaitIl = replaceRadical(c.subjonctifImperfaitIl, modelR, verbR)
-        c.subjonctifImperfaitNous = replaceRadical(c.subjonctifImperfaitNous, modelR, verbR)
-        c.subjonctifImperfaitVous = replaceRadical(c.subjonctifImperfaitVous, modelR, verbR)
-        c.subjonctifImperfaitIls = replaceRadical(c.subjonctifImperfaitIls, modelR, verbR)
+        c.konjunktiv2PrateritumIch = replaceRadical(c.konjunktiv2PrateritumIch, modelR, verbR)
+        c.konjunktiv2PrateritumDu = replaceRadical(c.konjunktiv2PrateritumDu, modelR, verbR)
+        c.konjunktiv2PrateritumEr = replaceRadical(c.konjunktiv2PrateritumEr, modelR, verbR)
+        c.konjunktiv2PrateritumWir = replaceRadical(c.konjunktiv2PrateritumWir, modelR, verbR)
+        c.konjunktiv2PrateritumIhr = replaceRadical(c.konjunktiv2PrateritumIhr, modelR, verbR)
+        c.konjunktiv2PrateritumSie = replaceRadical(c.konjunktiv2PrateritumSie, modelR, verbR)
         
         // Calculate and replace participe passe only, instead of radicals for composed tenses
-        var pp = c.participePasse1.components(separatedBy: " ")
+        var pp = c.partizipPerfekt.components(separatedBy: " ")
         let old = pp[0].elementsEqual("-") ? "" : pp[0]
         
-        c.participePasse1 = replaceRadical(c.participePasse1, modelR, verbR)
+        c.partizipPerfekt = replaceRadical(c.partizipPerfekt, modelR, verbR)
         
-        pp = c.participePasse1.components(separatedBy: " ")
+        pp = c.partizipPerfekt.components(separatedBy: " ")
         let new = pp[0].elementsEqual("-") ? "" : pp[0]
         
         if (!old.isEmpty && !new.isEmpty) {
@@ -1245,16 +1245,16 @@ class VerbDetailsViewController: UIViewController {
         
         // change auxiliar verb
         if (isAvoir && isEtre) {
-            if (c.infinitivePasse.contains("avoir")) {
+            if (c.infinitivPerfekt.contains("avoir")) {
                 //  Like: sortir, renter
                 replaceAuxiliar(c, wordsAvoir, wordsEtreAvoir)
-            } else if (c.infinitivePasse.contains("être")) {
+            } else if (c.infinitivPerfekt.contains("être")) {
                 replaceAuxiliar(c, wordsEtre, wordsEtreAvoir)
             }
-        } else if (c.infinitivePasse.contains("avoir") && isEtre && !isAvoir) {
+        } else if (c.infinitivPerfekt.contains("avoir") && isEtre && !isAvoir) {
             //  Like: partir, mourir, s'ecrier
             replaceAuxiliar(c, wordsAvoir, wordsEtre)
-        } else if (c.infinitivePasse.contains("être") && !isEtre && isAvoir) {
+        } else if (c.infinitivPerfekt.contains("être") && !isEtre && isAvoir) {
             replaceAuxiliar(c, wordsEtre, wordsAvoir)
         }
     }
@@ -1270,61 +1270,61 @@ class VerbDetailsViewController: UIViewController {
             let replace : String = replaces[index]
             
             switch (index) {
-            case 0:     c.infinitivePasse = ViewUtils.replaceFirst(c.infinitivePasse, of: word, with: replace)
+            case 0:     c.infinitivPerfekt = ViewUtils.replaceFirst(c.infinitivPerfekt, of: word, with: replace)
             case 1:     c.participePasse2 = ViewUtils.replaceFirst(c.participePasse2, of: word, with: replace)
             case 2:     c.gerondifPasse = ViewUtils.replaceFirst(c.gerondifPasse, of: word, with: replace)
             case 3:     c.imperatifPasseTu = ViewUtils.replaceFirst(c.imperatifPasseTu, of: word, with: replace)
             case 4:     c.imperatifPasseNous = ViewUtils.replaceFirst(c.imperatifPasseNous, of: word, with: replace)
             case 5:     c.imperatifPasseVous = ViewUtils.replaceFirst(c.imperatifPasseVous, of: word, with: replace)
                 
-            case 6:     c.indicatifPasseComposeJe = ViewUtils.replaceFirst(c.indicatifPasseComposeJe, of: word, with: replace)
-            case 7:     c.indicatifPasseComposeTu = ViewUtils.replaceFirst(c.indicatifPasseComposeTu, of: word, with: replace)
-            case 8:     c.indicatifPasseComposeIl = ViewUtils.replaceFirst(c.indicatifPasseComposeIl, of: word, with: replace)
-            case 9:     c.indicatifPasseComposeNous = ViewUtils.replaceFirst(c.indicatifPasseComposeNous, of: word, with: replace)
-            case 10:    c.indicatifPasseComposeVous = ViewUtils.replaceFirst(c.indicatifPasseComposeVous, of: word, with: replace)
-            case 11:    c.indicatifPasseComposeIls = ViewUtils.replaceFirst(c.indicatifPasseComposeIls, of: word, with: replace)
+            case 6:     c.indikativPrateritumIch = ViewUtils.replaceFirst(c.indikativPrateritumIch, of: word, with: replace)
+            case 7:     c.indikativPrateritumDu = ViewUtils.replaceFirst(c.indikativPrateritumDu, of: word, with: replace)
+            case 8:     c.indikativPrateritumEr = ViewUtils.replaceFirst(c.indikativPrateritumEr, of: word, with: replace)
+            case 9:     c.indikativPrateritumWir = ViewUtils.replaceFirst(c.indikativPrateritumWir, of: word, with: replace)
+            case 10:    c.indikativPrateritumIhr = ViewUtils.replaceFirst(c.indikativPrateritumIhr, of: word, with: replace)
+            case 11:    c.indikativPrateritumSie = ViewUtils.replaceFirst(c.indikativPrateritumSie, of: word, with: replace)
                 
-            case 12:    c.indicatifPlusQueParfaitJe = ViewUtils.replaceFirst(c.indicatifPlusQueParfaitJe, of: word, with: replace)
-            case 13:    c.indicatifPlusQueParfaitTu = ViewUtils.replaceFirst(c.indicatifPlusQueParfaitTu, of: word, with: replace)
-            case 14:    c.indicatifPlusQueParfaitIl = ViewUtils.replaceFirst(c.indicatifPlusQueParfaitIl, of: word, with: replace)
-            case 15:    c.indicatifPlusQueParfaitNous = ViewUtils.replaceFirst(c.indicatifPlusQueParfaitNous, of: word, with: replace)
-            case 16:    c.indicatifPlusQueParfaitVous = ViewUtils.replaceFirst(c.indicatifPlusQueParfaitVous, of: word, with: replace)
-            case 17:    c.indicatifPlusQueParfaitIls = ViewUtils.replaceFirst(c.indicatifPlusQueParfaitIls, of: word, with: replace)
+            case 12:    c.indikativPlusquamperfektIch = ViewUtils.replaceFirst(c.indikativPlusquamperfektIch, of: word, with: replace)
+            case 13:    c.indikativPlusquamperfektDu = ViewUtils.replaceFirst(c.indikativPlusquamperfektDu, of: word, with: replace)
+            case 14:    c.indikativPlusquamperfektEr = ViewUtils.replaceFirst(c.indikativPlusquamperfektEr, of: word, with: replace)
+            case 15:    c.indikativPlusquamperfektWir = ViewUtils.replaceFirst(c.indikativPlusquamperfektWir, of: word, with: replace)
+            case 16:    c.indikativPlusquamperfektIhr = ViewUtils.replaceFirst(c.indikativPlusquamperfektIhr, of: word, with: replace)
+            case 17:    c.indikativPlusquamperfektSie = ViewUtils.replaceFirst(c.indikativPlusquamperfektSie, of: word, with: replace)
                 
-            case 18:    c.indicatifPasseAnterieurJe = ViewUtils.replaceFirst(c.indicatifPasseAnterieurJe, of: word, with: replace)
-            case 19:    c.indicatifPasseAnterieurTu = ViewUtils.replaceFirst(c.indicatifPasseAnterieurTu, of: word, with: replace)
-            case 20:    c.indicatifPasseAnterieurIl = ViewUtils.replaceFirst(c.indicatifPasseAnterieurIl, of: word, with: replace)
-            case 21:    c.indicatifPasseAnterieurNous = ViewUtils.replaceFirst(c.indicatifPasseAnterieurNous, of: word, with: replace)
-            case 22:    c.indicatifPasseAnterieurVous = ViewUtils.replaceFirst(c.indicatifPasseAnterieurVous, of: word, with: replace)
-            case 23:    c.indicatifPasseAnterieurIls = ViewUtils.replaceFirst(c.indicatifPasseAnterieurIls, of: word, with: replace)
+            case 18:    c.indikativFutur2Ich = ViewUtils.replaceFirst(c.indikativFutur2Ich, of: word, with: replace)
+            case 19:    c.indikativFutur2Du = ViewUtils.replaceFirst(c.indikativFutur2Du, of: word, with: replace)
+            case 20:    c.indikativFutur2Er = ViewUtils.replaceFirst(c.indikativFutur2Er, of: word, with: replace)
+            case 21:    c.indikativFutur2Wir = ViewUtils.replaceFirst(c.indikativFutur2Wir, of: word, with: replace)
+            case 22:    c.indikativFutur2Ihr = ViewUtils.replaceFirst(c.indikativFutur2Ihr, of: word, with: replace)
+            case 23:    c.indikativFutur2Sie = ViewUtils.replaceFirst(c.indikativFutur2Sie, of: word, with: replace)
                 
-            case 24:    c.indicatifFuturAnterieurJe = ViewUtils.replaceFirst(c.indicatifFuturAnterieurJe, of: word, with: replace)
-            case 25:    c.indicatifFuturAnterieurTu = ViewUtils.replaceFirst(c.indicatifFuturAnterieurTu, of: word, with: replace)
-            case 26:    c.indicatifFuturAnterieurIl = ViewUtils.replaceFirst(c.indicatifFuturAnterieurIl, of: word, with: replace)
-            case 27:    c.indicatifFuturAnterieurNous = ViewUtils.replaceFirst(c.indicatifFuturAnterieurNous, of: word, with: replace)
-            case 28:    c.indicatifFuturAnterieurVous = ViewUtils.replaceFirst(c.indicatifFuturAnterieurVous, of: word, with: replace)
-            case 29:    c.indicatifFuturAnterieurIls = ViewUtils.replaceFirst(c.indicatifFuturAnterieurIls, of: word, with: replace)
+            case 24:    c.konjunktiv1PerfektIch = ViewUtils.replaceFirst(c.konjunktiv1PerfektIch, of: word, with: replace)
+            case 25:    c.konjunktiv1PerfektDu = ViewUtils.replaceFirst(c.konjunktiv1PerfektDu, of: word, with: replace)
+            case 26:    c.konjunktiv1PerfektEr = ViewUtils.replaceFirst(c.konjunktiv1PerfektEr, of: word, with: replace)
+            case 27:    c.konjunktiv1PerfektWir = ViewUtils.replaceFirst(c.konjunktiv1PerfektWir, of: word, with: replace)
+            case 28:    c.konjunktiv1PerfektIhr = ViewUtils.replaceFirst(c.konjunktiv1PerfektIhr, of: word, with: replace)
+            case 29:    c.konjunktiv1PerfektSie = ViewUtils.replaceFirst(c.konjunktiv1PerfektSie, of: word, with: replace)
                 
-            case 30:    c.conditionnelPasseJe = ViewUtils.replaceFirst(c.conditionnelPasseJe, of: word, with: replace)
-            case 31:    c.conditionnelPasseTu = ViewUtils.replaceFirst(c.conditionnelPasseTu, of: word, with: replace)
-            case 32:    c.conditionnelPasseIl = ViewUtils.replaceFirst(c.conditionnelPasseIl, of: word, with: replace)
-            case 33:    c.conditionnelPasseNous = ViewUtils.replaceFirst(c.conditionnelPasseNous, of: word, with: replace)
-            case 34:    c.conditionnelPasseVous = ViewUtils.replaceFirst(c.conditionnelPasseVous, of: word, with: replace)
-            case 35:    c.conditionnelPasseIls = ViewUtils.replaceFirst(c.conditionnelPasseIls, of: word, with: replace)
+            case 30:    c.konjunktiv2Futur2Ich = ViewUtils.replaceFirst(c.konjunktiv2Futur2Ich, of: word, with: replace)
+            case 31:    c.konjunktiv2Futur2Du = ViewUtils.replaceFirst(c.konjunktiv2Futur2Du, of: word, with: replace)
+            case 32:    c.konjunktiv2Futur2Er = ViewUtils.replaceFirst(c.konjunktiv2Futur2Er, of: word, with: replace)
+            case 33:    c.konjunktiv2Futur2Wir = ViewUtils.replaceFirst(c.konjunktiv2Futur2Wir, of: word, with: replace)
+            case 34:    c.konjunktiv2Futur2Ihr = ViewUtils.replaceFirst(c.konjunktiv2Futur2Ihr, of: word, with: replace)
+            case 35:    c.konjunktiv2Futur2Sie = ViewUtils.replaceFirst(c.konjunktiv2Futur2Sie, of: word, with: replace)
                 
-            case 36:    c.subjonctifPasseJe = ViewUtils.replaceFirst(c.subjonctifPasseJe, of: word, with: replace)
-            case 37:    c.subjonctifPasseTu = ViewUtils.replaceFirst(c.subjonctifPasseTu, of: word, with: replace)
-            case 38:    c.subjonctifPasseIl = ViewUtils.replaceFirst(c.subjonctifPasseIl, of: word, with: replace)
-            case 39:    c.subjonctifPasseNous = ViewUtils.replaceFirst(c.subjonctifPasseNous, of: word, with: replace)
-            case 40:    c.subjonctifPasseVous = ViewUtils.replaceFirst(c.subjonctifPasseVous, of: word, with: replace)
-            case 41:    c.subjonctifPasseIls = ViewUtils.replaceFirst(c.subjonctifPasseIls, of: word, with: replace)
+            case 36:    c.konjunktiv1Futur2Ich = ViewUtils.replaceFirst(c.konjunktiv1Futur2Ich, of: word, with: replace)
+            case 37:    c.konjunktiv1Futur2Du = ViewUtils.replaceFirst(c.konjunktiv1Futur2Du, of: word, with: replace)
+            case 38:    c.konjunktiv1Futur2Er = ViewUtils.replaceFirst(c.konjunktiv1Futur2Er, of: word, with: replace)
+            case 39:    c.konjunktiv1Futur2Wir = ViewUtils.replaceFirst(c.konjunktiv1Futur2Wir, of: word, with: replace)
+            case 40:    c.konjunktiv1Futur2Ihr = ViewUtils.replaceFirst(c.konjunktiv1Futur2Ihr, of: word, with: replace)
+            case 41:    c.konjunktiv1Futur2Sie = ViewUtils.replaceFirst(c.konjunktiv1Futur2Sie, of: word, with: replace)
                 
-            case 42:    c.subjonctifPlusQueParfaitJe = ViewUtils.replaceFirst(c.subjonctifPlusQueParfaitJe, of: word, with: replace)
-            case 43:    c.subjonctifPlusQueParfaitTu = ViewUtils.replaceFirst(c.subjonctifPlusQueParfaitTu, of: word, with: replace)
-            case 44:    c.subjonctifPlusQueParfaitIl = ViewUtils.replaceFirst(c.subjonctifPlusQueParfaitIl, of: word, with: replace)
-            case 45:    c.subjonctifPlusQueParfaitNous = ViewUtils.replaceFirst(c.subjonctifPlusQueParfaitNous, of: word, with: replace)
-            case 46:    c.subjonctifPlusQueParfaitVous = ViewUtils.replaceFirst(c.subjonctifPlusQueParfaitVous, of: word, with: replace)
-            case 47:    c.subjonctifPlusQueParfaitIls = ViewUtils.replaceFirst(c.subjonctifPlusQueParfaitIls, of: word, with: replace)
+            case 42:    c.konjunktiv2PlusquamperfektIch = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektIch, of: word, with: replace)
+            case 43:    c.konjunktiv2PlusquamperfektDu = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektDu, of: word, with: replace)
+            case 44:    c.konjunktiv2PlusquamperfektEr = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektEr, of: word, with: replace)
+            case 45:    c.konjunktiv2PlusquamperfektWir = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektWir, of: word, with: replace)
+            case 46:    c.konjunktiv2PlusquamperfektIhr = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektIhr, of: word, with: replace)
+            case 47:    c.konjunktiv2PlusquamperfektSie = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektSie, of: word, with: replace)
             default:    ()
             }
         }
@@ -1370,13 +1370,13 @@ class VerbDetailsViewController: UIViewController {
     }
     
     private func addReflexiveParticipe(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.participePresent
+        var text : String = c.partizipPrasens
         if (!text.elementsEqual("-")) {
-            c.participePresent = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.partizipPrasens = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-        text = c.participePasse1
+        text = c.partizipPerfekt
         if (!text.elementsEqual("-")) {
-            c.participePasse1 = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.partizipPerfekt = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
         text = c.participePasse2
         if (!text.elementsEqual("-")) {
@@ -1385,22 +1385,22 @@ class VerbDetailsViewController: UIViewController {
     }
     
     private func addReflexiveInfinitive(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.infinitivePasse
+        var text : String = c.infinitivPerfekt
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.infinitivePasse = ppInv ? text : text + "(e)(s)"
+            c.infinitivPerfekt = ppInv ? text : text + "(e)(s)"
         }
     }
     
     private func addReflexiveImperatif(_ c : Conjugation, _ ppInv : Bool) {
-        if (!c.imperatifPresentTu.elementsEqual("-")) {
-            c.imperatifPresentTu = c.imperatifPresentTu + "-toi"
+        if (!c.imperativDu.elementsEqual("-")) {
+            c.imperativDu = c.imperativDu + "-toi"
         }
-        if (!c.imperatifPresentNous.elementsEqual("-")) {
-            c.imperatifPresentNous = c.imperatifPresentNous + "-nous"
+        if (!c.imperativIhr.elementsEqual("-")) {
+            c.imperativIhr = c.imperativIhr + "-nous"
         }
-        if (!c.imperatifPresentVous.elementsEqual("-")) {
-            c.imperatifPresentVous = c.imperatifPresentVous + "-vous"
+        if (!c.imperativSie.elementsEqual("-")) {
+            c.imperativSie = c.imperativSie + "-vous"
         }
         
         var text : String = c.imperatifPasseTu
@@ -1418,394 +1418,394 @@ class VerbDetailsViewController: UIViewController {
     }
     
     private func addReflexiveSubjonctifPlusQueParfait(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.subjonctifPlusQueParfaitJe
+        var text : String = c.konjunktiv2PlusquamperfektIch
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.subjonctifPlusQueParfaitJe = ppInv ? text : text + "(e)"
+            c.konjunktiv2PlusquamperfektIch = ppInv ? text : text + "(e)"
         }
-        text = c.subjonctifPlusQueParfaitTu
+        text = c.konjunktiv2PlusquamperfektDu
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.subjonctifPlusQueParfaitTu = ppInv ? text : text + "(e)"
+            c.konjunktiv2PlusquamperfektDu = ppInv ? text : text + "(e)"
         }
-        text = c.subjonctifPlusQueParfaitIl
+        text = c.konjunktiv2PlusquamperfektEr
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.subjonctifPlusQueParfaitIl = ppInv ? text : text + "(e)"
+            c.konjunktiv2PlusquamperfektEr = ppInv ? text : text + "(e)"
         }
-        if (!c.subjonctifPlusQueParfaitNous.elementsEqual("-")) {
-            text = Constants.NOUS + c.subjonctifPlusQueParfaitNous
-            c.subjonctifPlusQueParfaitNous = ppInv ? text : text + "(e)s"
+        if (!c.konjunktiv2PlusquamperfektWir.elementsEqual("-")) {
+            text = Constants.NOUS + c.konjunktiv2PlusquamperfektWir
+            c.konjunktiv2PlusquamperfektWir = ppInv ? text : text + "(e)s"
         }
-        if (!c.subjonctifPlusQueParfaitVous.elementsEqual("-")) {
-            text = Constants.VOUS + c.subjonctifPlusQueParfaitVous
-            c.subjonctifPlusQueParfaitVous = ppInv ? text : text + "(e)s"
+        if (!c.konjunktiv2PlusquamperfektIhr.elementsEqual("-")) {
+            text = Constants.VOUS + c.konjunktiv2PlusquamperfektIhr
+            c.konjunktiv2PlusquamperfektIhr = ppInv ? text : text + "(e)s"
         }
-        text = c.subjonctifPlusQueParfaitIls
+        text = c.konjunktiv2PlusquamperfektSie
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.subjonctifPlusQueParfaitIls = ppInv ? text : text + "(e)s"
+            c.konjunktiv2PlusquamperfektSie = ppInv ? text : text + "(e)s"
         }
     }
     
     private func addReflexiveSubjonctifImperfait(_ c : Conjugation) {
-        var text : String = c.subjonctifImperfaitJe
+        var text : String = c.konjunktiv2PrateritumIch
         if (!text.elementsEqual("-")) {
-            c.subjonctifImperfaitJe = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
+            c.konjunktiv2PrateritumIch = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
         }
-        text = c.subjonctifImperfaitTu
+        text = c.konjunktiv2PrateritumDu
         if (!text.elementsEqual("-")) {
-            c.subjonctifImperfaitTu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
+            c.konjunktiv2PrateritumDu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
         }
-        text = c.subjonctifImperfaitIl
+        text = c.konjunktiv2PrateritumEr
         if (!text.elementsEqual("-")) {
-            c.subjonctifImperfaitIl = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.konjunktiv2PrateritumEr = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-        if (!c.subjonctifImperfaitNous.elementsEqual("-")) {
-            c.subjonctifImperfaitNous = Constants.NOUS + c.subjonctifImperfaitNous
+        if (!c.konjunktiv2PrateritumWir.elementsEqual("-")) {
+            c.konjunktiv2PrateritumWir = Constants.NOUS + c.konjunktiv2PrateritumWir
         }
-        if (!c.subjonctifImperfaitVous.elementsEqual("-")) {
-            c.subjonctifImperfaitVous = Constants.VOUS + c.subjonctifImperfaitVous
+        if (!c.konjunktiv2PrateritumIhr.elementsEqual("-")) {
+            c.konjunktiv2PrateritumIhr = Constants.VOUS + c.konjunktiv2PrateritumIhr
         }
-        text = c.subjonctifImperfaitIls
+        text = c.konjunktiv2PrateritumSie
         if (!text.elementsEqual("-")) {
-            c.subjonctifImperfaitIls = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.konjunktiv2PrateritumSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
     }
     
     private func addReflexiveSubjonctifPasse(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.subjonctifPasseJe
+        var text : String = c.konjunktiv1Futur2Ich
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.subjonctifPasseJe = ppInv ? text : text + "(e)"
+            c.konjunktiv1Futur2Ich = ppInv ? text : text + "(e)"
         }
-        text = c.subjonctifPasseTu
+        text = c.konjunktiv1Futur2Du
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.subjonctifPasseTu = ppInv ? text : text + "(e)"
+            c.konjunktiv1Futur2Du = ppInv ? text : text + "(e)"
         }
-        text = c.subjonctifPasseIl
+        text = c.konjunktiv1Futur2Er
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.subjonctifPasseIl = ppInv ? text : text + "(e)"
+            c.konjunktiv1Futur2Er = ppInv ? text : text + "(e)"
         }
-        if (!c.subjonctifPasseNous.elementsEqual("-")) {
-            text = Constants.NOUS + c.subjonctifPasseNous
-            c.subjonctifPasseNous = ppInv ? text : text + "(e)s"
+        if (!c.konjunktiv1Futur2Wir.elementsEqual("-")) {
+            text = Constants.NOUS + c.konjunktiv1Futur2Wir
+            c.konjunktiv1Futur2Wir = ppInv ? text : text + "(e)s"
         }
-        if (!c.subjonctifPasseVous.elementsEqual("-")) {
-            text = Constants.VOUS + c.subjonctifPasseVous
-            c.subjonctifPasseVous = ppInv ? text : text + "(e)s"
+        if (!c.konjunktiv1Futur2Ihr.elementsEqual("-")) {
+            text = Constants.VOUS + c.konjunktiv1Futur2Ihr
+            c.konjunktiv1Futur2Ihr = ppInv ? text : text + "(e)s"
         }
-        text = c.subjonctifPasseIls
+        text = c.konjunktiv1Futur2Sie
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.subjonctifPasseIls = ppInv ? text : text + "(e)s"
+            c.konjunktiv1Futur2Sie = ppInv ? text : text + "(e)s"
         }
     }
     
     private func addReflexiveSubjonctifPresent(_ c : Conjugation) {
-        var text : String = c.subjonctifPresentJe
+        var text : String = c.konjunktiv1Futur1Ich
         if (!text.elementsEqual("-")) {
-            c.subjonctifPresentJe = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
+            c.konjunktiv1Futur1Ich = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
         }
-        text = c.subjonctifPresentTu
+        text = c.konjunktiv1Futur1Du
         if (!text.elementsEqual("-")) {
-            c.subjonctifPresentTu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
+            c.konjunktiv1Futur1Du = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
         }
-        text = c.subjonctifPresentIl
+        text = c.konjunktiv1Futur1Er
         if (!text.elementsEqual("-")) {
-            c.subjonctifPresentIl = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.konjunktiv1Futur1Er = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-        if (!c.subjonctifPresentNous.elementsEqual("-")) {
-            c.subjonctifPresentNous = Constants.NOUS + c.subjonctifPresentNous
+        if (!c.konjunktiv1Futur1Wir.elementsEqual("-")) {
+            c.konjunktiv1Futur1Wir = Constants.NOUS + c.konjunktiv1Futur1Wir
         }
-        if (!c.subjonctifPresentVous.elementsEqual("-")) {
-            c.subjonctifPresentVous = Constants.VOUS + c.subjonctifPresentVous
+        if (!c.konjunktiv1Futur1Ihr.elementsEqual("-")) {
+            c.konjunktiv1Futur1Ihr = Constants.VOUS + c.konjunktiv1Futur1Ihr
         }
-        text = c.subjonctifPresentIls
+        text = c.konjunktiv1Futur1Sie
         if (!text.elementsEqual("-")) {
-            c.subjonctifPresentIls = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.konjunktiv1Futur1Sie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
     }
     
     private func addReflexiveConditionnelPasse(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.conditionnelPasseJe
+        var text : String = c.konjunktiv2Futur2Ich
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.conditionnelPasseJe = ppInv ? text : text + "(e)"
+            c.konjunktiv2Futur2Ich = ppInv ? text : text + "(e)"
         }
-        text = c.conditionnelPasseTu
+        text = c.konjunktiv2Futur2Du
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.conditionnelPasseTu = ppInv ? text : text + "(e)"
+            c.konjunktiv2Futur2Du = ppInv ? text : text + "(e)"
         }
-        text = c.conditionnelPasseIl
+        text = c.konjunktiv2Futur2Er
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.conditionnelPasseIl = ppInv ? text : text + "(e)"
+            c.konjunktiv2Futur2Er = ppInv ? text : text + "(e)"
         }
-        if (!c.conditionnelPasseNous.elementsEqual("-")) {
-            text = Constants.NOUS + c.conditionnelPasseNous
-            c.conditionnelPasseNous = ppInv ? text : text + "(e)s"
+        if (!c.konjunktiv2Futur2Wir.elementsEqual("-")) {
+            text = Constants.NOUS + c.konjunktiv2Futur2Wir
+            c.konjunktiv2Futur2Wir = ppInv ? text : text + "(e)s"
         }
-        if (!c.conditionnelPasseVous.elementsEqual("-")) {
-            text = Constants.VOUS + c.conditionnelPasseVous
-            c.conditionnelPasseVous = ppInv ? text : text + "(e)s"
+        if (!c.konjunktiv2Futur2Ihr.elementsEqual("-")) {
+            text = Constants.VOUS + c.konjunktiv2Futur2Ihr
+            c.konjunktiv2Futur2Ihr = ppInv ? text : text + "(e)s"
         }
-        text = c.conditionnelPasseIls
+        text = c.konjunktiv2Futur2Sie
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.conditionnelPasseIls = ppInv ? text : text + "(e)s"
+            c.konjunktiv2Futur2Sie = ppInv ? text : text + "(e)s"
         }
     }
     
     private func addReflexiveConditionnelPresent(_ c : Conjugation) {
-        var text : String = c.conditionnelPresentJe
+        var text : String = c.konjunktiv2Futur1Ich
         if (!text.elementsEqual("-")) {
-            c.conditionnelPresentJe = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
+            c.konjunktiv2Futur1Ich = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
         }
-        text = c.conditionnelPresentTu
+        text = c.konjunktiv2Futur1Du
         if (!text.elementsEqual("-")) {
-            c.conditionnelPresentTu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
+            c.konjunktiv2Futur1Du = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
         }
-        text = c.conditionnelPresentIl
+        text = c.konjunktiv2Futur1Er
         if (!text.elementsEqual("-")) {
-            c.conditionnelPresentIl = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.konjunktiv2Futur1Er = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-        if (!c.conditionnelPresentNous.elementsEqual("-")) {
-            c.conditionnelPresentNous = Constants.NOUS + c.conditionnelPresentNous
+        if (!c.konjunktiv2Futur1Wir.elementsEqual("-")) {
+            c.konjunktiv2Futur1Wir = Constants.NOUS + c.konjunktiv2Futur1Wir
         }
-        if (!c.conditionnelPresentVous.elementsEqual("-")) {
-            c.conditionnelPresentVous = Constants.VOUS + c.conditionnelPresentVous
+        if (!c.konjunktiv2Futur1Ihr.elementsEqual("-")) {
+            c.konjunktiv2Futur1Ihr = Constants.VOUS + c.konjunktiv2Futur1Ihr
         }
-        text = c.conditionnelPresentIls
+        text = c.konjunktiv2Futur1Sie
         if (!text.elementsEqual("-")) {
-            c.conditionnelPresentIls = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.konjunktiv2Futur1Sie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
     }
     
     private func addReflexiveIndicatifFuturAnterieur(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.indicatifFuturAnterieurJe
+        var text : String = c.konjunktiv1PerfektIch
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.indicatifFuturAnterieurJe = ppInv ? text : text + "(e)"
+            c.konjunktiv1PerfektIch = ppInv ? text : text + "(e)"
         }
-        text = c.indicatifFuturAnterieurTu
+        text = c.konjunktiv1PerfektDu
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.indicatifFuturAnterieurTu = ppInv ? text : text + "(e)"
+            c.konjunktiv1PerfektDu = ppInv ? text : text + "(e)"
         }
-        text = c.indicatifFuturAnterieurIl
+        text = c.konjunktiv1PerfektEr
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indicatifFuturAnterieurIl = ppInv ? text : text + "(e)"
+            c.konjunktiv1PerfektEr = ppInv ? text : text + "(e)"
         }
-        if (!c.indicatifFuturAnterieurNous.elementsEqual("-")) {
-            text = Constants.NOUS + c.indicatifFuturAnterieurNous
-            c.indicatifFuturAnterieurNous = ppInv ? text : text + "(e)s"
+        if (!c.konjunktiv1PerfektWir.elementsEqual("-")) {
+            text = Constants.NOUS + c.konjunktiv1PerfektWir
+            c.konjunktiv1PerfektWir = ppInv ? text : text + "(e)s"
         }
-        if (!c.indicatifFuturAnterieurVous.elementsEqual("-")) {
-            text = Constants.VOUS + c.indicatifFuturAnterieurVous
-            c.indicatifFuturAnterieurVous = ppInv ? text : text + "(e)s"
+        if (!c.konjunktiv1PerfektIhr.elementsEqual("-")) {
+            text = Constants.VOUS + c.konjunktiv1PerfektIhr
+            c.konjunktiv1PerfektIhr = ppInv ? text : text + "(e)s"
         }
-        text = c.indicatifFuturAnterieurIls
+        text = c.konjunktiv1PerfektSie
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indicatifFuturAnterieurIls = ppInv ? text : text + "(e)s"
+            c.konjunktiv1PerfektSie = ppInv ? text : text + "(e)s"
         }
     }
     
     private func addReflexiveIndicatifFuturSimple(_ c : Conjugation) {
-        var text : String = c.indicatifFuturSimpleJe
+        var text : String = c.konjunktiv1PrasensIch
         if (!text.elementsEqual("-")) {
-            c.indicatifFuturSimpleJe = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
+            c.konjunktiv1PrasensIch = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
         }
-        text = c.indicatifFuturSimpleTu
+        text = c.konjunktiv1PrasensDu
         if (!text.elementsEqual("-")) {
-            c.indicatifFuturSimpleTu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
+            c.konjunktiv1PrasensDu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
         }
-        text = c.indicatifFuturSimpleIl
+        text = c.konjunktiv1PrasensEr
         if (!text.elementsEqual("-")) {
-            c.indicatifFuturSimpleIl = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.konjunktiv1PrasensEr = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-        if (!c.indicatifFuturSimpleNous.elementsEqual("-")) {
-            c.indicatifFuturSimpleNous = Constants.NOUS + c.indicatifFuturSimpleNous
+        if (!c.konjunktiv1PrasensWir.elementsEqual("-")) {
+            c.konjunktiv1PrasensWir = Constants.NOUS + c.konjunktiv1PrasensWir
         }
-        if (!c.indicatifFuturSimpleVous.elementsEqual("-")) {
-            c.indicatifFuturSimpleVous = Constants.VOUS + c.indicatifFuturSimpleVous
+        if (!c.konjunktiv1PrasensIhr.elementsEqual("-")) {
+            c.konjunktiv1PrasensIhr = Constants.VOUS + c.konjunktiv1PrasensIhr
         }
-        text = c.indicatifFuturSimpleIls
+        text = c.konjunktiv1PrasensSie
         if (!text.elementsEqual("-")) {
-            c.indicatifFuturSimpleIls = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.konjunktiv1PrasensSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
     }
     
     private func addReflexiveIndicatifPasseAnterieur(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.indicatifPasseAnterieurJe
+        var text : String = c.indikativFutur2Ich
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.indicatifPasseAnterieurJe = ppInv ? text : text + "(e)"
+            c.indikativFutur2Ich = ppInv ? text : text + "(e)"
         }
-        text = c.indicatifPasseAnterieurTu
+        text = c.indikativFutur2Du
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.indicatifPasseAnterieurTu = ppInv ? text : text + "(e)"
+            c.indikativFutur2Du = ppInv ? text : text + "(e)"
         }
-        text = c.indicatifPasseAnterieurIl
+        text = c.indikativFutur2Er
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indicatifPasseAnterieurIl = ppInv ? text : text + "(e)"
+            c.indikativFutur2Er = ppInv ? text : text + "(e)"
         }
-        if (!c.indicatifPasseAnterieurNous.elementsEqual("-")) {
-            text = Constants.NOUS + c.indicatifPasseAnterieurNous
-            c.indicatifPasseAnterieurNous = ppInv ? text : text + "(e)s"
+        if (!c.indikativFutur2Wir.elementsEqual("-")) {
+            text = Constants.NOUS + c.indikativFutur2Wir
+            c.indikativFutur2Wir = ppInv ? text : text + "(e)s"
         }
-        if (!c.indicatifPasseAnterieurVous.elementsEqual("-")) {
-            text = Constants.VOUS + c.indicatifPasseAnterieurVous
-            c.indicatifPasseAnterieurVous = ppInv ? text : text + "(e)s"
+        if (!c.indikativFutur2Ihr.elementsEqual("-")) {
+            text = Constants.VOUS + c.indikativFutur2Ihr
+            c.indikativFutur2Ihr = ppInv ? text : text + "(e)s"
         }
-        text = c.indicatifPasseAnterieurIls
+        text = c.indikativFutur2Sie
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indicatifPasseAnterieurIls = ppInv ? text : text + "(e)s"
+            c.indikativFutur2Sie = ppInv ? text : text + "(e)s"
         }
     }
     
     private func addReflexiveIndicatifPasseSimple(_ c : Conjugation) {
-        var text : String = c.indicatifPasseSimpleJe
+        var text : String = c.indikativFutur1Ich
         if (!text.elementsEqual("-")) {
-            c.indicatifPasseSimpleJe = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
+            c.indikativFutur1Ich = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
         }
-        text = c.indicatifPasseSimpleTu
+        text = c.indikativFutur1Du
         if (!text.elementsEqual("-")) {
-            c.indicatifPasseSimpleTu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
+            c.indikativFutur1Du = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
         }
-        text = c.indicatifPasseSimpleIl
+        text = c.indikativFutur1Er
         if (!text.elementsEqual("-")) {
-            c.indicatifPasseSimpleIl = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.indikativFutur1Er = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-        if (!c.indicatifPasseSimpleNous.elementsEqual("-")) {
-            c.indicatifPasseSimpleNous = Constants.NOUS + c.indicatifPasseSimpleNous
+        if (!c.indikativFutur1Wir.elementsEqual("-")) {
+            c.indikativFutur1Wir = Constants.NOUS + c.indikativFutur1Wir
         }
-        if (!c.indicatifPasseSimpleVous.elementsEqual("-")) {
-            c.indicatifPasseSimpleVous = Constants.VOUS + c.indicatifPasseSimpleVous
+        if (!c.indikativFutur1Ihr.elementsEqual("-")) {
+            c.indikativFutur1Ihr = Constants.VOUS + c.indikativFutur1Ihr
         }
-        text = c.indicatifPasseSimpleIls
+        text = c.indikativFutur1Sie
         if (!text.elementsEqual("-")) {
-            c.indicatifPasseSimpleIls = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.indikativFutur1Sie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
     }
     
     private func addReflexiveIndicatifPlusQueParfait(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.indicatifPlusQueParfaitJe
+        var text : String = c.indikativPlusquamperfektIch
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.indicatifPlusQueParfaitJe = ppInv ? text : text + "(e)"
+            c.indikativPlusquamperfektIch = ppInv ? text : text + "(e)"
         }
-        text = c.indicatifPlusQueParfaitTu
+        text = c.indikativPlusquamperfektDu
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.indicatifPlusQueParfaitTu = ppInv ? text : text + "(e)"
+            c.indikativPlusquamperfektDu = ppInv ? text : text + "(e)"
         }
-        text = c.indicatifPlusQueParfaitIl
+        text = c.indikativPlusquamperfektEr
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indicatifPlusQueParfaitIl = ppInv ? text : text + "(e)"
+            c.indikativPlusquamperfektEr = ppInv ? text : text + "(e)"
         }
-        if (!c.indicatifPlusQueParfaitNous.elementsEqual("-")) {
-            text = Constants.NOUS + c.indicatifPlusQueParfaitNous
-            c.indicatifPlusQueParfaitNous = ppInv ? text : text + "(e)s"
+        if (!c.indikativPlusquamperfektWir.elementsEqual("-")) {
+            text = Constants.NOUS + c.indikativPlusquamperfektWir
+            c.indikativPlusquamperfektWir = ppInv ? text : text + "(e)s"
         }
-        if (!c.indicatifPlusQueParfaitVous.elementsEqual("-")) {
-            text = Constants.VOUS + c.indicatifPlusQueParfaitVous
-            c.indicatifPlusQueParfaitVous = ppInv ? text : text + "(e)s"
+        if (!c.indikativPlusquamperfektIhr.elementsEqual("-")) {
+            text = Constants.VOUS + c.indikativPlusquamperfektIhr
+            c.indikativPlusquamperfektIhr = ppInv ? text : text + "(e)s"
         }
-        text = c.indicatifPlusQueParfaitIls
+        text = c.indikativPlusquamperfektSie
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indicatifPlusQueParfaitIls = ppInv ? text : text + "(e)s"
+            c.indikativPlusquamperfektSie = ppInv ? text : text + "(e)s"
         }
     }
     
     private func addReflexiveIndicatifImperfait(_ c : Conjugation) {
-        var text : String = c.indicatifImperfaitJe
+        var text : String = c.indikativPerfektIch
         if (!text.elementsEqual("-")) {
-            c.indicatifImperfaitJe = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
+            c.indikativPerfektIch = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
         }
-        text = c.indicatifImperfaitTu
+        text = c.indikativPerfektDu
         if (!text.elementsEqual("-")) {
-            c.indicatifImperfaitTu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
+            c.indikativPerfektDu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
         }
-        text = c.indicatifImperfaitIl
+        text = c.indikativPerfektEr
         if (!text.elementsEqual("-")) {
-            c.indicatifImperfaitIl = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.indikativPerfektEr = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-        if (!c.indicatifImperfaitNous.elementsEqual("-")) {
-            c.indicatifImperfaitNous = Constants.NOUS + c.indicatifImperfaitNous
+        if (!c.indikativPerfektWir.elementsEqual("-")) {
+            c.indikativPerfektWir = Constants.NOUS + c.indikativPerfektWir
         }
-        if (!c.indicatifImperfaitVous.elementsEqual("-")) {
-            c.indicatifImperfaitVous = Constants.VOUS + c.indicatifImperfaitVous
+        if (!c.indikativPerfektIhr.elementsEqual("-")) {
+            c.indikativPerfektIhr = Constants.VOUS + c.indikativPerfektIhr
         }
-        text = c.indicatifImperfaitIls
+        text = c.indikativPerfektSie
         if (!text.elementsEqual("-")) {
-            c.indicatifImperfaitIls = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.indikativPerfektSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
     }
     
     private func addReflexiveIndicatifPasseCompose(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.indicatifPasseComposeJe
+        var text : String = c.indikativPrateritumIch
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.indicatifPasseComposeJe = ppInv ? text : text + "(e)"
+            c.indikativPrateritumIch = ppInv ? text : text + "(e)"
         }
-        text = c.indicatifPasseComposeTu
+        text = c.indikativPrateritumDu
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.indicatifPasseComposeTu = ppInv ? text : text + "(e)"
+            c.indikativPrateritumDu = ppInv ? text : text + "(e)"
         }
-        text = c.indicatifPasseComposeIl
+        text = c.indikativPrateritumEr
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indicatifPasseComposeIl = ppInv ? text : text + "(e)"
+            c.indikativPrateritumEr = ppInv ? text : text + "(e)"
         }
-        if (!c.indicatifPasseComposeNous.elementsEqual("-")) {
-            text = Constants.NOUS + c.indicatifPasseComposeNous
-            c.indicatifPasseComposeNous = ppInv ? text : text + "(e)s"
+        if (!c.indikativPrateritumWir.elementsEqual("-")) {
+            text = Constants.NOUS + c.indikativPrateritumWir
+            c.indikativPrateritumWir = ppInv ? text : text + "(e)s"
         }
-        if (!c.indicatifPasseComposeVous.elementsEqual("-")) {
-            text = Constants.VOUS + c.indicatifPasseComposeVous
-            c.indicatifPasseComposeVous = ppInv ? text : text + "(e)s"
+        if (!c.indikativPrateritumIhr.elementsEqual("-")) {
+            text = Constants.VOUS + c.indikativPrateritumIhr
+            c.indikativPrateritumIhr = ppInv ? text : text + "(e)s"
         }
-        text = c.indicatifPasseComposeIls
+        text = c.indikativPrateritumSie
         if (!text.elementsEqual("-")) {
             text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indicatifPasseComposeIls = ppInv ? text : text + "(e)s"
+            c.indikativPrateritumSie = ppInv ? text : text + "(e)s"
         }
     }
     
     private func addReflexiveIndicatifPresent(_ c : Conjugation) {
-        var text : String = c.indicatifPresentJe
+        var text : String = c.indikativPrasensIch
         if (!text.elementsEqual("-")) {
-            c.indicatifPresentJe = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
+            c.indikativPrasensIch = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
         }
-        text = c.indicatifPresentTu
+        text = c.indikativPrasensDu
         if (!text.elementsEqual("-")) {
-            c.indicatifPresentTu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
+            c.indikativPrasensDu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
         }
-        text = c.indicatifPresentIl
+        text = c.indikativPrasensEr
         if (!text.elementsEqual("-")) {
-            c.indicatifPresentIl = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.indikativPrasensEr = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-        if (!c.indicatifPresentNous.elementsEqual("-")) {
-            c.indicatifPresentNous = Constants.NOUS + c.indicatifPresentNous
+        if (!c.indikativPrasensWir.elementsEqual("-")) {
+            c.indikativPrasensWir = Constants.NOUS + c.indikativPrasensWir
         }
-        if (!c.indicatifPresentVous.elementsEqual("-")) {
-            c.indicatifPresentVous = Constants.VOUS + c.indicatifPresentVous
+        if (!c.indikativPrasensIhr.elementsEqual("-")) {
+            c.indikativPrasensIhr = Constants.VOUS + c.indikativPrasensIhr
         }
-        text = c.indicatifPresentIls
+        text = c.indikativPrasensSie
         if (!text.elementsEqual("-")) {
-            c.indicatifPresentIls = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
+            c.indikativPrasensSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
     }
     
@@ -1833,310 +1833,310 @@ class VerbDetailsViewController: UIViewController {
     }
     
     private func addPronomsSubjonctifPlusQueParfait(_ c : Conjugation) {
-        let text : String = c.subjonctifPlusQueParfaitJe
+        let text : String = c.konjunktiv2PlusquamperfektIch
         if (!text.elementsEqual("-")) {
-            c.subjonctifPlusQueParfaitJe = ViewUtils.useApostrophe(text) ? Constants.QUE + Constants.JEA + text : Constants.QUE + Constants.JE + text
+            c.konjunktiv2PlusquamperfektIch = ViewUtils.useApostrophe(text) ? Constants.QUE + Constants.JEA + text : Constants.QUE + Constants.JE + text
         }
-        if (!c.subjonctifPlusQueParfaitTu.elementsEqual("-")) {
-            c.subjonctifPlusQueParfaitTu = Constants.QUE + Constants.TU + c.subjonctifPlusQueParfaitTu
+        if (!c.konjunktiv2PlusquamperfektDu.elementsEqual("-")) {
+            c.konjunktiv2PlusquamperfektDu = Constants.QUE + Constants.TU + c.konjunktiv2PlusquamperfektDu
         }
-        if (!c.subjonctifPlusQueParfaitIl.elementsEqual("-")) {
-            c.subjonctifPlusQueParfaitIl = Constants.QUEA + Constants.IL + c.subjonctifPlusQueParfaitIl
+        if (!c.konjunktiv2PlusquamperfektEr.elementsEqual("-")) {
+            c.konjunktiv2PlusquamperfektEr = Constants.QUEA + Constants.IL + c.konjunktiv2PlusquamperfektEr
         }
-        if (!c.subjonctifPlusQueParfaitNous.elementsEqual("-")) {
-            c.subjonctifPlusQueParfaitNous = Constants.QUE + Constants.NOUS + c.subjonctifPlusQueParfaitNous
+        if (!c.konjunktiv2PlusquamperfektWir.elementsEqual("-")) {
+            c.konjunktiv2PlusquamperfektWir = Constants.QUE + Constants.NOUS + c.konjunktiv2PlusquamperfektWir
         }
-        if (!c.subjonctifPlusQueParfaitVous.elementsEqual("-")) {
-            c.subjonctifPlusQueParfaitVous = Constants.QUE + Constants.VOUS + c.subjonctifPlusQueParfaitVous
+        if (!c.konjunktiv2PlusquamperfektIhr.elementsEqual("-")) {
+            c.konjunktiv2PlusquamperfektIhr = Constants.QUE + Constants.VOUS + c.konjunktiv2PlusquamperfektIhr
         }
-        if (!c.subjonctifPlusQueParfaitIls.elementsEqual("-")) {
-            c.subjonctifPlusQueParfaitIls = Constants.QUEA + Constants.ILS + c.subjonctifPlusQueParfaitIls
+        if (!c.konjunktiv2PlusquamperfektSie.elementsEqual("-")) {
+            c.konjunktiv2PlusquamperfektSie = Constants.QUEA + Constants.ILS + c.konjunktiv2PlusquamperfektSie
         }
     }
     
     private func addPronomsSubjonctifImperfait(_ c : Conjugation) {
-        let text : String = c.subjonctifImperfaitJe
+        let text : String = c.konjunktiv2PrateritumIch
         if (!text.elementsEqual("-")) {
-            c.subjonctifImperfaitJe = ViewUtils.useApostrophe(text) ? Constants.QUE + Constants.JEA + text : Constants.QUE + Constants.JE + text
+            c.konjunktiv2PrateritumIch = ViewUtils.useApostrophe(text) ? Constants.QUE + Constants.JEA + text : Constants.QUE + Constants.JE + text
         }
-        if (!c.subjonctifImperfaitTu.elementsEqual("-")) {
-            c.subjonctifImperfaitTu = Constants.QUE + Constants.TU + c.subjonctifImperfaitTu
+        if (!c.konjunktiv2PrateritumDu.elementsEqual("-")) {
+            c.konjunktiv2PrateritumDu = Constants.QUE + Constants.TU + c.konjunktiv2PrateritumDu
         }
-        if (!c.subjonctifImperfaitIl.elementsEqual("-")) {
-            c.subjonctifImperfaitIl = Constants.QUEA + Constants.IL + c.subjonctifImperfaitIl
+        if (!c.konjunktiv2PrateritumEr.elementsEqual("-")) {
+            c.konjunktiv2PrateritumEr = Constants.QUEA + Constants.IL + c.konjunktiv2PrateritumEr
         }
-        if (!c.subjonctifImperfaitNous.elementsEqual("-")) {
-            c.subjonctifImperfaitNous = Constants.QUE + Constants.NOUS + c.subjonctifImperfaitNous
+        if (!c.konjunktiv2PrateritumWir.elementsEqual("-")) {
+            c.konjunktiv2PrateritumWir = Constants.QUE + Constants.NOUS + c.konjunktiv2PrateritumWir
         }
-        if (!c.subjonctifImperfaitVous.elementsEqual("-")) {
-            c.subjonctifImperfaitVous = Constants.QUE + Constants.VOUS + c.subjonctifImperfaitVous
+        if (!c.konjunktiv2PrateritumIhr.elementsEqual("-")) {
+            c.konjunktiv2PrateritumIhr = Constants.QUE + Constants.VOUS + c.konjunktiv2PrateritumIhr
         }
-        if (!c.subjonctifImperfaitIls.elementsEqual("-")) {
-            c.subjonctifImperfaitIls = Constants.QUEA + Constants.ILS + c.subjonctifImperfaitIls
+        if (!c.konjunktiv2PrateritumSie.elementsEqual("-")) {
+            c.konjunktiv2PrateritumSie = Constants.QUEA + Constants.ILS + c.konjunktiv2PrateritumSie
         }
     }
     
     private func addPronomsSubjonctifPasse(_ c : Conjugation) {
-        let text : String = c.subjonctifPasseJe
+        let text : String = c.konjunktiv1Futur2Ich
         if (!text.elementsEqual("-")) {
-            c.subjonctifPasseJe = ViewUtils.useApostrophe(text) ? Constants.QUE + Constants.JEA + text : Constants.QUE + Constants.JE + text
+            c.konjunktiv1Futur2Ich = ViewUtils.useApostrophe(text) ? Constants.QUE + Constants.JEA + text : Constants.QUE + Constants.JE + text
         }
-        if (!c.subjonctifPasseTu.elementsEqual("-")) {
-            c.subjonctifPasseTu = Constants.QUE + Constants.TU + c.subjonctifPasseTu
+        if (!c.konjunktiv1Futur2Du.elementsEqual("-")) {
+            c.konjunktiv1Futur2Du = Constants.QUE + Constants.TU + c.konjunktiv1Futur2Du
         }
-        if (!c.subjonctifPasseIl.elementsEqual("-")) {
-            c.subjonctifPasseIl = Constants.QUEA + Constants.IL + c.subjonctifPasseIl
+        if (!c.konjunktiv1Futur2Er.elementsEqual("-")) {
+            c.konjunktiv1Futur2Er = Constants.QUEA + Constants.IL + c.konjunktiv1Futur2Er
         }
-        if (!c.subjonctifPasseNous.elementsEqual("-")) {
-            c.subjonctifPasseNous = Constants.QUE + Constants.NOUS + c.subjonctifPasseNous
+        if (!c.konjunktiv1Futur2Wir.elementsEqual("-")) {
+            c.konjunktiv1Futur2Wir = Constants.QUE + Constants.NOUS + c.konjunktiv1Futur2Wir
         }
-        if (!c.subjonctifPasseVous.elementsEqual("-")) {
-            c.subjonctifPasseVous = Constants.QUE + Constants.VOUS + c.subjonctifPasseVous
+        if (!c.konjunktiv1Futur2Ihr.elementsEqual("-")) {
+            c.konjunktiv1Futur2Ihr = Constants.QUE + Constants.VOUS + c.konjunktiv1Futur2Ihr
         }
-        if (!c.subjonctifPasseIls.elementsEqual("-")) {
-            c.subjonctifPasseIls = Constants.QUEA + Constants.ILS + c.subjonctifPasseIls
+        if (!c.konjunktiv1Futur2Sie.elementsEqual("-")) {
+            c.konjunktiv1Futur2Sie = Constants.QUEA + Constants.ILS + c.konjunktiv1Futur2Sie
         }
     }
     
     private func addPronomsSubjonctifPresent(_ c : Conjugation) {
-        let text : String = c.subjonctifPresentJe
+        let text : String = c.konjunktiv1Futur1Ich
         if (!text.elementsEqual("-")) {
-            c.subjonctifPresentJe = ViewUtils.useApostrophe(text) ? Constants.QUE + Constants.JEA + text : Constants.QUE + Constants.JE + text
+            c.konjunktiv1Futur1Ich = ViewUtils.useApostrophe(text) ? Constants.QUE + Constants.JEA + text : Constants.QUE + Constants.JE + text
         }
-        if (!c.subjonctifPresentTu.elementsEqual("-")) {
-            c.subjonctifPresentTu = Constants.QUE + Constants.TU + c.subjonctifPresentTu
+        if (!c.konjunktiv1Futur1Du.elementsEqual("-")) {
+            c.konjunktiv1Futur1Du = Constants.QUE + Constants.TU + c.konjunktiv1Futur1Du
         }
-        if (!c.subjonctifPresentIl.elementsEqual("-")) {
-            c.subjonctifPresentIl = Constants.QUEA + Constants.IL + c.subjonctifPresentIl
+        if (!c.konjunktiv1Futur1Er.elementsEqual("-")) {
+            c.konjunktiv1Futur1Er = Constants.QUEA + Constants.IL + c.konjunktiv1Futur1Er
         }
-        if (!c.subjonctifPresentNous.elementsEqual("-")) {
-            c.subjonctifPresentNous = Constants.QUE + Constants.NOUS + c.subjonctifPresentNous
+        if (!c.konjunktiv1Futur1Wir.elementsEqual("-")) {
+            c.konjunktiv1Futur1Wir = Constants.QUE + Constants.NOUS + c.konjunktiv1Futur1Wir
         }
-        if (!c.subjonctifPresentVous.elementsEqual("-")) {
-            c.subjonctifPresentVous = Constants.QUE + Constants.VOUS + c.subjonctifPresentVous
+        if (!c.konjunktiv1Futur1Ihr.elementsEqual("-")) {
+            c.konjunktiv1Futur1Ihr = Constants.QUE + Constants.VOUS + c.konjunktiv1Futur1Ihr
         }
-        if (!c.subjonctifPresentIls.elementsEqual("-")) {
-            c.subjonctifPresentIls = Constants.QUEA + Constants.ILS + c.subjonctifPresentIls
+        if (!c.konjunktiv1Futur1Sie.elementsEqual("-")) {
+            c.konjunktiv1Futur1Sie = Constants.QUEA + Constants.ILS + c.konjunktiv1Futur1Sie
         }
     }
     
     private func addPronomsConditionnelPasse(_ c : Conjugation) {
-        let text : String = c.conditionnelPasseJe
+        let text : String = c.konjunktiv2Futur2Ich
         if (!text.elementsEqual("-")) {
-            c.conditionnelPasseJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.konjunktiv2Futur2Ich = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.conditionnelPasseTu.elementsEqual("-")) {
-            c.conditionnelPasseTu = Constants.TU + c.conditionnelPasseTu
+        if (!c.konjunktiv2Futur2Du.elementsEqual("-")) {
+            c.konjunktiv2Futur2Du = Constants.TU + c.konjunktiv2Futur2Du
         }
-        if (!c.conditionnelPasseIl.elementsEqual("-")) {
-            c.conditionnelPasseIl = Constants.IL + c.conditionnelPasseIl
+        if (!c.konjunktiv2Futur2Er.elementsEqual("-")) {
+            c.konjunktiv2Futur2Er = Constants.IL + c.konjunktiv2Futur2Er
         }
-        if (!c.conditionnelPasseNous.elementsEqual("-")) {
-            c.conditionnelPasseNous = Constants.NOUS + c.conditionnelPasseNous
+        if (!c.konjunktiv2Futur2Wir.elementsEqual("-")) {
+            c.konjunktiv2Futur2Wir = Constants.NOUS + c.konjunktiv2Futur2Wir
         }
-        if (!c.conditionnelPasseVous.elementsEqual("-")) {
-            c.conditionnelPasseVous = Constants.VOUS + c.conditionnelPasseVous
+        if (!c.konjunktiv2Futur2Ihr.elementsEqual("-")) {
+            c.konjunktiv2Futur2Ihr = Constants.VOUS + c.konjunktiv2Futur2Ihr
         }
-        if (!c.conditionnelPasseIls.elementsEqual("-")) {
-            c.conditionnelPasseIls = Constants.ILS + c.conditionnelPasseIls
+        if (!c.konjunktiv2Futur2Sie.elementsEqual("-")) {
+            c.konjunktiv2Futur2Sie = Constants.ILS + c.konjunktiv2Futur2Sie
         }
     }
     
     private func addPronomsConditionnelPresent(_ c : Conjugation) {
-        let text : String = c.conditionnelPresentJe
+        let text : String = c.konjunktiv2Futur1Ich
         if (!text.elementsEqual("-")) {
-            c.conditionnelPresentJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.konjunktiv2Futur1Ich = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.conditionnelPresentTu.elementsEqual("-")) {
-            c.conditionnelPresentTu = Constants.TU + c.conditionnelPresentTu
+        if (!c.konjunktiv2Futur1Du.elementsEqual("-")) {
+            c.konjunktiv2Futur1Du = Constants.TU + c.konjunktiv2Futur1Du
         }
-        if (!c.conditionnelPresentIl.elementsEqual("-")) {
-            c.conditionnelPresentIl = Constants.IL + c.conditionnelPresentIl
+        if (!c.konjunktiv2Futur1Er.elementsEqual("-")) {
+            c.konjunktiv2Futur1Er = Constants.IL + c.konjunktiv2Futur1Er
         }
-        if (!c.conditionnelPresentNous.elementsEqual("-")) {
-            c.conditionnelPresentNous = Constants.NOUS + c.conditionnelPresentNous
+        if (!c.konjunktiv2Futur1Wir.elementsEqual("-")) {
+            c.konjunktiv2Futur1Wir = Constants.NOUS + c.konjunktiv2Futur1Wir
         }
-        if (!c.conditionnelPresentVous.elementsEqual("-")) {
-            c.conditionnelPresentVous = Constants.VOUS + c.conditionnelPresentVous
+        if (!c.konjunktiv2Futur1Ihr.elementsEqual("-")) {
+            c.konjunktiv2Futur1Ihr = Constants.VOUS + c.konjunktiv2Futur1Ihr
         }
-        if (!c.conditionnelPresentIls.elementsEqual("-")) {
-            c.conditionnelPresentIls = Constants.ILS + c.conditionnelPresentIls
+        if (!c.konjunktiv2Futur1Sie.elementsEqual("-")) {
+            c.konjunktiv2Futur1Sie = Constants.ILS + c.konjunktiv2Futur1Sie
         }
     }
     
     private func addPronomsIndicatifFuturAnterieur(_ c : Conjugation) {
-        let text : String = c.indicatifFuturAnterieurJe
+        let text : String = c.konjunktiv1PerfektIch
         if (!text.elementsEqual("-")) {
-            c.indicatifFuturAnterieurJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.konjunktiv1PerfektIch = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.indicatifFuturAnterieurTu.elementsEqual("-")) {
-            c.indicatifFuturAnterieurTu = Constants.TU + c.indicatifFuturAnterieurTu
+        if (!c.konjunktiv1PerfektDu.elementsEqual("-")) {
+            c.konjunktiv1PerfektDu = Constants.TU + c.konjunktiv1PerfektDu
         }
-        if (!c.indicatifFuturAnterieurIl.elementsEqual("-")) {
-            c.indicatifFuturAnterieurIl = Constants.IL + c.indicatifFuturAnterieurIl
+        if (!c.konjunktiv1PerfektEr.elementsEqual("-")) {
+            c.konjunktiv1PerfektEr = Constants.IL + c.konjunktiv1PerfektEr
         }
-        if (!c.indicatifFuturAnterieurNous.elementsEqual("-")) {
-            c.indicatifFuturAnterieurNous = Constants.NOUS + c.indicatifFuturAnterieurNous
+        if (!c.konjunktiv1PerfektWir.elementsEqual("-")) {
+            c.konjunktiv1PerfektWir = Constants.NOUS + c.konjunktiv1PerfektWir
         }
-        if (!c.indicatifFuturAnterieurVous.elementsEqual("-")) {
-            c.indicatifFuturAnterieurVous = Constants.VOUS + c.indicatifFuturAnterieurVous
+        if (!c.konjunktiv1PerfektIhr.elementsEqual("-")) {
+            c.konjunktiv1PerfektIhr = Constants.VOUS + c.konjunktiv1PerfektIhr
         }
-        if (!c.indicatifFuturAnterieurIls.elementsEqual("-")) {
-            c.indicatifFuturAnterieurIls = Constants.ILS + c.indicatifFuturAnterieurIls
+        if (!c.konjunktiv1PerfektSie.elementsEqual("-")) {
+            c.konjunktiv1PerfektSie = Constants.ILS + c.konjunktiv1PerfektSie
         }
     }
     
     private func addPronomsIndicatifFuturSimple(_ c : Conjugation) {
-        let text : String = c.indicatifFuturSimpleJe
+        let text : String = c.konjunktiv1PrasensIch
         if (!text.elementsEqual("-")) {
-            c.indicatifFuturSimpleJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.konjunktiv1PrasensIch = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.indicatifFuturSimpleTu.elementsEqual("-")) {
-            c.indicatifFuturSimpleTu = Constants.TU + c.indicatifFuturSimpleTu
+        if (!c.konjunktiv1PrasensDu.elementsEqual("-")) {
+            c.konjunktiv1PrasensDu = Constants.TU + c.konjunktiv1PrasensDu
         }
-        if (!c.indicatifFuturSimpleIl.elementsEqual("-")) {
-            c.indicatifFuturSimpleIl = Constants.IL + c.indicatifFuturSimpleIl
+        if (!c.konjunktiv1PrasensEr.elementsEqual("-")) {
+            c.konjunktiv1PrasensEr = Constants.IL + c.konjunktiv1PrasensEr
         }
-        if (!c.indicatifFuturSimpleNous.elementsEqual("-")) {
-            c.indicatifFuturSimpleNous = Constants.NOUS + c.indicatifFuturSimpleNous
+        if (!c.konjunktiv1PrasensWir.elementsEqual("-")) {
+            c.konjunktiv1PrasensWir = Constants.NOUS + c.konjunktiv1PrasensWir
         }
-        if (!c.indicatifFuturSimpleVous.elementsEqual("-")) {
-            c.indicatifFuturSimpleVous = Constants.VOUS + c.indicatifFuturSimpleVous
+        if (!c.konjunktiv1PrasensIhr.elementsEqual("-")) {
+            c.konjunktiv1PrasensIhr = Constants.VOUS + c.konjunktiv1PrasensIhr
         }
-        if (!c.indicatifFuturSimpleIls.elementsEqual("-")) {
-            c.indicatifFuturSimpleIls = Constants.ILS + c.indicatifFuturSimpleIls
+        if (!c.konjunktiv1PrasensSie.elementsEqual("-")) {
+            c.konjunktiv1PrasensSie = Constants.ILS + c.konjunktiv1PrasensSie
         }
     }
     
     private func addPronomsIndicatifPasseAnterieur(_ c : Conjugation) {
-        let text : String = c.indicatifPasseAnterieurJe
+        let text : String = c.indikativFutur2Ich
         if (!text.elementsEqual("-")) {
-            c.indicatifPasseAnterieurJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.indikativFutur2Ich = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.indicatifPasseAnterieurTu.elementsEqual("-")) {
-            c.indicatifPasseAnterieurTu = Constants.TU + c.indicatifPasseAnterieurTu
+        if (!c.indikativFutur2Du.elementsEqual("-")) {
+            c.indikativFutur2Du = Constants.TU + c.indikativFutur2Du
         }
-        if (!c.indicatifPasseAnterieurIl.elementsEqual("-")) {
-            c.indicatifPasseAnterieurIl = Constants.IL + c.indicatifPasseAnterieurIl
+        if (!c.indikativFutur2Er.elementsEqual("-")) {
+            c.indikativFutur2Er = Constants.IL + c.indikativFutur2Er
         }
-        if (!c.indicatifPasseAnterieurNous.elementsEqual("-")) {
-            c.indicatifPasseAnterieurNous = Constants.NOUS + c.indicatifPasseAnterieurNous
+        if (!c.indikativFutur2Wir.elementsEqual("-")) {
+            c.indikativFutur2Wir = Constants.NOUS + c.indikativFutur2Wir
         }
-        if (!c.indicatifPasseAnterieurVous.elementsEqual("-")) {
-            c.indicatifPasseAnterieurVous = Constants.VOUS + c.indicatifPasseAnterieurVous
+        if (!c.indikativFutur2Ihr.elementsEqual("-")) {
+            c.indikativFutur2Ihr = Constants.VOUS + c.indikativFutur2Ihr
         }
-        if (!c.indicatifPasseAnterieurIls.elementsEqual("-")) {
-            c.indicatifPasseAnterieurIls = Constants.ILS + c.indicatifPasseAnterieurIls
+        if (!c.indikativFutur2Sie.elementsEqual("-")) {
+            c.indikativFutur2Sie = Constants.ILS + c.indikativFutur2Sie
         }
     }
     
     private func addPronomsIndicatifPasseSimple(_ c : Conjugation) {
-        let text : String = c.indicatifPasseSimpleJe
+        let text : String = c.indikativFutur1Ich
         if (!text.elementsEqual("-")) {
-            c.indicatifPasseSimpleJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.indikativFutur1Ich = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.indicatifPasseSimpleTu.elementsEqual("-")) {
-            c.indicatifPasseSimpleTu = Constants.TU + c.indicatifPasseSimpleTu
+        if (!c.indikativFutur1Du.elementsEqual("-")) {
+            c.indikativFutur1Du = Constants.TU + c.indikativFutur1Du
         }
-        if (!c.indicatifPasseSimpleIl.elementsEqual("-")) {
-            c.indicatifPasseSimpleIl = Constants.IL + c.indicatifPasseSimpleIl
+        if (!c.indikativFutur1Er.elementsEqual("-")) {
+            c.indikativFutur1Er = Constants.IL + c.indikativFutur1Er
         }
-        if (!c.indicatifPasseSimpleNous.elementsEqual("-")) {
-            c.indicatifPasseSimpleNous = Constants.NOUS + c.indicatifPasseSimpleNous
+        if (!c.indikativFutur1Wir.elementsEqual("-")) {
+            c.indikativFutur1Wir = Constants.NOUS + c.indikativFutur1Wir
         }
-        if (!c.indicatifPasseSimpleVous.elementsEqual("-")) {
-            c.indicatifPasseSimpleVous = Constants.VOUS + c.indicatifPasseSimpleVous
+        if (!c.indikativFutur1Ihr.elementsEqual("-")) {
+            c.indikativFutur1Ihr = Constants.VOUS + c.indikativFutur1Ihr
         }
-        if (!c.indicatifPasseSimpleIls.elementsEqual("-")) {
-            c.indicatifPasseSimpleIls = Constants.ILS + c.indicatifPasseSimpleIls
+        if (!c.indikativFutur1Sie.elementsEqual("-")) {
+            c.indikativFutur1Sie = Constants.ILS + c.indikativFutur1Sie
         }
     }
     
     private func addPronomsIndicatifPlusQueParfait(_ c : Conjugation) {
-        let text : String = c.indicatifPlusQueParfaitJe
+        let text : String = c.indikativPlusquamperfektIch
         if (!text.elementsEqual("-")) {
-            c.indicatifPlusQueParfaitJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.indikativPlusquamperfektIch = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.indicatifPlusQueParfaitTu.elementsEqual("-")) {
-            c.indicatifPlusQueParfaitTu = Constants.TU + c.indicatifPlusQueParfaitTu
+        if (!c.indikativPlusquamperfektDu.elementsEqual("-")) {
+            c.indikativPlusquamperfektDu = Constants.TU + c.indikativPlusquamperfektDu
         }
-        if (!c.indicatifPlusQueParfaitIl.elementsEqual("-")) {
-            c.indicatifPlusQueParfaitIl = Constants.IL + c.indicatifPlusQueParfaitIl
+        if (!c.indikativPlusquamperfektEr.elementsEqual("-")) {
+            c.indikativPlusquamperfektEr = Constants.IL + c.indikativPlusquamperfektEr
         }
-        if (!c.indicatifPlusQueParfaitNous.elementsEqual("-")) {
-            c.indicatifPlusQueParfaitNous = Constants.NOUS + c.indicatifPlusQueParfaitNous
+        if (!c.indikativPlusquamperfektWir.elementsEqual("-")) {
+            c.indikativPlusquamperfektWir = Constants.NOUS + c.indikativPlusquamperfektWir
         }
-        if (!c.indicatifPlusQueParfaitVous.elementsEqual("-")) {
-            c.indicatifPlusQueParfaitVous = Constants.VOUS + c.indicatifPlusQueParfaitVous
+        if (!c.indikativPlusquamperfektIhr.elementsEqual("-")) {
+            c.indikativPlusquamperfektIhr = Constants.VOUS + c.indikativPlusquamperfektIhr
         }
-        if (!c.indicatifPlusQueParfaitIls.elementsEqual("-")) {
-            c.indicatifPlusQueParfaitIls = Constants.ILS + c.indicatifPlusQueParfaitIls
+        if (!c.indikativPlusquamperfektSie.elementsEqual("-")) {
+            c.indikativPlusquamperfektSie = Constants.ILS + c.indikativPlusquamperfektSie
         }
     }
     
     private func addPronomsIndicatifImperfait(_ c : Conjugation) {
-        let text : String = c.indicatifImperfaitJe
+        let text : String = c.indikativPerfektIch
         if (!text.elementsEqual("-")) {
-            c.indicatifImperfaitJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.indikativPerfektIch = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.indicatifImperfaitTu.elementsEqual("-")) {
-            c.indicatifImperfaitTu = Constants.TU + c.indicatifImperfaitTu
+        if (!c.indikativPerfektDu.elementsEqual("-")) {
+            c.indikativPerfektDu = Constants.TU + c.indikativPerfektDu
         }
-        if (!c.indicatifImperfaitIl.elementsEqual("-")) {
-            c.indicatifImperfaitIl = Constants.IL + c.indicatifImperfaitIl
+        if (!c.indikativPerfektEr.elementsEqual("-")) {
+            c.indikativPerfektEr = Constants.IL + c.indikativPerfektEr
         }
-        if (!c.indicatifImperfaitNous.elementsEqual("-")) {
-            c.indicatifImperfaitNous = Constants.NOUS + c.indicatifImperfaitNous
+        if (!c.indikativPerfektWir.elementsEqual("-")) {
+            c.indikativPerfektWir = Constants.NOUS + c.indikativPerfektWir
         }
-        if (!c.indicatifImperfaitVous.elementsEqual("-")) {
-            c.indicatifImperfaitVous = Constants.VOUS + c.indicatifImperfaitVous
+        if (!c.indikativPerfektIhr.elementsEqual("-")) {
+            c.indikativPerfektIhr = Constants.VOUS + c.indikativPerfektIhr
         }
-        if (!c.indicatifImperfaitIls.elementsEqual("-")) {
-            c.indicatifImperfaitIls = Constants.ILS + c.indicatifImperfaitIls
+        if (!c.indikativPerfektSie.elementsEqual("-")) {
+            c.indikativPerfektSie = Constants.ILS + c.indikativPerfektSie
         }
     }
     
     private func addPronomsIndicatifPasseCompose(_ c : Conjugation) {
-        let text : String = c.indicatifPasseComposeJe
+        let text : String = c.indikativPrateritumIch
         if (!text.elementsEqual("-")) {
-            c.indicatifPasseComposeJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.indikativPrateritumIch = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.indicatifPasseComposeTu.elementsEqual("-")) {
-            c.indicatifPasseComposeTu = Constants.TU + c.indicatifPasseComposeTu
+        if (!c.indikativPrateritumDu.elementsEqual("-")) {
+            c.indikativPrateritumDu = Constants.TU + c.indikativPrateritumDu
         }
-        if (!c.indicatifPasseComposeIl.elementsEqual("-")) {
-            c.indicatifPasseComposeIl = Constants.IL + c.indicatifPasseComposeIl
+        if (!c.indikativPrateritumEr.elementsEqual("-")) {
+            c.indikativPrateritumEr = Constants.IL + c.indikativPrateritumEr
         }
-        if (!c.indicatifPasseComposeNous.elementsEqual("-")) {
-            c.indicatifPasseComposeNous = Constants.NOUS + c.indicatifPasseComposeNous
+        if (!c.indikativPrateritumWir.elementsEqual("-")) {
+            c.indikativPrateritumWir = Constants.NOUS + c.indikativPrateritumWir
         }
-        if (!c.indicatifPasseComposeVous.elementsEqual("-")) {
-            c.indicatifPasseComposeVous = Constants.VOUS + c.indicatifPasseComposeVous
+        if (!c.indikativPrateritumIhr.elementsEqual("-")) {
+            c.indikativPrateritumIhr = Constants.VOUS + c.indikativPrateritumIhr
         }
-        if (!c.indicatifPasseComposeIls.elementsEqual("-")) {
-            c.indicatifPasseComposeIls = Constants.ILS + c.indicatifPasseComposeIls
+        if (!c.indikativPrateritumSie.elementsEqual("-")) {
+            c.indikativPrateritumSie = Constants.ILS + c.indikativPrateritumSie
         }
     }
     
     private func addPronomsIndicatifPresent(_ c : Conjugation) {
-        let text : String = c.indicatifPresentJe
+        let text : String = c.indikativPrasensIch
         if (!text.elementsEqual("-")) {
-            c.indicatifPresentJe = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
+            c.indikativPrasensIch = ViewUtils.useApostrophe(text) ? Constants.JEA + text : Constants.JE + text
         }
-        if (!c.indicatifPresentTu.elementsEqual("-")) {
-            c.indicatifPresentTu = Constants.TU + c.indicatifPresentTu
+        if (!c.indikativPrasensDu.elementsEqual("-")) {
+            c.indikativPrasensDu = Constants.TU + c.indikativPrasensDu
         }
-        if (!c.indicatifPresentIl.elementsEqual("-")) {
-            c.indicatifPresentIl = Constants.IL + c.indicatifPresentIl
+        if (!c.indikativPrasensEr.elementsEqual("-")) {
+            c.indikativPrasensEr = Constants.IL + c.indikativPrasensEr
         }
-        if (!c.indicatifPresentNous.elementsEqual("-")) {
-            c.indicatifPresentNous = Constants.NOUS + c.indicatifPresentNous
+        if (!c.indikativPrasensWir.elementsEqual("-")) {
+            c.indikativPrasensWir = Constants.NOUS + c.indikativPrasensWir
         }
-        if (!c.indicatifPresentVous.elementsEqual("-")) {
-            c.indicatifPresentVous = Constants.VOUS + c.indicatifPresentVous
+        if (!c.indikativPrasensIhr.elementsEqual("-")) {
+            c.indikativPrasensIhr = Constants.VOUS + c.indikativPrasensIhr
         }
-        if (!c.indicatifPresentIls.elementsEqual("-")) {
-            c.indicatifPresentIls = Constants.ILS + c.indicatifPresentIls
+        if (!c.indikativPrasensSie.elementsEqual("-")) {
+            c.indikativPrasensSie = Constants.ILS + c.indikativPrasensSie
         }
     }
     
@@ -2160,247 +2160,247 @@ class VerbDetailsViewController: UIViewController {
         ignoreSubjonctifPlusQueParfait(c)
         
         ignoreImperatif(c)
-        c.infinitivePasse = "-"
-        c.participePresent = "-"
-        c.participePasse1 = "-"
+        c.infinitivPerfekt = "-"
+        c.partizipPrasens = "-"
+        c.partizipPerfekt = "-"
         c.participePasse2 = "-"
         c.gerondifPresent = "-"
         c.gerondifPasse = "-"
     }
     
     private func ignoreIndicatifPresent(_ c : Conjugation) {
-        c.indicatifPresentJe = "-"
-        c.indicatifPresentTu = "-"
-        c.indicatifPresentIl = "-"
-        c.indicatifPresentNous = "-"
-        c.indicatifPresentVous = "-"
-        c.indicatifPresentIls = "-"
+        c.indikativPrasensIch = "-"
+        c.indikativPrasensDu = "-"
+        c.indikativPrasensEr = "-"
+        c.indikativPrasensWir = "-"
+        c.indikativPrasensIhr = "-"
+        c.indikativPrasensSie = "-"
     }
     
     private func ignoreIndicatifPresentNousVousIls(_ c : Conjugation) {
-        c.indicatifPresentNous = "-"
-        c.indicatifPresentVous = "-"
-        c.indicatifPresentIls = "-"
+        c.indikativPrasensWir = "-"
+        c.indikativPrasensIhr = "-"
+        c.indikativPrasensSie = "-"
     }
     
     private func ignoreIndicatifPasseCompose(_ c : Conjugation) {
-        c.indicatifPasseComposeJe = "-"
-        c.indicatifPasseComposeTu = "-"
-        c.indicatifPasseComposeIl = "-"
-        c.indicatifPasseComposeNous = "-"
-        c.indicatifPasseComposeVous = "-"
-        c.indicatifPasseComposeIls = "-"
+        c.indikativPrateritumIch = "-"
+        c.indikativPrateritumDu = "-"
+        c.indikativPrateritumEr = "-"
+        c.indikativPrateritumWir = "-"
+        c.indikativPrateritumIhr = "-"
+        c.indikativPrateritumSie = "-"
     }
     
     private func ignoreIndicatifImperfait(_ c : Conjugation) {
-        c.indicatifImperfaitJe = "-"
-        c.indicatifImperfaitTu = "-"
-        c.indicatifImperfaitIl = "-"
-        c.indicatifImperfaitNous = "-"
-        c.indicatifImperfaitVous = "-"
-        c.indicatifImperfaitIls = "-"
+        c.indikativPerfektIch = "-"
+        c.indikativPerfektDu = "-"
+        c.indikativPerfektEr = "-"
+        c.indikativPerfektWir = "-"
+        c.indikativPerfektIhr = "-"
+        c.indikativPerfektSie = "-"
     }
     
     private func ignoreIndicatifPlusQueParfait(_ c : Conjugation) {
-        c.indicatifPlusQueParfaitJe = "-"
-        c.indicatifPlusQueParfaitTu = "-"
-        c.indicatifPlusQueParfaitIl = "-"
-        c.indicatifPlusQueParfaitNous = "-"
-        c.indicatifPlusQueParfaitVous = "-"
-        c.indicatifPlusQueParfaitIls = "-"
+        c.indikativPlusquamperfektIch = "-"
+        c.indikativPlusquamperfektDu = "-"
+        c.indikativPlusquamperfektEr = "-"
+        c.indikativPlusquamperfektWir = "-"
+        c.indikativPlusquamperfektIhr = "-"
+        c.indikativPlusquamperfektSie = "-"
     }
     
     private func ignoreIndicatifPasseSimple(_ c : Conjugation) {
-        c.indicatifPasseSimpleJe = "-"
-        c.indicatifPasseSimpleTu = "-"
-        c.indicatifPasseSimpleIl = "-"
-        c.indicatifPasseSimpleNous = "-"
-        c.indicatifPasseSimpleVous = "-"
-        c.indicatifPasseSimpleIls = "-"
+        c.indikativFutur1Ich = "-"
+        c.indikativFutur1Du = "-"
+        c.indikativFutur1Er = "-"
+        c.indikativFutur1Wir = "-"
+        c.indikativFutur1Ihr = "-"
+        c.indikativFutur1Sie = "-"
     }
     
     private func ignoreIndicatifPasseAnterieur(_ c : Conjugation) {
-        c.indicatifPasseAnterieurJe = "-"
-        c.indicatifPasseAnterieurTu = "-"
-        c.indicatifPasseAnterieurIl = "-"
-        c.indicatifPasseAnterieurNous = "-"
-        c.indicatifPasseAnterieurVous = "-"
-        c.indicatifPasseAnterieurIls = "-"
+        c.indikativFutur2Ich = "-"
+        c.indikativFutur2Du = "-"
+        c.indikativFutur2Er = "-"
+        c.indikativFutur2Wir = "-"
+        c.indikativFutur2Ihr = "-"
+        c.indikativFutur2Sie = "-"
     }
     
     private func ignoreIndicatifFuturSimple(_ c : Conjugation) {
-        c.indicatifFuturSimpleJe = "-"
-        c.indicatifFuturSimpleTu = "-"
-        c.indicatifFuturSimpleIl = "-"
-        c.indicatifFuturSimpleNous = "-"
-        c.indicatifFuturSimpleVous = "-"
-        c.indicatifFuturSimpleIls = "-"
+        c.konjunktiv1PrasensIch = "-"
+        c.konjunktiv1PrasensDu = "-"
+        c.konjunktiv1PrasensEr = "-"
+        c.konjunktiv1PrasensWir = "-"
+        c.konjunktiv1PrasensIhr = "-"
+        c.konjunktiv1PrasensSie = "-"
     }
     
     private func ignoreIndicatifFuturAnterieur(_ c : Conjugation) {
-        c.indicatifFuturAnterieurJe = "-"
-        c.indicatifFuturAnterieurTu = "-"
-        c.indicatifFuturAnterieurIl = "-"
-        c.indicatifFuturAnterieurNous = "-"
-        c.indicatifFuturAnterieurVous = "-"
-        c.indicatifFuturAnterieurIls = "-"
+        c.konjunktiv1PerfektIch = "-"
+        c.konjunktiv1PerfektDu = "-"
+        c.konjunktiv1PerfektEr = "-"
+        c.konjunktiv1PerfektWir = "-"
+        c.konjunktiv1PerfektIhr = "-"
+        c.konjunktiv1PerfektSie = "-"
     }
     
     private func ignoreConditionnelPresent(_ c : Conjugation) {
-        c.conditionnelPresentJe = "-"
-        c.conditionnelPresentTu = "-"
-        c.conditionnelPresentIl = "-"
-        c.conditionnelPresentNous = "-"
-        c.conditionnelPresentVous = "-"
-        c.conditionnelPresentIls = "-"
+        c.konjunktiv2Futur1Ich = "-"
+        c.konjunktiv2Futur1Du = "-"
+        c.konjunktiv2Futur1Er = "-"
+        c.konjunktiv2Futur1Wir = "-"
+        c.konjunktiv2Futur1Ihr = "-"
+        c.konjunktiv2Futur1Sie = "-"
     }
     
     private func ignoreConditionnelPasse(_ c : Conjugation) {
-        c.conditionnelPasseJe = "-"
-        c.conditionnelPasseTu = "-"
-        c.conditionnelPasseIl = "-"
-        c.conditionnelPasseNous = "-"
-        c.conditionnelPasseVous = "-"
-        c.conditionnelPasseIls = "-"
+        c.konjunktiv2Futur2Ich = "-"
+        c.konjunktiv2Futur2Du = "-"
+        c.konjunktiv2Futur2Er = "-"
+        c.konjunktiv2Futur2Wir = "-"
+        c.konjunktiv2Futur2Ihr = "-"
+        c.konjunktiv2Futur2Sie = "-"
     }
     
     private func ignoreSubjonctifPresent(_ c : Conjugation) {
-        c.subjonctifPresentJe = "-"
-        c.subjonctifPresentTu = "-"
-        c.subjonctifPresentIl = "-"
-        c.subjonctifPresentNous = "-"
-        c.subjonctifPresentVous = "-"
-        c.subjonctifPresentIls = "-"
+        c.konjunktiv1Futur1Ich = "-"
+        c.konjunktiv1Futur1Du = "-"
+        c.konjunktiv1Futur1Er = "-"
+        c.konjunktiv1Futur1Wir = "-"
+        c.konjunktiv1Futur1Ihr = "-"
+        c.konjunktiv1Futur1Sie = "-"
     }
     
     private func ignoreSubjonctifPasse(_ c : Conjugation) {
-        c.subjonctifPasseJe = "-"
-        c.subjonctifPasseTu = "-"
-        c.subjonctifPasseIl = "-"
-        c.subjonctifPasseNous = "-"
-        c.subjonctifPasseVous = "-"
-        c.subjonctifPasseIls = "-"
+        c.konjunktiv1Futur2Ich = "-"
+        c.konjunktiv1Futur2Du = "-"
+        c.konjunktiv1Futur2Er = "-"
+        c.konjunktiv1Futur2Wir = "-"
+        c.konjunktiv1Futur2Ihr = "-"
+        c.konjunktiv1Futur2Sie = "-"
     }
     
     private func ignoreSubjonctifImperfait(_ c : Conjugation) {
-        c.subjonctifImperfaitJe = "-"
-        c.subjonctifImperfaitTu = "-"
-        c.subjonctifImperfaitIl = "-"
-        c.subjonctifImperfaitNous = "-"
-        c.subjonctifImperfaitVous = "-"
-        c.subjonctifImperfaitIls = "-"
+        c.konjunktiv2PrateritumIch = "-"
+        c.konjunktiv2PrateritumDu = "-"
+        c.konjunktiv2PrateritumEr = "-"
+        c.konjunktiv2PrateritumWir = "-"
+        c.konjunktiv2PrateritumIhr = "-"
+        c.konjunktiv2PrateritumSie = "-"
     }
     
     private func ignoreSubjonctifPlusQueParfait(_ c : Conjugation) {
-        c.subjonctifPlusQueParfaitJe = "-"
-        c.subjonctifPlusQueParfaitTu = "-"
-        c.subjonctifPlusQueParfaitIl = "-"
-        c.subjonctifPlusQueParfaitNous = "-"
-        c.subjonctifPlusQueParfaitVous = "-"
-        c.subjonctifPlusQueParfaitIls = "-"
+        c.konjunktiv2PlusquamperfektIch = "-"
+        c.konjunktiv2PlusquamperfektDu = "-"
+        c.konjunktiv2PlusquamperfektEr = "-"
+        c.konjunktiv2PlusquamperfektWir = "-"
+        c.konjunktiv2PlusquamperfektIhr = "-"
+        c.konjunktiv2PlusquamperfektSie = "-"
     }
     
     private func ignoreImperatif(_ c : Conjugation) {
-        c.imperatifPresentTu = "-"
-        c.imperatifPresentNous = "-"
-        c.imperatifPresentVous = "-"
+        c.imperativDu = "-"
+        c.imperativIhr = "-"
+        c.imperativSie = "-"
         c.imperatifPasseTu = "-"
         c.imperatifPasseNous = "-"
         c.imperatifPasseVous = "-"
     }
     
     private func ignoreImperatifNousVous(_ c : Conjugation) {
-        c.imperatifPresentNous = "-"
-        c.imperatifPresentVous = "-"
+        c.imperativIhr = "-"
+        c.imperativSie = "-"
     }
     
     /**
      * Marks the conjugations as "-" for all persons except il
      */
     private func ignoreAllPersonsExceptIl(_ c : Conjugation) {
-        c.indicatifPresentJe = "-"
-        c.indicatifPresentTu = "-"
-        c.indicatifPresentNous = "-"
-        c.indicatifPresentVous = "-"
-        c.indicatifPresentIls = "-"
+        c.indikativPrasensIch = "-"
+        c.indikativPrasensDu = "-"
+        c.indikativPrasensWir = "-"
+        c.indikativPrasensIhr = "-"
+        c.indikativPrasensSie = "-"
         
-        c.indicatifPasseComposeJe = "-"
-        c.indicatifPasseComposeTu = "-"
-        c.indicatifPasseComposeNous = "-"
-        c.indicatifPasseComposeVous = "-"
-        c.indicatifPasseComposeIls = "-"
+        c.indikativPrateritumIch = "-"
+        c.indikativPrateritumDu = "-"
+        c.indikativPrateritumWir = "-"
+        c.indikativPrateritumIhr = "-"
+        c.indikativPrateritumSie = "-"
         
-        c.indicatifImperfaitJe = "-"
-        c.indicatifImperfaitTu = "-"
-        c.indicatifImperfaitNous = "-"
-        c.indicatifImperfaitVous = "-"
-        c.indicatifImperfaitIls = "-"
+        c.indikativPerfektIch = "-"
+        c.indikativPerfektDu = "-"
+        c.indikativPerfektWir = "-"
+        c.indikativPerfektIhr = "-"
+        c.indikativPerfektSie = "-"
         
-        c.indicatifPlusQueParfaitJe = "-"
-        c.indicatifPlusQueParfaitTu = "-"
-        c.indicatifPlusQueParfaitNous = "-"
-        c.indicatifPlusQueParfaitVous = "-"
-        c.indicatifPlusQueParfaitIls = "-"
+        c.indikativPlusquamperfektIch = "-"
+        c.indikativPlusquamperfektDu = "-"
+        c.indikativPlusquamperfektWir = "-"
+        c.indikativPlusquamperfektIhr = "-"
+        c.indikativPlusquamperfektSie = "-"
         
-        c.indicatifPasseSimpleJe = "-"
-        c.indicatifPasseSimpleTu = "-"
-        c.indicatifPasseSimpleNous = "-"
-        c.indicatifPasseSimpleVous = "-"
-        c.indicatifPasseSimpleIls = "-"
+        c.indikativFutur1Ich = "-"
+        c.indikativFutur1Du = "-"
+        c.indikativFutur1Wir = "-"
+        c.indikativFutur1Ihr = "-"
+        c.indikativFutur1Sie = "-"
         
-        c.indicatifPasseAnterieurJe = "-"
-        c.indicatifPasseAnterieurTu = "-"
-        c.indicatifPasseAnterieurNous = "-"
-        c.indicatifPasseAnterieurVous = "-"
-        c.indicatifPasseAnterieurIls = "-"
+        c.indikativFutur2Ich = "-"
+        c.indikativFutur2Du = "-"
+        c.indikativFutur2Wir = "-"
+        c.indikativFutur2Ihr = "-"
+        c.indikativFutur2Sie = "-"
         
-        c.indicatifFuturSimpleJe = "-"
-        c.indicatifFuturSimpleTu = "-"
-        c.indicatifFuturSimpleNous = "-"
-        c.indicatifFuturSimpleVous = "-"
-        c.indicatifFuturSimpleIls = "-"
+        c.konjunktiv1PrasensIch = "-"
+        c.konjunktiv1PrasensDu = "-"
+        c.konjunktiv1PrasensWir = "-"
+        c.konjunktiv1PrasensIhr = "-"
+        c.konjunktiv1PrasensSie = "-"
         
-        c.indicatifFuturAnterieurJe = "-"
-        c.indicatifFuturAnterieurTu = "-"
-        c.indicatifFuturAnterieurNous = "-"
-        c.indicatifFuturAnterieurVous = "-"
-        c.indicatifFuturAnterieurIls = "-"
+        c.konjunktiv1PerfektIch = "-"
+        c.konjunktiv1PerfektDu = "-"
+        c.konjunktiv1PerfektWir = "-"
+        c.konjunktiv1PerfektIhr = "-"
+        c.konjunktiv1PerfektSie = "-"
         
-        c.conditionnelPresentJe = "-"
-        c.conditionnelPresentTu = "-"
-        c.conditionnelPresentNous = "-"
-        c.conditionnelPresentVous = "-"
-        c.conditionnelPresentIls = "-"
+        c.konjunktiv2Futur1Ich = "-"
+        c.konjunktiv2Futur1Du = "-"
+        c.konjunktiv2Futur1Wir = "-"
+        c.konjunktiv2Futur1Ihr = "-"
+        c.konjunktiv2Futur1Sie = "-"
         
-        c.conditionnelPasseJe = "-"
-        c.conditionnelPasseTu = "-"
-        c.conditionnelPasseNous = "-"
-        c.conditionnelPasseVous = "-"
-        c.conditionnelPasseIls = "-"
+        c.konjunktiv2Futur2Ich = "-"
+        c.konjunktiv2Futur2Du = "-"
+        c.konjunktiv2Futur2Wir = "-"
+        c.konjunktiv2Futur2Ihr = "-"
+        c.konjunktiv2Futur2Sie = "-"
         
-        c.subjonctifPresentJe = "-"
-        c.subjonctifPresentTu = "-"
-        c.subjonctifPresentNous = "-"
-        c.subjonctifPresentVous = "-"
-        c.subjonctifPresentIls = "-"
+        c.konjunktiv1Futur1Ich = "-"
+        c.konjunktiv1Futur1Du = "-"
+        c.konjunktiv1Futur1Wir = "-"
+        c.konjunktiv1Futur1Ihr = "-"
+        c.konjunktiv1Futur1Sie = "-"
         
-        c.subjonctifPasseJe = "-"
-        c.subjonctifPasseTu = "-"
-        c.subjonctifPasseNous = "-"
-        c.subjonctifPasseVous = "-"
-        c.subjonctifPasseIls = "-"
+        c.konjunktiv1Futur2Ich = "-"
+        c.konjunktiv1Futur2Du = "-"
+        c.konjunktiv1Futur2Wir = "-"
+        c.konjunktiv1Futur2Ihr = "-"
+        c.konjunktiv1Futur2Sie = "-"
         
-        c.subjonctifImperfaitJe = "-"
-        c.subjonctifImperfaitTu = "-"
-        c.subjonctifImperfaitNous = "-"
-        c.subjonctifImperfaitVous = "-"
-        c.subjonctifImperfaitIls = "-"
+        c.konjunktiv2PrateritumIch = "-"
+        c.konjunktiv2PrateritumDu = "-"
+        c.konjunktiv2PrateritumWir = "-"
+        c.konjunktiv2PrateritumIhr = "-"
+        c.konjunktiv2PrateritumSie = "-"
         
-        c.subjonctifPlusQueParfaitJe = "-"
-        c.subjonctifPlusQueParfaitTu = "-"
-        c.subjonctifPlusQueParfaitNous = "-"
-        c.subjonctifPlusQueParfaitVous = "-"
-        c.subjonctifPlusQueParfaitIls = "-"
+        c.konjunktiv2PlusquamperfektIch = "-"
+        c.konjunktiv2PlusquamperfektDu = "-"
+        c.konjunktiv2PlusquamperfektWir = "-"
+        c.konjunktiv2PlusquamperfektIhr = "-"
+        c.konjunktiv2PlusquamperfektSie = "-"
         
         ignoreImperatif(c)
     }
@@ -2409,112 +2409,112 @@ class VerbDetailsViewController: UIViewController {
      * Marks the conjugations as "-" for all persons except il and ils.
      */
     private func ignoreAllPersonsExceptIlAndIls(_ c : Conjugation) {
-        c.indicatifPresentJe = "-"
-        c.indicatifPresentTu = "-"
-        c.indicatifPresentNous = "-"
-        c.indicatifPresentVous = "-"
+        c.indikativPrasensIch = "-"
+        c.indikativPrasensDu = "-"
+        c.indikativPrasensWir = "-"
+        c.indikativPrasensIhr = "-"
         
-        c.indicatifPasseComposeJe = "-"
-        c.indicatifPasseComposeTu = "-"
-        c.indicatifPasseComposeNous = "-"
-        c.indicatifPasseComposeVous = "-"
+        c.indikativPrateritumIch = "-"
+        c.indikativPrateritumDu = "-"
+        c.indikativPrateritumWir = "-"
+        c.indikativPrateritumIhr = "-"
         
-        c.indicatifImperfaitJe = "-"
-        c.indicatifImperfaitTu = "-"
-        c.indicatifImperfaitNous = "-"
-        c.indicatifImperfaitVous = "-"
+        c.indikativPerfektIch = "-"
+        c.indikativPerfektDu = "-"
+        c.indikativPerfektWir = "-"
+        c.indikativPerfektIhr = "-"
         
-        c.indicatifPlusQueParfaitJe = "-"
-        c.indicatifPlusQueParfaitTu = "-"
-        c.indicatifPlusQueParfaitNous = "-"
-        c.indicatifPlusQueParfaitVous = "-"
+        c.indikativPlusquamperfektIch = "-"
+        c.indikativPlusquamperfektDu = "-"
+        c.indikativPlusquamperfektWir = "-"
+        c.indikativPlusquamperfektIhr = "-"
         
-        c.indicatifPasseSimpleJe = "-"
-        c.indicatifPasseSimpleTu = "-"
-        c.indicatifPasseSimpleNous = "-"
-        c.indicatifPasseSimpleVous = "-"
+        c.indikativFutur1Ich = "-"
+        c.indikativFutur1Du = "-"
+        c.indikativFutur1Wir = "-"
+        c.indikativFutur1Ihr = "-"
         
-        c.indicatifPasseAnterieurJe = "-"
-        c.indicatifPasseAnterieurTu = "-"
-        c.indicatifPasseAnterieurNous = "-"
-        c.indicatifPasseAnterieurVous = "-"
+        c.indikativFutur2Ich = "-"
+        c.indikativFutur2Du = "-"
+        c.indikativFutur2Wir = "-"
+        c.indikativFutur2Ihr = "-"
         
-        c.indicatifFuturSimpleJe = "-"
-        c.indicatifFuturSimpleTu = "-"
-        c.indicatifFuturSimpleNous = "-"
-        c.indicatifFuturSimpleVous = "-"
+        c.konjunktiv1PrasensIch = "-"
+        c.konjunktiv1PrasensDu = "-"
+        c.konjunktiv1PrasensWir = "-"
+        c.konjunktiv1PrasensIhr = "-"
         
-        c.indicatifFuturAnterieurJe = "-"
-        c.indicatifFuturAnterieurTu = "-"
-        c.indicatifFuturAnterieurNous = "-"
-        c.indicatifFuturAnterieurVous = "-"
+        c.konjunktiv1PerfektIch = "-"
+        c.konjunktiv1PerfektDu = "-"
+        c.konjunktiv1PerfektWir = "-"
+        c.konjunktiv1PerfektIhr = "-"
         
-        c.conditionnelPresentJe = "-"
-        c.conditionnelPresentTu = "-"
-        c.conditionnelPresentNous = "-"
-        c.conditionnelPresentVous = "-"
+        c.konjunktiv2Futur1Ich = "-"
+        c.konjunktiv2Futur1Du = "-"
+        c.konjunktiv2Futur1Wir = "-"
+        c.konjunktiv2Futur1Ihr = "-"
         
-        c.conditionnelPasseJe = "-"
-        c.conditionnelPasseTu = "-"
-        c.conditionnelPasseNous = "-"
-        c.conditionnelPasseVous = "-"
+        c.konjunktiv2Futur2Ich = "-"
+        c.konjunktiv2Futur2Du = "-"
+        c.konjunktiv2Futur2Wir = "-"
+        c.konjunktiv2Futur2Ihr = "-"
         
-        c.subjonctifPresentJe = "-"
-        c.subjonctifPresentTu = "-"
-        c.subjonctifPresentNous = "-"
-        c.subjonctifPresentVous = "-"
+        c.konjunktiv1Futur1Ich = "-"
+        c.konjunktiv1Futur1Du = "-"
+        c.konjunktiv1Futur1Wir = "-"
+        c.konjunktiv1Futur1Ihr = "-"
         
-        c.subjonctifPasseJe = "-"
-        c.subjonctifPasseTu = "-"
-        c.subjonctifPasseNous = "-"
-        c.subjonctifPasseVous = "-"
+        c.konjunktiv1Futur2Ich = "-"
+        c.konjunktiv1Futur2Du = "-"
+        c.konjunktiv1Futur2Wir = "-"
+        c.konjunktiv1Futur2Ihr = "-"
         
-        c.subjonctifImperfaitJe = "-"
-        c.subjonctifImperfaitTu = "-"
-        c.subjonctifImperfaitNous = "-"
-        c.subjonctifImperfaitVous = "-"
+        c.konjunktiv2PrateritumIch = "-"
+        c.konjunktiv2PrateritumDu = "-"
+        c.konjunktiv2PrateritumWir = "-"
+        c.konjunktiv2PrateritumIhr = "-"
         
-        c.subjonctifPlusQueParfaitJe = "-"
-        c.subjonctifPlusQueParfaitTu = "-"
-        c.subjonctifPlusQueParfaitNous = "-"
-        c.subjonctifPlusQueParfaitVous = "-"
+        c.konjunktiv2PlusquamperfektIch = "-"
+        c.konjunktiv2PlusquamperfektDu = "-"
+        c.konjunktiv2PlusquamperfektWir = "-"
+        c.konjunktiv2PlusquamperfektIhr = "-"
         
         ignoreImperatif(c)
     }
     
     private func ignoreAllPersonsExceptIlAndIlsIndicatif(_ c : Conjugation) {
-        c.indicatifPresentJe = "-"
-        c.indicatifPresentTu = "-"
-        c.indicatifPresentNous = "-"
-        c.indicatifPresentVous = "-"
+        c.indikativPrasensIch = "-"
+        c.indikativPrasensDu = "-"
+        c.indikativPrasensWir = "-"
+        c.indikativPrasensIhr = "-"
         
         ignoreIndicatifPasseCompose(c)
         
-        c.indicatifImperfaitJe = "-"
-        c.indicatifImperfaitTu = "-"
-        c.indicatifImperfaitNous = "-"
-        c.indicatifImperfaitVous = "-"
+        c.indikativPerfektIch = "-"
+        c.indikativPerfektDu = "-"
+        c.indikativPerfektWir = "-"
+        c.indikativPerfektIhr = "-"
         
         ignoreIndicatifPlusQueParfait(c)
         
-        c.indicatifPasseSimpleJe = "-"
-        c.indicatifPasseSimpleTu = "-"
-        c.indicatifPasseSimpleNous = "-"
-        c.indicatifPasseSimpleVous = "-"
+        c.indikativFutur1Ich = "-"
+        c.indikativFutur1Du = "-"
+        c.indikativFutur1Wir = "-"
+        c.indikativFutur1Ihr = "-"
         
         ignoreIndicatifPasseAnterieur(c)
         
-        c.indicatifFuturSimpleJe = "-"
-        c.indicatifFuturSimpleTu = "-"
-        c.indicatifFuturSimpleNous = "-"
-        c.indicatifFuturSimpleVous = "-"
+        c.konjunktiv1PrasensIch = "-"
+        c.konjunktiv1PrasensDu = "-"
+        c.konjunktiv1PrasensWir = "-"
+        c.konjunktiv1PrasensIhr = "-"
         
         ignoreIndicatifFuturAnterieur(c)
         
-        c.conditionnelPresentJe = "-"
-        c.conditionnelPresentTu = "-"
-        c.conditionnelPresentNous = "-"
-        c.conditionnelPresentVous = "-"
+        c.konjunktiv2Futur1Ich = "-"
+        c.konjunktiv2Futur1Du = "-"
+        c.konjunktiv2Futur1Wir = "-"
+        c.konjunktiv2Futur1Ihr = "-"
         
         ignoreConditionnelPasse(c)
         ignoreSubjonctifPresent(c)
@@ -2526,106 +2526,106 @@ class VerbDetailsViewController: UIViewController {
     
     
     private func fillConjugationDetails(_ c : Conjugation) {
-        infinitivePresent.setTitle(c.infinitivePresent, for: .normal)
-        infinitivePasse.setTitle(c.infinitivePasse, for: .normal)
-        participePresent.setTitle(c.participePresent, for: .normal)
-        participePasse1.setTitle(c.participePasse1, for: .normal)
+        infinitivePresent.setTitle(c.infinitivPrasens, for: .normal)
+        infinitivePasse.setTitle(c.infinitivPerfekt, for: .normal)
+        participePresent.setTitle(c.partizipPrasens, for: .normal)
+        participePasse1.setTitle(c.partizipPerfekt, for: .normal)
         participePasse2.setTitle(c.participePasse2, for: .normal)
         gerondifPresent.setTitle(c.gerondifPresent, for: .normal)
         gerondifPasse.setTitle(c.gerondifPasse, for: .normal)
-        imperatifPresentTu.setTitle(c.imperatifPresentTu, for: .normal)
-        imperatifPresentNous.setTitle(c.imperatifPresentNous, for: .normal)
-        imperatifPresentVous.setTitle(c.imperatifPresentVous, for: .normal)
+        imperatifPresentTu.setTitle(c.imperativDu, for: .normal)
+        imperatifPresentNous.setTitle(c.imperativIhr, for: .normal)
+        imperatifPresentVous.setTitle(c.imperativSie, for: .normal)
         imperatifPasseTu.setTitle(c.imperatifPasseTu, for: .normal)
         imperatifPasseNous.setTitle(c.imperatifPasseNous, for: .normal)
         imperatifPasseVous.setTitle(c.imperatifPasseVous, for: .normal)
         
-        indicatifPresentJe.setTitle(c.indicatifPresentJe, for: .normal)
-        indicatifPresentTu.setTitle(c.indicatifPresentTu, for: .normal)
-        indicatifPresentIl.setTitle(c.indicatifPresentIl, for: .normal)
-        indicatifPresentNous.setTitle(c.indicatifPresentNous, for: .normal)
-        indicatifPresentVous.setTitle(c.indicatifPresentVous, for: .normal)
-        indicatifPresentIls.setTitle(c.indicatifPresentIls, for: .normal)
-        indicatifPasseComposeJe.setTitle(c.indicatifPasseComposeJe, for: .normal)
-        indicatifPasseComposeTu.setTitle(c.indicatifPasseComposeTu, for: .normal)
-        indicatifPasseComposeIl.setTitle(c.indicatifPasseComposeIl, for: .normal)
-        indicatifPasseComposeNous.setTitle(c.indicatifPasseComposeNous, for: .normal)
-        indicatifPasseComposeVous.setTitle(c.indicatifPasseComposeVous, for: .normal)
-        indicatifPasseComposeIls.setTitle(c.indicatifPasseComposeIls, for: .normal)
-        indicatifImperfaitJe.setTitle(c.indicatifImperfaitJe, for: .normal)
-        indicatifImperfaitTu.setTitle(c.indicatifImperfaitTu, for: .normal)
-        indicatifImperfaitIl.setTitle(c.indicatifImperfaitIl, for: .normal)
-        indicatifImperfaitNous.setTitle(c.indicatifImperfaitNous, for: .normal)
-        indicatifImperfaitVous.setTitle(c.indicatifImperfaitVous, for: .normal)
-        indicatifImperfaitIls.setTitle(c.indicatifImperfaitIls, for: .normal)
-        indicatifPlusQueParfaitJe.setTitle(c.indicatifPlusQueParfaitJe, for: .normal)
-        indicatifPlusQueParfaitTu.setTitle(c.indicatifPlusQueParfaitTu, for: .normal)
-        indicatifPlusQueParfaitIl.setTitle(c.indicatifPlusQueParfaitIl, for: .normal)
-        indicatifPlusQueParfaitNous.setTitle(c.indicatifPlusQueParfaitNous, for: .normal)
-        indicatifPlusQueParfaitVous.setTitle(c.indicatifPlusQueParfaitVous, for: .normal)
-        indicatifPlusQueParfaitIls.setTitle(c.indicatifPlusQueParfaitIls, for: .normal)
-        indicatifPasseSimpleJe.setTitle(c.indicatifPasseSimpleJe, for: .normal)
-        indicatifPasseSimpleTu.setTitle(c.indicatifPasseSimpleTu, for: .normal)
-        indicatifPasseSimpleIl.setTitle(c.indicatifPasseSimpleIl, for: .normal)
-        indicatifPasseSimpleNous.setTitle(c.indicatifPasseSimpleNous, for: .normal)
-        indicatifPasseSimpleVous.setTitle(c.indicatifPasseSimpleVous, for: .normal)
-        indicatifPasseSimpleIls.setTitle(c.indicatifPasseSimpleIls, for: .normal)
-        indicatifPasseAnterieurJe.setTitle(c.indicatifPasseAnterieurJe, for: .normal)
-        indicatifPasseAnterieurTu.setTitle(c.indicatifPasseAnterieurTu, for: .normal)
-        indicatifPasseAnterieurIl.setTitle(c.indicatifPasseAnterieurIl, for: .normal)
-        indicatifPasseAnterieurNous.setTitle(c.indicatifPasseAnterieurNous, for: .normal)
-        indicatifPasseAnterieurVous.setTitle(c.indicatifPasseAnterieurVous, for: .normal)
-        indicatifPasseAnterieurIls.setTitle(c.indicatifPasseAnterieurIls, for: .normal)
-        indicatifFuturSimpleJe.setTitle(c.indicatifFuturSimpleJe, for: .normal)
-        indicatifFuturSimpleTu.setTitle(c.indicatifFuturSimpleTu, for: .normal)
-        indicatifFuturSimpleIl.setTitle(c.indicatifFuturSimpleIl, for: .normal)
-        indicatifFuturSimpleNous.setTitle(c.indicatifFuturSimpleNous, for: .normal)
-        indicatifFuturSimpleVous.setTitle(c.indicatifFuturSimpleVous, for: .normal)
-        indicatifFuturSimpleIls.setTitle(c.indicatifFuturSimpleIls, for: .normal)
-        indicatifFuturAnterieurJe.setTitle(c.indicatifFuturAnterieurJe, for: .normal)
-        indicatifFuturAnterieurTu.setTitle(c.indicatifFuturAnterieurTu, for: .normal)
-        indicatifFuturAnterieurIl.setTitle(c.indicatifFuturAnterieurIl, for: .normal)
-        indicatifFuturAnterieurNous.setTitle(c.indicatifFuturAnterieurNous, for: .normal)
-        indicatifFuturAnterieurVous.setTitle(c.indicatifFuturAnterieurVous, for: .normal)
-        indicatifFuturAnterieurIls.setTitle(c.indicatifFuturAnterieurIls, for: .normal)
+        indicatifPresentJe.setTitle(c.indikativPrasensIch, for: .normal)
+        indicatifPresentTu.setTitle(c.indikativPrasensDu, for: .normal)
+        indicatifPresentIl.setTitle(c.indikativPrasensEr, for: .normal)
+        indicatifPresentNous.setTitle(c.indikativPrasensWir, for: .normal)
+        indicatifPresentVous.setTitle(c.indikativPrasensIhr, for: .normal)
+        indicatifPresentIls.setTitle(c.indikativPrasensSie, for: .normal)
+        indicatifPasseComposeJe.setTitle(c.indikativPrateritumIch, for: .normal)
+        indicatifPasseComposeTu.setTitle(c.indikativPrateritumDu, for: .normal)
+        indicatifPasseComposeIl.setTitle(c.indikativPrateritumEr, for: .normal)
+        indicatifPasseComposeNous.setTitle(c.indikativPrateritumWir, for: .normal)
+        indicatifPasseComposeVous.setTitle(c.indikativPrateritumIhr, for: .normal)
+        indicatifPasseComposeIls.setTitle(c.indikativPrateritumSie, for: .normal)
+        indicatifImperfaitJe.setTitle(c.indikativPerfektIch, for: .normal)
+        indicatifImperfaitTu.setTitle(c.indikativPerfektDu, for: .normal)
+        indicatifImperfaitIl.setTitle(c.indikativPerfektEr, for: .normal)
+        indicatifImperfaitNous.setTitle(c.indikativPerfektWir, for: .normal)
+        indicatifImperfaitVous.setTitle(c.indikativPerfektIhr, for: .normal)
+        indicatifImperfaitIls.setTitle(c.indikativPerfektSie, for: .normal)
+        indicatifPlusQueParfaitJe.setTitle(c.indikativPlusquamperfektIch, for: .normal)
+        indicatifPlusQueParfaitTu.setTitle(c.indikativPlusquamperfektDu, for: .normal)
+        indicatifPlusQueParfaitIl.setTitle(c.indikativPlusquamperfektEr, for: .normal)
+        indicatifPlusQueParfaitNous.setTitle(c.indikativPlusquamperfektWir, for: .normal)
+        indicatifPlusQueParfaitVous.setTitle(c.indikativPlusquamperfektIhr, for: .normal)
+        indicatifPlusQueParfaitIls.setTitle(c.indikativPlusquamperfektSie, for: .normal)
+        indicatifPasseSimpleJe.setTitle(c.indikativFutur1Ich, for: .normal)
+        indicatifPasseSimpleTu.setTitle(c.indikativFutur1Du, for: .normal)
+        indicatifPasseSimpleIl.setTitle(c.indikativFutur1Er, for: .normal)
+        indicatifPasseSimpleNous.setTitle(c.indikativFutur1Wir, for: .normal)
+        indicatifPasseSimpleVous.setTitle(c.indikativFutur1Ihr, for: .normal)
+        indicatifPasseSimpleIls.setTitle(c.indikativFutur1Sie, for: .normal)
+        indicatifPasseAnterieurJe.setTitle(c.indikativFutur2Ich, for: .normal)
+        indicatifPasseAnterieurTu.setTitle(c.indikativFutur2Du, for: .normal)
+        indicatifPasseAnterieurIl.setTitle(c.indikativFutur2Er, for: .normal)
+        indicatifPasseAnterieurNous.setTitle(c.indikativFutur2Wir, for: .normal)
+        indicatifPasseAnterieurVous.setTitle(c.indikativFutur2Ihr, for: .normal)
+        indicatifPasseAnterieurIls.setTitle(c.indikativFutur2Sie, for: .normal)
+        indicatifFuturSimpleJe.setTitle(c.konjunktiv1PrasensIch, for: .normal)
+        indicatifFuturSimpleTu.setTitle(c.konjunktiv1PrasensDu, for: .normal)
+        indicatifFuturSimpleIl.setTitle(c.konjunktiv1PrasensEr, for: .normal)
+        indicatifFuturSimpleNous.setTitle(c.konjunktiv1PrasensWir, for: .normal)
+        indicatifFuturSimpleVous.setTitle(c.konjunktiv1PrasensIhr, for: .normal)
+        indicatifFuturSimpleIls.setTitle(c.konjunktiv1PrasensSie, for: .normal)
+        indicatifFuturAnterieurJe.setTitle(c.konjunktiv1PerfektIch, for: .normal)
+        indicatifFuturAnterieurTu.setTitle(c.konjunktiv1PerfektDu, for: .normal)
+        indicatifFuturAnterieurIl.setTitle(c.konjunktiv1PerfektEr, for: .normal)
+        indicatifFuturAnterieurNous.setTitle(c.konjunktiv1PerfektWir, for: .normal)
+        indicatifFuturAnterieurVous.setTitle(c.konjunktiv1PerfektIhr, for: .normal)
+        indicatifFuturAnterieurIls.setTitle(c.konjunktiv1PerfektSie, for: .normal)
         
-        subjonctifPresentJe.setTitle(c.subjonctifPresentJe, for: .normal)
-        subjonctifPresentTu.setTitle(c.subjonctifPresentTu, for: .normal)
-        subjonctifPresentIl.setTitle(c.subjonctifPresentIl, for: .normal)
-        subjonctifPresentNous.setTitle(c.subjonctifPresentNous, for: .normal)
-        subjonctifPresentVous.setTitle(c.subjonctifPresentVous, for: .normal)
-        subjonctifPresentIls.setTitle(c.subjonctifPresentIls, for: .normal)
-        subjonctifPasseJe.setTitle(c.subjonctifPasseJe, for: .normal)
-        subjonctifPasseTu.setTitle(c.subjonctifPasseTu, for: .normal)
-        subjonctifPasseIl.setTitle(c.subjonctifPasseIl, for: .normal)
-        subjonctifPasseNous.setTitle(c.subjonctifPasseNous, for: .normal)
-        subjonctifPasseVous.setTitle(c.subjonctifPasseVous, for: .normal)
-        subjonctifPasseIls.setTitle(c.subjonctifPasseIls, for: .normal)
-        subjonctifImperfaitJe.setTitle(c.subjonctifImperfaitJe, for: .normal)
-        subjonctifImperfaitTu.setTitle(c.subjonctifImperfaitTu, for: .normal)
-        subjonctifImperfaitIl.setTitle(c.subjonctifImperfaitIl, for: .normal)
-        subjonctifImperfaitNous.setTitle(c.subjonctifImperfaitNous, for: .normal)
-        subjonctifImperfaitVous.setTitle(c.subjonctifImperfaitVous, for: .normal)
-        subjonctifImperfaitIls.setTitle(c.subjonctifImperfaitIls, for: .normal)
-        subjonctifPlusQueParfaitJe.setTitle(c.subjonctifPlusQueParfaitJe, for: .normal)
-        subjonctifPlusQueParfaitTu.setTitle(c.subjonctifPlusQueParfaitTu, for: .normal)
-        subjonctifPlusQueParfaitIl.setTitle(c.subjonctifPlusQueParfaitIl, for: .normal)
-        subjonctifPlusQueParfaitNous.setTitle(c.subjonctifPlusQueParfaitNous, for: .normal)
-        subjonctifPlusQueParfaitVous.setTitle(c.subjonctifPlusQueParfaitVous, for: .normal)
-        subjonctifPlusQueParfaitIls.setTitle(c.subjonctifPlusQueParfaitIls, for: .normal)
+        subjonctifPresentJe.setTitle(c.konjunktiv1Futur1Ich, for: .normal)
+        subjonctifPresentTu.setTitle(c.konjunktiv1Futur1Du, for: .normal)
+        subjonctifPresentIl.setTitle(c.konjunktiv1Futur1Er, for: .normal)
+        subjonctifPresentNous.setTitle(c.konjunktiv1Futur1Wir, for: .normal)
+        subjonctifPresentVous.setTitle(c.konjunktiv1Futur1Ihr, for: .normal)
+        subjonctifPresentIls.setTitle(c.konjunktiv1Futur1Sie, for: .normal)
+        subjonctifPasseJe.setTitle(c.konjunktiv1Futur2Ich, for: .normal)
+        subjonctifPasseTu.setTitle(c.konjunktiv1Futur2Du, for: .normal)
+        subjonctifPasseIl.setTitle(c.konjunktiv1Futur2Er, for: .normal)
+        subjonctifPasseNous.setTitle(c.konjunktiv1Futur2Wir, for: .normal)
+        subjonctifPasseVous.setTitle(c.konjunktiv1Futur2Ihr, for: .normal)
+        subjonctifPasseIls.setTitle(c.konjunktiv1Futur2Sie, for: .normal)
+        subjonctifImperfaitJe.setTitle(c.konjunktiv2PrateritumIch, for: .normal)
+        subjonctifImperfaitTu.setTitle(c.konjunktiv2PrateritumDu, for: .normal)
+        subjonctifImperfaitIl.setTitle(c.konjunktiv2PrateritumEr, for: .normal)
+        subjonctifImperfaitNous.setTitle(c.konjunktiv2PrateritumWir, for: .normal)
+        subjonctifImperfaitVous.setTitle(c.konjunktiv2PrateritumIhr, for: .normal)
+        subjonctifImperfaitIls.setTitle(c.konjunktiv2PrateritumSie, for: .normal)
+        subjonctifPlusQueParfaitJe.setTitle(c.konjunktiv2PlusquamperfektIch, for: .normal)
+        subjonctifPlusQueParfaitTu.setTitle(c.konjunktiv2PlusquamperfektDu, for: .normal)
+        subjonctifPlusQueParfaitIl.setTitle(c.konjunktiv2PlusquamperfektEr, for: .normal)
+        subjonctifPlusQueParfaitNous.setTitle(c.konjunktiv2PlusquamperfektWir, for: .normal)
+        subjonctifPlusQueParfaitVous.setTitle(c.konjunktiv2PlusquamperfektIhr, for: .normal)
+        subjonctifPlusQueParfaitIls.setTitle(c.konjunktiv2PlusquamperfektSie, for: .normal)
         
-        conditionnelPresentJe.setTitle(c.conditionnelPresentJe, for: .normal)
-        conditionnelPresentTu.setTitle(c.conditionnelPresentTu, for: .normal)
-        conditionnelPresentIl.setTitle(c.conditionnelPresentIl, for: .normal)
-        conditionnelPresentNous.setTitle(c.conditionnelPresentNous, for: .normal)
-        conditionnelPresentVous.setTitle(c.conditionnelPresentVous, for: .normal)
-        conditionnelPresentIls.setTitle(c.conditionnelPresentIls, for: .normal)
-        conditionnelPasseJe.setTitle(c.conditionnelPasseJe, for: .normal)
-        conditionnelPasseTu.setTitle(c.conditionnelPasseTu, for: .normal)
-        conditionnelPasseIl.setTitle(c.conditionnelPasseIl, for: .normal)
-        conditionnelPasseNous.setTitle(c.conditionnelPasseNous, for: .normal)
-        conditionnelPasseVous.setTitle(c.conditionnelPasseVous, for: .normal)
-        conditionnelPasseIls.setTitle(c.conditionnelPasseIls, for: .normal)
+        conditionnelPresentJe.setTitle(c.konjunktiv2Futur1Ich, for: .normal)
+        conditionnelPresentTu.setTitle(c.konjunktiv2Futur1Du, for: .normal)
+        conditionnelPresentIl.setTitle(c.konjunktiv2Futur1Er, for: .normal)
+        conditionnelPresentNous.setTitle(c.konjunktiv2Futur1Wir, for: .normal)
+        conditionnelPresentVous.setTitle(c.konjunktiv2Futur1Ihr, for: .normal)
+        conditionnelPresentIls.setTitle(c.konjunktiv2Futur1Sie, for: .normal)
+        conditionnelPasseJe.setTitle(c.konjunktiv2Futur2Ich, for: .normal)
+        conditionnelPasseTu.setTitle(c.konjunktiv2Futur2Du, for: .normal)
+        conditionnelPasseIl.setTitle(c.konjunktiv2Futur2Er, for: .normal)
+        conditionnelPasseNous.setTitle(c.konjunktiv2Futur2Wir, for: .normal)
+        conditionnelPasseVous.setTitle(c.konjunktiv2Futur2Ihr, for: .normal)
+        conditionnelPasseIls.setTitle(c.konjunktiv2Futur2Sie, for: .normal)
     }
     
     private func setAdjustsFontForContentSizeCategory() {
@@ -2801,119 +2801,119 @@ class VerbDetailsViewController: UIViewController {
     private func createShareText() -> String {
         let text : String = "Verb: \(verb.infinitive)\nGroupe: \(verb.type)\n\nDéfinition:\n\(verb.definition)\n\nExemples:\n1. \(verb.sample1)\n2. \(verb.sample2)\n3. \(verb.sample3)"
             + "\n\nIndicatif Présent:"
-            + "\n" + conjugation.indicatifPresentJe
-            + "\n" + conjugation.indicatifPresentTu
-            + "\n" + conjugation.indicatifPresentIl
-            + "\n" + conjugation.indicatifPresentNous
-            + "\n" + conjugation.indicatifPresentVous
-            + "\n" + conjugation.indicatifPresentIls
+            + "\n" + conjugation.indikativPrasensIch
+            + "\n" + conjugation.indikativPrasensDu
+            + "\n" + conjugation.indikativPrasensEr
+            + "\n" + conjugation.indikativPrasensWir
+            + "\n" + conjugation.indikativPrasensIhr
+            + "\n" + conjugation.indikativPrasensSie
             + "\n\nIndicatif Passé Composé:"
-            + "\n" + conjugation.indicatifPasseComposeJe
-            + "\n" + conjugation.indicatifPasseComposeTu
-            + "\n" + conjugation.indicatifPasseComposeIl
-            + "\n" + conjugation.indicatifPasseComposeNous
-            + "\n" + conjugation.indicatifPasseComposeVous
-            + "\n" + conjugation.indicatifPasseComposeIls
+            + "\n" + conjugation.indikativPrateritumIch
+            + "\n" + conjugation.indikativPrateritumDu
+            + "\n" + conjugation.indikativPrateritumEr
+            + "\n" + conjugation.indikativPrateritumWir
+            + "\n" + conjugation.indikativPrateritumIhr
+            + "\n" + conjugation.indikativPrateritumSie
             + "\n\nIndicatif Imparfait:"
-            + "\n" + conjugation.indicatifImperfaitJe
-            + "\n" + conjugation.indicatifImperfaitTu
-            + "\n" + conjugation.indicatifImperfaitIl
-            + "\n" + conjugation.indicatifImperfaitNous
-            + "\n" + conjugation.indicatifImperfaitVous
-            + "\n" + conjugation.indicatifImperfaitIls
+            + "\n" + conjugation.indikativPerfektIch
+            + "\n" + conjugation.indikativPerfektDu
+            + "\n" + conjugation.indikativPerfektEr
+            + "\n" + conjugation.indikativPerfektWir
+            + "\n" + conjugation.indikativPerfektIhr
+            + "\n" + conjugation.indikativPerfektSie
             + "\n\nIndicatif Plus-Que-Parfait:"
-            + "\n" + conjugation.indicatifPlusQueParfaitJe
-            + "\n" + conjugation.indicatifPlusQueParfaitTu
-            + "\n" + conjugation.indicatifPlusQueParfaitIl
-            + "\n" + conjugation.indicatifPlusQueParfaitNous
-            + "\n" + conjugation.indicatifPlusQueParfaitVous
-            + "\n" + conjugation.indicatifPlusQueParfaitIls
+            + "\n" + conjugation.indikativPlusquamperfektIch
+            + "\n" + conjugation.indikativPlusquamperfektDu
+            + "\n" + conjugation.indikativPlusquamperfektEr
+            + "\n" + conjugation.indikativPlusquamperfektWir
+            + "\n" + conjugation.indikativPlusquamperfektIhr
+            + "\n" + conjugation.indikativPlusquamperfektSie
             + "\n\nIndicatif Passé Simple:"
-            + "\n" + conjugation.indicatifPasseSimpleJe
-            + "\n" + conjugation.indicatifPasseSimpleTu
-            + "\n" + conjugation.indicatifPasseSimpleIl
-            + "\n" + conjugation.indicatifPasseSimpleNous
-            + "\n" + conjugation.indicatifPasseSimpleVous
-            + "\n" + conjugation.indicatifPasseSimpleIls
+            + "\n" + conjugation.indikativFutur1Ich
+            + "\n" + conjugation.indikativFutur1Du
+            + "\n" + conjugation.indikativFutur1Er
+            + "\n" + conjugation.indikativFutur1Wir
+            + "\n" + conjugation.indikativFutur1Ihr
+            + "\n" + conjugation.indikativFutur1Sie
             + "\n\nIndicatif Passé Antérieur:"
-            + "\n" + conjugation.indicatifPasseAnterieurJe
-            + "\n" + conjugation.indicatifPasseAnterieurTu
-            + "\n" + conjugation.indicatifPasseAnterieurIl
-            + "\n" + conjugation.indicatifPasseAnterieurNous
-            + "\n" + conjugation.indicatifPasseAnterieurVous
-            + "\n" + conjugation.indicatifPasseAnterieurIls
+            + "\n" + conjugation.indikativFutur2Ich
+            + "\n" + conjugation.indikativFutur2Du
+            + "\n" + conjugation.indikativFutur2Er
+            + "\n" + conjugation.indikativFutur2Wir
+            + "\n" + conjugation.indikativFutur2Ihr
+            + "\n" + conjugation.indikativFutur2Sie
             + "\n\nIndicatif Futur Simple:"
-            + "\n" + conjugation.indicatifFuturSimpleJe
-            + "\n" + conjugation.indicatifFuturSimpleTu
-            + "\n" + conjugation.indicatifFuturSimpleIl
-            + "\n" + conjugation.indicatifFuturSimpleNous
-            + "\n" + conjugation.indicatifFuturSimpleVous
-            + "\n" + conjugation.indicatifFuturSimpleIls
+            + "\n" + conjugation.konjunktiv1PrasensIch
+            + "\n" + conjugation.konjunktiv1PrasensDu
+            + "\n" + conjugation.konjunktiv1PrasensEr
+            + "\n" + conjugation.konjunktiv1PrasensWir
+            + "\n" + conjugation.konjunktiv1PrasensIhr
+            + "\n" + conjugation.konjunktiv1PrasensSie
             + "\n\nIndicatif Futur Antérieur:"
-            + "\n" + conjugation.indicatifFuturAnterieurJe
-            + "\n" + conjugation.indicatifFuturAnterieurTu
-            + "\n" + conjugation.indicatifFuturAnterieurIl
-            + "\n" + conjugation.indicatifFuturAnterieurNous
-            + "\n" + conjugation.indicatifFuturAnterieurVous
-            + "\n" + conjugation.indicatifFuturAnterieurIls
+            + "\n" + conjugation.konjunktiv1PerfektIch
+            + "\n" + conjugation.konjunktiv1PerfektDu
+            + "\n" + conjugation.konjunktiv1PerfektEr
+            + "\n" + conjugation.konjunktiv1PerfektWir
+            + "\n" + conjugation.konjunktiv1PerfektIhr
+            + "\n" + conjugation.konjunktiv1PerfektSie
             + "\n\nConditionnel Présent:"
-            + "\n" + conjugation.conditionnelPresentJe
-            + "\n" + conjugation.conditionnelPresentTu
-            + "\n" + conjugation.conditionnelPresentIl
-            + "\n" + conjugation.conditionnelPresentNous
-            + "\n" + conjugation.conditionnelPresentVous
-            + "\n" + conjugation.conditionnelPresentIls
+            + "\n" + conjugation.konjunktiv2Futur1Ich
+            + "\n" + conjugation.konjunktiv2Futur1Du
+            + "\n" + conjugation.konjunktiv2Futur1Er
+            + "\n" + conjugation.konjunktiv2Futur1Wir
+            + "\n" + conjugation.konjunktiv2Futur1Ihr
+            + "\n" + conjugation.konjunktiv2Futur1Sie
             + "\n\nConditionnel Passé:"
-            + "\n" + conjugation.conditionnelPasseJe
-            + "\n" + conjugation.conditionnelPasseTu
-            + "\n" + conjugation.conditionnelPasseIl
-            + "\n" + conjugation.conditionnelPasseNous
-            + "\n" + conjugation.conditionnelPasseVous
-            + "\n" + conjugation.conditionnelPasseIls
+            + "\n" + conjugation.konjunktiv2Futur2Ich
+            + "\n" + conjugation.konjunktiv2Futur2Du
+            + "\n" + conjugation.konjunktiv2Futur2Er
+            + "\n" + conjugation.konjunktiv2Futur2Wir
+            + "\n" + conjugation.konjunktiv2Futur2Ihr
+            + "\n" + conjugation.konjunktiv2Futur2Sie
             + "\n\nSubjonctif Présent:"
-            + "\n" + conjugation.subjonctifPresentJe
-            + "\n" + conjugation.subjonctifPresentTu
-            + "\n" + conjugation.subjonctifPresentIl
-            + "\n" + conjugation.subjonctifPresentNous
-            + "\n" + conjugation.subjonctifPresentVous
-            + "\n" + conjugation.subjonctifPresentIls
+            + "\n" + conjugation.konjunktiv1Futur1Ich
+            + "\n" + conjugation.konjunktiv1Futur1Du
+            + "\n" + conjugation.konjunktiv1Futur1Er
+            + "\n" + conjugation.konjunktiv1Futur1Wir
+            + "\n" + conjugation.konjunktiv1Futur1Ihr
+            + "\n" + conjugation.konjunktiv1Futur1Sie
             + "\n\nSubjonctif Passé:"
-            + "\n" + conjugation.subjonctifPasseJe
-            + "\n" + conjugation.subjonctifPasseTu
-            + "\n" + conjugation.subjonctifPasseIl
-            + "\n" + conjugation.subjonctifPasseNous
-            + "\n" + conjugation.subjonctifPasseVous
-            + "\n" + conjugation.subjonctifPasseIls
+            + "\n" + conjugation.konjunktiv1Futur2Ich
+            + "\n" + conjugation.konjunktiv1Futur2Du
+            + "\n" + conjugation.konjunktiv1Futur2Er
+            + "\n" + conjugation.konjunktiv1Futur2Wir
+            + "\n" + conjugation.konjunktiv1Futur2Ihr
+            + "\n" + conjugation.konjunktiv1Futur2Sie
             + "\n\nSubjonctif Imparfait:"
-            + "\n" + conjugation.subjonctifImperfaitJe
-            + "\n" + conjugation.subjonctifImperfaitTu
-            + "\n" + conjugation.subjonctifImperfaitIl
-            + "\n" + conjugation.subjonctifImperfaitNous
-            + "\n" + conjugation.subjonctifImperfaitVous
-            + "\n" + conjugation.subjonctifImperfaitIls
+            + "\n" + conjugation.konjunktiv2PrateritumIch
+            + "\n" + conjugation.konjunktiv2PrateritumDu
+            + "\n" + conjugation.konjunktiv2PrateritumEr
+            + "\n" + conjugation.konjunktiv2PrateritumWir
+            + "\n" + conjugation.konjunktiv2PrateritumIhr
+            + "\n" + conjugation.konjunktiv2PrateritumSie
             + "\n\nSubjonctif Plus-Que-Parfait:"
-            + "\n" + conjugation.subjonctifPlusQueParfaitJe
-            + "\n" + conjugation.subjonctifPlusQueParfaitTu
-            + "\n" + conjugation.subjonctifPlusQueParfaitIl
-            + "\n" + conjugation.subjonctifPlusQueParfaitNous
-            + "\n" + conjugation.subjonctifPlusQueParfaitVous
-            + "\n" + conjugation.subjonctifPlusQueParfaitIls
+            + "\n" + conjugation.konjunktiv2PlusquamperfektIch
+            + "\n" + conjugation.konjunktiv2PlusquamperfektDu
+            + "\n" + conjugation.konjunktiv2PlusquamperfektEr
+            + "\n" + conjugation.konjunktiv2PlusquamperfektWir
+            + "\n" + conjugation.konjunktiv2PlusquamperfektIhr
+            + "\n" + conjugation.konjunktiv2PlusquamperfektSie
             + "\n\nImparfait Présent:"
-            + "\n" + conjugation.imperatifPresentTu
-            + "\n" + conjugation.imperatifPresentNous
-            + "\n" + conjugation.imperatifPresentVous
+            + "\n" + conjugation.imperativDu
+            + "\n" + conjugation.imperativIhr
+            + "\n" + conjugation.imperativSie
             + "\n\nImparfait Passé:"
             + "\n" + conjugation.imperatifPasseTu
             + "\n" + conjugation.imperatifPasseNous
             + "\n" + conjugation.imperatifPasseVous
             + "\n\nInfinitif Présent:"
-            + "\n" + conjugation.infinitivePresent
+            + "\n" + conjugation.infinitivPrasens
             + "\n\nInfinitif Passé:"
-            + "\n" + conjugation.infinitivePasse
+            + "\n" + conjugation.infinitivPerfekt
             + "\n\nParticipe Présent:"
-            + "\n" + conjugation.participePresent
+            + "\n" + conjugation.partizipPrasens
             + "\n\nParticipe Passé:"
-            + "\n" + conjugation.participePasse1
+            + "\n" + conjugation.partizipPerfekt
             + "\n" + conjugation.participePasse2
             + "\n\nGérondif Présent:"
             + "\n" + conjugation.gerondifPresent
