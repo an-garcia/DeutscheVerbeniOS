@@ -53,11 +53,11 @@ class ViewUtils {
         var addByGroup = true
         switch group {
         case Constants.GROUP1:
-            addByGroup =  verb.group == 1
+            addByGroup =  verb.type == 1
         case Constants.GROUP2:
-            addByGroup =  verb.group == 2
+            addByGroup =  verb.type == 2
         case Constants.GROUP3:
-            addByGroup =  verb.group == 3
+            addByGroup =  verb.type == 3
         default:
             break
         }
@@ -91,10 +91,10 @@ class ViewUtils {
         } else {
             // sort by group and then by alphabeth
             verbs = verbs.sorted(by: { t1, t2 in
-                if t1.group == t2.group {
+                if t1.type == t2.type {
                     return t1.infinitive < t2.infinitive
                 }
-                return t1.group < t2.group
+                return t1.type < t2.type
             })
         }
     }
@@ -174,9 +174,9 @@ class ViewUtils {
         case Constants.ENGLISH:
             translation = verb.translationEN
         case Constants.SPANISH:
-            translation = verb.translationES
+            translation = verb.translationFR
         case Constants.PORTUGUESE:
-            translation = verb.translationPT
+            translation = verb.translationES
         default:
             break
         }

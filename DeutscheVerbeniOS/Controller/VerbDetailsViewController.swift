@@ -182,7 +182,7 @@ class VerbDetailsViewController: UIViewController {
         let lang : String = translationLanguage != nil ? translationLanguage! : Constants.ENGLISH
         translation.text = ViewUtils.getTranslation(verb, lang)
         // TODO: Set better string
-        group.text = "\(verb.group) group"
+        group.text = "\(verb.type) group"
         
         definition.setTitle(verb.definition, for: .normal)
         sample1.setTitle(verb.sample1, for: .normal)
@@ -2799,7 +2799,7 @@ class VerbDetailsViewController: UIViewController {
      * Create the text to share.
      */
     private func createShareText() -> String {
-        let text : String = "Verb: \(verb.infinitive)\nGroupe: \(verb.group)\n\nDéfinition:\n\(verb.definition)\n\nExemples:\n1. \(verb.sample1)\n2. \(verb.sample2)\n3. \(verb.sample3)"
+        let text : String = "Verb: \(verb.infinitive)\nGroupe: \(verb.type)\n\nDéfinition:\n\(verb.definition)\n\nExemples:\n1. \(verb.sample1)\n2. \(verb.sample2)\n3. \(verb.sample3)"
             + "\n\nIndicatif Présent:"
             + "\n" + conjugation.indicatifPresentJe
             + "\n" + conjugation.indicatifPresentTu
