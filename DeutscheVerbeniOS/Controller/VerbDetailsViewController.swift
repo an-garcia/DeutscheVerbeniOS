@@ -189,7 +189,7 @@ class VerbDetailsViewController: UIViewController {
         let lang : String = translationLanguage != nil ? translationLanguage! : Constants.ENGLISH
         translation.text = ViewUtils.getTranslation(verb, lang)
         // TODO: Set better string
-        type.text = "\(verb.type) type"
+        type.text = getVerbTypeString()
         principalParts.text = verb.pastHe + ", " + verb.pastParticiple + ", " + verb.presentHe
         
         definition.setTitle(verb.definition, for: .normal)
@@ -2777,121 +2777,132 @@ class VerbDetailsViewController: UIViewController {
         self.present(activityVC, animated: true, completion: nil)
     }
     
+    private func getVerbTypeString() -> String {
+        switch (verb.type) {
+            case 1: return "schwaches"
+            case 2: return "starkes"
+            case 3: return "unregelmäßiges"
+            default: return "schwaches"
+        }
+    }
+    
     /**
      * Create the text to share.
      */
     private func createShareText() -> String {
-        let text : String = "Verb: \(verb.infinitive)\nGroupe: \(verb.type)\n\nDéfinition:\n\(verb.definition)\n\nExemples:\n1. \(verb.sample1)\n2. \(verb.sample2)\n3. \(verb.sample3)"
-            + "\n\nIndicatif Présent:"
+        let text : String = "Verbe: \(verb.infinitive)"
+            + "\n\nInfinitiv Präsens: \(conjugation.infinitivPrasens)"
+            + "\nInfinitiv Perfekt: \(conjugation.infinitivPerfekt)"
+            + "\nPartizip Präsens: \(conjugation.partizipPrasens)"
+            + "\nPartizip Perfekt: \(conjugation.partizipPerfekt)"
+            + "\n\nTyp: " + getVerbTypeString()
+            + "\n\nDéfinition:\n\(verb.definition)"
+            + "\n\nBeispiele:"
+            + "\n 1. \(verb.sample1)"
+            + "\n 2. \(verb.sample2)"
+            + "\n 3. \(verb.sample3)"
+            + "\n\nImperativ:"
+            + "\n" + conjugation.imperativDu
+            + "\n" + conjugation.imperativIhr
+            + "\n" + conjugation.imperativSie
+            + "\n\nIndikativ Präsens:"
             + "\n" + conjugation.indikativPrasensIch
             + "\n" + conjugation.indikativPrasensDu
             + "\n" + conjugation.indikativPrasensEr
             + "\n" + conjugation.indikativPrasensWir
             + "\n" + conjugation.indikativPrasensIhr
             + "\n" + conjugation.indikativPrasensSie
-            + "\n\nIndicatif Passé Composé:"
+            + "\n\nIndikativ Präteritum:"
             + "\n" + conjugation.indikativPrateritumIch
             + "\n" + conjugation.indikativPrateritumDu
             + "\n" + conjugation.indikativPrateritumEr
             + "\n" + conjugation.indikativPrateritumWir
             + "\n" + conjugation.indikativPrateritumIhr
             + "\n" + conjugation.indikativPrateritumSie
-            + "\n\nIndicatif Imparfait:"
+            + "\n\nIndikativ Perfekt:"
             + "\n" + conjugation.indikativPerfektIch
             + "\n" + conjugation.indikativPerfektDu
             + "\n" + conjugation.indikativPerfektEr
             + "\n" + conjugation.indikativPerfektWir
             + "\n" + conjugation.indikativPerfektIhr
             + "\n" + conjugation.indikativPerfektSie
-            + "\n\nIndicatif Plus-Que-Parfait:"
+            + "\n\nIndikativ Plusquamperfekt:"
             + "\n" + conjugation.indikativPlusquamperfektIch
             + "\n" + conjugation.indikativPlusquamperfektDu
             + "\n" + conjugation.indikativPlusquamperfektEr
             + "\n" + conjugation.indikativPlusquamperfektWir
             + "\n" + conjugation.indikativPlusquamperfektIhr
             + "\n" + conjugation.indikativPlusquamperfektSie
-            + "\n\nIndicatif Passé Simple:"
+            + "\n\nIndikativ Futur I:"
             + "\n" + conjugation.indikativFutur1Ich
             + "\n" + conjugation.indikativFutur1Du
             + "\n" + conjugation.indikativFutur1Er
             + "\n" + conjugation.indikativFutur1Wir
             + "\n" + conjugation.indikativFutur1Ihr
             + "\n" + conjugation.indikativFutur1Sie
-            + "\n\nIndicatif Passé Antérieur:"
+            + "\n\nIndikativ Futur II:"
             + "\n" + conjugation.indikativFutur2Ich
             + "\n" + conjugation.indikativFutur2Du
             + "\n" + conjugation.indikativFutur2Er
             + "\n" + conjugation.indikativFutur2Wir
             + "\n" + conjugation.indikativFutur2Ihr
             + "\n" + conjugation.indikativFutur2Sie
-            + "\n\nIndicatif Futur Simple:"
+            + "\n\nKonjunktiv I Präsens:"
             + "\n" + conjugation.konjunktiv1PrasensIch
             + "\n" + conjugation.konjunktiv1PrasensDu
             + "\n" + conjugation.konjunktiv1PrasensEr
             + "\n" + conjugation.konjunktiv1PrasensWir
             + "\n" + conjugation.konjunktiv1PrasensIhr
             + "\n" + conjugation.konjunktiv1PrasensSie
-            + "\n\nIndicatif Futur Antérieur:"
+            + "\n\nKonjunktiv I Perfekt:"
             + "\n" + conjugation.konjunktiv1PerfektIch
             + "\n" + conjugation.konjunktiv1PerfektDu
             + "\n" + conjugation.konjunktiv1PerfektEr
             + "\n" + conjugation.konjunktiv1PerfektWir
             + "\n" + conjugation.konjunktiv1PerfektIhr
             + "\n" + conjugation.konjunktiv1PerfektSie
-            + "\n\nConditionnel Présent:"
-            + "\n" + conjugation.konjunktiv2Futur1Ich
-            + "\n" + conjugation.konjunktiv2Futur1Du
-            + "\n" + conjugation.konjunktiv2Futur1Er
-            + "\n" + conjugation.konjunktiv2Futur1Wir
-            + "\n" + conjugation.konjunktiv2Futur1Ihr
-            + "\n" + conjugation.konjunktiv2Futur1Sie
-            + "\n\nConditionnel Passé:"
-            + "\n" + conjugation.konjunktiv2Futur2Ich
-            + "\n" + conjugation.konjunktiv2Futur2Du
-            + "\n" + conjugation.konjunktiv2Futur2Er
-            + "\n" + conjugation.konjunktiv2Futur2Wir
-            + "\n" + conjugation.konjunktiv2Futur2Ihr
-            + "\n" + conjugation.konjunktiv2Futur2Sie
-            + "\n\nSubjonctif Présent:"
+            + "\n\nKonjunktiv I Futur I:"
             + "\n" + conjugation.konjunktiv1Futur1Ich
             + "\n" + conjugation.konjunktiv1Futur1Du
             + "\n" + conjugation.konjunktiv1Futur1Er
             + "\n" + conjugation.konjunktiv1Futur1Wir
             + "\n" + conjugation.konjunktiv1Futur1Ihr
             + "\n" + conjugation.konjunktiv1Futur1Sie
-            + "\n\nSubjonctif Passé:"
+            + "\n\nKonjunktiv I Futur II:"
             + "\n" + conjugation.konjunktiv1Futur2Ich
             + "\n" + conjugation.konjunktiv1Futur2Du
             + "\n" + conjugation.konjunktiv1Futur2Er
             + "\n" + conjugation.konjunktiv1Futur2Wir
             + "\n" + conjugation.konjunktiv1Futur2Ihr
             + "\n" + conjugation.konjunktiv1Futur2Sie
-            + "\n\nSubjonctif Imparfait:"
+            + "\n\nKonjunktiv II Präteritum:"
             + "\n" + conjugation.konjunktiv2PrateritumIch
             + "\n" + conjugation.konjunktiv2PrateritumDu
             + "\n" + conjugation.konjunktiv2PrateritumEr
             + "\n" + conjugation.konjunktiv2PrateritumWir
             + "\n" + conjugation.konjunktiv2PrateritumIhr
             + "\n" + conjugation.konjunktiv2PrateritumSie
-            + "\n\nSubjonctif Plus-Que-Parfait:"
+            + "\n\nKonjunktiv II Plusquamperfekt:"
             + "\n" + conjugation.konjunktiv2PlusquamperfektIch
             + "\n" + conjugation.konjunktiv2PlusquamperfektDu
             + "\n" + conjugation.konjunktiv2PlusquamperfektEr
             + "\n" + conjugation.konjunktiv2PlusquamperfektWir
             + "\n" + conjugation.konjunktiv2PlusquamperfektIhr
             + "\n" + conjugation.konjunktiv2PlusquamperfektSie
-            + "\n\nImparfait Présent:"
-            + "\n" + conjugation.imperativDu
-            + "\n" + conjugation.imperativIhr
-            + "\n" + conjugation.imperativSie
-            + "\n\nInfinitif Présent:"
-            + "\n" + conjugation.infinitivPrasens
-            + "\n\nInfinitif Passé:"
-            + "\n" + conjugation.infinitivPerfekt
-            + "\n\nParticipe Présent:"
-            + "\n" + conjugation.partizipPrasens
-            + "\n\nParticipe Passé:"
-            + "\n" + conjugation.partizipPerfekt
+            + "\n\nKonjunktiv II Futur I:"
+            + "\n" + conjugation.konjunktiv2Futur1Ich
+            + "\n" + conjugation.konjunktiv2Futur1Du
+            + "\n" + conjugation.konjunktiv2Futur1Er
+            + "\n" + conjugation.konjunktiv2Futur1Wir
+            + "\n" + conjugation.konjunktiv2Futur1Ihr
+            + "\n" + conjugation.konjunktiv2Futur1Sie
+            + "\n\nKonjunktiv II Futur II:"
+            + "\n" + conjugation.konjunktiv2Futur2Ich
+            + "\n" + conjugation.konjunktiv2Futur2Du
+            + "\n" + conjugation.konjunktiv2Futur2Er
+            + "\n" + conjugation.konjunktiv2Futur2Wir
+            + "\n" + conjugation.konjunktiv2Futur2Ihr
+            + "\n" + conjugation.konjunktiv2Futur2Sie
         return text
     }
 }
