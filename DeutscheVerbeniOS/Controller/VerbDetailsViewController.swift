@@ -19,6 +19,7 @@ class VerbDetailsViewController: UIViewController {
     
     @IBOutlet weak var infinitive : UIButton!
     @IBOutlet weak var type : UILabel!
+    @IBOutlet weak var principalParts : UILabel!
     @IBOutlet weak var translation : UILabel!
     @IBOutlet weak var definitionLabel : UILabel!
     @IBOutlet weak var definition : UIButton!
@@ -189,6 +190,7 @@ class VerbDetailsViewController: UIViewController {
         translation.text = ViewUtils.getTranslation(verb, lang)
         // TODO: Set better string
         type.text = "\(verb.type) type"
+        principalParts.text = verb.pastHe + ", " + verb.pastParticiple + ", " + verb.presentHe
         
         definition.setTitle(verb.definition, for: .normal)
         sample1.setTitle(verb.sample1, for: .normal)

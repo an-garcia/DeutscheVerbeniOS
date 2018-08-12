@@ -312,10 +312,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="9U7-9P-UgP" userLabel="VerbDetails Stack View">
-                                                <rect key="frame" x="8" y="8" width="359" height="2505.5"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="2534"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8d1-Xl-yrm" userLabel="Details Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="482.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="511"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="B1R-HM-WYS" userLabel="Infinitive Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="33"/>
@@ -336,23 +336,29 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="principalParts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za4-Lg-xtf">
+                                                                <rect key="frame" x="0.0" y="41" width="105" height="20.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verb_teach" translatesAutoresizingMaskIntoConstraints="NO" id="J1v-Z5-r9a">
-                                                                <rect key="frame" x="0.0" y="41" width="359" height="192"/>
+                                                                <rect key="frame" x="0.0" y="69.5" width="359" height="192"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UES-hN-glN">
-                                                                <rect key="frame" x="0.0" y="241" width="42" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="269.5" width="42" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Definition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blc-Rf-Var">
-                                                                <rect key="frame" x="0.0" y="269.5" width="73" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="298" width="73" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-5R-1p3">
-                                                                <rect key="frame" x="0.0" y="298" width="51" height="33"/>
+                                                                <rect key="frame" x="0.0" y="326.5" width="51" height="33"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
@@ -360,13 +366,13 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Examples" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmd-xl-9Ng">
-                                                                <rect key="frame" x="0.0" y="339" width="73.5" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="367.5" width="73.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xXN-K8-Wde">
-                                                                <rect key="frame" x="0.0" y="367.5" width="51" height="33"/>
+                                                                <rect key="frame" x="0.0" y="396" width="51" height="33"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
@@ -374,7 +380,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FvP-cZ-lGa">
-                                                                <rect key="frame" x="0.0" y="408.5" width="51" height="33"/>
+                                                                <rect key="frame" x="0.0" y="437" width="51" height="33"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
@@ -382,7 +388,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3H5-19-O41">
-                                                                <rect key="frame" x="0.0" y="449.5" width="51" height="33"/>
+                                                                <rect key="frame" x="0.0" y="478" width="51" height="33"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
@@ -401,7 +407,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="teq-it-rfk" userLabel="Conjugation Stack View">
-                                                        <rect key="frame" x="0.0" y="506.5" width="359" height="1999"/>
+                                                        <rect key="frame" x="0.0" y="535" width="359" height="1999"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INDIKATIV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xt-6m-YCh">
                                                                 <rect key="frame" x="138" y="0.0" width="83" height="20.5"/>
@@ -1697,6 +1703,7 @@
                         <outlet property="konjunktiv2PrateritumWir" destination="Mj4-IU-1g2" id="l4x-bn-Uj0"/>
                         <outlet property="partizipPerfekt" destination="JJY-in-pOW" id="FKD-6E-zML"/>
                         <outlet property="partizipPrasens" destination="32G-tg-oPb" id="MBR-FQ-Ipu"/>
+                        <outlet property="principalParts" destination="za4-Lg-xtf" id="AXc-N7-y9Z"/>
                         <outlet property="sample1" destination="xXN-K8-Wde" id="wJs-qG-sBN"/>
                         <outlet property="sample2" destination="FvP-cZ-lGa" id="N7c-5Y-cbk"/>
                         <outlet property="sample3" destination="3H5-19-O41" id="zra-wO-YfQ"/>
