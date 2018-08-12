@@ -2743,15 +2743,16 @@ class VerbDetailsViewController: UIViewController {
              indikativFutur1Wir, indikativFutur1Ihr, indikativFutur1Sie,
              indikativFutur2Ich, indikativFutur2Du, indikativFutur2Er,
              indikativFutur2Wir, indikativFutur2Ihr, indikativFutur2Sie,
+             
              konjunktiv1PrasensIch, konjunktiv1PrasensDu, konjunktiv1PrasensEr,
              konjunktiv1PrasensWir, konjunktiv1PrasensIhr, konjunktiv1PrasensSie,
              konjunktiv1PerfektIch, konjunktiv1PerfektDu, konjunktiv1PerfektEr,
              konjunktiv1PerfektWir, konjunktiv1PerfektIhr, konjunktiv1PerfektSie,
-             
              konjunktiv1Futur1Ich, konjunktiv1Futur1Du, konjunktiv1Futur1Er,
              konjunktiv1Futur1Wir, konjunktiv1Futur1Ihr, konjunktiv1Futur1Sie,
              konjunktiv1Futur2Ich, konjunktiv1Futur2Du, konjunktiv1Futur2Er,
              konjunktiv1Futur2Wir, konjunktiv1Futur2Ihr, konjunktiv1Futur2Sie,
+             
              konjunktiv2PrateritumIch, konjunktiv2PrateritumDu, konjunktiv2PrateritumEr,
              konjunktiv2PrateritumWir, konjunktiv2PrateritumIhr, konjunktiv2PrateritumSie,
              konjunktiv2PlusquamperfektIch, konjunktiv2PlusquamperfektDu, konjunktiv2PlusquamperfektEr,

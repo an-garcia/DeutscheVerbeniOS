@@ -145,8 +145,8 @@ class ViewUtils {
         let languages : [Option] = [
             Option(NSLocalizedString("None", comment: ""), Constants.NONE),
             Option(Constants.STR_ENGLISH, Constants.ENGLISH),
-            Option(Constants.STR_SPANISH, Constants.SPANISH),
-            Option(Constants.STR_FRENCH, Constants.FRENCH)]
+            Option(Constants.STR_FRENCH, Constants.FRENCH),
+            Option(Constants.STR_SPANISH, Constants.SPANISH)]
         return languages
     }
     
