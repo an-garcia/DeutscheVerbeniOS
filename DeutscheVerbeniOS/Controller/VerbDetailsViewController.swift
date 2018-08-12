@@ -18,7 +18,7 @@ class VerbDetailsViewController: UIViewController {
     let speaker = Speaker("fr-FR")
     
     @IBOutlet weak var infinitive : UIButton!
-    @IBOutlet weak var group : UILabel!
+    @IBOutlet weak var type : UILabel!
     @IBOutlet weak var translation : UILabel!
     @IBOutlet weak var definitionLabel : UILabel!
     @IBOutlet weak var definition : UIButton!
@@ -28,106 +28,112 @@ class VerbDetailsViewController: UIViewController {
     @IBOutlet weak var sample3 : UIButton!
     @IBOutlet weak var image : UIImageView!
     
-    @IBOutlet weak var infinitivePresent : UIButton!
-    @IBOutlet weak var infinitivePasse : UIButton!
-    @IBOutlet weak var participePresent : UIButton!
-    @IBOutlet weak var participePasse1 : UIButton!
-    @IBOutlet weak var participePasse2 : UIButton!
-    @IBOutlet weak var gerondifPresent : UIButton!
-    @IBOutlet weak var gerondifPasse : UIButton!
-    @IBOutlet weak var imperatifPresentTu : UIButton!
-    @IBOutlet weak var imperatifPresentNous : UIButton!
-    @IBOutlet weak var imperatifPresentVous : UIButton!
-    @IBOutlet weak var imperatifPasseTu : UIButton!
-    @IBOutlet weak var imperatifPasseNous : UIButton!
-    @IBOutlet weak var imperatifPasseVous : UIButton!
+    @IBOutlet weak var infinitivPrasens : UIButton!
+    @IBOutlet weak var infinitivPerfekt : UIButton!
+    @IBOutlet weak var partizipPrasens : UIButton!
+    @IBOutlet weak var partizipPerfekt : UIButton!
     
-    @IBOutlet weak var indicatifPresentJe : UIButton!
-    @IBOutlet weak var indicatifPresentTu : UIButton!
-    @IBOutlet weak var indicatifPresentIl : UIButton!
-    @IBOutlet weak var indicatifPresentNous : UIButton!
-    @IBOutlet weak var indicatifPresentVous : UIButton!
-    @IBOutlet weak var indicatifPresentIls : UIButton!
-    @IBOutlet weak var indicatifPasseComposeJe : UIButton!
-    @IBOutlet weak var indicatifPasseComposeTu : UIButton!
-    @IBOutlet weak var indicatifPasseComposeIl : UIButton!
-    @IBOutlet weak var indicatifPasseComposeNous : UIButton!
-    @IBOutlet weak var indicatifPasseComposeVous : UIButton!
-    @IBOutlet weak var indicatifPasseComposeIls : UIButton!
-    @IBOutlet weak var indicatifImperfaitJe : UIButton!
-    @IBOutlet weak var indicatifImperfaitTu : UIButton!
-    @IBOutlet weak var indicatifImperfaitIl : UIButton!
-    @IBOutlet weak var indicatifImperfaitNous : UIButton!
-    @IBOutlet weak var indicatifImperfaitVous : UIButton!
-    @IBOutlet weak var indicatifImperfaitIls : UIButton!
-    @IBOutlet weak var indicatifPlusQueParfaitJe : UIButton!
-    @IBOutlet weak var indicatifPlusQueParfaitTu : UIButton!
-    @IBOutlet weak var indicatifPlusQueParfaitIl : UIButton!
-    @IBOutlet weak var indicatifPlusQueParfaitNous : UIButton!
-    @IBOutlet weak var indicatifPlusQueParfaitVous : UIButton!
-    @IBOutlet weak var indicatifPlusQueParfaitIls : UIButton!
-    @IBOutlet weak var indicatifPasseSimpleJe : UIButton!
-    @IBOutlet weak var indicatifPasseSimpleTu : UIButton!
-    @IBOutlet weak var indicatifPasseSimpleIl : UIButton!
-    @IBOutlet weak var indicatifPasseSimpleNous : UIButton!
-    @IBOutlet weak var indicatifPasseSimpleVous : UIButton!
-    @IBOutlet weak var indicatifPasseSimpleIls : UIButton!
-    @IBOutlet weak var indicatifPasseAnterieurJe : UIButton!
-    @IBOutlet weak var indicatifPasseAnterieurTu : UIButton!
-    @IBOutlet weak var indicatifPasseAnterieurIl : UIButton!
-    @IBOutlet weak var indicatifPasseAnterieurNous : UIButton!
-    @IBOutlet weak var indicatifPasseAnterieurVous : UIButton!
-    @IBOutlet weak var indicatifPasseAnterieurIls : UIButton!
-    @IBOutlet weak var indicatifFuturSimpleJe : UIButton!
-    @IBOutlet weak var indicatifFuturSimpleTu : UIButton!
-    @IBOutlet weak var indicatifFuturSimpleIl : UIButton!
-    @IBOutlet weak var indicatifFuturSimpleNous : UIButton!
-    @IBOutlet weak var indicatifFuturSimpleVous : UIButton!
-    @IBOutlet weak var indicatifFuturSimpleIls : UIButton!
-    @IBOutlet weak var indicatifFuturAnterieurJe : UIButton!
-    @IBOutlet weak var indicatifFuturAnterieurTu : UIButton!
-    @IBOutlet weak var indicatifFuturAnterieurIl : UIButton!
-    @IBOutlet weak var indicatifFuturAnterieurNous : UIButton!
-    @IBOutlet weak var indicatifFuturAnterieurVous : UIButton!
-    @IBOutlet weak var indicatifFuturAnterieurIls : UIButton!
+    @IBOutlet weak var imperativDu : UIButton!
+    @IBOutlet weak var imperativIhr : UIButton!
+    @IBOutlet weak var imperativSie : UIButton!
     
-    @IBOutlet weak var subjonctifPresentJe : UIButton!
-    @IBOutlet weak var subjonctifPresentTu : UIButton!
-    @IBOutlet weak var subjonctifPresentIl : UIButton!
-    @IBOutlet weak var subjonctifPresentNous : UIButton!
-    @IBOutlet weak var subjonctifPresentVous : UIButton!
-    @IBOutlet weak var subjonctifPresentIls : UIButton!
-    @IBOutlet weak var subjonctifPasseJe : UIButton!
-    @IBOutlet weak var subjonctifPasseTu : UIButton!
-    @IBOutlet weak var subjonctifPasseIl : UIButton!
-    @IBOutlet weak var subjonctifPasseNous : UIButton!
-    @IBOutlet weak var subjonctifPasseVous : UIButton!
-    @IBOutlet weak var subjonctifPasseIls : UIButton!
-    @IBOutlet weak var subjonctifImperfaitJe : UIButton!
-    @IBOutlet weak var subjonctifImperfaitTu : UIButton!
-    @IBOutlet weak var subjonctifImperfaitIl : UIButton!
-    @IBOutlet weak var subjonctifImperfaitNous : UIButton!
-    @IBOutlet weak var subjonctifImperfaitVous : UIButton!
-    @IBOutlet weak var subjonctifImperfaitIls : UIButton!
-    @IBOutlet weak var subjonctifPlusQueParfaitJe : UIButton!
-    @IBOutlet weak var subjonctifPlusQueParfaitTu : UIButton!
-    @IBOutlet weak var subjonctifPlusQueParfaitIl : UIButton!
-    @IBOutlet weak var subjonctifPlusQueParfaitNous : UIButton!
-    @IBOutlet weak var subjonctifPlusQueParfaitVous : UIButton!
-    @IBOutlet weak var subjonctifPlusQueParfaitIls : UIButton!
+    @IBOutlet weak var indikativPrasensIch : UIButton!
+    @IBOutlet weak var indikativPrasensDu : UIButton!
+    @IBOutlet weak var indikativPrasensEr : UIButton!
+    @IBOutlet weak var indikativPrasensWir : UIButton!
+    @IBOutlet weak var indikativPrasensIhr : UIButton!
+    @IBOutlet weak var indikativPrasensSie : UIButton!
     
-    @IBOutlet weak var conditionnelPresentJe : UIButton!
-    @IBOutlet weak var conditionnelPresentTu : UIButton!
-    @IBOutlet weak var conditionnelPresentIl : UIButton!
-    @IBOutlet weak var conditionnelPresentNous : UIButton!
-    @IBOutlet weak var conditionnelPresentVous : UIButton!
-    @IBOutlet weak var conditionnelPresentIls : UIButton!
-    @IBOutlet weak var conditionnelPasseJe : UIButton!
-    @IBOutlet weak var conditionnelPasseTu : UIButton!
-    @IBOutlet weak var conditionnelPasseIl : UIButton!
-    @IBOutlet weak var conditionnelPasseNous : UIButton!
-    @IBOutlet weak var conditionnelPasseVous : UIButton!
-    @IBOutlet weak var conditionnelPasseIls : UIButton!
+    @IBOutlet weak var indikativPrateritumIch : UIButton!
+    @IBOutlet weak var indikativPrateritumDu : UIButton!
+    @IBOutlet weak var indikativPrateritumEr : UIButton!
+    @IBOutlet weak var indikativPrateritumWir : UIButton!
+    @IBOutlet weak var indikativPrateritumIhr : UIButton!
+    @IBOutlet weak var indikativPrateritumSie : UIButton!
+    
+    @IBOutlet weak var indikativPerfektIch : UIButton!
+    @IBOutlet weak var indikativPerfektDu : UIButton!
+    @IBOutlet weak var indikativPerfektEr : UIButton!
+    @IBOutlet weak var indikativPerfektWir : UIButton!
+    @IBOutlet weak var indikativPerfektIhr : UIButton!
+    @IBOutlet weak var indikativPerfektSie : UIButton!
+    
+    @IBOutlet weak var indikativPlusquamperfektIch : UIButton!
+    @IBOutlet weak var indikativPlusquamperfektDu : UIButton!
+    @IBOutlet weak var indikativPlusquamperfektEr : UIButton!
+    @IBOutlet weak var indikativPlusquamperfektWir : UIButton!
+    @IBOutlet weak var indikativPlusquamperfektIhr : UIButton!
+    @IBOutlet weak var indikativPlusquamperfektSie : UIButton!
+    
+    @IBOutlet weak var indikativFutur1Ich : UIButton!
+    @IBOutlet weak var indikativFutur1Du : UIButton!
+    @IBOutlet weak var indikativFutur1Er : UIButton!
+    @IBOutlet weak var indikativFutur1Wir : UIButton!
+    @IBOutlet weak var indikativFutur1Ihr : UIButton!
+    @IBOutlet weak var indikativFutur1Sie : UIButton!
+    
+    @IBOutlet weak var indikativFutur2Ich : UIButton!
+    @IBOutlet weak var indikativFutur2Du : UIButton!
+    @IBOutlet weak var indikativFutur2Er : UIButton!
+    @IBOutlet weak var indikativFutur2Wir : UIButton!
+    @IBOutlet weak var indikativFutur2Ihr : UIButton!
+    @IBOutlet weak var indikativFutur2Sie : UIButton!
+    
+    @IBOutlet weak var konjunktiv1PrasensIch : UIButton!
+    @IBOutlet weak var konjunktiv1PrasensDu : UIButton!
+    @IBOutlet weak var konjunktiv1PrasensEr : UIButton!
+    @IBOutlet weak var konjunktiv1PrasensWir : UIButton!
+    @IBOutlet weak var konjunktiv1PrasensIhr : UIButton!
+    @IBOutlet weak var konjunktiv1PrasensSie : UIButton!
+    
+    @IBOutlet weak var konjunktiv1PerfektIch : UIButton!
+    @IBOutlet weak var konjunktiv1PerfektDu : UIButton!
+    @IBOutlet weak var konjunktiv1PerfektEr : UIButton!
+    @IBOutlet weak var konjunktiv1PerfektWir : UIButton!
+    @IBOutlet weak var konjunktiv1PerfektIhr : UIButton!
+    @IBOutlet weak var konjunktiv1PerfektSie : UIButton!
+    
+    @IBOutlet weak var konjunktiv1Futur1Ich : UIButton!
+    @IBOutlet weak var konjunktiv1Futur1Du : UIButton!
+    @IBOutlet weak var konjunktiv1Futur1Er : UIButton!
+    @IBOutlet weak var konjunktiv1Futur1Wir : UIButton!
+    @IBOutlet weak var konjunktiv1Futur1Ihr : UIButton!
+    @IBOutlet weak var konjunktiv1Futur1Sie : UIButton!
+    
+    @IBOutlet weak var konjunktiv1Futur2Ich : UIButton!
+    @IBOutlet weak var konjunktiv1Futur2Du : UIButton!
+    @IBOutlet weak var konjunktiv1Futur2Er : UIButton!
+    @IBOutlet weak var konjunktiv1Futur2Wir : UIButton!
+    @IBOutlet weak var konjunktiv1Futur2Ihr : UIButton!
+    @IBOutlet weak var konjunktiv1Futur2Sie : UIButton!
+    
+    @IBOutlet weak var konjunktiv2PrateritumIch : UIButton!
+    @IBOutlet weak var konjunktiv2PrateritumDu : UIButton!
+    @IBOutlet weak var konjunktiv2PrateritumEr : UIButton!
+    @IBOutlet weak var konjunktiv2PrateritumWir : UIButton!
+    @IBOutlet weak var konjunktiv2PrateritumIhr : UIButton!
+    @IBOutlet weak var konjunktiv2PrateritumSie : UIButton!
+    
+    @IBOutlet weak var konjunktiv2PlusquamperfektIch : UIButton!
+    @IBOutlet weak var konjunktiv2PlusquamperfektDu : UIButton!
+    @IBOutlet weak var konjunktiv2PlusquamperfektEr : UIButton!
+    @IBOutlet weak var konjunktiv2PlusquamperfektWir : UIButton!
+    @IBOutlet weak var konjunktiv2PlusquamperfektIhr : UIButton!
+    @IBOutlet weak var konjunktiv2PlusquamperfektSie : UIButton!
+    
+    @IBOutlet weak var konjunktiv2Futur1Ich : UIButton!
+    @IBOutlet weak var konjunktiv2Futur1Du : UIButton!
+    @IBOutlet weak var konjunktiv2Futur1Er : UIButton!
+    @IBOutlet weak var konjunktiv2Futur1Wir : UIButton!
+    @IBOutlet weak var konjunktiv2Futur1Ihr : UIButton!
+    @IBOutlet weak var konjunktiv2Futur1Sie : UIButton!
+    
+    @IBOutlet weak var konjunktiv2Futur2Ich : UIButton!
+    @IBOutlet weak var konjunktiv2Futur2Du : UIButton!
+    @IBOutlet weak var konjunktiv2Futur2Er : UIButton!
+    @IBOutlet weak var konjunktiv2Futur2Wir : UIButton!
+    @IBOutlet weak var konjunktiv2Futur2Ihr : UIButton!
+    @IBOutlet weak var konjunktiv2Futur2Sie : UIButton!
     
     @IBOutlet weak var stack: UIStackView!
     //var banner: GADBannerView!
@@ -182,7 +188,7 @@ class VerbDetailsViewController: UIViewController {
         let lang : String = translationLanguage != nil ? translationLanguage! : Constants.ENGLISH
         translation.text = ViewUtils.getTranslation(verb, lang)
         // TODO: Set better string
-        group.text = "\(verb.type) group"
+        type.text = "\(verb.type) type"
         
         definition.setTitle(verb.definition, for: .normal)
         sample1.setTitle(verb.sample1, for: .normal)
@@ -256,7 +262,7 @@ class VerbDetailsViewController: UIViewController {
             
             conjugateVerb(c, verb.infinitive, isPronominal)
             // check if the verb uses other auxiliar verb and replace it. Like partir, mourir, s'ecrier
-            reviewAuxiliar(c, isEtre, isAvoir)
+            //reviewAuxiliar(c, isEtre, isAvoir)
             if (isPronominal) {
                 addReflexive(c, isParticipePasseInvariable)
             }
@@ -305,7 +311,7 @@ class VerbDetailsViewController: UIViewController {
         }
         
         // Exceptions to the conjugation model
-        replaceAccents(c, verbInfinitive)
+        //replaceAccents(c, verbInfinitive)
         replaceConjugationModel(c, verbInfinitive)
         replaceParticipePasse(c, verbInfinitive)
     }
@@ -383,13 +389,6 @@ class VerbDetailsViewController: UIViewController {
     private func replaceParticipePasse(_ c : Conjugation, _ old : String, _ new : String) {
         c.infinitivPerfekt = c.infinitivPerfekt.replacingOccurrences(of: old, with: new)
         
-        c.participePasse2 = c.participePasse2.replacingOccurrences(of: old, with: new)
-        c.gerondifPasse = c.gerondifPasse.replacingOccurrences(of: old, with: new)
-        
-        c.imperatifPasseTu = c.imperatifPasseTu.replacingOccurrences(of: old, with: new)
-        c.imperatifPasseNous = c.imperatifPasseNous.replacingOccurrences(of: old, with: new)
-        c.imperatifPasseVous = c.imperatifPasseVous.replacingOccurrences(of: old, with: new)
-        
         c.indikativPrateritumIch = c.indikativPrateritumIch.replacingOccurrences(of: old, with: new)
         c.indikativPrateritumDu = c.indikativPrateritumDu.replacingOccurrences(of: old, with: new)
         c.indikativPrateritumEr = c.indikativPrateritumEr.replacingOccurrences(of: old, with: new)
@@ -455,7 +454,7 @@ class VerbDetailsViewController: UIViewController {
     
     /**
      * Known Exceptions for the accents in conjugation model.
-     */
+     */ /*
     private func replaceAccents(_ c : Conjugation, _ verbInfinitive : String) {
         if (c.id == 73 && !verbInfinitive.elementsEqual("croître")) {
             // NOTE: all verbes, except croître : accroître, décroître, recroître
@@ -475,14 +474,9 @@ class VerbDetailsViewController: UIViewController {
             c.indikativPerfektSie = c.indikativPerfektSie.replacingOccurrences(of: "û", with: "u")
             
             c.imperativDu = c.imperativDu.replacingOccurrences(of: "î", with: "i")
-            c.imperatifPasseTu = c.imperatifPasseTu.replacingOccurrences(of: "crû", with: "cru")
-            c.imperatifPasseNous = c.imperatifPasseNous.replacingOccurrences(of: "crû", with: "cru")
-            c.imperatifPasseVous = c.imperatifPasseVous.replacingOccurrences(of: "crû", with: "cru")
             
             c.infinitivPerfekt = c.infinitivPerfekt.replacingOccurrences(of: "crû", with: "cru")
             c.partizipPerfekt = c.partizipPerfekt.replacingOccurrences(of: "crû", with: "cru")
-            c.participePasse2 = c.participePasse2.replacingOccurrences(of: "crû", with: "cru")
-            c.gerondifPasse = c.gerondifPasse.replacingOccurrences(of: "crû", with: "cru")
             
             c.indikativPrateritumIch = c.indikativPrateritumIch.replacingOccurrences(of: "crû", with: "cru")
             c.indikativPrateritumDu = c.indikativPrateritumDu.replacingOccurrences(of: "crû", with: "cru")
@@ -640,18 +634,12 @@ class VerbDetailsViewController: UIViewController {
             c.imperativDu = c.imperativDu.replacingOccurrences(of: "amui", with: "amuï")
             c.imperativIhr = c.imperativIhr.replacingOccurrences(of: "amui", with: "amuï")
             c.imperativSie = c.imperativSie.replacingOccurrences(of: "amui", with: "amuï")
-            c.imperatifPasseTu = c.imperatifPasseTu.replacingOccurrences(of: "amui", with: "amuï")
-            c.imperatifPasseNous = c.imperatifPasseNous.replacingOccurrences(of: "amui", with: "amuï")
-            c.imperatifPasseVous = c.imperatifPasseVous.replacingOccurrences(of: "amui", with: "amuï")
             
             c.infinitivPerfekt = c.infinitivPerfekt.replacingOccurrences(of: "amui", with: "amuï")
             c.partizipPrasens = c.partizipPrasens.replacingOccurrences(of: "amui", with: "amuï")
             c.partizipPerfekt = c.partizipPerfekt.replacingOccurrences(of: "amui", with: "amuï")
-            c.participePasse2 = c.participePasse2.replacingOccurrences(of: "amui", with: "amuï")
-            c.gerondifPresent = c.gerondifPresent.replacingOccurrences(of: "amui", with: "amuï")
-            c.gerondifPasse = c.gerondifPasse.replacingOccurrences(of: "amui", with: "amuï")
         }
-    }
+    } */
     
     /**
      * Generates the verb radical based on the model.
@@ -1102,7 +1090,6 @@ class VerbDetailsViewController: UIViewController {
         
         c.infinitivPrasens = verbInfinitive
         c.partizipPrasens = replaceRadical(c.partizipPrasens, modelR, verbR)
-        c.gerondifPresent = replaceRadical(c.gerondifPresent, modelR, verbR)
         
         c.imperativDu = replaceRadical(c.imperativDu, modelR, verbR)
         c.imperativIhr = replaceRadical(c.imperativIhr, modelR, verbR)
@@ -1202,7 +1189,7 @@ class VerbDetailsViewController: UIViewController {
     
     /**
      * Checks if the verb uses other auxiliar verb and replace it.
-     */
+     */ /*
     private func reviewAuxiliar(_ c : Conjugation, _ isEtre : Bool, _ isAvoir : Bool) {
         
         if (!isEtre && !isAvoir) { return }
@@ -1247,22 +1234,22 @@ class VerbDetailsViewController: UIViewController {
         if (isAvoir && isEtre) {
             if (c.infinitivPerfekt.contains("avoir")) {
                 //  Like: sortir, renter
-                replaceAuxiliar(c, wordsAvoir, wordsEtreAvoir)
+                //replaceAuxiliar(c, wordsAvoir, wordsEtreAvoir)
             } else if (c.infinitivPerfekt.contains("être")) {
-                replaceAuxiliar(c, wordsEtre, wordsEtreAvoir)
+                //replaceAuxiliar(c, wordsEtre, wordsEtreAvoir)
             }
         } else if (c.infinitivPerfekt.contains("avoir") && isEtre && !isAvoir) {
             //  Like: partir, mourir, s'ecrier
-            replaceAuxiliar(c, wordsAvoir, wordsEtre)
+            //replaceAuxiliar(c, wordsAvoir, wordsEtre)
         } else if (c.infinitivPerfekt.contains("être") && !isEtre && isAvoir) {
-            replaceAuxiliar(c, wordsEtre, wordsAvoir)
+            //replaceAuxiliar(c, wordsEtre, wordsAvoir)
         }
-    }
+    }*/
     
     /**
      * Replaces a list of strings with another list.
      * Both list should refer to the same conjugation item in the same order.
-     */
+     */ /*
     private func replaceAuxiliar(_ c : Conjugation, _ words : [String], _ replaces : [String]) {
         // NOTE: Items to replace must come in the same order
         for index in 0 ..< words.count {
@@ -1328,7 +1315,7 @@ class VerbDetailsViewController: UIViewController {
             default:    ()
             }
         }
-    }
+    } */
     
     
     /**
@@ -1337,7 +1324,7 @@ class VerbDetailsViewController: UIViewController {
     private func addReflexive(_ c : Conjugation, _ ppInv : Bool) {
         // Add pronoms
         // TODO: Show pronoms in different color
-        addReflexiveIndicatifPresent(c)
+        /*addReflexiveIndicatifPresent(c)
         addReflexiveIndicatifPasseCompose(c, ppInv)
         addReflexiveIndicatifImperfait(c)
         addReflexiveIndicatifPlusQueParfait(c, ppInv)
@@ -1354,9 +1341,10 @@ class VerbDetailsViewController: UIViewController {
         addReflexiveImperatif(c, ppInv)
         addReflexiveInfinitive(c, ppInv)
         addReflexiveParticipe(c, ppInv)
-        addReflexiveGerondif(c, ppInv)
+        addReflexiveGerondif(c, ppInv) */
     }
     
+    /*
     private func addReflexiveGerondif(_ c : Conjugation, _ ppInv : Bool) {
         var text : String = c.gerondifPresent.replacingOccurrences(of: "en ", with: "")
         if (!text.elementsEqual("-")) {
@@ -1807,7 +1795,7 @@ class VerbDetailsViewController: UIViewController {
         if (!text.elementsEqual("-")) {
             c.indikativPrasensSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
         }
-    }
+    }*/
     
     
     /**
@@ -2163,9 +2151,6 @@ class VerbDetailsViewController: UIViewController {
         c.infinitivPerfekt = "-"
         c.partizipPrasens = "-"
         c.partizipPerfekt = "-"
-        c.participePasse2 = "-"
-        c.gerondifPresent = "-"
-        c.gerondifPasse = "-"
     }
     
     private func ignoreIndicatifPresent(_ c : Conjugation) {
@@ -2304,9 +2289,6 @@ class VerbDetailsViewController: UIViewController {
         c.imperativDu = "-"
         c.imperativIhr = "-"
         c.imperativSie = "-"
-        c.imperatifPasseTu = "-"
-        c.imperatifPasseNous = "-"
-        c.imperatifPasseVous = "-"
     }
     
     private func ignoreImperatifNousVous(_ c : Conjugation) {
@@ -2526,106 +2508,100 @@ class VerbDetailsViewController: UIViewController {
     
     
     private func fillConjugationDetails(_ c : Conjugation) {
-        infinitivePresent.setTitle(c.infinitivPrasens, for: .normal)
-        infinitivePasse.setTitle(c.infinitivPerfekt, for: .normal)
-        participePresent.setTitle(c.partizipPrasens, for: .normal)
-        participePasse1.setTitle(c.partizipPerfekt, for: .normal)
-        participePasse2.setTitle(c.participePasse2, for: .normal)
-        gerondifPresent.setTitle(c.gerondifPresent, for: .normal)
-        gerondifPasse.setTitle(c.gerondifPasse, for: .normal)
-        imperatifPresentTu.setTitle(c.imperativDu, for: .normal)
-        imperatifPresentNous.setTitle(c.imperativIhr, for: .normal)
-        imperatifPresentVous.setTitle(c.imperativSie, for: .normal)
-        imperatifPasseTu.setTitle(c.imperatifPasseTu, for: .normal)
-        imperatifPasseNous.setTitle(c.imperatifPasseNous, for: .normal)
-        imperatifPasseVous.setTitle(c.imperatifPasseVous, for: .normal)
+        infinitivPrasens.setTitle(c.infinitivPrasens, for: .normal)
+        infinitivPerfekt.setTitle(c.infinitivPerfekt, for: .normal)
+        partizipPrasens.setTitle(c.partizipPrasens, for: .normal)
+        partizipPerfekt.setTitle(c.partizipPerfekt, for: .normal)
+        imperativDu.setTitle(c.imperativDu, for: .normal)
+        imperativIhr.setTitle(c.imperativIhr, for: .normal)
+        imperativSie.setTitle(c.imperativSie, for: .normal)
         
-        indicatifPresentJe.setTitle(c.indikativPrasensIch, for: .normal)
-        indicatifPresentTu.setTitle(c.indikativPrasensDu, for: .normal)
-        indicatifPresentIl.setTitle(c.indikativPrasensEr, for: .normal)
-        indicatifPresentNous.setTitle(c.indikativPrasensWir, for: .normal)
-        indicatifPresentVous.setTitle(c.indikativPrasensIhr, for: .normal)
-        indicatifPresentIls.setTitle(c.indikativPrasensSie, for: .normal)
-        indicatifPasseComposeJe.setTitle(c.indikativPrateritumIch, for: .normal)
-        indicatifPasseComposeTu.setTitle(c.indikativPrateritumDu, for: .normal)
-        indicatifPasseComposeIl.setTitle(c.indikativPrateritumEr, for: .normal)
-        indicatifPasseComposeNous.setTitle(c.indikativPrateritumWir, for: .normal)
-        indicatifPasseComposeVous.setTitle(c.indikativPrateritumIhr, for: .normal)
-        indicatifPasseComposeIls.setTitle(c.indikativPrateritumSie, for: .normal)
-        indicatifImperfaitJe.setTitle(c.indikativPerfektIch, for: .normal)
-        indicatifImperfaitTu.setTitle(c.indikativPerfektDu, for: .normal)
-        indicatifImperfaitIl.setTitle(c.indikativPerfektEr, for: .normal)
-        indicatifImperfaitNous.setTitle(c.indikativPerfektWir, for: .normal)
-        indicatifImperfaitVous.setTitle(c.indikativPerfektIhr, for: .normal)
-        indicatifImperfaitIls.setTitle(c.indikativPerfektSie, for: .normal)
-        indicatifPlusQueParfaitJe.setTitle(c.indikativPlusquamperfektIch, for: .normal)
-        indicatifPlusQueParfaitTu.setTitle(c.indikativPlusquamperfektDu, for: .normal)
-        indicatifPlusQueParfaitIl.setTitle(c.indikativPlusquamperfektEr, for: .normal)
-        indicatifPlusQueParfaitNous.setTitle(c.indikativPlusquamperfektWir, for: .normal)
-        indicatifPlusQueParfaitVous.setTitle(c.indikativPlusquamperfektIhr, for: .normal)
-        indicatifPlusQueParfaitIls.setTitle(c.indikativPlusquamperfektSie, for: .normal)
-        indicatifPasseSimpleJe.setTitle(c.indikativFutur1Ich, for: .normal)
-        indicatifPasseSimpleTu.setTitle(c.indikativFutur1Du, for: .normal)
-        indicatifPasseSimpleIl.setTitle(c.indikativFutur1Er, for: .normal)
-        indicatifPasseSimpleNous.setTitle(c.indikativFutur1Wir, for: .normal)
-        indicatifPasseSimpleVous.setTitle(c.indikativFutur1Ihr, for: .normal)
-        indicatifPasseSimpleIls.setTitle(c.indikativFutur1Sie, for: .normal)
-        indicatifPasseAnterieurJe.setTitle(c.indikativFutur2Ich, for: .normal)
-        indicatifPasseAnterieurTu.setTitle(c.indikativFutur2Du, for: .normal)
-        indicatifPasseAnterieurIl.setTitle(c.indikativFutur2Er, for: .normal)
-        indicatifPasseAnterieurNous.setTitle(c.indikativFutur2Wir, for: .normal)
-        indicatifPasseAnterieurVous.setTitle(c.indikativFutur2Ihr, for: .normal)
-        indicatifPasseAnterieurIls.setTitle(c.indikativFutur2Sie, for: .normal)
-        indicatifFuturSimpleJe.setTitle(c.konjunktiv1PrasensIch, for: .normal)
-        indicatifFuturSimpleTu.setTitle(c.konjunktiv1PrasensDu, for: .normal)
-        indicatifFuturSimpleIl.setTitle(c.konjunktiv1PrasensEr, for: .normal)
-        indicatifFuturSimpleNous.setTitle(c.konjunktiv1PrasensWir, for: .normal)
-        indicatifFuturSimpleVous.setTitle(c.konjunktiv1PrasensIhr, for: .normal)
-        indicatifFuturSimpleIls.setTitle(c.konjunktiv1PrasensSie, for: .normal)
-        indicatifFuturAnterieurJe.setTitle(c.konjunktiv1PerfektIch, for: .normal)
-        indicatifFuturAnterieurTu.setTitle(c.konjunktiv1PerfektDu, for: .normal)
-        indicatifFuturAnterieurIl.setTitle(c.konjunktiv1PerfektEr, for: .normal)
-        indicatifFuturAnterieurNous.setTitle(c.konjunktiv1PerfektWir, for: .normal)
-        indicatifFuturAnterieurVous.setTitle(c.konjunktiv1PerfektIhr, for: .normal)
-        indicatifFuturAnterieurIls.setTitle(c.konjunktiv1PerfektSie, for: .normal)
+        indikativPrasensIch.setTitle(c.indikativPrasensIch, for: .normal)
+        indikativPrasensDu.setTitle(c.indikativPrasensDu, for: .normal)
+        indikativPrasensEr.setTitle(c.indikativPrasensEr, for: .normal)
+        indikativPrasensWir.setTitle(c.indikativPrasensWir, for: .normal)
+        indikativPrasensIhr.setTitle(c.indikativPrasensIhr, for: .normal)
+        indikativPrasensSie.setTitle(c.indikativPrasensSie, for: .normal)
+        indikativPrateritumIch.setTitle(c.indikativPrateritumIch, for: .normal)
+        indikativPrateritumDu.setTitle(c.indikativPrateritumDu, for: .normal)
+        indikativPrateritumEr.setTitle(c.indikativPrateritumEr, for: .normal)
+        indikativPrateritumWir.setTitle(c.indikativPrateritumWir, for: .normal)
+        indikativPrateritumIhr.setTitle(c.indikativPrateritumIhr, for: .normal)
+        indikativPrateritumSie.setTitle(c.indikativPrateritumSie, for: .normal)
+        indikativPerfektIch.setTitle(c.indikativPerfektIch, for: .normal)
+        indikativPerfektDu.setTitle(c.indikativPerfektDu, for: .normal)
+        indikativPerfektEr.setTitle(c.indikativPerfektEr, for: .normal)
+        indikativPerfektWir.setTitle(c.indikativPerfektWir, for: .normal)
+        indikativPerfektIhr.setTitle(c.indikativPerfektIhr, for: .normal)
+        indikativPerfektSie.setTitle(c.indikativPerfektSie, for: .normal)
+        indikativPlusquamperfektIch.setTitle(c.indikativPlusquamperfektIch, for: .normal)
+        indikativPlusquamperfektDu.setTitle(c.indikativPlusquamperfektDu, for: .normal)
+        indikativPlusquamperfektEr.setTitle(c.indikativPlusquamperfektEr, for: .normal)
+        indikativPlusquamperfektWir.setTitle(c.indikativPlusquamperfektWir, for: .normal)
+        indikativPlusquamperfektIhr.setTitle(c.indikativPlusquamperfektIhr, for: .normal)
+        indikativPlusquamperfektSie.setTitle(c.indikativPlusquamperfektSie, for: .normal)
+        indikativFutur1Ich.setTitle(c.indikativFutur1Ich, for: .normal)
+        indikativFutur1Du.setTitle(c.indikativFutur1Du, for: .normal)
+        indikativFutur1Er.setTitle(c.indikativFutur1Er, for: .normal)
+        indikativFutur1Wir.setTitle(c.indikativFutur1Wir, for: .normal)
+        indikativFutur1Ihr.setTitle(c.indikativFutur1Ihr, for: .normal)
+        indikativFutur1Sie.setTitle(c.indikativFutur1Sie, for: .normal)
+        indikativFutur2Ich.setTitle(c.indikativFutur2Ich, for: .normal)
+        indikativFutur2Du.setTitle(c.indikativFutur2Du, for: .normal)
+        indikativFutur2Er.setTitle(c.indikativFutur2Er, for: .normal)
+        indikativFutur2Wir.setTitle(c.indikativFutur2Wir, for: .normal)
+        indikativFutur2Ihr.setTitle(c.indikativFutur2Ihr, for: .normal)
+        indikativFutur2Sie.setTitle(c.indikativFutur2Sie, for: .normal)
+        konjunktiv1PrasensIch.setTitle(c.konjunktiv1PrasensIch, for: .normal)
+        konjunktiv1PrasensDu.setTitle(c.konjunktiv1PrasensDu, for: .normal)
+        konjunktiv1PrasensEr.setTitle(c.konjunktiv1PrasensEr, for: .normal)
+        konjunktiv1PrasensWir.setTitle(c.konjunktiv1PrasensWir, for: .normal)
+        konjunktiv1PrasensIhr.setTitle(c.konjunktiv1PrasensIhr, for: .normal)
+        konjunktiv1PrasensSie.setTitle(c.konjunktiv1PrasensSie, for: .normal)
+        konjunktiv1PerfektIch.setTitle(c.konjunktiv1PerfektIch, for: .normal)
+        konjunktiv1PerfektDu.setTitle(c.konjunktiv1PerfektDu, for: .normal)
+        konjunktiv1PerfektEr.setTitle(c.konjunktiv1PerfektEr, for: .normal)
+        konjunktiv1PerfektWir.setTitle(c.konjunktiv1PerfektWir, for: .normal)
+        konjunktiv1PerfektIhr.setTitle(c.konjunktiv1PerfektIhr, for: .normal)
+        konjunktiv1PerfektSie.setTitle(c.konjunktiv1PerfektSie, for: .normal)
         
-        subjonctifPresentJe.setTitle(c.konjunktiv1Futur1Ich, for: .normal)
-        subjonctifPresentTu.setTitle(c.konjunktiv1Futur1Du, for: .normal)
-        subjonctifPresentIl.setTitle(c.konjunktiv1Futur1Er, for: .normal)
-        subjonctifPresentNous.setTitle(c.konjunktiv1Futur1Wir, for: .normal)
-        subjonctifPresentVous.setTitle(c.konjunktiv1Futur1Ihr, for: .normal)
-        subjonctifPresentIls.setTitle(c.konjunktiv1Futur1Sie, for: .normal)
-        subjonctifPasseJe.setTitle(c.konjunktiv1Futur2Ich, for: .normal)
-        subjonctifPasseTu.setTitle(c.konjunktiv1Futur2Du, for: .normal)
-        subjonctifPasseIl.setTitle(c.konjunktiv1Futur2Er, for: .normal)
-        subjonctifPasseNous.setTitle(c.konjunktiv1Futur2Wir, for: .normal)
-        subjonctifPasseVous.setTitle(c.konjunktiv1Futur2Ihr, for: .normal)
-        subjonctifPasseIls.setTitle(c.konjunktiv1Futur2Sie, for: .normal)
-        subjonctifImperfaitJe.setTitle(c.konjunktiv2PrateritumIch, for: .normal)
-        subjonctifImperfaitTu.setTitle(c.konjunktiv2PrateritumDu, for: .normal)
-        subjonctifImperfaitIl.setTitle(c.konjunktiv2PrateritumEr, for: .normal)
-        subjonctifImperfaitNous.setTitle(c.konjunktiv2PrateritumWir, for: .normal)
-        subjonctifImperfaitVous.setTitle(c.konjunktiv2PrateritumIhr, for: .normal)
-        subjonctifImperfaitIls.setTitle(c.konjunktiv2PrateritumSie, for: .normal)
-        subjonctifPlusQueParfaitJe.setTitle(c.konjunktiv2PlusquamperfektIch, for: .normal)
-        subjonctifPlusQueParfaitTu.setTitle(c.konjunktiv2PlusquamperfektDu, for: .normal)
-        subjonctifPlusQueParfaitIl.setTitle(c.konjunktiv2PlusquamperfektEr, for: .normal)
-        subjonctifPlusQueParfaitNous.setTitle(c.konjunktiv2PlusquamperfektWir, for: .normal)
-        subjonctifPlusQueParfaitVous.setTitle(c.konjunktiv2PlusquamperfektIhr, for: .normal)
-        subjonctifPlusQueParfaitIls.setTitle(c.konjunktiv2PlusquamperfektSie, for: .normal)
+        konjunktiv1Futur1Ich.setTitle(c.konjunktiv1Futur1Ich, for: .normal)
+        konjunktiv1Futur1Du.setTitle(c.konjunktiv1Futur1Du, for: .normal)
+        konjunktiv1Futur1Er.setTitle(c.konjunktiv1Futur1Er, for: .normal)
+        konjunktiv1Futur1Wir.setTitle(c.konjunktiv1Futur1Wir, for: .normal)
+        konjunktiv1Futur1Ihr.setTitle(c.konjunktiv1Futur1Ihr, for: .normal)
+        konjunktiv1Futur1Sie.setTitle(c.konjunktiv1Futur1Sie, for: .normal)
+        konjunktiv1Futur2Ich.setTitle(c.konjunktiv1Futur2Ich, for: .normal)
+        konjunktiv1Futur2Du.setTitle(c.konjunktiv1Futur2Du, for: .normal)
+        konjunktiv1Futur2Er.setTitle(c.konjunktiv1Futur2Er, for: .normal)
+        konjunktiv1Futur2Wir.setTitle(c.konjunktiv1Futur2Wir, for: .normal)
+        konjunktiv1Futur2Ihr.setTitle(c.konjunktiv1Futur2Ihr, for: .normal)
+        konjunktiv1Futur2Sie.setTitle(c.konjunktiv1Futur2Sie, for: .normal)
+        konjunktiv2PrateritumIch.setTitle(c.konjunktiv2PrateritumIch, for: .normal)
+        konjunktiv2PrateritumDu.setTitle(c.konjunktiv2PrateritumDu, for: .normal)
+        konjunktiv2PrateritumEr.setTitle(c.konjunktiv2PrateritumEr, for: .normal)
+        konjunktiv2PrateritumWir.setTitle(c.konjunktiv2PrateritumWir, for: .normal)
+        konjunktiv2PrateritumIhr.setTitle(c.konjunktiv2PrateritumIhr, for: .normal)
+        konjunktiv2PrateritumSie.setTitle(c.konjunktiv2PrateritumSie, for: .normal)
+        konjunktiv2PlusquamperfektIch.setTitle(c.konjunktiv2PlusquamperfektIch, for: .normal)
+        konjunktiv2PlusquamperfektDu.setTitle(c.konjunktiv2PlusquamperfektDu, for: .normal)
+        konjunktiv2PlusquamperfektEr.setTitle(c.konjunktiv2PlusquamperfektEr, for: .normal)
+        konjunktiv2PlusquamperfektWir.setTitle(c.konjunktiv2PlusquamperfektWir, for: .normal)
+        konjunktiv2PlusquamperfektIhr.setTitle(c.konjunktiv2PlusquamperfektIhr, for: .normal)
+        konjunktiv2PlusquamperfektSie.setTitle(c.konjunktiv2PlusquamperfektSie, for: .normal)
         
-        conditionnelPresentJe.setTitle(c.konjunktiv2Futur1Ich, for: .normal)
-        conditionnelPresentTu.setTitle(c.konjunktiv2Futur1Du, for: .normal)
-        conditionnelPresentIl.setTitle(c.konjunktiv2Futur1Er, for: .normal)
-        conditionnelPresentNous.setTitle(c.konjunktiv2Futur1Wir, for: .normal)
-        conditionnelPresentVous.setTitle(c.konjunktiv2Futur1Ihr, for: .normal)
-        conditionnelPresentIls.setTitle(c.konjunktiv2Futur1Sie, for: .normal)
-        conditionnelPasseJe.setTitle(c.konjunktiv2Futur2Ich, for: .normal)
-        conditionnelPasseTu.setTitle(c.konjunktiv2Futur2Du, for: .normal)
-        conditionnelPasseIl.setTitle(c.konjunktiv2Futur2Er, for: .normal)
-        conditionnelPasseNous.setTitle(c.konjunktiv2Futur2Wir, for: .normal)
-        conditionnelPasseVous.setTitle(c.konjunktiv2Futur2Ihr, for: .normal)
-        conditionnelPasseIls.setTitle(c.konjunktiv2Futur2Sie, for: .normal)
+        konjunktiv2Futur1Ich.setTitle(c.konjunktiv2Futur1Ich, for: .normal)
+        konjunktiv2Futur1Du.setTitle(c.konjunktiv2Futur1Du, for: .normal)
+        konjunktiv2Futur1Er.setTitle(c.konjunktiv2Futur1Er, for: .normal)
+        konjunktiv2Futur1Wir.setTitle(c.konjunktiv2Futur1Wir, for: .normal)
+        konjunktiv2Futur1Ihr.setTitle(c.konjunktiv2Futur1Ihr, for: .normal)
+        konjunktiv2Futur1Sie.setTitle(c.konjunktiv2Futur1Sie, for: .normal)
+        konjunktiv2Futur2Ich.setTitle(c.konjunktiv2Futur2Ich, for: .normal)
+        konjunktiv2Futur2Du.setTitle(c.konjunktiv2Futur2Du, for: .normal)
+        konjunktiv2Futur2Er.setTitle(c.konjunktiv2Futur2Er, for: .normal)
+        konjunktiv2Futur2Wir.setTitle(c.konjunktiv2Futur2Wir, for: .normal)
+        konjunktiv2Futur2Ihr.setTitle(c.konjunktiv2Futur2Ihr, for: .normal)
+        konjunktiv2Futur2Sie.setTitle(c.konjunktiv2Futur2Sie, for: .normal)
     }
     
     private func setAdjustsFontForContentSizeCategory() {
@@ -2635,106 +2611,112 @@ class VerbDetailsViewController: UIViewController {
         sample2.titleLabel?.adjustsFontForContentSizeCategory = true
         sample3.titleLabel?.adjustsFontForContentSizeCategory = true
         
-        infinitivePresent.titleLabel?.adjustsFontForContentSizeCategory = true
-        infinitivePasse.titleLabel?.adjustsFontForContentSizeCategory = true
-        participePresent.titleLabel?.adjustsFontForContentSizeCategory = true
-        participePasse1.titleLabel?.adjustsFontForContentSizeCategory = true
-        participePasse2.titleLabel?.adjustsFontForContentSizeCategory = true
-        gerondifPresent.titleLabel?.adjustsFontForContentSizeCategory = true
-        gerondifPasse.titleLabel?.adjustsFontForContentSizeCategory = true
-        imperatifPresentTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        imperatifPresentNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        imperatifPresentVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        imperatifPasseTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        imperatifPasseNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        imperatifPasseVous.titleLabel?.adjustsFontForContentSizeCategory = true
+        infinitivPrasens.titleLabel?.adjustsFontForContentSizeCategory = true
+        infinitivPerfekt.titleLabel?.adjustsFontForContentSizeCategory = true
+        partizipPrasens.titleLabel?.adjustsFontForContentSizeCategory = true
+        partizipPerfekt.titleLabel?.adjustsFontForContentSizeCategory = true
+
+        imperativDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        imperativIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        imperativSie.titleLabel?.adjustsFontForContentSizeCategory = true
         
-        indicatifPresentJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPresentTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPresentIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPresentNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPresentVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPresentIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseComposeJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseComposeTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseComposeIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseComposeNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseComposeVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseComposeIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifImperfaitJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifImperfaitTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifImperfaitIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifImperfaitNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifImperfaitVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifImperfaitIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPlusQueParfaitJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPlusQueParfaitTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPlusQueParfaitIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPlusQueParfaitNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPlusQueParfaitVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPlusQueParfaitIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseSimpleJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseSimpleTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseSimpleIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseSimpleNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseSimpleVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseSimpleIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseAnterieurJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseAnterieurTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseAnterieurIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseAnterieurNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseAnterieurVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifPasseAnterieurIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturSimpleJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturSimpleTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturSimpleIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturSimpleNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturSimpleVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturSimpleIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturAnterieurJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturAnterieurTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturAnterieurIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturAnterieurNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturAnterieurVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        indicatifFuturAnterieurIls.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrasensIch.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrasensDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrasensEr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrasensWir.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrasensIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrasensSie.titleLabel?.adjustsFontForContentSizeCategory = true
         
-        subjonctifPresentJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPresentTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPresentIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPresentNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPresentVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPresentIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPasseJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPasseTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPasseIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPasseNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPasseVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPasseIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifImperfaitJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifImperfaitTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifImperfaitIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifImperfaitNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifImperfaitVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifImperfaitIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPlusQueParfaitJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPlusQueParfaitTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPlusQueParfaitIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPlusQueParfaitNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPlusQueParfaitVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        subjonctifPlusQueParfaitIls.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrateritumIch.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrateritumDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrateritumEr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrateritumWir.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrateritumIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPrateritumSie.titleLabel?.adjustsFontForContentSizeCategory = true
         
-        conditionnelPresentJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPresentTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPresentIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPresentNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPresentVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPresentIls.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPasseJe.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPasseTu.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPasseIl.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPasseNous.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPasseVous.titleLabel?.adjustsFontForContentSizeCategory = true
-        conditionnelPasseIls.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPerfektIch.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPerfektDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPerfektEr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPerfektWir.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPerfektIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPerfektSie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        indikativPlusquamperfektIch.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPlusquamperfektDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPlusquamperfektEr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPlusquamperfektWir.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPlusquamperfektIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativPlusquamperfektSie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        indikativFutur1Ich.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur1Du.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur1Er.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur1Wir.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur1Ihr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur1Sie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        indikativFutur2Ich.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur2Du.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur2Er.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur2Wir.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur2Ihr.titleLabel?.adjustsFontForContentSizeCategory = true
+        indikativFutur2Sie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        konjunktiv1PrasensIch.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PrasensDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PrasensEr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PrasensWir.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PrasensIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PrasensSie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        konjunktiv1PerfektIch.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PerfektDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PerfektEr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PerfektWir.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PerfektIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1PerfektSie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        konjunktiv1Futur1Ich.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur1Du.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur1Er.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur1Wir.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur1Ihr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur1Sie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        konjunktiv1Futur2Ich.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur2Du.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur2Er.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur2Wir.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur2Ihr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv1Futur2Sie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        konjunktiv2PrateritumIch.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PrateritumDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PrateritumEr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PrateritumWir.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PrateritumIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PrateritumSie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        konjunktiv2PlusquamperfektIch.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PlusquamperfektDu.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PlusquamperfektEr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PlusquamperfektWir.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PlusquamperfektIhr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2PlusquamperfektSie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        konjunktiv2Futur1Ich.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur1Du.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur1Er.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur1Wir.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur1Ihr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur1Sie.titleLabel?.adjustsFontForContentSizeCategory = true
+        
+        konjunktiv2Futur2Ich.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur2Du.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur2Er.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur2Wir.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur2Ihr.titleLabel?.adjustsFontForContentSizeCategory = true
+        konjunktiv2Futur2Sie.titleLabel?.adjustsFontForContentSizeCategory = true
     }
     
     
@@ -2743,41 +2725,39 @@ class VerbDetailsViewController: UIViewController {
         
         switch (sender) {
         case infinitive, definition, sample1, sample2, sample3,
-             infinitivePresent, infinitivePasse,
-             participePresent, participePasse1, participePasse2,
-             gerondifPresent, gerondifPasse,
-             imperatifPresentTu, imperatifPresentNous, imperatifPresentVous,
-             imperatifPasseTu, imperatifPasseNous, imperatifPasseVous,
+             infinitivPrasens, infinitivPerfekt,
+             partizipPrasens, partizipPerfekt,
+             imperativDu, imperativIhr, imperativSie,
              
-             indicatifPresentJe, indicatifPresentTu, indicatifPresentIl,
-             indicatifPresentNous, indicatifPresentVous, indicatifPresentIls,
-             indicatifPasseComposeJe, indicatifPasseComposeTu, indicatifPasseComposeIl,
-             indicatifPasseComposeNous, indicatifPasseComposeVous, indicatifPasseComposeIls,
-             indicatifImperfaitJe, indicatifImperfaitTu, indicatifImperfaitIl,
-             indicatifImperfaitNous, indicatifImperfaitVous, indicatifImperfaitIls,
-             indicatifPlusQueParfaitJe, indicatifPlusQueParfaitTu, indicatifPlusQueParfaitIl,
-             indicatifPlusQueParfaitNous, indicatifPlusQueParfaitVous, indicatifPlusQueParfaitIls,
-             indicatifPasseSimpleJe, indicatifPasseSimpleTu, indicatifPasseSimpleIl,
-             indicatifPasseSimpleNous, indicatifPasseSimpleVous, indicatifPasseSimpleIls,
-             indicatifPasseAnterieurJe, indicatifPasseAnterieurTu, indicatifPasseAnterieurIl,
-             indicatifPasseAnterieurNous, indicatifPasseAnterieurVous, indicatifPasseAnterieurIls,
-             indicatifFuturSimpleJe, indicatifFuturSimpleTu, indicatifFuturSimpleIl,
-             indicatifFuturSimpleNous, indicatifFuturSimpleVous, indicatifFuturSimpleIls,
-             indicatifFuturAnterieurJe, indicatifFuturAnterieurTu, indicatifFuturAnterieurIl,
-             indicatifFuturAnterieurNous, indicatifFuturAnterieurVous, indicatifFuturAnterieurIls,
+             indikativPrasensIch, indikativPrasensDu, indikativPrasensEr,
+             indikativPrasensWir, indikativPrasensIhr, indikativPrasensSie,
+             indikativPrateritumIch, indikativPrateritumDu, indikativPrateritumEr,
+             indikativPrateritumWir, indikativPrateritumIhr, indikativPrateritumSie,
+             indikativPerfektIch, indikativPerfektDu, indikativPerfektEr,
+             indikativPerfektWir, indikativPerfektIhr, indikativPerfektSie,
+             indikativPlusquamperfektIch, indikativPlusquamperfektDu, indikativPlusquamperfektEr,
+             indikativPlusquamperfektWir, indikativPlusquamperfektIhr, indikativPlusquamperfektSie,
+             indikativFutur1Ich, indikativFutur1Du, indikativFutur1Er,
+             indikativFutur1Wir, indikativFutur1Ihr, indikativFutur1Sie,
+             indikativFutur2Ich, indikativFutur2Du, indikativFutur2Er,
+             indikativFutur2Wir, indikativFutur2Ihr, indikativFutur2Sie,
+             konjunktiv1PrasensIch, konjunktiv1PrasensDu, konjunktiv1PrasensEr,
+             konjunktiv1PrasensWir, konjunktiv1PrasensIhr, konjunktiv1PrasensSie,
+             konjunktiv1PerfektIch, konjunktiv1PerfektDu, konjunktiv1PerfektEr,
+             konjunktiv1PerfektWir, konjunktiv1PerfektIhr, konjunktiv1PerfektSie,
              
-             subjonctifPresentJe, subjonctifPresentTu, subjonctifPresentIl,
-             subjonctifPresentNous, subjonctifPresentVous, subjonctifPresentIls,
-             subjonctifPasseJe, subjonctifPasseTu, subjonctifPasseIl,
-             subjonctifPasseNous, subjonctifPasseVous, subjonctifPasseIls,
-             subjonctifImperfaitJe, subjonctifImperfaitTu, subjonctifImperfaitIl,
-             subjonctifImperfaitNous, subjonctifImperfaitVous, subjonctifImperfaitIls,
-             subjonctifPlusQueParfaitJe, subjonctifPlusQueParfaitTu, subjonctifPlusQueParfaitIl,
-             subjonctifPlusQueParfaitNous, subjonctifPlusQueParfaitVous, subjonctifPlusQueParfaitIls,
-             conditionnelPresentJe, conditionnelPresentTu, conditionnelPresentIl,
-             conditionnelPresentNous, conditionnelPresentVous, conditionnelPresentIls,
-             conditionnelPasseJe, conditionnelPasseTu, conditionnelPasseIl,
-             conditionnelPasseNous, conditionnelPasseVous, conditionnelPasseIls:
+             konjunktiv1Futur1Ich, konjunktiv1Futur1Du, konjunktiv1Futur1Er,
+             konjunktiv1Futur1Wir, konjunktiv1Futur1Ihr, konjunktiv1Futur1Sie,
+             konjunktiv1Futur2Ich, konjunktiv1Futur2Du, konjunktiv1Futur2Er,
+             konjunktiv1Futur2Wir, konjunktiv1Futur2Ihr, konjunktiv1Futur2Sie,
+             konjunktiv2PrateritumIch, konjunktiv2PrateritumDu, konjunktiv2PrateritumEr,
+             konjunktiv2PrateritumWir, konjunktiv2PrateritumIhr, konjunktiv2PrateritumSie,
+             konjunktiv2PlusquamperfektIch, konjunktiv2PlusquamperfektDu, konjunktiv2PlusquamperfektEr,
+             konjunktiv2PlusquamperfektWir, konjunktiv2PlusquamperfektIhr, konjunktiv2PlusquamperfektSie,
+             konjunktiv2Futur1Ich, konjunktiv2Futur1Du, konjunktiv2Futur1Er,
+             konjunktiv2Futur1Wir, konjunktiv2Futur1Ihr, konjunktiv2Futur1Sie,
+             konjunktiv2Futur2Ich, konjunktiv2Futur2Du, konjunktiv2Futur2Er,
+             konjunktiv2Futur2Wir, konjunktiv2Futur2Ihr, konjunktiv2Futur2Sie:
             
             let text : String = sender.title(for: .normal)!
             speaker.speak(text)
@@ -2902,10 +2882,6 @@ class VerbDetailsViewController: UIViewController {
             + "\n" + conjugation.imperativDu
             + "\n" + conjugation.imperativIhr
             + "\n" + conjugation.imperativSie
-            + "\n\nImparfait Passé:"
-            + "\n" + conjugation.imperatifPasseTu
-            + "\n" + conjugation.imperatifPasseNous
-            + "\n" + conjugation.imperatifPasseVous
             + "\n\nInfinitif Présent:"
             + "\n" + conjugation.infinitivPrasens
             + "\n\nInfinitif Passé:"
@@ -2914,11 +2890,6 @@ class VerbDetailsViewController: UIViewController {
             + "\n" + conjugation.partizipPrasens
             + "\n\nParticipe Passé:"
             + "\n" + conjugation.partizipPerfekt
-            + "\n" + conjugation.participePasse2
-            + "\n\nGérondif Présent:"
-            + "\n" + conjugation.gerondifPresent
-            + "\n\nGérondif Passé:"
-            + "\n" + conjugation.gerondifPasse
         return text
     }
 }

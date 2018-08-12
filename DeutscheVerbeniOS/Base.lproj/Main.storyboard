@@ -103,7 +103,7 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
-                                                    <action selector="changeShowVerbGroup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ult-Fc-DRe"/>
+                                                    <action selector="changeShowVerbType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ult-Fc-DRe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -166,8 +166,6 @@
                     </view>
                     <connections>
                         <outlet property="general" destination="UjU-7h-uPI" id="J9S-fl-dgo"/>
-                        <outlet property="group" destination="jrJ-xO-hKR" id="526-RD-500"/>
-                        <outlet property="groupLabel" destination="vhG-9O-o3w" id="OI8-76-yQj"/>
                         <outlet property="language" destination="ArW-6S-Hfk" id="xUA-iy-fHy"/>
                         <outlet property="languageLabel" destination="JOi-U9-UhL" id="TCx-Gn-OhO"/>
                         <outlet property="mostCommon" destination="KKl-Ne-2RN" id="fd8-D6-D2I"/>
@@ -177,6 +175,8 @@
                         <outlet property="showVerbs" destination="Jlw-x5-Off" id="cEQ-JI-gPt"/>
                         <outlet property="sort" destination="Uh2-Rm-kfk" id="fBP-iP-JgP"/>
                         <outlet property="sortLabel" destination="qyC-I0-J0s" id="csU-LH-AIH"/>
+                        <outlet property="type" destination="jrJ-xO-hKR" id="526-RD-500"/>
+                        <outlet property="typeLabel" destination="vhG-9O-o3w" id="OI8-76-yQj"/>
                         <outlet property="verbTranslation" destination="CGV-9K-piP" id="8jn-LP-6pw"/>
                     </connections>
                 </viewController>
@@ -207,19 +207,19 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VkR-Ud-512" userLabel="Main Stack View">
-                                                            <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                            <rect key="frame" x="8" y="8" width="584" height="27.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pr0-11-B9z" userLabel="Verb Stack View">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="20.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDe-WA-TAf">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="292" height="20.5"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-QJ-MkB">
-                                                                            <rect key="frame" x="179.5" y="0.0" width="179.5" height="20.5"/>
+                                                                            <rect key="frame" x="292" y="0.0" width="292" height="20.5"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -312,7 +312,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="9U7-9P-UgP" userLabel="VerbDetails Stack View">
-                                                <rect key="frame" x="8" y="8" width="359" height="2628.5"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="2505.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8d1-Xl-yrm" userLabel="Details Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="482.5"/>
@@ -401,21 +401,21 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="teq-it-rfk" userLabel="Conjugation Stack View">
-                                                        <rect key="frame" x="0.0" y="506.5" width="359" height="2122"/>
+                                                        <rect key="frame" x="0.0" y="506.5" width="359" height="1999"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INDICATIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xt-6m-YCh">
-                                                                <rect key="frame" x="139" y="0.0" width="81" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INDIKATIV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xt-6m-YCh">
+                                                                <rect key="frame" x="138" y="0.0" width="83" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bqK-Jf-M3e" userLabel="Indicatif1 Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bqK-Jf-M3e" userLabel="Indikativ1 Stack View">
                                                                 <rect key="frame" x="0.0" y="28.5" width="359" height="218.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bCU-ez-yvw" userLabel="Present Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bCU-ez-yvw" userLabel="Prasens Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Présent" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csY-AO-h0E">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Präsens" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csY-AO-h0E">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -479,10 +479,10 @@
                                                                             <constraint firstItem="vdb-jk-nDF" firstAttribute="firstBaseline" secondItem="p4D-Qd-grh" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="qDi-2X-n31"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QAq-1F-fvM" userLabel="Passe Compose Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QAq-1F-fvM" userLabel="Prateritum Stack View">
                                                                         <rect key="frame" x="179.5" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé composé" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6p-cM-KXe">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Präteritum" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6p-cM-KXe">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -548,13 +548,13 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VJw-SZ-nV1" userLabel="Indicatif2 Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VJw-SZ-nV1" userLabel="Indikativ2 Stack View">
                                                                 <rect key="frame" x="0.0" y="255" width="359" height="218.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PyI-IG-QxC" userLabel="Imparfait Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PyI-IG-QxC" userLabel="Perfekt Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imperfait" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-Mn-1TB">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfekt" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-Mn-1TB">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -619,10 +619,10 @@
                                                                             <constraint firstItem="BZb-tm-pO9" firstAttribute="firstBaseline" secondItem="0JD-Mn-1TB" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="zbA-fd-sXX"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-3s-Bif" userLabel="PlusQueParfait Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-3s-Bif" userLabel="Plusquamperfekt Stack View">
                                                                         <rect key="frame" x="179.5" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plus-que-parfait" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCF-Ee-t5j">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plusquamperfekt" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCF-Ee-t5j">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -689,13 +689,13 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-jB-PUu" userLabel="Indicatif3 Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-jB-PUu" userLabel="Indikativ3 Stack View">
                                                                 <rect key="frame" x="0.0" y="481.5" width="359" height="218.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zUw-n9-dBb" userLabel="PasseSimple Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zUw-n9-dBb" userLabel="Futur1 Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé simple" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwB-ug-joC">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futur I" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwB-ug-joC">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -759,10 +759,10 @@
                                                                             <constraint firstItem="pIW-IB-NUv" firstAttribute="firstBaseline" secondItem="zRl-6a-4gy" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="ntT-fa-R7a"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IfF-y5-lCJ" userLabel="PasseAnterieur Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IfF-y5-lCJ" userLabel="Futur2 Stack View">
                                                                         <rect key="frame" x="179.5" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé antérieur" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cco-ey-bLa">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futur II" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cco-ey-bLa">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -828,13 +828,19 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QSy-e8-8gF" userLabel="Indicatif4 Stack View">
-                                                                <rect key="frame" x="0.0" y="708" width="359" height="218.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KONJUNKTIV I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0b-lK-QSc">
+                                                                <rect key="frame" x="121" y="708" width="117.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QSy-e8-8gF" userLabel="Konjuktiv1.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="736.5" width="359" height="218.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-pN-eka" userLabel="FuturSimple Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hm3-pN-eka" userLabel="Prasens Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futur simple" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65D-7C-vZF">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Präsens" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65D-7C-vZF">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -898,10 +904,10 @@
                                                                             <constraint firstItem="Vtx-To-b7w" firstAttribute="firstBaseline" secondItem="rpF-kd-u8M" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="mYS-FO-iiw"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-4l-Grt" userLabel="FuturAnterieur Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-4l-Grt" userLabel="Perfekt Stack View">
                                                                         <rect key="frame" x="179.5" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futur antérieur" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoJ-IF-fSk">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfekt" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoJ-IF-fSk">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -967,19 +973,13 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONDITIONNEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0b-lK-QSc">
-                                                                <rect key="frame" x="116" y="934.5" width="127.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pmb-HY-Asl" userLabel="Conditionnel Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pmb-HY-Asl" userLabel="Konjuktiv1.2 Stack View">
                                                                 <rect key="frame" x="0.0" y="963" width="359" height="218.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zw6-bD-3hM" userLabel="Condit Present Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zw6-bD-3hM" userLabel="Futur1 Present Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Présent" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxx-5E-pql">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futur I" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxx-5E-pql">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -1043,10 +1043,10 @@
                                                                             <constraint firstItem="yt3-xd-Yzh" firstAttribute="firstBaseline" secondItem="xaJ-qw-1ls" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="dEO-uT-pE4"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q3B-BL-9GF" userLabel="Condit Passe Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q3B-BL-9GF" userLabel="Futur2 Stack View">
                                                                         <rect key="frame" x="179.5" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyT-m5-aIG">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futur II" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyT-m5-aIG">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -1112,158 +1112,19 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBJONCTIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVb-Ws-obH">
-                                                                <rect key="frame" x="126.5" y="1189.5" width="106" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KONJUNKTIV II" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVb-Ws-obH">
+                                                                <rect key="frame" x="118.5" y="1189.5" width="122.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5XI-1Q-XRY" userLabel="Subjonctif1 Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-Yz-odC" userLabel="Konjuktiv2.1 Stack View">
                                                                 <rect key="frame" x="0.0" y="1218" width="359" height="218.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o20-IV-5f5" userLabel="Subj Present Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VNR-Mz-h2x" userLabel="Prateritum Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Présent" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RY-c2-nYV">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qv7-bX-5em">
-                                                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="bK2-Vj-E5l"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IG5-Lm-lfC">
-                                                                                <rect key="frame" x="0.0" y="53.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="cgw-mT-y8n"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ydg-QL-bQT">
-                                                                                <rect key="frame" x="0.0" y="86.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="FZs-RQ-wQV"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tiw-HK-uPs">
-                                                                                <rect key="frame" x="0.0" y="119.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="Ukl-IK-p4B"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zYJ-Mn-jP8">
-                                                                                <rect key="frame" x="0.0" y="152.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="9V3-ak-UVh"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GO5-q1-kcN">
-                                                                                <rect key="frame" x="0.0" y="185.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="UMF-Tt-lWd"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="Tiw-HK-uPs" firstAttribute="firstBaseline" secondItem="Ydg-QL-bQT" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="9vY-6D-DxN"/>
-                                                                            <constraint firstItem="GO5-q1-kcN" firstAttribute="firstBaseline" secondItem="zYJ-Mn-jP8" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Hqr-9M-FNH"/>
-                                                                            <constraint firstItem="IG5-Lm-lfC" firstAttribute="firstBaseline" secondItem="qv7-bX-5em" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="TTC-Qk-IgV"/>
-                                                                            <constraint firstItem="qv7-bX-5em" firstAttribute="firstBaseline" secondItem="8RY-c2-nYV" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="nRX-3U-QRX"/>
-                                                                            <constraint firstItem="Ydg-QL-bQT" firstAttribute="firstBaseline" secondItem="IG5-Lm-lfC" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="pqm-2B-hSI"/>
-                                                                            <constraint firstItem="zYJ-Mn-jP8" firstAttribute="firstBaseline" secondItem="Tiw-HK-uPs" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="yTD-yA-BJr"/>
-                                                                        </constraints>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ecp-o1-qxZ" userLabel="Subj Passe Stack View">
-                                                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="218.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unc-pS-1mG">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BdS-6D-0eL">
-                                                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="stc-Ly-2dh"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cms-dT-CX3">
-                                                                                <rect key="frame" x="0.0" y="53.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="jdT-un-eBc"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Q1j-FC-9pn">
-                                                                                <rect key="frame" x="0.0" y="86.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="YLB-p0-iJy"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Wsv-5Z-M55">
-                                                                                <rect key="frame" x="0.0" y="119.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="xKc-uY-gPl"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JWX-IF-6bP">
-                                                                                <rect key="frame" x="0.0" y="152.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="Ofw-e6-yOZ"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vyV-05-sDX">
-                                                                                <rect key="frame" x="0.0" y="185.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="s7Q-f3-Xnn"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="cms-dT-CX3" firstAttribute="firstBaseline" secondItem="BdS-6D-0eL" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="8JP-Yg-wxa"/>
-                                                                            <constraint firstItem="Q1j-FC-9pn" firstAttribute="firstBaseline" secondItem="cms-dT-CX3" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="C3v-lq-yv5"/>
-                                                                            <constraint firstItem="BdS-6D-0eL" firstAttribute="firstBaseline" secondItem="Unc-pS-1mG" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="IEs-Lb-tNs"/>
-                                                                            <constraint firstItem="JWX-IF-6bP" firstAttribute="firstBaseline" secondItem="Wsv-5Z-M55" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Kbl-Gc-uSz"/>
-                                                                            <constraint firstItem="Wsv-5Z-M55" firstAttribute="firstBaseline" secondItem="Q1j-FC-9pn" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="ZaG-Kj-OnP"/>
-                                                                            <constraint firstItem="vyV-05-sDX" firstAttribute="firstBaseline" secondItem="JWX-IF-6bP" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="gt0-rA-ucC"/>
-                                                                        </constraints>
-                                                                    </stackView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-Yz-odC" userLabel="Subjonctif2 Stack View">
-                                                                <rect key="frame" x="0.0" y="1444.5" width="359" height="218.5"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VNR-Mz-h2x" userLabel="Subj Imparfait Stack View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="218.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imparfait" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPL-B1-5WS">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Präteritum" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPL-B1-5WS">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -1327,10 +1188,10 @@
                                                                             <constraint firstItem="152-bx-E1t" firstAttribute="firstBaseline" secondItem="Mj4-IU-1g2" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="iRR-Zb-4D4"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o0t-Bc-9bW" userLabel="Subj PlusQueParfait Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o0t-Bc-9bW" userLabel="Plusquamperfekt Stack View">
                                                                         <rect key="frame" x="179.5" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plus-que-parfait" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOC-eo-zFK">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plusquamperfekt" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOC-eo-zFK">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -1396,26 +1257,165 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMPÉRATIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2e-AH-dDq">
-                                                                <rect key="frame" x="136" y="1671" width="87" height="20.5"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WJZ-HW-2K0" userLabel="Imperatif Stack View">
-                                                                <rect key="frame" x="0.0" y="1699.5" width="359" height="119.5"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5XI-1Q-XRY" userLabel="Konjuktiv2.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="1444.5" width="359" height="218.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sJU-B4-UYf" userLabel="Imperatif Present Stack View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="119.5"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o20-IV-5f5" userLabel="Futur1 Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="218.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Présent" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ill-sM-V9u">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futur I" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RY-c2-nYV">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gly-gl-fSI">
+                                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qv7-bX-5em">
                                                                                 <rect key="frame" x="0.0" y="20.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="bK2-Vj-E5l"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IG5-Lm-lfC">
+                                                                                <rect key="frame" x="0.0" y="53.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="cgw-mT-y8n"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ydg-QL-bQT">
+                                                                                <rect key="frame" x="0.0" y="86.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="FZs-RQ-wQV"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tiw-HK-uPs">
+                                                                                <rect key="frame" x="0.0" y="119.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="Ukl-IK-p4B"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zYJ-Mn-jP8">
+                                                                                <rect key="frame" x="0.0" y="152.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="9V3-ak-UVh"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GO5-q1-kcN">
+                                                                                <rect key="frame" x="0.0" y="185.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="UMF-Tt-lWd"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="Tiw-HK-uPs" firstAttribute="firstBaseline" secondItem="Ydg-QL-bQT" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="9vY-6D-DxN"/>
+                                                                            <constraint firstItem="GO5-q1-kcN" firstAttribute="firstBaseline" secondItem="zYJ-Mn-jP8" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Hqr-9M-FNH"/>
+                                                                            <constraint firstItem="IG5-Lm-lfC" firstAttribute="firstBaseline" secondItem="qv7-bX-5em" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="TTC-Qk-IgV"/>
+                                                                            <constraint firstItem="qv7-bX-5em" firstAttribute="firstBaseline" secondItem="8RY-c2-nYV" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="nRX-3U-QRX"/>
+                                                                            <constraint firstItem="Ydg-QL-bQT" firstAttribute="firstBaseline" secondItem="IG5-Lm-lfC" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="pqm-2B-hSI"/>
+                                                                            <constraint firstItem="zYJ-Mn-jP8" firstAttribute="firstBaseline" secondItem="Tiw-HK-uPs" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="yTD-yA-BJr"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ecp-o1-qxZ" userLabel="Futur2 Stack View">
+                                                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="218.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Futur II" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unc-pS-1mG">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BdS-6D-0eL">
+                                                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="stc-Ly-2dh"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cms-dT-CX3">
+                                                                                <rect key="frame" x="0.0" y="53.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="jdT-un-eBc"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Q1j-FC-9pn">
+                                                                                <rect key="frame" x="0.0" y="86.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="YLB-p0-iJy"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Wsv-5Z-M55">
+                                                                                <rect key="frame" x="0.0" y="119.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="xKc-uY-gPl"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JWX-IF-6bP">
+                                                                                <rect key="frame" x="0.0" y="152.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="Ofw-e6-yOZ"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vyV-05-sDX">
+                                                                                <rect key="frame" x="0.0" y="185.5" width="179.5" height="33"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="s7Q-f3-Xnn"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="cms-dT-CX3" firstAttribute="firstBaseline" secondItem="BdS-6D-0eL" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="8JP-Yg-wxa"/>
+                                                                            <constraint firstItem="Q1j-FC-9pn" firstAttribute="firstBaseline" secondItem="cms-dT-CX3" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="C3v-lq-yv5"/>
+                                                                            <constraint firstItem="BdS-6D-0eL" firstAttribute="firstBaseline" secondItem="Unc-pS-1mG" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="IEs-Lb-tNs"/>
+                                                                            <constraint firstItem="JWX-IF-6bP" firstAttribute="firstBaseline" secondItem="Wsv-5Z-M55" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Kbl-Gc-uSz"/>
+                                                                            <constraint firstItem="Wsv-5Z-M55" firstAttribute="firstBaseline" secondItem="Q1j-FC-9pn" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="ZaG-Kj-OnP"/>
+                                                                            <constraint firstItem="vyV-05-sDX" firstAttribute="firstBaseline" secondItem="JWX-IF-6bP" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="gt0-rA-ucC"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMPERATIV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2e-AH-dDq">
+                                                                <rect key="frame" x="135" y="1671" width="89" height="20.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WJZ-HW-2K0" userLabel="Imperativ Stack View">
+                                                                <rect key="frame" x="0.0" y="1699.5" width="359" height="119.5"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sJU-B4-UYf" userLabel="Imperativ Prasens Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="119.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Präsens" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ill-sM-V9u">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gly-gl-fSI">
+                                                                                <rect key="frame" x="0.0" y="20.5" width="359" height="33"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                 <state key="normal" title="Button"/>
                                                                                 <connections>
@@ -1423,7 +1423,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6uu-Pw-hOm">
-                                                                                <rect key="frame" x="0.0" y="53.5" width="179.5" height="33"/>
+                                                                                <rect key="frame" x="0.0" y="53.5" width="359" height="33"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                 <state key="normal" title="Button"/>
                                                                                 <connections>
@@ -1431,7 +1431,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-wy-Nun">
-                                                                                <rect key="frame" x="0.0" y="86.5" width="179.5" height="33"/>
+                                                                                <rect key="frame" x="0.0" y="86.5" width="359" height="33"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                 <state key="normal" title="Button"/>
                                                                                 <connections>
@@ -1445,61 +1445,21 @@
                                                                             <constraint firstItem="gMg-wy-Nun" firstAttribute="firstBaseline" secondItem="6uu-Pw-hOm" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="aJ0-RP-vvm"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-Em-tTf" userLabel="Imperatif Passe Stack View">
-                                                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="119.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4i-2L-sW4">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5bd-j8-LbO">
-                                                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="zNj-Ul-LnL"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="g7J-Ap-bVf">
-                                                                                <rect key="frame" x="0.0" y="53.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="coL-WU-gAT"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cdR-jk-tid">
-                                                                                <rect key="frame" x="0.0" y="86.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="QB0-QL-BLB"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="5bd-j8-LbO" firstAttribute="firstBaseline" secondItem="m4i-2L-sW4" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="8Gv-Ud-iqr"/>
-                                                                            <constraint firstItem="cdR-jk-tid" firstAttribute="firstBaseline" secondItem="g7J-Ap-bVf" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Cfb-jV-toY"/>
-                                                                            <constraint firstItem="g7J-Ap-bVf" firstAttribute="firstBaseline" secondItem="5bd-j8-LbO" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="KYW-Yo-UJG"/>
-                                                                        </constraints>
-                                                                    </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFINITIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APz-Au-78s">
-                                                                <rect key="frame" x="142.5" y="1827" width="74" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFINITIV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APz-Au-78s">
+                                                                <rect key="frame" x="142" y="1827" width="75.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-sQ-gmj" userLabel="Infinitif Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-sQ-gmj" userLabel="Infinitiv Stack View">
                                                                 <rect key="frame" x="0.0" y="1855.5" width="359" height="53.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LMm-wT-iSy" userLabel="Infinitif Present Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LMm-wT-iSy" userLabel="Infinitiv Prasens Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="53.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Présent" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejz-BR-G7N">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Präsens" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejz-BR-G7N">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -1515,10 +1475,10 @@
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3bb-at-1ho" userLabel="Infinitif Passe Stack View">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3bb-at-1ho" userLabel="Infinitiv Perfekt Stack View">
                                                                         <rect key="frame" x="179.5" y="0.0" width="179.5" height="53.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1T-VT-Szn">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfekt" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1T-VT-Szn">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -1536,26 +1496,26 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PARTICIPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37s-sy-AqU">
-                                                                <rect key="frame" x="136.5" y="1917" width="86" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PARTIZIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37s-sy-AqU">
+                                                                <rect key="frame" x="142" y="1917" width="75" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U4s-gH-GCb" userLabel="Participe Stack View">
-                                                                <rect key="frame" x="0.0" y="1945.5" width="359" height="86.5"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U4s-gH-GCb" userLabel="Partizip Stack View">
+                                                                <rect key="frame" x="0.0" y="1945.5" width="359" height="53.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uFa-6O-67h" userLabel="Participe Present Stack View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="86.5"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uFa-6O-67h" userLabel="Partizip Prasens Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="53.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Présent" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHP-1p-xni">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Präsens" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHP-1p-xni">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="32G-tg-oPb">
-                                                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="66"/>
+                                                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="33"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                 <state key="normal" title="Button"/>
                                                                                 <connections>
@@ -1567,10 +1527,10 @@
                                                                             <constraint firstItem="32G-tg-oPb" firstAttribute="firstBaseline" secondItem="SHP-1p-xni" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Ttu-t9-YDJ"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9CK-q4-dBb" userLabel="Participe Passe Stack View">
-                                                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="86.5"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9CK-q4-dBb" userLabel="Partizip Perfekt Stack View">
+                                                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="53.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaD-NC-S36">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfekt" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaD-NC-S36">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                                 <nil key="textColor"/>
@@ -1584,73 +1544,9 @@
                                                                                     <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="4xY-ls-bsS"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="U6J-0N-AvU">
-                                                                                <rect key="frame" x="0.0" y="53.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="egi-rX-Nkd"/>
-                                                                                </connections>
-                                                                            </button>
                                                                         </subviews>
                                                                         <constraints>
-                                                                            <constraint firstItem="U6J-0N-AvU" firstAttribute="firstBaseline" secondItem="JJY-in-pOW" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Rrp-0Z-oXw"/>
                                                                             <constraint firstItem="JJY-in-pOW" firstAttribute="firstBaseline" secondItem="zaD-NC-S36" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="T6d-9c-jTp"/>
-                                                                        </constraints>
-                                                                    </stackView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GÉRONDIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcE-Eb-LTR">
-                                                                <rect key="frame" x="137" y="2040" width="85.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y7f-Lb-hCw" userLabel="Gerondif Stack View">
-                                                                <rect key="frame" x="0.0" y="2068.5" width="359" height="53.5"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7mE-Z0-Con" userLabel="Gerondif Present Stack View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="53.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Présent" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndW-PU-ww2">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0Mz-ge-wbY">
-                                                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="fh5-Kp-jwU"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="0Mz-ge-wbY" firstAttribute="firstBaseline" secondItem="ndW-PU-ww2" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="RIT-V8-Qg2"/>
-                                                                        </constraints>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a5L-Gp-Cav" userLabel="Gerondif Passe Stack View">
-                                                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="53.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passé" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MI-sT-v5d">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-5I-6Yp">
-                                                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="33"/>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <connections>
-                                                                                    <action selector="speakButton:" destination="eUu-rI-KR1" eventType="touchUpInside" id="rQh-86-5oH"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="BvB-5I-6Yp" firstAttribute="firstBaseline" secondItem="1MI-sT-v5d" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="ZoC-Pi-jQ7"/>
                                                                         </constraints>
                                                                     </stackView>
                                                                 </subviews>
@@ -1660,7 +1556,6 @@
                                                             <constraint firstItem="bqK-Jf-M3e" firstAttribute="width" secondItem="teq-it-rfk" secondAttribute="width" id="KPf-lB-lcY"/>
                                                             <constraint firstItem="QSy-e8-8gF" firstAttribute="width" secondItem="teq-it-rfk" secondAttribute="width" id="NsV-RK-CfC"/>
                                                             <constraint firstItem="WJZ-HW-2K0" firstAttribute="width" secondItem="teq-it-rfk" secondAttribute="width" id="PUR-qT-BHi"/>
-                                                            <constraint firstItem="y7f-Lb-hCw" firstAttribute="width" secondItem="teq-it-rfk" secondAttribute="width" id="TmG-LK-WBv"/>
                                                             <constraint firstItem="mK3-Yz-odC" firstAttribute="width" secondItem="teq-it-rfk" secondAttribute="width" id="W3O-Db-CdB"/>
                                                             <constraint firstItem="U4s-gH-GCb" firstAttribute="width" secondItem="teq-it-rfk" secondAttribute="width" id="ces-Rh-4Pf"/>
                                                             <constraint firstItem="VJw-SZ-nV1" firstAttribute="width" secondItem="teq-it-rfk" secondAttribute="width" id="f2W-w0-7wx"/>
@@ -1706,114 +1601,108 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="conditionnelPasseIl" destination="jXq-0h-lKh" id="64m-GY-HAt"/>
-                        <outlet property="conditionnelPasseIls" destination="Jn4-qp-98A" id="d2q-AB-jHa"/>
-                        <outlet property="conditionnelPasseJe" destination="uA7-XH-g22" id="ltC-Tb-KSE"/>
-                        <outlet property="conditionnelPasseNous" destination="SJU-a1-9W1" id="MdW-Ry-FsC"/>
-                        <outlet property="conditionnelPasseTu" destination="pbO-Lu-1fN" id="8iu-es-5xn"/>
-                        <outlet property="conditionnelPasseVous" destination="qaG-Ao-w5X" id="xvt-si-qtg"/>
-                        <outlet property="conditionnelPresentIl" destination="91Y-4F-4iI" id="rgn-Cu-Pu5"/>
-                        <outlet property="conditionnelPresentIls" destination="yt3-xd-Yzh" id="4M0-Wf-1Jp"/>
-                        <outlet property="conditionnelPresentJe" destination="a25-Rc-TjZ" id="ndt-Pn-bRU"/>
-                        <outlet property="conditionnelPresentNous" destination="qRk-of-Zff" id="feA-YF-6ZR"/>
-                        <outlet property="conditionnelPresentTu" destination="k3d-xi-a7c" id="YjS-L8-7Sj"/>
-                        <outlet property="conditionnelPresentVous" destination="xaJ-qw-1ls" id="AlK-Mz-kJB"/>
                         <outlet property="definition" destination="xXy-5R-1p3" id="a7j-AH-EmA"/>
                         <outlet property="definitionLabel" destination="Blc-Rf-Var" id="GDj-mn-aef"/>
                         <outlet property="examples" destination="Xmd-xl-9Ng" id="Vhq-K2-gg1"/>
-                        <outlet property="gerondifPasse" destination="BvB-5I-6Yp" id="o06-kT-Hpn"/>
-                        <outlet property="gerondifPresent" destination="0Mz-ge-wbY" id="sIt-iw-PL4"/>
-                        <outlet property="group" destination="g8F-TN-82V" id="TQf-HE-lcg"/>
                         <outlet property="image" destination="J1v-Z5-r9a" id="ZyR-CF-FiV"/>
-                        <outlet property="imperatifPasseNous" destination="g7J-Ap-bVf" id="7Jz-8z-Via"/>
-                        <outlet property="imperatifPasseTu" destination="5bd-j8-LbO" id="fxY-w5-d4N"/>
-                        <outlet property="imperatifPasseVous" destination="cdR-jk-tid" id="YuT-Bf-ATm"/>
-                        <outlet property="imperatifPresentNous" destination="6uu-Pw-hOm" id="7HF-L4-nck"/>
-                        <outlet property="imperatifPresentTu" destination="gly-gl-fSI" id="29i-bN-RuU"/>
-                        <outlet property="imperatifPresentVous" destination="gMg-wy-Nun" id="4Ff-Ez-pbQ"/>
-                        <outlet property="indicatifFuturAnterieurIl" destination="20n-R9-8F9" id="TyD-2J-LYC"/>
-                        <outlet property="indicatifFuturAnterieurIls" destination="F3H-He-ebj" id="4Xa-Ie-Q1M"/>
-                        <outlet property="indicatifFuturAnterieurJe" destination="H4f-Al-nhn" id="db0-uD-Lcd"/>
-                        <outlet property="indicatifFuturAnterieurNous" destination="iGJ-Zb-1pQ" id="nOD-bm-Bbf"/>
-                        <outlet property="indicatifFuturAnterieurTu" destination="IrI-2v-AaJ" id="D2q-IS-Kxh"/>
-                        <outlet property="indicatifFuturAnterieurVous" destination="kaH-ew-LSS" id="qwv-nX-Ey6"/>
-                        <outlet property="indicatifFuturSimpleIl" destination="k88-OZ-IQR" id="hmV-Kl-azK"/>
-                        <outlet property="indicatifFuturSimpleIls" destination="tiK-Pz-Kqf" id="qMV-6v-8DV"/>
-                        <outlet property="indicatifFuturSimpleJe" destination="8Cu-C2-Uhx" id="aCU-zR-VLX"/>
-                        <outlet property="indicatifFuturSimpleNous" destination="rpF-kd-u8M" id="R1J-fZ-gRf"/>
-                        <outlet property="indicatifFuturSimpleTu" destination="Ejb-0M-Wix" id="oLG-wl-QOJ"/>
-                        <outlet property="indicatifFuturSimpleVous" destination="Vtx-To-b7w" id="DkT-D9-JpV"/>
-                        <outlet property="indicatifImperfaitIl" destination="e0n-JY-V4Q" id="oR9-J3-kUJ"/>
-                        <outlet property="indicatifImperfaitIls" destination="kdK-Du-8MA" id="Sdb-2h-NkE"/>
-                        <outlet property="indicatifImperfaitJe" destination="BZb-tm-pO9" id="5jM-cb-ya7"/>
-                        <outlet property="indicatifImperfaitNous" destination="rfB-ta-hsb" id="V3P-fS-vFf"/>
-                        <outlet property="indicatifImperfaitTu" destination="8le-36-Klj" id="85i-0N-ddQ"/>
-                        <outlet property="indicatifImperfaitVous" destination="jI3-E0-6LO" id="zRK-8C-jp5"/>
-                        <outlet property="indicatifPasseAnterieurIl" destination="GNd-wv-m0X" id="fV3-7b-bVA"/>
-                        <outlet property="indicatifPasseAnterieurIls" destination="OGa-EE-i3K" id="idy-pn-xXq"/>
-                        <outlet property="indicatifPasseAnterieurJe" destination="agD-Fh-Zu9" id="xSA-jO-WcK"/>
-                        <outlet property="indicatifPasseAnterieurNous" destination="THW-WH-bPo" id="hFu-du-fYI"/>
-                        <outlet property="indicatifPasseAnterieurTu" destination="Sd5-uQ-aPV" id="k99-wx-fUt"/>
-                        <outlet property="indicatifPasseAnterieurVous" destination="iXw-fw-s6c" id="0x9-vL-axz"/>
-                        <outlet property="indicatifPasseComposeIl" destination="Wju-1J-Xjf" id="jAZ-Zh-fC6"/>
-                        <outlet property="indicatifPasseComposeIls" destination="7Yd-Ea-6KN" id="14b-6r-nnx"/>
-                        <outlet property="indicatifPasseComposeJe" destination="7wW-9d-w8C" id="SgS-4D-Gk9"/>
-                        <outlet property="indicatifPasseComposeNous" destination="IOD-RJ-EH2" id="2lA-Ma-hJc"/>
-                        <outlet property="indicatifPasseComposeTu" destination="UuK-oB-xV5" id="5z8-WN-fmz"/>
-                        <outlet property="indicatifPasseComposeVous" destination="bR9-db-xWR" id="uR9-Pl-k2b"/>
-                        <outlet property="indicatifPasseSimpleIl" destination="zRl-6a-4gy" id="h4A-Vb-pFG"/>
-                        <outlet property="indicatifPasseSimpleIls" destination="lBX-gM-8zQ" id="FYj-vY-wpi"/>
-                        <outlet property="indicatifPasseSimpleJe" destination="uHM-Tn-wju" id="8Of-nT-SWJ"/>
-                        <outlet property="indicatifPasseSimpleNous" destination="pIW-IB-NUv" id="wFl-Ko-gFc"/>
-                        <outlet property="indicatifPasseSimpleTu" destination="0Ae-5k-9eE" id="kZ3-Fv-1k0"/>
-                        <outlet property="indicatifPasseSimpleVous" destination="Ig5-T1-kfy" id="wNU-x7-zKw"/>
-                        <outlet property="indicatifPlusQueParfaitIl" destination="egi-fi-zUV" id="e4x-Sg-Zpl"/>
-                        <outlet property="indicatifPlusQueParfaitIls" destination="eVN-EY-pRq" id="mvh-2Z-Xf6"/>
-                        <outlet property="indicatifPlusQueParfaitJe" destination="AT8-Eg-aRd" id="RP6-0p-e7h"/>
-                        <outlet property="indicatifPlusQueParfaitNous" destination="8Zn-Ix-1c2" id="D3v-Sf-eiR"/>
-                        <outlet property="indicatifPlusQueParfaitTu" destination="jbS-8Z-WLB" id="zfq-Ed-8Zg"/>
-                        <outlet property="indicatifPlusQueParfaitVous" destination="ZYY-nl-2yQ" id="HcH-Ih-r5B"/>
-                        <outlet property="indicatifPresentIl" destination="tmP-bp-aaW" id="Jgj-2c-Zoe"/>
-                        <outlet property="indicatifPresentIls" destination="Kn4-9b-U8C" id="1BQ-Hn-CHf"/>
-                        <outlet property="indicatifPresentJe" destination="p4D-Qd-grh" id="2Qk-Ig-2ek"/>
-                        <outlet property="indicatifPresentNous" destination="Heh-mD-gXS" id="N2d-Oz-zxE"/>
-                        <outlet property="indicatifPresentTu" destination="vdb-jk-nDF" id="HU7-M9-PEa"/>
-                        <outlet property="indicatifPresentVous" destination="QAY-a4-BuI" id="EU6-fy-6yC"/>
+                        <outlet property="imperativDu" destination="gly-gl-fSI" id="29i-bN-RuU"/>
+                        <outlet property="imperativIhr" destination="6uu-Pw-hOm" id="7HF-L4-nck"/>
+                        <outlet property="imperativSie" destination="gMg-wy-Nun" id="4Ff-Ez-pbQ"/>
+                        <outlet property="indikativFutur1Du" destination="0Ae-5k-9eE" id="kZ3-Fv-1k0"/>
+                        <outlet property="indikativFutur1Er" destination="zRl-6a-4gy" id="h4A-Vb-pFG"/>
+                        <outlet property="indikativFutur1Ich" destination="uHM-Tn-wju" id="8Of-nT-SWJ"/>
+                        <outlet property="indikativFutur1Ihr" destination="Ig5-T1-kfy" id="wNU-x7-zKw"/>
+                        <outlet property="indikativFutur1Sie" destination="lBX-gM-8zQ" id="FYj-vY-wpi"/>
+                        <outlet property="indikativFutur1Wir" destination="pIW-IB-NUv" id="wFl-Ko-gFc"/>
+                        <outlet property="indikativFutur2Du" destination="Sd5-uQ-aPV" id="k99-wx-fUt"/>
+                        <outlet property="indikativFutur2Er" destination="GNd-wv-m0X" id="fV3-7b-bVA"/>
+                        <outlet property="indikativFutur2Ich" destination="agD-Fh-Zu9" id="xSA-jO-WcK"/>
+                        <outlet property="indikativFutur2Ihr" destination="iXw-fw-s6c" id="0x9-vL-axz"/>
+                        <outlet property="indikativFutur2Sie" destination="OGa-EE-i3K" id="idy-pn-xXq"/>
+                        <outlet property="indikativFutur2Wir" destination="THW-WH-bPo" id="hFu-du-fYI"/>
+                        <outlet property="indikativPerfektDu" destination="8le-36-Klj" id="85i-0N-ddQ"/>
+                        <outlet property="indikativPerfektEr" destination="e0n-JY-V4Q" id="oR9-J3-kUJ"/>
+                        <outlet property="indikativPerfektIch" destination="BZb-tm-pO9" id="5jM-cb-ya7"/>
+                        <outlet property="indikativPerfektIhr" destination="jI3-E0-6LO" id="zRK-8C-jp5"/>
+                        <outlet property="indikativPerfektSie" destination="kdK-Du-8MA" id="Sdb-2h-NkE"/>
+                        <outlet property="indikativPerfektWir" destination="rfB-ta-hsb" id="V3P-fS-vFf"/>
+                        <outlet property="indikativPlusquamperfektDu" destination="jbS-8Z-WLB" id="zfq-Ed-8Zg"/>
+                        <outlet property="indikativPlusquamperfektEr" destination="egi-fi-zUV" id="e4x-Sg-Zpl"/>
+                        <outlet property="indikativPlusquamperfektIch" destination="AT8-Eg-aRd" id="RP6-0p-e7h"/>
+                        <outlet property="indikativPlusquamperfektIhr" destination="ZYY-nl-2yQ" id="HcH-Ih-r5B"/>
+                        <outlet property="indikativPlusquamperfektSie" destination="eVN-EY-pRq" id="mvh-2Z-Xf6"/>
+                        <outlet property="indikativPlusquamperfektWir" destination="8Zn-Ix-1c2" id="D3v-Sf-eiR"/>
+                        <outlet property="indikativPrasensDu" destination="vdb-jk-nDF" id="HU7-M9-PEa"/>
+                        <outlet property="indikativPrasensEr" destination="tmP-bp-aaW" id="Jgj-2c-Zoe"/>
+                        <outlet property="indikativPrasensIch" destination="p4D-Qd-grh" id="2Qk-Ig-2ek"/>
+                        <outlet property="indikativPrasensIhr" destination="QAY-a4-BuI" id="EU6-fy-6yC"/>
+                        <outlet property="indikativPrasensSie" destination="Kn4-9b-U8C" id="1BQ-Hn-CHf"/>
+                        <outlet property="indikativPrasensWir" destination="Heh-mD-gXS" id="N2d-Oz-zxE"/>
+                        <outlet property="indikativPrateritumDu" destination="UuK-oB-xV5" id="5z8-WN-fmz"/>
+                        <outlet property="indikativPrateritumEr" destination="Wju-1J-Xjf" id="jAZ-Zh-fC6"/>
+                        <outlet property="indikativPrateritumIch" destination="7wW-9d-w8C" id="SgS-4D-Gk9"/>
+                        <outlet property="indikativPrateritumIhr" destination="bR9-db-xWR" id="uR9-Pl-k2b"/>
+                        <outlet property="indikativPrateritumSie" destination="7Yd-Ea-6KN" id="14b-6r-nnx"/>
+                        <outlet property="indikativPrateritumWir" destination="IOD-RJ-EH2" id="2lA-Ma-hJc"/>
+                        <outlet property="infinitivPerfekt" destination="QTo-YO-5AB" id="mVn-iJ-sVy"/>
+                        <outlet property="infinitivPrasens" destination="iP2-CA-lBv" id="GER-Rx-5hM"/>
                         <outlet property="infinitive" destination="6Zn-m2-KvJ" id="Fmt-9I-8ZP"/>
-                        <outlet property="infinitivePasse" destination="QTo-YO-5AB" id="mVn-iJ-sVy"/>
-                        <outlet property="infinitivePresent" destination="iP2-CA-lBv" id="GER-Rx-5hM"/>
-                        <outlet property="participePasse1" destination="JJY-in-pOW" id="FKD-6E-zML"/>
-                        <outlet property="participePasse2" destination="U6J-0N-AvU" id="hbs-qu-Mco"/>
-                        <outlet property="participePresent" destination="32G-tg-oPb" id="MBR-FQ-Ipu"/>
+                        <outlet property="konjunktiv1Futur1Du" destination="IG5-Lm-lfC" id="Tch-cz-uvS"/>
+                        <outlet property="konjunktiv1Futur1Er" destination="Ydg-QL-bQT" id="OOg-Te-SQs"/>
+                        <outlet property="konjunktiv1Futur1Ich" destination="qv7-bX-5em" id="lS2-kE-Abf"/>
+                        <outlet property="konjunktiv1Futur1Ihr" destination="zYJ-Mn-jP8" id="9Pn-vX-aYK"/>
+                        <outlet property="konjunktiv1Futur1Sie" destination="GO5-q1-kcN" id="bz6-3h-hLI"/>
+                        <outlet property="konjunktiv1Futur1Wir" destination="Tiw-HK-uPs" id="SgA-yd-qvr"/>
+                        <outlet property="konjunktiv1Futur2Du" destination="cms-dT-CX3" id="Tcs-uY-V9N"/>
+                        <outlet property="konjunktiv1Futur2Er" destination="Q1j-FC-9pn" id="eO6-pT-NCT"/>
+                        <outlet property="konjunktiv1Futur2Ich" destination="BdS-6D-0eL" id="yF9-DF-Xom"/>
+                        <outlet property="konjunktiv1Futur2Ihr" destination="JWX-IF-6bP" id="P8X-08-Nux"/>
+                        <outlet property="konjunktiv1Futur2Sie" destination="vyV-05-sDX" id="Ods-5J-6gD"/>
+                        <outlet property="konjunktiv1Futur2Wir" destination="Wsv-5Z-M55" id="6kg-RX-NX0"/>
+                        <outlet property="konjunktiv1PerfektDu" destination="IrI-2v-AaJ" id="D2q-IS-Kxh"/>
+                        <outlet property="konjunktiv1PerfektEr" destination="20n-R9-8F9" id="TyD-2J-LYC"/>
+                        <outlet property="konjunktiv1PerfektIch" destination="H4f-Al-nhn" id="db0-uD-Lcd"/>
+                        <outlet property="konjunktiv1PerfektIhr" destination="kaH-ew-LSS" id="qwv-nX-Ey6"/>
+                        <outlet property="konjunktiv1PerfektSie" destination="F3H-He-ebj" id="4Xa-Ie-Q1M"/>
+                        <outlet property="konjunktiv1PerfektWir" destination="iGJ-Zb-1pQ" id="nOD-bm-Bbf"/>
+                        <outlet property="konjunktiv1PrasensDu" destination="Ejb-0M-Wix" id="oLG-wl-QOJ"/>
+                        <outlet property="konjunktiv1PrasensEr" destination="k88-OZ-IQR" id="hmV-Kl-azK"/>
+                        <outlet property="konjunktiv1PrasensIch" destination="8Cu-C2-Uhx" id="aCU-zR-VLX"/>
+                        <outlet property="konjunktiv1PrasensIhr" destination="Vtx-To-b7w" id="DkT-D9-JpV"/>
+                        <outlet property="konjunktiv1PrasensSie" destination="tiK-Pz-Kqf" id="qMV-6v-8DV"/>
+                        <outlet property="konjunktiv1PrasensWir" destination="rpF-kd-u8M" id="R1J-fZ-gRf"/>
+                        <outlet property="konjunktiv2Futur1Du" destination="k3d-xi-a7c" id="YjS-L8-7Sj"/>
+                        <outlet property="konjunktiv2Futur1Er" destination="91Y-4F-4iI" id="rgn-Cu-Pu5"/>
+                        <outlet property="konjunktiv2Futur1Ich" destination="a25-Rc-TjZ" id="ndt-Pn-bRU"/>
+                        <outlet property="konjunktiv2Futur1Ihr" destination="xaJ-qw-1ls" id="AlK-Mz-kJB"/>
+                        <outlet property="konjunktiv2Futur1Sie" destination="yt3-xd-Yzh" id="4M0-Wf-1Jp"/>
+                        <outlet property="konjunktiv2Futur1Wir" destination="qRk-of-Zff" id="feA-YF-6ZR"/>
+                        <outlet property="konjunktiv2Futur2Du" destination="pbO-Lu-1fN" id="8iu-es-5xn"/>
+                        <outlet property="konjunktiv2Futur2Er" destination="jXq-0h-lKh" id="64m-GY-HAt"/>
+                        <outlet property="konjunktiv2Futur2Ich" destination="uA7-XH-g22" id="ltC-Tb-KSE"/>
+                        <outlet property="konjunktiv2Futur2Ihr" destination="qaG-Ao-w5X" id="xvt-si-qtg"/>
+                        <outlet property="konjunktiv2Futur2Sie" destination="Jn4-qp-98A" id="d2q-AB-jHa"/>
+                        <outlet property="konjunktiv2Futur2Wir" destination="SJU-a1-9W1" id="MdW-Ry-FsC"/>
+                        <outlet property="konjunktiv2PlusquamperfektDu" destination="PO8-an-ixE" id="aay-uk-N2E"/>
+                        <outlet property="konjunktiv2PlusquamperfektEr" destination="k5e-fo-WAI" id="Cl6-uH-P94"/>
+                        <outlet property="konjunktiv2PlusquamperfektIch" destination="1Zz-lT-RKg" id="JW7-aT-hwq"/>
+                        <outlet property="konjunktiv2PlusquamperfektIhr" destination="ZN8-fs-Zz7" id="bqQ-2S-oYm"/>
+                        <outlet property="konjunktiv2PlusquamperfektSie" destination="jda-js-IAx" id="cEc-jt-jcc"/>
+                        <outlet property="konjunktiv2PlusquamperfektWir" destination="mJR-JY-HEg" id="bjC-uQ-s3k"/>
+                        <outlet property="konjunktiv2PrateritumDu" destination="VHl-FV-Wzm" id="erb-53-RZT"/>
+                        <outlet property="konjunktiv2PrateritumEr" destination="e2S-y2-UwQ" id="HUW-Sr-voi"/>
+                        <outlet property="konjunktiv2PrateritumIch" destination="zlj-xn-GA3" id="HqO-Mg-7Hc"/>
+                        <outlet property="konjunktiv2PrateritumIhr" destination="152-bx-E1t" id="icQ-6v-ylb"/>
+                        <outlet property="konjunktiv2PrateritumSie" destination="tFS-iK-Gg0" id="tYM-vL-giJ"/>
+                        <outlet property="konjunktiv2PrateritumWir" destination="Mj4-IU-1g2" id="l4x-bn-Uj0"/>
+                        <outlet property="partizipPerfekt" destination="JJY-in-pOW" id="FKD-6E-zML"/>
+                        <outlet property="partizipPrasens" destination="32G-tg-oPb" id="MBR-FQ-Ipu"/>
                         <outlet property="sample1" destination="xXN-K8-Wde" id="wJs-qG-sBN"/>
                         <outlet property="sample2" destination="FvP-cZ-lGa" id="N7c-5Y-cbk"/>
                         <outlet property="sample3" destination="3H5-19-O41" id="zra-wO-YfQ"/>
                         <outlet property="stack" destination="Y7H-mI-PKf" id="Wai-IE-EPZ"/>
-                        <outlet property="subjonctifImperfaitIl" destination="e2S-y2-UwQ" id="HUW-Sr-voi"/>
-                        <outlet property="subjonctifImperfaitIls" destination="tFS-iK-Gg0" id="tYM-vL-giJ"/>
-                        <outlet property="subjonctifImperfaitJe" destination="zlj-xn-GA3" id="HqO-Mg-7Hc"/>
-                        <outlet property="subjonctifImperfaitNous" destination="Mj4-IU-1g2" id="l4x-bn-Uj0"/>
-                        <outlet property="subjonctifImperfaitTu" destination="VHl-FV-Wzm" id="erb-53-RZT"/>
-                        <outlet property="subjonctifImperfaitVous" destination="152-bx-E1t" id="icQ-6v-ylb"/>
-                        <outlet property="subjonctifPasseIl" destination="Q1j-FC-9pn" id="eO6-pT-NCT"/>
-                        <outlet property="subjonctifPasseIls" destination="vyV-05-sDX" id="Ods-5J-6gD"/>
-                        <outlet property="subjonctifPasseJe" destination="BdS-6D-0eL" id="yF9-DF-Xom"/>
-                        <outlet property="subjonctifPasseNous" destination="Wsv-5Z-M55" id="6kg-RX-NX0"/>
-                        <outlet property="subjonctifPasseTu" destination="cms-dT-CX3" id="Tcs-uY-V9N"/>
-                        <outlet property="subjonctifPasseVous" destination="JWX-IF-6bP" id="P8X-08-Nux"/>
-                        <outlet property="subjonctifPlusQueParfaitIl" destination="k5e-fo-WAI" id="Cl6-uH-P94"/>
-                        <outlet property="subjonctifPlusQueParfaitIls" destination="jda-js-IAx" id="cEc-jt-jcc"/>
-                        <outlet property="subjonctifPlusQueParfaitJe" destination="1Zz-lT-RKg" id="JW7-aT-hwq"/>
-                        <outlet property="subjonctifPlusQueParfaitNous" destination="mJR-JY-HEg" id="bjC-uQ-s3k"/>
-                        <outlet property="subjonctifPlusQueParfaitTu" destination="PO8-an-ixE" id="aay-uk-N2E"/>
-                        <outlet property="subjonctifPlusQueParfaitVous" destination="ZN8-fs-Zz7" id="bqQ-2S-oYm"/>
-                        <outlet property="subjonctifPresentIl" destination="Ydg-QL-bQT" id="OOg-Te-SQs"/>
-                        <outlet property="subjonctifPresentIls" destination="GO5-q1-kcN" id="bz6-3h-hLI"/>
-                        <outlet property="subjonctifPresentJe" destination="qv7-bX-5em" id="lS2-kE-Abf"/>
-                        <outlet property="subjonctifPresentNous" destination="Tiw-HK-uPs" id="SgA-yd-qvr"/>
-                        <outlet property="subjonctifPresentTu" destination="IG5-Lm-lfC" id="Tch-cz-uvS"/>
-                        <outlet property="subjonctifPresentVous" destination="zYJ-Mn-jP8" id="9Pn-vX-aYK"/>
                         <outlet property="translation" destination="UES-hN-glN" id="FqI-8B-nUl"/>
+                        <outlet property="type" destination="g8F-TN-82V" id="TQf-HE-lcg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOD-If-ZOK" userLabel="First Responder" sceneMemberID="firstResponder"/>

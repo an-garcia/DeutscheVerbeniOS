@@ -14,35 +14,35 @@ struct Constants {
     // Translation language code
     static let NONE = "None"
     static let ENGLISH = "en"
+    static let FRENCH = "fr"
     static let SPANISH = "es"
-    static let PORTUGUESE = "pt"
     
     // Translation language display strings
     static let STR_NONE = "None"
     static let STR_ENGLISH = "English"
+    static let STR_FRENCH = "Français"
     static let STR_SPANISH = "Español"
-    static let STR_PORTUGUESE = "Português"
     
     
     // UserDefaults keys
     static let KEY_HAS_LAUNCHED_BEFORE = "hasLaunchedBefore"
     static let KEY_SHOW_VERB_DEFINITION = "showVerbDefinition"
     static let KEY_TRANSLATION_LANGUAGE = "translationLanguage"
-    static let KEY_SHOW_VERB_GROUP = "showVerbGroup"
+    static let KEY_SHOW_VERB_TYPE = "showVerbType"
     static let KEY_SHOW_VERB_SORT = "showVerbSort"
     static let KEY_SHOW_VERB_COMMON = "showVerbMostCommon"
     
     // Show verbs
-    static let GROUP1 = "group1"
-    static let GROUP2 = "group2"
-    static let GROUP3 = "group3"
+    static let TYPE1 = "1_weak"
+    static let TYPE2 = "2_strong"
+    static let TYPE3 = "3_irregular"
     static let ALL = "all"
     static let ALPHABET = "alphabet"
-    static let GROUP = "group"
+    static let TYPE = "type"
     static let MOST_COMMON_25 = "25"
     static let MOST_COMMON_50 = "50"
     static let MOST_COMMON_100 = "100"
-    static let MOST_COMMON_300 = "300"
+    static let MOST_COMMON_250 = "250"
     
     
     // Pronoms personnels

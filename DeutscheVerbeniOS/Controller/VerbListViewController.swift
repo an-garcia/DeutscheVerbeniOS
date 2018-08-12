@@ -64,15 +64,15 @@ class VerbListViewController: UIViewController {
     
     private func loadData() {
         // Get the verbs accroding to the settings
-        var value = UserDefaults.standard.string(forKey: Constants.KEY_SHOW_VERB_GROUP)
-        let group : String = value != nil ? value! : Constants.ALL
+        var value = UserDefaults.standard.string(forKey: Constants.KEY_SHOW_VERB_TYPE)
+        let type : String = value != nil ? value! : Constants.ALL
         value = UserDefaults.standard.string(forKey: Constants.KEY_SHOW_VERB_SORT)
         let sort : String = value != nil ? value! : Constants.ALPHABET
         value = UserDefaults.standard.string(forKey: Constants.KEY_SHOW_VERB_COMMON)
         let mostCommon : String = value != nil ? value! : Constants.ALL
         verbsAll.removeAll()
         verbs.removeAll()
-        ViewUtils.loadData(group, sort, mostCommon, &verbsAll, &conjugations)
+        ViewUtils.loadData(type, sort, mostCommon, &verbsAll, &conjugations)
         verbs = verbsAll
     }
     

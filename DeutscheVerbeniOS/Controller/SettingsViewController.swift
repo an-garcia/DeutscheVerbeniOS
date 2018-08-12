@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var showVerbDefinition: UISwitch!
     @IBOutlet weak var language: UIButton!
-    @IBOutlet weak var group: UIButton!
+    @IBOutlet weak var type: UIButton!
     @IBOutlet weak var sort: UIButton!
     @IBOutlet weak var mostCommon: UIButton!
     @IBOutlet weak var general: UILabel!
@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var verbTranslation: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var showVerbs: UILabel!
-    @IBOutlet weak var groupLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var sortLabel: UILabel!
     @IBOutlet weak var mostCommonLabel: UILabel!
     
@@ -54,7 +54,7 @@ class SettingsViewController: UIViewController {
         self.verbTranslation.text = NSLocalizedString("Verb translation", comment: "")
         self.languageLabel.text = NSLocalizedString("Language", comment: "")
         self.showVerbs.text = NSLocalizedString("Show verbs", comment: "")
-        self.groupLabel.text = NSLocalizedString("Group", comment: "")
+        self.typeLabel.text = NSLocalizedString("Type", comment: "")
         self.sortLabel.text = NSLocalizedString("Sort", comment: "")
         self.mostCommonLabel.text = NSLocalizedString("Most common", comment: "")
         
@@ -64,9 +64,9 @@ class SettingsViewController: UIViewController {
         var value : String = UserDefaults.standard.string(forKey: Constants.KEY_TRANSLATION_LANGUAGE)!
         var text = ViewUtils.languageForCode(value)
         language.setTitle(text, for: .normal)
-        value = UserDefaults.standard.string(forKey: Constants.KEY_SHOW_VERB_GROUP)!
+        value = UserDefaults.standard.string(forKey: Constants.KEY_SHOW_VERB_TYPE)!
         text = ViewUtils.showVerbTypeForCode(value)
-        group.setTitle(text, for: .normal)
+        type.setTitle(text, for: .normal)
         value = UserDefaults.standard.string(forKey: Constants.KEY_SHOW_VERB_SORT)!
         text = ViewUtils.showVerbSortForCode(value)
         sort.setTitle(text, for: .normal)
@@ -79,7 +79,7 @@ class SettingsViewController: UIViewController {
     
     private func setAdjustsFontForContentSizeCategory() {
         language.titleLabel?.adjustsFontForContentSizeCategory = true
-        group.titleLabel?.adjustsFontForContentSizeCategory = true
+        type.titleLabel?.adjustsFontForContentSizeCategory = true
         sort.titleLabel?.adjustsFontForContentSizeCategory = true
         mostCommon.titleLabel?.adjustsFontForContentSizeCategory = true
     }
@@ -128,20 +128,20 @@ class SettingsViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    // MARK: Change show verb group
-    @IBAction func changeShowVerbGroup(_ sender: Any) {
+    // MARK: Change show verb type
+    @IBAction func changeShowVerbType(_ sender: Any) {
         
         let style = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad ? UIAlertControllerStyle.alert : UIAlertControllerStyle.actionSheet
         let alert = UIAlertController(title: "", message: "", preferredStyle: style)
-        var types : [ViewUtils.Option] = ViewUtils.createShowVerbGroupOptions()
+        var types : [ViewUtils.Option] = ViewUtils.createShowVerbTypeOptions()
         
         for index in 0 ..< types.count {
             let action = UIAlertAction(title: types[index].name, style: .default, handler: { (action) -> Void in
                 // Save setting value
-                UserDefaults.standard.set(types[index].code, forKey: Constants.KEY_SHOW_VERB_GROUP)
+                UserDefaults.standard.set(types[index].code, forKey: Constants.KEY_SHOW_VERB_TYPE)
                 self.delegate?.settingsChanged(true)
                 // update the button text
-                self.group.setTitle(types[index].name, for: .normal)
+                self.type.setTitle(types[index].name, for: .normal)
             })
             
             alert.addAction(action)
@@ -178,7 +178,7 @@ class SettingsViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    // MARK: Change show verb type
+    // MARK: Change show verb most common
     @IBAction func changeShowVerbMostCommon(_ sender: Any) {
         
         let style = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad ? UIAlertControllerStyle.alert : UIAlertControllerStyle.actionSheet

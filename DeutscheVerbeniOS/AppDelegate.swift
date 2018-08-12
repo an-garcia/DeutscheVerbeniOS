@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: Constants.KEY_HAS_LAUNCHED_BEFORE)
             UserDefaults.standard.set(true, forKey: Constants.KEY_SHOW_VERB_DEFINITION)
             UserDefaults.standard.set(Constants.ENGLISH, forKey: Constants.KEY_TRANSLATION_LANGUAGE)
-            UserDefaults.standard.set(Constants.ALL, forKey: Constants.KEY_SHOW_VERB_GROUP)
+            UserDefaults.standard.set(Constants.ALL, forKey: Constants.KEY_SHOW_VERB_TYPE)
             UserDefaults.standard.set(Constants.ALPHABET, forKey: Constants.KEY_SHOW_VERB_SORT)
             UserDefaults.standard.set(Constants.ALL, forKey: Constants.KEY_SHOW_VERB_COMMON)
             UserDefaults.standard.synchronize()

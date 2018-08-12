@@ -15,7 +15,7 @@ class ViewUtils {
     /**
      * Loads the list of verbs and conjugations
      */
-    class func loadData(_ group : String, _ sort : String, _ mostCommon : String, _ verbs : inout [Verb], _ conjugations : inout [Conjugation]) {
+    class func loadData(_ type : String, _ sort : String, _ mostCommon : String, _ verbs : inout [Verb], _ conjugations : inout [Conjugation]) {
         let plistPaths = Bundle.main.paths(forResourcesOfType: "plist", inDirectory: nil)
         
         for plistPath in plistPaths {
@@ -28,7 +28,7 @@ class ViewUtils {
                         let verb = Verb(dictionary: dictionary as! [String : AnyObject])
                         
                         // check with Settings
-                        if isValidVerbGroup(group, verb) && isValidVerbCommon(mostCommon, verb) {
+                        if isValidVerbType(type, verb) && isValidVerbCommon(mostCommon, verb) {
                             verbs.append(verb)
                         }
                     }
@@ -48,26 +48,26 @@ class ViewUtils {
         }
     }
     
-    // Checks if the verb can be added to the list according to the show verbs by group setting.
-    class func isValidVerbGroup(_ group : String, _ verb : Verb) -> Bool {
-        var addByGroup = true
-        switch group {
-        case Constants.GROUP1:
-            addByGroup =  verb.type == 1
-        case Constants.GROUP2:
-            addByGroup =  verb.type == 2
-        case Constants.GROUP3:
-            addByGroup =  verb.type == 3
+    // Checks if the verb can be added to the list according to the show verbs by type setting.
+    class func isValidVerbType(_ type : String, _ verb : Verb) -> Bool {
+        var addByType = true
+        switch type {
+        case Constants.TYPE1:
+            addByType =  verb.type == 1
+        case Constants.TYPE2:
+            addByType =  verb.type == 2
+        case Constants.TYPE3:
+            addByType =  verb.type == 3
         default:
             break
         }
-        return addByGroup
+        return addByType
     }
     
     // Checks if the verb can be added to the list according to the show verbs by most common setting.
     class func isValidVerbCommon(_ mostCommon : String, _ verb : Verb) -> Bool {
         var addByCommon = true
-        // common (1=TOP_25, 2=TOP_50, 3=TOP_100, 4=TOP_300, 5=TOP_500, 6=TOP_1000, 99=OTHER)
+        // common (1=TOP_25, 2=TOP_50, 3=TOP_100, 4=TOP_250, 5=TOP_500, 6=TOP_1000, 99=OTHER)
         switch (mostCommon) {
         case Constants.MOST_COMMON_25:
             addByCommon =  verb.common == 1
@@ -75,7 +75,7 @@ class ViewUtils {
             addByCommon =  verb.common == 1 || verb.common == 2
         case Constants.MOST_COMMON_100:
             addByCommon =  verb.common == 1 || verb.common == 2 || verb.common == 3
-        case Constants.MOST_COMMON_300:
+        case Constants.MOST_COMMON_250:
             addByCommon =  verb.common == 1 || verb.common == 2 || verb.common == 3 || verb.common == 4
         default:
             break
@@ -89,7 +89,7 @@ class ViewUtils {
             // sort by alphabeth
             verbs = verbs.sorted(by: { $0.infinitive < $1.infinitive })
         } else {
-            // sort by group and then by alphabeth
+            // sort by type and then by alphabeth
             verbs = verbs.sorted(by: { t1, t2 in
                 if t1.type == t2.type {
                     return t1.infinitive < t2.infinitive
@@ -145,8 +145,8 @@ class ViewUtils {
         let languages : [Option] = [
             Option(NSLocalizedString("None", comment: ""), Constants.NONE),
             Option(Constants.STR_ENGLISH, Constants.ENGLISH),
-            Option(Constants.STR_PORTUGUESE, Constants.PORTUGUESE),
-            Option(Constants.STR_SPANISH, Constants.SPANISH)]
+            Option(Constants.STR_SPANISH, Constants.SPANISH),
+            Option(Constants.STR_FRENCH, Constants.FRENCH)]
         return languages
     }
     
@@ -173,9 +173,9 @@ class ViewUtils {
         switch (language) {
         case Constants.ENGLISH:
             translation = verb.translationEN
-        case Constants.SPANISH:
+        case Constants.FRENCH:
             translation = verb.translationFR
-        case Constants.PORTUGUESE:
+        case Constants.SPANISH:
             translation = verb.translationES
         default:
             break
@@ -185,13 +185,13 @@ class ViewUtils {
     
     
     /**
-     * Create show verb group options.
+     * Create show verb type options.
      */
-    class func createShowVerbGroupOptions() -> [Option] {
+    class func createShowVerbTypeOptions() -> [Option] {
         let options : [Option] = [
-            Option(NSLocalizedString("1er groupe", comment: ""), Constants.GROUP1),
-            Option(NSLocalizedString("2e groupe", comment: ""), Constants.GROUP2),
-            Option(NSLocalizedString("3e groupe", comment: ""), Constants.GROUP3),
+            Option(NSLocalizedString("Weak", comment: ""), Constants.TYPE1),
+            Option(NSLocalizedString("Strong", comment: ""), Constants.TYPE2),
+            Option(NSLocalizedString("Irregular", comment: ""), Constants.TYPE3),
             Option(NSLocalizedString("All", comment: ""), Constants.ALL)]
         return options
     }
@@ -201,7 +201,7 @@ class ViewUtils {
      */
     class func showVerbTypeForCode(_ code : String) -> String {
         var response : String = ""
-        let options = createShowVerbGroupOptions()
+        let options = createShowVerbTypeOptions()
         for index in 0 ..< options.count {
             if options[index].code.elementsEqual(code) {
                 response = options[index].name
@@ -217,7 +217,7 @@ class ViewUtils {
     class func createShowVerbSortOptions() -> [Option] {
         let options : [Option] = [
             Option(NSLocalizedString("Alphabet", comment: ""), Constants.ALPHABET),
-            Option(NSLocalizedString("Group", comment: ""), Constants.GROUP)]
+            Option(NSLocalizedString("Type", comment: ""), Constants.TYPE)]
         return options
     }
     
@@ -244,7 +244,7 @@ class ViewUtils {
             Option(NSLocalizedString("25 most common", comment: ""), Constants.MOST_COMMON_25),
             Option(NSLocalizedString("50 most common", comment: ""), Constants.MOST_COMMON_50),
             Option(NSLocalizedString("100 most common", comment: ""), Constants.MOST_COMMON_100),
-            Option(NSLocalizedString("300 most common", comment: ""), Constants.MOST_COMMON_300),
+            Option(NSLocalizedString("250 most common", comment: ""), Constants.MOST_COMMON_250),
             Option(NSLocalizedString("All", comment: ""), Constants.ALL)]
         return options
     }
