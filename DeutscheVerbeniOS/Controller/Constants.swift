@@ -46,23 +46,13 @@ struct Constants {
     
     
     // Pronoms personnels
-    static let JEA = "j'"
-    static let JE = "je "
-    static let TU = "tu "
-    static let IL = "il "
-    static let NOUS = "nous "
-    static let VOUS = "vous "
-    static let ILS = "ils "
-    static let QUE = "que "
-    static let QUEA = "qu'"
+    static let ICH = "ich "       // I
+    static let DU = "du "         // You (informal singular)
+    static let ER = "er/sie/es "  // He / She / It
+    static let WIR = "wir "       // We (us)
+    static let IHR = "ihr "       // You (informal plural)
+    static let SIE = "sie/Sie "   // They / You (formal - singular or plural)
     
-    // Pronoms reflexive
-    static let MEA = "m'"
-    static let ME = "me "
-    static let TEA = "t'"
-    static let TE = "te "
-    static let SEA = "s'"
-    static let SE = "se "
     
     /**
      * Enable test ads for AdMob
