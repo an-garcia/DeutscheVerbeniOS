@@ -9,6 +9,21 @@
 import UIKit
 //import GoogleMobileAds
 
+public extension String
+{
+    func replaceFirst(_ target: String, with replace: String) -> String {
+        if let range = self.range(of: target) {
+            return self.replacingCharacters(in: range, with: replace)
+        }
+        return self
+    }
+    
+    func replaceLast(_ target: String, with replace: String) -> String {
+        return String(String(self.reversed()).replaceFirst(target, with: replace).reversed())
+    }
+}
+
+
 // MARK: - VerbDetailsViewController
 class VerbDetailsViewController: UIViewController {
 
@@ -252,7 +267,7 @@ class VerbDetailsViewController: UIViewController {
         if (!c.infinitivPrasens.isEmpty
             && !c.infinitivPrasens.elementsEqual(verb.infinitive)) {
             // if we need, conjugate the verb model.
-            var verbInfinitive = removeReflexiveNotation(verb.infinitive)
+            let verbInfinitive = removeReflexiveNotation(verb.infinitive)
             conjugateVerb(c, verbInfinitive)
         }
         
@@ -727,7 +742,7 @@ class VerbDetailsViewController: UIViewController {
         }
         
         // Exceptions to the conjugation model
-        //replaceParticipePasse(c, verbInfinitive)
+        //replacePartizipPerfekt(c, verbInfinitive)
     }
     
     private func setParticipePasseAsInvariable(_ c : Conjugation) {
@@ -741,15 +756,15 @@ class VerbDetailsViewController: UIViewController {
     }
     
     
-    private func replaceParticipePasse(_ c : Conjugation, _ old : String, _ new : String) {
+    private func replacePartizipPerfekt(_ c : Conjugation, _ old : String, _ new : String) {
         c.infinitivPerfekt = c.infinitivPerfekt.replacingOccurrences(of: old, with: new)
         
-        c.indikativPrateritumIch = c.indikativPrateritumIch.replacingOccurrences(of: old, with: new)
-        c.indikativPrateritumDu = c.indikativPrateritumDu.replacingOccurrences(of: old, with: new)
-        c.indikativPrateritumEr = c.indikativPrateritumEr.replacingOccurrences(of: old, with: new)
-        c.indikativPrateritumWir = c.indikativPrateritumWir.replacingOccurrences(of: old, with: new)
-        c.indikativPrateritumIhr = c.indikativPrateritumIhr.replacingOccurrences(of: old, with: new)
-        c.indikativPrateritumSie = c.indikativPrateritumSie.replacingOccurrences(of: old, with: new)
+        c.indikativPerfektIch = c.indikativPerfektIch.replacingOccurrences(of: old, with: new)
+        c.indikativPerfektDu = c.indikativPerfektDu.replacingOccurrences(of: old, with: new)
+        c.indikativPerfektEr = c.indikativPerfektEr.replacingOccurrences(of: old, with: new)
+        c.indikativPerfektWir = c.indikativPerfektWir.replacingOccurrences(of: old, with: new)
+        c.indikativPerfektIhr = c.indikativPerfektIhr.replacingOccurrences(of: old, with: new)
+        c.indikativPerfektSie = c.indikativPerfektSie.replacingOccurrences(of: old, with: new)
         
         c.indikativPlusquamperfektIch = c.indikativPlusquamperfektIch.replacingOccurrences(of: old, with: new)
         c.indikativPlusquamperfektDu = c.indikativPlusquamperfektDu.replacingOccurrences(of: old, with: new)
@@ -772,13 +787,6 @@ class VerbDetailsViewController: UIViewController {
         c.konjunktiv1PerfektIhr = c.konjunktiv1PerfektIhr.replacingOccurrences(of: old, with: new)
         c.konjunktiv1PerfektSie = c.konjunktiv1PerfektSie.replacingOccurrences(of: old, with: new)
         
-        c.konjunktiv2Futur2Ich = c.konjunktiv2Futur2Ich.replacingOccurrences(of: old, with: new)
-        c.konjunktiv2Futur2Du = c.konjunktiv2Futur2Du.replacingOccurrences(of: old, with: new)
-        c.konjunktiv2Futur2Er = c.konjunktiv2Futur2Er.replacingOccurrences(of: old, with: new)
-        c.konjunktiv2Futur2Wir = c.konjunktiv2Futur2Wir.replacingOccurrences(of: old, with: new)
-        c.konjunktiv2Futur2Ihr = c.konjunktiv2Futur2Ihr.replacingOccurrences(of: old, with: new)
-        c.konjunktiv2Futur2Sie = c.konjunktiv2Futur2Sie.replacingOccurrences(of: old, with: new)
-        
         c.konjunktiv1Futur2Ich = c.konjunktiv1Futur2Ich.replacingOccurrences(of: old, with: new)
         c.konjunktiv1Futur2Du = c.konjunktiv1Futur2Du.replacingOccurrences(of: old, with: new)
         c.konjunktiv1Futur2Er = c.konjunktiv1Futur2Er.replacingOccurrences(of: old, with: new)
@@ -792,6 +800,36 @@ class VerbDetailsViewController: UIViewController {
         c.konjunktiv2PlusquamperfektWir = c.konjunktiv2PlusquamperfektWir.replacingOccurrences(of: old, with: new)
         c.konjunktiv2PlusquamperfektIhr = c.konjunktiv2PlusquamperfektIhr.replacingOccurrences(of: old, with: new)
         c.konjunktiv2PlusquamperfektSie = c.konjunktiv2PlusquamperfektSie.replacingOccurrences(of: old, with: new)
+        
+        c.konjunktiv2Futur2Ich = c.konjunktiv2Futur2Ich.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Du = c.konjunktiv2Futur2Du.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Er = c.konjunktiv2Futur2Er.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Wir = c.konjunktiv2Futur2Wir.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Ihr = c.konjunktiv2Futur2Ihr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur2Sie = c.konjunktiv2Futur2Sie.replacingOccurrences(of: old, with: new)
+    }
+    
+    private func replaceInfinitiv(_ c : Conjugation, _ old : String, _ new : String) {
+        c.indikativFutur1Ich = c.indikativFutur1Ich.replacingOccurrences(of: old, with: new)
+        c.indikativFutur1Du = c.indikativFutur1Du.replacingOccurrences(of: old, with: new)
+        c.indikativFutur1Er = c.indikativFutur1Er.replacingOccurrences(of: old, with: new)
+        c.indikativFutur1Wir = c.indikativFutur1Wir.replacingOccurrences(of: old, with: new)
+        c.indikativFutur1Ihr = c.indikativFutur1Ihr.replacingOccurrences(of: old, with: new)
+        c.indikativFutur1Sie = c.indikativFutur1Sie.replacingOccurrences(of: old, with: new)
+        
+        c.konjunktiv1Futur1Ich = c.konjunktiv1Futur1Ich.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur1Du = c.konjunktiv1Futur1Du.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur1Er = c.konjunktiv1Futur1Er.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur1Wir = c.konjunktiv1Futur1Wir.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur1Ihr = c.konjunktiv1Futur1Ihr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv1Futur1Sie = c.konjunktiv1Futur1Sie.replacingOccurrences(of: old, with: new)
+        
+        c.konjunktiv2Futur1Ich = c.konjunktiv2Futur1Ich.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur1Du = c.konjunktiv2Futur1Du.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur1Er = c.konjunktiv2Futur1Er.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur1Wir = c.konjunktiv2Futur1Wir.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur1Ihr = c.konjunktiv2Futur1Ihr.replacingOccurrences(of: old, with: new)
+        c.konjunktiv2Futur1Sie = c.konjunktiv2Futur1Sie.replacingOccurrences(of: old, with: new)
     }
     
     
@@ -801,432 +839,486 @@ class VerbDetailsViewController: UIViewController {
     private func generateRadical(_ infinitive : String, _ modelR : String, _ id : Int) -> String {
         var verbR : String = infinitive
         // remove termination
-        if (infinitive.hasSuffix("er") || infinitive.hasSuffix("ir") || infinitive.hasSuffix("re")) {
+        if (infinitive.hasSuffix("en")) {
             verbR = String(infinitive.prefix(infinitive.count - 2))
+        } else if (infinitive.hasSuffix("ern") || infinitive.hasSuffix("eln")) {
+            verbR = String(infinitive.prefix(infinitive.count - 3))
         }
         
-        // TODO: Check all models (after 40+)
         // know models
         switch (id) {
-        case 8:
-            // placer, plaçer : verbes en -cer
-            if (modelR.contains("ç")) {
-                verbR = infinitive.hasSuffix("cer") ? infinitive.replacingOccurrences(of: "cer", with: "ç") : verbR
-            }
-            
-        case 10:
-            // peser, pèser : verbes ayant un e muet à l'avant dèrniere syllabe de l'infinitif: verbes en e(.)er
-            if (modelR.contains("è") && verbR.contains("e")) {
-                // replace last "e" with "è"
-                let reversed : String = ViewUtils.replaceFirst(String(verbR.reversed()), of: "e", with: "è")
-                verbR = String(reversed.reversed())
-            }
-            
-        case 11:
-            // céder, cède : verbes ayant un e muet à l'avant dèrniere syllabe de l'infinitif: verbes en é(.)er
-            if (modelR.contains("è") && verbR.contains("é")) {
-                // replace last "é" with "è"
-                let reversed : String = ViewUtils.replaceFirst(String(verbR.reversed()), of: "é", with: "è")
-                verbR = String(reversed.reversed())
-            }
-            
-        case 12:
-            // jeter, jetter : verbes en -eler ou -eter, doublant 1 ou t devant e muet
-            if (modelR.contains("tt")) {
-                verbR = verbR.hasSuffix("l") ? verbR + "l" : verbR
-                verbR = verbR.hasSuffix("t") ? verbR + "t" : verbR
-            }
-            
-        case 13:
-            // model, modèl : verbes en -eler ou -eter, changeant e en è devant syllabe muette
-            if (modelR.contains("è")) {
-                verbR = infinitive.hasSuffix("eler") ? infinitive.replacingOccurrences(of: "eler", with: "èl") : verbR
-                verbR = infinitive.hasSuffix("eter") ? infinitive.replacingOccurrences(of: "eter", with: "èt") : verbR
-            }
-            
-        case 15:
-            // assiéger, assiège : verbes en -éger
-            if (modelR.contains("è") && verbR.contains("é")) {
-                // replace last "é" with "è"
-                let reversed : String = ViewUtils.replaceFirst(String(verbR.reversed()), of: "é", with: "è")
-                verbR = String(reversed.reversed())
-            }
-            
-        case 17:
-            // paie / paye : verbes en -ayer
-            if (modelR.contains("i")) {
-                verbR = infinitive.hasSuffix("ayer") ? infinitive.replacingOccurrences(of: "ayer", with: "ai") : verbR
-            }
-            
-        case 18:
-            // broyer, broie : verbes en -oyer, -uyer
-            if (modelR.contains("i")) {
-                verbR = infinitive.hasSuffix("oyer") ? infinitive.replacingOccurrences(of: "oyer", with: "oi") : verbR
-                verbR = infinitive.hasSuffix("uyer") ? infinitive.replacingOccurrences(of: "uyer", with: "ui") : verbR
-            }
-            
-        case 19:
-            // envoyer, envoie, enverra : all verbes, envoyer, renvoyer, s'envoyer, se renvoyer, avoyer
-            if (modelR.contains("i")) {
-                verbR = infinitive.hasSuffix("yer") ? infinitive.replacingOccurrences(of: "yer", with: "i") : verbR
-            } else if (modelR.contains("enverr")) {
-                // 2 special cases for enverr
-                verbR = infinitive.hasSuffix("envoyer") ? infinitive.replacingOccurrences(of: "envoyer", with: "enverr") : verbR
-                verbR = infinitive.hasSuffix("avoyer") ? infinitive.replacingOccurrences(of: "avoyer", with: "avoier") : verbR
-            }
-            
-        case 20:
-            // finir: all verbes.  known exceptions: s'amuïr
-            if (modelR.contains("fin")) {
-                verbR = infinitive.hasSuffix("amuïr") ? infinitive.replacingOccurrences(of: "amuïr", with: "amu") : verbR
-                verbR = infinitive.hasSuffix("maudire") ? infinitive.replacingOccurrences(of: "maudire", with: "maud") : verbR
-            }
-            
-        case 21:
-            // haïr est le seul verbe
-            if (modelR.contains("ha")) {
-                verbR = infinitive.hasSuffix("haïr") ? infinitive.replacingOccurrences(of: "haïr", with: "ha") : verbR
-            }
-            
-        case 24:
-            // tenir, tiens, tinsse, tînt : verbes -enir
-            if (modelR.contains("ten")) {
-                verbR = infinitive.hasSuffix("enir") ? infinitive.replacingOccurrences(of: "enir", with: "en") : verbR
-            } else if (modelR.contains("tien")) {
-                verbR = infinitive.hasSuffix("enir") ? infinitive.replacingOccurrences(of: "enir", with: "ien") : verbR
-            } else if (modelR.contains("tin")) {
-                verbR = infinitive.hasSuffix("enir") ? infinitive.replacingOccurrences(of: "enir", with: "in") : verbR
-            } else if (modelR.contains("tîn")) {
-                verbR = infinitive.hasSuffix("enir") ? infinitive.replacingOccurrences(of: "enir", with: "în") : verbR
-            }
-            
-        case 25:
-            // acquerir : verbes en -érir
-            if (modelR.contains("acqu")) {
-                verbR = infinitive.hasSuffix("érir") ? infinitive.replacingOccurrences(of: "érir", with: "") : verbR
-            }
-            
-        case 26:
-            // sentir : verbes eb -tir
-            if (modelR.elementsEqual("sen")) {
-                verbR = infinitive.hasSuffix("tir") ? infinitive.replacingOccurrences(of: "tir", with: "") : verbR
-            } else if (modelR.elementsEqual("senti")) {
-                verbR = infinitive.hasSuffix("tir") ? infinitive.replacingOccurrences(of: "tir", with: "ti") : verbR
-            }
-            
-        case 28:
-            // souffrir, souffert : verbes en -vrir, frir
-            if (modelR.contains("couve")) {
-                verbR = infinitive.hasSuffix("vrir") ? infinitive.replacingOccurrences(of: "vrir", with: "ve") : verbR
-                verbR = infinitive.hasSuffix("frir") ? infinitive.replacingOccurrences(of: "frir", with: "fe") : verbR
-            }
-            
-        case 32:
-            // bouillir, bous : all verbes, known: bouillir, debouillir, racabouillir
-            if (modelR.elementsEqual("bou")) {
-                verbR = infinitive.hasSuffix("bouillir") ? infinitive.replacingOccurrences(of: "bouillir", with: "bou") : verbR
-            }
-            
-        case 33:
-            // dormir, dors : all verbes, known: dormir, endormir, rendormir
-            if (modelR.elementsEqual("dor")) {
-                verbR = infinitive.hasSuffix("dormir") ? infinitive.replacingOccurrences(of: "dormir", with: "dor") : verbR
-            }
-            
-        case 35:
-            // mourir, meurs : all verbes, known: mourir, se mourir
-            if (modelR.contains("meur")) {
-                verbR = infinitive.hasSuffix("mourir") ? infinitive.replacingOccurrences(of: "mourir", with: "meur") : verbR
-            }
-            
-        case 36:
-            // servir, sers : all verbes, known: servir, desservir, reservir
-            if (modelR.elementsEqual("ser")) {
-                verbR = infinitive.hasSuffix("servir") ? infinitive.replacingOccurrences(of: "servir", with: "ser") : verbR
-            }
-            
-        case 40:
-            // recevoir : verbes en -cevoir, all known: recevoir, apercevoir, concevoir, decevoir, percevoir
-            if (modelR.elementsEqual("re")) {
-                verbR = infinitive.hasSuffix("cevoir") ? infinitive.replacingOccurrences(of: "cevoir", with: "") : verbR
-            } else if (modelR.elementsEqual("reçu")) {
-                verbR = infinitive.hasSuffix("cevoir") ? infinitive.replacingOccurrences(of: "cevoir", with: "çu") : verbR
-            } else if (modelR.elementsEqual("rece")) {
-                verbR = infinitive.hasSuffix("cevoir") ? infinitive.replacingOccurrences(of: "cevoir", with: "ce") : verbR
-            }
-            
-        case 41:
-            // voir, vu : all verbes, known: voir, entrevoir, prevoir, revoir
-            if (modelR.elementsEqual("voi")) {
-                verbR = infinitive.hasSuffix("voir") ? infinitive.replacingOccurrences(of: "voir", with: "voi") : verbR
-            } else if (modelR.elementsEqual("voy")) {
-                verbR = infinitive.hasSuffix("voir") ? infinitive.replacingOccurrences(of: "voir", with: "voy") : verbR
-            } else if (modelR.elementsEqual("vi")) {
-                verbR = infinitive.hasSuffix("voir") ? infinitive.replacingOccurrences(of: "voir", with: "vi") : verbR
-            } else if (modelR.elementsEqual("vî")) {
-                verbR = infinitive.hasSuffix("voir") ? infinitive.replacingOccurrences(of: "voir", with: "vî") : verbR
-            } else if (modelR.elementsEqual("verr")) {
-                if (infinitive.elementsEqual("prévoir")) { // this is an exception
-                    verbR = "prévoir" // Futur Simple and Conditionnel Present
-                } else {
-                    verbR = infinitive.hasSuffix("voir") ? infinitive.replacingOccurrences(of: "voir", with: "verr") : verbR
+            case 3: // treiben, unterschreiben, forttreiben : [bleiben] verbes -eiben
+                if (infinitive.hasSuffix("eiben")) {
+                    if (modelR.elementsEqual("bl")) {
+                        verbR = verbR.replaceLast("bie", with: "")
+                    }
                 }
-            } else if (modelR.elementsEqual("vu")) {
-                verbR = infinitive.hasSuffix("voir") ? infinitive.replacingOccurrences(of: "voir", with: "vu") : verbR
-            }
+            case 7: // messen, vergessen, aufmessen : [essen] verbes -essen
+                if (infinitive.hasSuffix("essen")) {
+                    if (modelR.elementsEqual("ess")) {
+                    } else if (modelR.elementsEqual("iss")) {
+                        verbR = verbR.replaceLast("e", with: "i")
+                    } else if (modelR.elementsEqual("aß")) {
+                        verbR = verbR.replaceLast("sse", with: "ßa")
+                    } else if (modelR.elementsEqual("aß")) {
+                        verbR = verbR.replaceLast("sse", with: "ßä")
+                    }
+                }
+            case 9: // verschwinden, befinden, vorbinden : [finden] verbes -inden
+                if (infinitive.hasSuffix("inden")) {
+                    if (modelR.elementsEqual("f")) {
+                        verbR = verbR.replaceLast("dni", with: "")
+                    }
+                }
+            case 11: // vergeben, ausgeben, aufgeben : [geben] verbes -eben
+                if (infinitive.hasSuffix("eben")) {
+                    if (modelR.elementsEqual("geb")) {
+                    } else if (modelR.elementsEqual("gib")) {
+                        verbR = verbR.replaceLast("e", with: "i")
+                    } else if (modelR.elementsEqual("gab")) {
+                        verbR = verbR.replaceLast("e", with: "a")
+                    } else if (modelR.elementsEqual("gäb")) {
+                        verbR = verbR.replaceLast("e", with: "ä")
+                    }
+                }
+            case 12: // umgehen, zurückgehen, vergehen : [gehen] verbes -ehen
+                if (infinitive.hasSuffix("ehen")) {
+                    if (modelR.elementsEqual("geh")) {
+                    } else if (modelR.elementsEqual("ging")) {
+                        verbR = verbR.replaceLast("he", with: "gni")
+                    }
+                }
+            case 16: // erhalten, einhalten, hierbehalten : [halten] verbes -alten
+                if (infinitive.hasSuffix("alten")) {
+                    if (modelR.elementsEqual("halt")) {
+                    } else if (modelR.elementsEqual("hält")) {
+                        verbR = verbR.replaceLast("a", with: "ä")
+                    } else if (modelR.elementsEqual("hielt")) {
+                        verbR = verbR.replaceLast("a", with: "ei")
+                    }
+                }
+            case 17: //  ... : [heißen] verbes -eißen
+                if (infinitive.hasSuffix("eißen")) {
+                    if (modelR.elementsEqual("heiß")) {
+                    } else if (modelR.elementsEqual("hieß")) {
+                        verbR = verbR.replaceLast("ei", with: "ie")
+                    }
+                }
+            case 21: // benennen, nennen, wegbrennen : [kennen] verbes -ennen
+                if (infinitive.hasSuffix("ennen")) {
+                    if (modelR.elementsEqual("kenn")) {
+                    } else if (modelR.elementsEqual("kann")) {
+                        verbR = verbR.replaceLast("e", with: "a")
+                    }
+                }
+            case 22: // nachkommen, einkommen, ankommen : [kommen] verbes -ommen
+                if (infinitive.hasSuffix("ommen")) {
+                    if (modelR.elementsEqual("k")) {
+                        verbR = verbR.replaceLast("mmo", with: "")
+                    }
+                }
+            case 24: // verlassen, überlassen, ablassen : [lassen] verbes -assen
+                if (infinitive.hasSuffix("assen")) {
+                    if (modelR.elementsEqual("l")) {
+                        verbR = verbR.replaceLast("ssa", with: "")
+                    }
+                }
+            case 29: break // hören, berücksichtigen, verursachen : [machen] verbes -en
+            case 32:  // einnehmen, mitnehmen, annehmen : [nehmen] verbes -ehmen
+                if (infinitive.hasSuffix("ehmen")) {
+                    if (modelR.elementsEqual("nehm")) {
+                    } else if (modelR.elementsEqual("nimm")) {
+                        verbR = verbR.replaceLast("mhe", with: "mmi")
+                    } else if (modelR.elementsEqual("nahm")) {
+                        verbR = verbR.replaceLast("e", with: "a")
+                    } else if (modelR.elementsEqual("nähm")) {
+                        verbR = verbR.replaceLast("e", with: "ä")
+                    }
+                }
+            case 34: // beischlafen, ausschlafen, einschlafen : [schlafen] verbes -afen
+                if (infinitive.hasSuffix("afen")) {
+                    if (modelR.elementsEqual("schl")) {
+                        verbR = verbR.replaceLast("fa", with: "")
+                    }
+                }
+            case 37: // versehen, aussehen, hersehen : [sehen] verbes -ehen
+                if (infinitive.hasSuffix("ehen")) {
+                    if (modelR.elementsEqual("seh")) {
+                    } else if (modelR.elementsEqual("sieh")) {
+                        verbR = verbR.replaceLast("e", with: "ei")
+                    } else if (modelR.elementsEqual("sah")) {
+                        verbR = verbR.replaceLast("e", with: "a")
+                    } else if (modelR.elementsEqual("säh")) {
+                        verbR = verbR.replaceLast("e", with: "ä")
+                    }
+                }
+            case 42: // verbrechen, entsprechen, brechen : [sprechen] verbes -echen
+                if (infinitive.hasSuffix("echen")) {
+                    if (modelR.elementsEqual("spr")) {
+                        verbR = verbR.replaceLast("hce", with: "")
+                    }
+                }
+            case 43: // bestehen, zurückstehen, verstehen : [stehen] verbes -ehen
+                if (infinitive.hasSuffix("ehen")) {
+                    if (modelR.elementsEqual("steh")) {
+                    } else if (modelR.elementsEqual("stan")) {
+                        verbR = verbR.replaceLast("he", with: "na")
+                    } else if (modelR.elementsEqual("stän")) {
+                        verbR = verbR.replaceLast("he", with: "nä")
+                    } else if (modelR.elementsEqual("stün")) {
+                        verbR = verbR.replaceLast("he", with: "nü")
+                    }
+                }
+            case 45: // erwerben, bewerben, anwerben : [sterben] verbes -erben
+                if (infinitive.hasSuffix("erben")) {
+                    if (modelR.elementsEqual("sterb")) {
+                    } else if (modelR.elementsEqual("stirb")) {
+                        verbR = verbR.replaceLast("e", with: "i")
+                    } else if (modelR.elementsEqual("starb")) {
+                        verbR = verbR.replaceLast("e", with: "a")
+                    } else if (modelR.elementsEqual("stürb")) {
+                        verbR = verbR.replaceLast("e", with: "ü")
+                    }
+                }
+            case 46: // betragen, schlagen, ertragen : [tragen] verbes -agen
+                if (infinitive.hasSuffix("agen")) {
+                    if (modelR.elementsEqual("tr")) {
+                        verbR = verbR.replaceLast("ga", with: "")
+                    }
+                }
+            case 47: // betreffen, zutreffen, umtreffen : [treffen] verbes -effen
+                if (infinitive.hasSuffix("effen")) {
+                    if (modelR.elementsEqual("tr")) {
+                        verbR = verbR.replaceLast("ffe", with: "")
+                    }
+                }
+            case 51: // entwerfen, auswerfen, umwerfen : [werfen] verbes -erfen
+                if (infinitive.hasSuffix("erfen")) {
+                    if (modelR.elementsEqual("werf")) {
+                    } else if (modelR.elementsEqual("wirf")) {
+                        verbR = verbR.replaceLast("e", with: "i")
+                    } else if (modelR.elementsEqual("warf")) {
+                        verbR = verbR.replaceLast("e", with: "a")
+                    } else if (modelR.elementsEqual("würf")) {
+                        verbR = verbR.replaceLast("e", with: "ü")
+                    }
+                }
+            case 60: // entsinnen, entsinnen, rüberrinnen : [beginnen] verbes -innen
+                if (infinitive.hasSuffix("innen")) {
+                    if (modelR.elementsEqual("beg")) {
+                        verbR = verbR.replaceLast("nni", with: "")
+                    }
+                }
+            case 61: // gewinnen : [gewinnen] verbes -innen
+                if (infinitive.hasSuffix("innen")) {
+                    if (modelR.elementsEqual("gew")) {
+                        verbR = verbR.replaceLast("nni", with: "")
+                    }
+                }
+            case 62: // erscheinen, widerscheinen, bescheinen : [scheinen] verbes -einen
+                if (infinitive.hasSuffix("einen")) {
+                    if (modelR.elementsEqual("sch")) {
+                        verbR = verbR.replaceLast("nie", with: "")
+                    }
+                }
+            case 63: // entfallen, leichtfallen, niederfallen : [fallen] verbes -allen
+                if (infinitive.hasSuffix("allen")) {
+                    if (modelR.elementsEqual("f")) {
+                        verbR = verbR.replaceLast("lla", with: "")
+                    }
+                }
+            case 64: // aufrufen, anrufen, widerrufen : [rufen] verbes -ufen
+                if (infinitive.hasSuffix("ufen")) {
+                    if (modelR.elementsEqual("ruf")) {
+                    } else if (modelR.elementsEqual("rief")) {
+                        verbR = verbR.replaceLast("u", with: "ei")
+                    }
+                }
+            case 65: break // handeln, lächeln, behandeln : [sammeln] verbes -eln
+            case 66: // beschaffen, vorausschaffen, beiseiteschaffen : [schaffen] verbes -affen
+                if (infinitive.hasSuffix("affen")) {
+                    if (modelR.elementsEqual("sch")) {
+                        verbR = verbR.replaceLast("ffa", with: "")
+                    }
+                }
+            case 67: // auflesen, fertiglesen, nachlesen : [lesen] verbes -esen
+                if (infinitive.hasSuffix("esen")) {
+                    if (modelR.elementsEqual("l")) {
+                        verbR = verbR.replaceLast("se", with: "")
+                    }
+                }
+            case 68: // verlieren, zufrieren, überfrieren : [frieren] verbes -ieren
+                if (infinitive.hasSuffix("ieren")) {
+                    if (modelR.elementsEqual("fr")) {
+                        verbR = verbR.replaceLast("rei", with: "")
+                    }
+                }
+            case 69, 70: // pflegen, hinbewegen, zubewegen : [bewegen] verbes -egen
+                if (infinitive.hasSuffix("egen")) {
+                    if (modelR.elementsEqual("bew")) {
+                        verbR = verbR.replaceLast("ge", with: "")
+                    }
+                }
+            case 72: // erwachsen, entwachsen, festwachsen : [wachsen] verbes -achsen
+                if (infinitive.hasSuffix("achsen")) {
+                    if (modelR.elementsEqual("wachs")) {
+                    } else if (modelR.elementsEqual("wächs")) {
+                        verbR = verbR.replaceLast("a", with: "ä")
+                    } else if (modelR.elementsEqual("wuchs")) {
+                        verbR = verbR.replaceLast("a", with: "u")
+                    } else if (modelR.elementsEqual("wüchs")) {
+                        verbR = verbR.replaceLast("a", with: "ü")
+                    }
+                }
+            case 73: // anfangen, einfangen, empfangen : [fangen] verbes -angen
+                if (infinitive.hasSuffix("angen")) {
+                    if (modelR.elementsEqual("f")) {
+                        verbR = verbR.replaceLast("gna", with: "")
+                    }
+                }
+            case 74: // anschliessen, genießen, ausschließen : [schießen] verbes -ießen
+                if (infinitive.hasSuffix("ießen")) {
+                    if (modelR.elementsEqual("sch")) {
+                        verbR = verbR.replaceLast("ßei", with: "")
+                    }
+                }
+            case 75: // anbieten, verbieten, gebieten : [bieten] verbes -ieten
+                if (infinitive.hasSuffix("ieten")) {
+                    if (modelR.elementsEqual("biet")) {
+                    } else if (modelR.elementsEqual("bot")) {
+                        verbR = verbR.replaceLast("ei", with: "o")
+                    } else if (modelR.elementsEqual("böt")) {
+                        verbR = verbR.replaceLast("ei", with: "ö")
+                    }
+                }
+            case 76: // versenden, zuwenden, wenden : [senden] verbes -enden
+                if (infinitive.hasSuffix("enden")) {
+                    if (modelR.elementsEqual("send")) {
+                    } else if (modelR.elementsEqual("sand")) {
+                        verbR = verbR.replaceLast("e", with: "a")
+                    }
+                }
+            case 77: // schneiden, verschneiden, erleiden : [leiden] verbes -eiden
+                if (infinitive.hasSuffix("eiden")) {
+                    if (modelR.elementsEqual("l")) {
+                        verbR = verbR.replaceLast("die", with: "")
+                    }
+                }
+            case 78: // unterstreichen, vergleichen, gleichen : [streichen] verbes -eichen
+                if (infinitive.hasSuffix("eichen")) {
+                    if (modelR.elementsEqual("str")) {
+                        verbR = verbR.replaceLast("hcie", with: "")
+                    }
+                }
+            case 79: // befehlen, stehlen, abstehlen : [empfehlen] verbes -ehlen
+                if (infinitive.hasSuffix("ehlen")) {
+                    if (modelR.elementsEqual("empf")) {
+                        verbR = verbR.replaceLast("lhe", with: "")
+                    }
+                }
+            case 80: //  ... : [beißen] verbes -eißen
+                if (infinitive.hasSuffix("eißen")) {
+                    if (modelR.elementsEqual("beiß")) {
+                    } else if (modelR.elementsEqual("biss")) {
+                        verbR = verbR.replaceLast("ßie", with: "ssi")
+                    }
+                }
+            case 81: //  fliegen, heranfliegen, zubiegen : [biegen] verbes -iegen
+                if (infinitive.hasSuffix("iegen")) {
+                    if (modelR.elementsEqual("bieg")) {
+                    } else if (modelR.elementsEqual("bog")) {
+                        verbR = verbR.replaceLast("ei", with: "o")
+                    } else if (modelR.elementsEqual("bög")) {
+                        verbR = verbR.replaceLast("ei", with: "ö")
+                    }
+                }
+            case 82: //  hineinbitten, ausbitten, hereinbitten : [bitten] verbes -itten
+                if (infinitive.hasSuffix("itten")) {
+                    if (modelR.elementsEqual("bitt")) {
+                    } else if (modelR.elementsEqual("bat")) {
+                        verbR = verbR.replaceLast("ti", with: "a")
+                    } else if (modelR.elementsEqual("bät")) {
+                        verbR = verbR.replaceLast("ti", with: "ä")
+                    }
+                }
+            case 83: //  vermeiden, entscheiden, mitentscheiden : [scheiden] verbes -eiden
+                if (infinitive.hasSuffix("eiden")) {
+                    if (modelR.elementsEqual("sch")) {
+                        verbR = verbR.replaceLast("die", with: "")
+                    }
+                }
+            case 84: //  ... : [erschrecken] verbes -ecken
+                if (infinitive.hasSuffix("ecken")) {
+                    if (modelR.elementsEqual("erschr")) {
+                        verbR = verbR.replaceLast("kce", with: "")
+                    }
+                }
+            case 85: //  entfliehen, auseinanderfliehen : [fliehen] verbes -iehen
+                if (infinitive.hasSuffix("iehen")) {
+                    if (modelR.elementsEqual("fl")) {
+                        verbR = verbR.replaceLast("hei", with: "")
+                    }
+                }
+            case 87: //  begraben, untergraben, aufgraben : [graben] verbes -aben
+                if (infinitive.hasSuffix("aben")) {
+                    if (modelR.elementsEqual("gr")) {
+                        verbR = verbR.replaceLast("ba", with: "")
+                    }
+                }
+            case 88: //  angreifen, ergreifen, schleifen : [greifen] verbes -eifen
+                if (infinitive.hasSuffix("eifen")) {
+                    if (modelR.elementsEqual("gr")) {
+                        verbR = verbR.replaceLast("fie", with: "")
+                    }
+                }
+            case 89: //  anhängen, drinhängen, umhängen : [hängen] verbes -ängen
+                if (infinitive.hasSuffix("ängen")) {
+                    if (modelR.elementsEqual("häng")) {
+                    } else if (modelR.elementsEqual("hing")) {
+                        verbR = verbR.replaceLast("ä", with: "i")
+                    }
+                }
+            case 90: //  erheben, beheben, abheben : [heben] verbes -eben
+                if (infinitive.hasSuffix("eben")) {
+                    if (modelR.elementsEqual("heb")) {
+                    } else if (modelR.elementsEqual("hob")) {
+                        verbR = verbR.replaceLast("e", with: "o")
+                    } else if (modelR.elementsEqual("höb")) {
+                        verbR = verbR.replaceLast("e", with: "ö")
+                    }
+                }
+            case 91: //  gelingen, springen, klingen : [singen] verbes -ingen
+                if (infinitive.hasSuffix("ingen")) {
+                    if (modelR.elementsEqual("sing")) {
+                    } else if (modelR.elementsEqual("sang")) {
+                        verbR = verbR.replaceLast("i", with: "a")
+                    } else if (modelR.elementsEqual("säng")) {
+                        verbR = verbR.replaceLast("i", with: "ä")
+                    }
+                }
+            case 92: //  hochladen, entladen, beladen : [laden] verbes -aden
+                if (infinitive.hasSuffix("aden")) {
+                    if (modelR.elementsEqual("lad")) {
+                    } else if (modelR.elementsEqual("lud")) {
+                        verbR = verbR.replaceLast("a", with: "u")
+                    } else if (modelR.elementsEqual("läd")) {
+                        verbR = verbR.replaceLast("a", with: "ä")
+                    }
+                }
+            case 93: //  verzeihen, beleihen, herleihen : [leihen] verbes -eihen
+                if (infinitive.hasSuffix("eihen")) {
+                    if (modelR.elementsEqual("leih")) {
+                    } else if (modelR.elementsEqual("lieh")) {
+                        verbR = verbR.replaceLast("ie", with: "ei")
+                    }
+                }
+            case 94: //  verraten, beraten, heiraten : [raten] verbes -aten
+                if (infinitive.hasSuffix("aten")) {
+                    if (modelR.elementsEqual("rat")) {
+                    } else if (modelR.elementsEqual("rät")) {
+                        verbR = verbR.replaceLast("a", with: "ä")
+                    } else if (modelR.elementsEqual("riet")) {
+                        verbR = verbR.replaceLast("a", with: "ei")
+                    }
+                }
+            case 95: //  kriechen, zurückkriechen, verriechen : [riechen] verbes -iechen
+                if (infinitive.hasSuffix("iechen")) {
+                    if (modelR.elementsEqual("riech")) {
+                    } else if (modelR.elementsEqual("roch")) {
+                        verbR = verbR.replaceLast("ei", with: "o")
+                    } else if (modelR.elementsEqual("röch")) {
+                        verbR = verbR.replaceLast("ei", with: "ö")
+                    }
+                }
+            case 97: //  speien, anspeien, beschreien : [schreien] verbes -eien
+                if (infinitive.hasSuffix("eien")) {
+                    if (modelR.elementsEqual("schr")) {
+                        verbR = verbR.replaceLast("ie", with: "")
+                    }
+                }
+            case 98: //  schweigen, hinabsteigen, totschweigen : [steigen] verbes -eigen
+                if (infinitive.hasSuffix("eigen")) {
+                    if (modelR.elementsEqual("steig")) {
+                    } else if (modelR.elementsEqual("stieg")) {
+                        verbR = verbR.replaceLast("ie", with: "ei")
+                    }
+                }
+            case 99: //  ranschwimmen, verschwimmen, abschwimmen : [schwimmen] verbes -immen
+                if (infinitive.hasSuffix("immen")) {
+                    if (modelR.elementsEqual("schw")) {
+                        verbR = verbR.replaceLast("mmi", with: "")
+                    }
+                }
+            case 100: //  sinken, betrinken, umsinken : [trinken] verbes -inken
+                if (infinitive.hasSuffix("inken")) {
+                    if (modelR.elementsEqual("tr")) {
+                        verbR = verbR.replaceLast("kni", with: "")
+                    }
+                }
+            case 101: //  stossen, verstoßen, fortstossen : [stoßen] verbes -oßen
+                if (infinitive.hasSuffix("oßen") || infinitive.hasSuffix("ossen")) {
+                    if (modelR.elementsEqual("stoß")) {
+                    } else if (modelR.elementsEqual("stöß")) {
+                        verbR = verbR.replaceLast("o", with: "ö")
+                    } else if (modelR.elementsEqual("stieß")) {
+                        verbR = verbR.replaceLast("o", with: "ei")
+                    }
+                }
+            case 102: //  unterbreiten, breiten, streiten : [schreiten] verbes -eiten
+                if (infinitive.hasSuffix("eiten")) {
+                    if (modelR.elementsEqual("schr")) {
+                        verbR = verbR.replaceLast("tie", with: "")
+                    }
+                }
+            case 103: //  beitreten, vertreten, festtreten : [treten] verbes -eten
+                if (infinitive.hasSuffix("eten")) {
+                    if (modelR.elementsEqual("tr")) {
+                        verbR = verbR.replaceLast("te", with: "")
+                    }
+                }
+            case 104: //  verstecken, wegstecken, durchstecken : [stecken] verbes -ecken
+                if (infinitive.hasSuffix("ecken")) {
+                    if (modelR.elementsEqual("steck")) {
+                    } else if (modelR.elementsEqual("stak")) {
+                        verbR = verbR.replaceLast("ce", with: "a")
+                    } else if (modelR.elementsEqual("stäk")) {
+                        verbR = verbR.replaceLast("ce", with: "ä")
+                    }
+                }
+            case 105: //  aufwaschen, anwaschen, vorwaschen : [waschen] verbes -aschen
+                if (infinitive.hasSuffix("aschen")) {
+                    if (modelR.elementsEqual("wachs")) {
+                    } else if (modelR.elementsEqual("wächs")) {
+                        verbR = verbR.replaceLast("a", with: "ä")
+                    } else if (modelR.elementsEqual("wuchs")) {
+                        verbR = verbR.replaceLast("a", with: "u")
+                    } else if (modelR.elementsEqual("wüchs")) {
+                        verbR = verbR.replaceLast("a", with: "ü")
+                    }
+                }
+            case 106: //  abbacken, anbacken, mitbacken : [backen] verbes -acken
+                if (infinitive.hasSuffix("acken")) {
+                    if (modelR.elementsEqual("back")) {
+                    } else if (modelR.elementsEqual("bäck")) {
+                        verbR = verbR.replaceLast("a", with: "ä")
+                    } else if (modelR.elementsEqual("buk")) {
+                        verbR = verbR.replaceLast("ca", with: "u")
+                    } else if (modelR.elementsEqual("bük")) {
+                        verbR = verbR.replaceLast("ca", with: "ü")
+                    }
+                }
+            case 107: //  pflügen, betrügen, erlügen : [lügen] verbes -ügen
+                if (infinitive.hasSuffix("ügen")) {
+                    if (modelR.elementsEqual("lüg")) {
+                    } else if (modelR.elementsEqual("log")) {
+                        verbR = verbR.replaceLast("ü", with: "o")
+                    } else if (modelR.elementsEqual("lög")) {
+                        verbR = verbR.replaceLast("ü", with: "ö")
+                    }
+                }
             
-        case 42:
-            // pourvoir, pourvu : all verbes, known: pourvoir, depourvoir
-            if (modelR.elementsEqual("pourv")) {
-                verbR = infinitive.hasSuffix("pourvoir") ? infinitive.replacingOccurrences(of: "pourvoir", with: "pourv") : verbR
-            }
-            
-        case 44:
-            // devoir, dois : all verbes, known: devoir, redevoir
-            if (modelR.elementsEqual("d")) {
-                verbR = infinitive.hasSuffix("devoir") ? infinitive.replacingOccurrences(of: "devoir", with: "d") : verbR
-            }
-            
-        case 45:
-            // pouvoir, pu : all verbes, known: pouvoir
-            if (modelR.elementsEqual("p")) {
-                verbR = infinitive.hasSuffix("pouvoir") ? infinitive.replacingOccurrences(of: "pouvoir", with: "p") : verbR
-            }
-            
-        case 46:
-            // mouvoir, mu : all verbes, known: mouvoir, émouvoir, promouvoir
-            if (modelR.elementsEqual("m")) {
-                verbR = infinitive.hasSuffix("mouvoir") ? infinitive.replacingOccurrences(of: "mouvoir", with: "m") : verbR
-            }
-            
-        case 47:
-            // pleuvoir, plu : all verbes, known: pleuvoir, repleuvoir
-            if (modelR.elementsEqual("pl")) {
-                verbR = infinitive.hasSuffix("pleuvoir") ? infinitive.replacingOccurrences(of: "pleuvoir", with: "pl") : verbR
-            }
-            
-        case 49:
-            // valoir, valu : all verbes, known: valoir, équivaloir, prévaloir, revaloir
-            if (modelR.elementsEqual("va")) {
-                verbR = infinitive.hasSuffix("valoir") ? infinitive.replacingOccurrences(of: "valoir", with: "va") : verbR
-            }
-            
-        case 50:
-            // vouloir, veux : all verbes, known: vouloir, revouloir
-            if (modelR.elementsEqual("veu")) {
-                verbR = infinitive.hasSuffix("vouloir") ? infinitive.replacingOccurrences(of: "vouloir", with: "veu") : verbR
-            } else if (modelR.elementsEqual("voul")) {
-                verbR = infinitive.hasSuffix("vouloir") ? infinitive.replacingOccurrences(of: "vouloir", with: "voul") : verbR
-            } else if (modelR.elementsEqual("voud")) {
-                verbR = infinitive.hasSuffix("vouloir") ? infinitive.replacingOccurrences(of: "vouloir", with: "voud") : verbR
-            }
-            
-        case 51:
-            // asseoir : all verbes, known: asseoir, rasseoir,
-            if (modelR.elementsEqual("ass")) {
-                verbR = infinitive.hasSuffix("asseoir") ? infinitive.replacingOccurrences(of: "asseoir", with: "ass") : verbR
-            }
-            
-        case 59:
-            // prendre, pris : all verbes,
-            // known: prendre, apprendre, comprendre, déprendre, désapprendre, entreprendre, s'éprendre,
-            //        se méprendre, rapprendre, reapprendre, reprendre, surprendre
-            if (modelR.elementsEqual("pr")) {
-                verbR = infinitive.hasSuffix("prendre") ? infinitive.replacingOccurrences(of: "prendre", with: "pr") : verbR
-            }
-            
-        case 60:
-            // battre, battu : all verbes,
-            // known: battre, abattre, combattre, contrebattre, debattre, ebattre, embattre, rabattre, rebattre
-            if (modelR.elementsEqual("bat")) {
-                verbR = infinitive.hasSuffix("battre") ? infinitive.replacingOccurrences(of: "battre", with: "bat") : verbR
-            }
-            
-        case 61:
-            // mettre, mis : all verbes,
-            // known: mettre, admettre, commettre, compromettre, demettre, emettre, (.)mettre
-            if (modelR.elementsEqual("met")) {
-                verbR = infinitive.hasSuffix("mettre") ? infinitive.replacingOccurrences(of: "mettre", with: "met") : verbR
-            } else if (modelR.elementsEqual("mi")) {
-                verbR = infinitive.hasSuffix("mettre") ? infinitive.replacingOccurrences(of: "mettre", with: "mi") : verbR
-            } else if (modelR.elementsEqual("mî")) {
-                verbR = infinitive.hasSuffix("mettre") ? infinitive.replacingOccurrences(of: "mettre", with: "mî") : verbR
-            }
-            
-        case 62:
-            // peindre, peignez : all verbes,
-            // known: peindre, astreindre, ceindre,  (.)eindre
-            if (modelR.elementsEqual("pei")) {
-                verbR = infinitive.hasSuffix("eindre") ? infinitive.replacingOccurrences(of: "eindre", with: "ei") : verbR
-            }
-            
-        case 63:
-            // joindre, joins : all verbes,
-            // known: joindre, adjoindre, conjoindre, disjoindre, enjoindre, rejoindre, oindre, poindre
-            if (modelR.elementsEqual("joi")) {
-                verbR = infinitive.hasSuffix("oindre") ? infinitive.replacingOccurrences(of: "oindre", with: "oi") : verbR
-            }
-            
-        case 64:
-            // craindre, craint : all verbes,
-            // known: craindre, contraindre, plaindre
-            if (modelR.elementsEqual("crai")) {
-                verbR = infinitive.hasSuffix("aindre") ? infinitive.replacingOccurrences(of: "aindre", with: "ai") : verbR
-            }
-            
-        case 65:
-            // vaincre, vaincu : all verbes,
-            // known: vaincre, convaincre
-            if (modelR.elementsEqual("vain")) {
-                verbR = infinitive.hasSuffix("vaincre") ? infinitive.replacingOccurrences(of: "vaincre", with: "vain") : verbR
-            }
-            
-        case 66:
-            // traire, trait : all verbes,
-            // known: traire, abstraire, distraire, extraire, retraire, raire, soustraire, braire
-            if (modelR.elementsEqual("tra")) {
-                verbR = infinitive.hasSuffix("raire") ? infinitive.replacingOccurrences(of: "raire", with: "ra") : verbR
-            }
-            
-        case 67:
-            // faire, fait : all verbes,
-            // known: faire, contrefaire, defaire, forfaire, malfaire, mefaire, parfaire, redefaire,
-            //        refaire, satisfaire, surfaire
-            if (modelR.elementsEqual("f")) {
-                verbR = infinitive.hasSuffix("faire") ? infinitive.replacingOccurrences(of: "faire", with: "f") : verbR
-            }
-            
-        case 68:
-            // plaire, plait : all verbes,
-            // known: plaire, complaire, déplaire, taire
-            if (modelR.elementsEqual("pl")) {
-                verbR = infinitive.hasSuffix("aire") ? infinitive.replacingOccurrences(of: "aire", with: "") : verbR
-            }
-            
-        case 69:
-            // connaître, connu : all verbes,
-            // known: connaître, méconnaître, reconnaître, paraître, apparaître, comparaître,
-            //        disparaître, réapparaître, recomparaître, reparaître, transparaître
-            if (modelR.elementsEqual("conn")) {
-                verbR = infinitive.hasSuffix("aître") ? infinitive.replacingOccurrences(of: "aître", with: "") : verbR
-            }
-            
-        case 70:
-            // naître, né : all verbes, known: naître, renaître
-            if (modelR.elementsEqual("na")) {
-                verbR = infinitive.hasSuffix("naître") ? infinitive.replacingOccurrences(of: "naître", with: "na") : verbR
-            } else if (modelR.elementsEqual("né")) {
-                verbR = infinitive.hasSuffix("naître") ? infinitive.replacingOccurrences(of: "naître", with: "né") : verbR
-            }
-            
-        case 73:
-            // croître, crû : all verbes, known: croître, accroître, décroître, recroître
-            if (modelR.elementsEqual("cr")) {
-                verbR = infinitive.hasSuffix("croître") ? infinitive.replacingOccurrences(of: "croître", with: "cr") : verbR
-            }
-            
-        case 74:
-            // croire, cru : all verbes, known: croire, accroire
-            if (modelR.elementsEqual("cr")) {
-                verbR = infinitive.hasSuffix("croire") ? infinitive.replacingOccurrences(of: "croire", with: "cr") : verbR
-            }
-            
-        case 75:
-            // boire, bu : all verbes, known: boire, emboire
-            if (modelR.elementsEqual("b")) {
-                verbR = infinitive.hasSuffix("boire") ? infinitive.replacingOccurrences(of: "boire", with: "b") : verbR
-            }
-            
-        case 76:
-            // clore, clos : all verbes, known: clore, déclore, éclore, enclore, forclore
-            if (modelR.elementsEqual("cl")) {
-                verbR = infinitive.hasSuffix("clore") ? infinitive.replacingOccurrences(of: "clore", with: "cl") : verbR
-            }
-            
-        case 77:
-            // conclure, conclu : all verbes, known: conclure, exclure, inclure, occlure, reclure
-            if (modelR.elementsEqual("con")) {
-                verbR = infinitive.hasSuffix("clure") ? infinitive.replacingOccurrences(of: "clure", with: "") : verbR
-            }
-            
-        case 78:
-            // absoudre, absous : all verbes, known: absoudre, dissoudre, résoudre
-            if (modelR.elementsEqual("abso")) {
-                verbR = infinitive.hasSuffix("soudre") ? infinitive.replacingOccurrences(of: "soudre", with: "so") : verbR
-            }
-            
-        case 79:
-            // coudre, cousu : all verbes, known: coudre, découdre, recoudre
-            if (modelR.elementsEqual("cou")) {
-                verbR = infinitive.hasSuffix("coudre") ? infinitive.replacingOccurrences(of: "coudre", with: "cou") : verbR
-            }
-            
-        case 80:
-            // moudre, moulu : all verbes, known: moudre, émoudre, remoudre
-            if (modelR.elementsEqual("mou")) {
-                verbR = infinitive.hasSuffix("moudre") ? infinitive.replacingOccurrences(of: "moudre", with: "mou") : verbR
-            }
-            
-        case 81:
-            // suivre, suivi : all verbes, known: suivre, ensuivre, poursuivre
-            if (modelR.elementsEqual("sui")) {
-                verbR = infinitive.hasSuffix("suivre") ? infinitive.replacingOccurrences(of: "suivre", with: "sui") : verbR
-            }
-            
-        case 82:
-            // vivre, vécu : all verbes, known: vivre, revivre, survivre
-            if (modelR.elementsEqual("viv, vi, véc")) {
-                verbR = infinitive.hasSuffix("vivre") ? infinitive.replacingOccurrences(of: "vivre", with: "viv") : verbR
-            } else if (modelR.elementsEqual("vi")) {
-                verbR = infinitive.hasSuffix("vivre") ? infinitive.replacingOccurrences(of: "vivre", with: "vi") : verbR
-            } else if (modelR.elementsEqual("véc")) {
-                verbR = infinitive.hasSuffix("vivre") ? infinitive.replacingOccurrences(of: "vivre", with: "véc") : verbR
-            }
-            
-        case 83:
-            // lire, lu : all verbes, known: lire, élire, réélire, relire
-            if (modelR.elementsEqual("l")) {
-                verbR = infinitive.hasSuffix("lire") ? infinitive.replacingOccurrences(of: "lire", with: "l") : verbR
-            }
-            
-        case 84:
-            // dire, dit : all verbes, known: dire, contredire, dédire, interdire, médire, prédire, redire
-            if (modelR.elementsEqual("d")) {
-                verbR = infinitive.hasSuffix("dire") ? infinitive.replacingOccurrences(of: "dire", with: "d") : verbR
-            }
-            
-        case 85:
-            // rire, ri : all verbes, known: rire, sourire
-            if (modelR.elementsEqual("rir, r")) {
-                verbR = infinitive.hasSuffix("rire") ? infinitive.replacingOccurrences(of: "rire", with: "rir") : verbR
-            } else if (modelR.elementsEqual("r")) {
-                verbR = infinitive.hasSuffix("rire") ? infinitive.replacingOccurrences(of: "rire", with: "r") : verbR
-            }
-            
-        case 86:
-            // écrire, écrit : all verbes,
-            // known: écrire, circonscrire, décrire, inscrire, prescrire, proscrire, récrire,
-            //        réinscrire, retranscrire, souscrire, transcrire
-            if (modelR.elementsEqual("écri")) {
-                verbR = infinitive.hasSuffix("crire") ? infinitive.replacingOccurrences(of: "crire", with: "cri") : verbR
-            }
-            
-        case 87:
-            // confire, confit : all verbes,
-            // known: confire, déconfire, circoncire, frire, suffire
-            if (modelR.elementsEqual("conf")) {
-                verbR = infinitive.hasSuffix("ire") ? infinitive.replacingOccurrences(of: "ire", with: "") : verbR
-            }
-            
-        case 88:
-            // cuire, cuit : all verbes,
-            // known: cuire, recuire, conduire, deduire, econduire, enduire, introduire, produire, (.)uire
-            if (modelR.elementsEqual("cui")) {
-                verbR = infinitive.hasSuffix("uire") ? infinitive.replacingOccurrences(of: "uire", with: "ui") : verbR
-            }
-            
-        default:
-            break
+            default:
+                break
         }
         
         return verbR
@@ -1237,7 +1329,10 @@ class VerbDetailsViewController: UIViewController {
      */
     private func replaceRadicals(_ c : Conjugation, _ modelR : [String], _ verbR : [String], _ verbInfinitive : String) {
         
-        c.infinitivPrasens = verbInfinitive
+        let inf = removeReflexiveNotation(verbInfinitive)
+        replaceInfinitiv(c, c.infinitivPrasens, inf)
+        
+        c.infinitivPrasens = inf
         c.partizipPrasens = replaceRadical(c.partizipPrasens, modelR, verbR)
         
         c.imperativDu = replaceRadical(c.imperativDu, modelR, verbR)
@@ -1251,19 +1346,12 @@ class VerbDetailsViewController: UIViewController {
         c.indikativPrasensIhr = replaceRadical(c.indikativPrasensIhr, modelR, verbR)
         c.indikativPrasensSie = replaceRadical(c.indikativPrasensSie, modelR, verbR)
         
-        c.indikativPerfektIch = replaceRadical(c.indikativPerfektIch, modelR, verbR)
-        c.indikativPerfektDu = replaceRadical(c.indikativPerfektDu, modelR, verbR)
-        c.indikativPerfektEr = replaceRadical(c.indikativPerfektEr, modelR, verbR)
-        c.indikativPerfektWir = replaceRadical(c.indikativPerfektWir, modelR, verbR)
-        c.indikativPerfektIhr = replaceRadical(c.indikativPerfektIhr, modelR, verbR)
-        c.indikativPerfektSie = replaceRadical(c.indikativPerfektSie, modelR, verbR)
-        
-        c.indikativFutur1Ich = replaceRadical(c.indikativFutur1Ich, modelR, verbR)
-        c.indikativFutur1Du = replaceRadical(c.indikativFutur1Du, modelR, verbR)
-        c.indikativFutur1Er = replaceRadical(c.indikativFutur1Er, modelR, verbR)
-        c.indikativFutur1Wir = replaceRadical(c.indikativFutur1Wir, modelR, verbR)
-        c.indikativFutur1Ihr = replaceRadical(c.indikativFutur1Ihr, modelR, verbR)
-        c.indikativFutur1Sie = replaceRadical(c.indikativFutur1Sie, modelR, verbR)
+        c.indikativPrateritumIch = replaceRadical(c.indikativPrateritumIch, modelR, verbR)
+        c.indikativPrateritumDu = replaceRadical(c.indikativPrateritumDu, modelR, verbR)
+        c.indikativPrateritumEr = replaceRadical(c.indikativPrateritumEr, modelR, verbR)
+        c.indikativPrateritumWir = replaceRadical(c.indikativPrateritumWir, modelR, verbR)
+        c.indikativPrateritumIhr = replaceRadical(c.indikativPrateritumIhr, modelR, verbR)
+        c.indikativPrateritumSie = replaceRadical(c.indikativPrateritumSie, modelR, verbR)
         
         c.konjunktiv1PrasensIch = replaceRadical(c.konjunktiv1PrasensIch, modelR, verbR)
         c.konjunktiv1PrasensDu = replaceRadical(c.konjunktiv1PrasensDu, modelR, verbR)
@@ -1271,20 +1359,6 @@ class VerbDetailsViewController: UIViewController {
         c.konjunktiv1PrasensWir = replaceRadical(c.konjunktiv1PrasensWir, modelR, verbR)
         c.konjunktiv1PrasensIhr = replaceRadical(c.konjunktiv1PrasensIhr, modelR, verbR)
         c.konjunktiv1PrasensSie = replaceRadical(c.konjunktiv1PrasensSie, modelR, verbR)
-        
-        c.konjunktiv2Futur1Ich = replaceRadical(c.konjunktiv2Futur1Ich, modelR, verbR)
-        c.konjunktiv2Futur1Du = replaceRadical(c.konjunktiv2Futur1Du, modelR, verbR)
-        c.konjunktiv2Futur1Er = replaceRadical(c.konjunktiv2Futur1Er, modelR, verbR)
-        c.konjunktiv2Futur1Wir = replaceRadical(c.konjunktiv2Futur1Wir, modelR, verbR)
-        c.konjunktiv2Futur1Ihr = replaceRadical(c.konjunktiv2Futur1Ihr, modelR, verbR)
-        c.konjunktiv2Futur1Sie = replaceRadical(c.konjunktiv2Futur1Sie, modelR, verbR)
-        
-        c.konjunktiv1Futur1Ich = replaceRadical(c.konjunktiv1Futur1Ich, modelR, verbR)
-        c.konjunktiv1Futur1Du = replaceRadical(c.konjunktiv1Futur1Du, modelR, verbR)
-        c.konjunktiv1Futur1Er = replaceRadical(c.konjunktiv1Futur1Er, modelR, verbR)
-        c.konjunktiv1Futur1Wir = replaceRadical(c.konjunktiv1Futur1Wir, modelR, verbR)
-        c.konjunktiv1Futur1Ihr = replaceRadical(c.konjunktiv1Futur1Ihr, modelR, verbR)
-        c.konjunktiv1Futur1Sie = replaceRadical(c.konjunktiv1Futur1Sie, modelR, verbR)
         
         c.konjunktiv2PrateritumIch = replaceRadical(c.konjunktiv2PrateritumIch, modelR, verbR)
         c.konjunktiv2PrateritumDu = replaceRadical(c.konjunktiv2PrateritumDu, modelR, verbR)
@@ -1303,7 +1377,7 @@ class VerbDetailsViewController: UIViewController {
         let new = pp[0].elementsEqual("-") ? "" : pp[0]
         
         if (!old.isEmpty && !new.isEmpty) {
-            replaceParticipePasse(c, old, new)
+            replacePartizipPerfekt(c, old, new)
         }
     }
     
@@ -1320,13 +1394,13 @@ class VerbDetailsViewController: UIViewController {
             radicalV = verbR[i]
             if (!radicalM.isEmpty && !radicalV.isEmpty && text.contains(radicalM)) {
                 if (newText.contains(" / ")) {
-                    // if there is 2 conjugations. Like model 51 asseoir. je rassieds / rassois
+                    // if there is 2 conjugations. Like model 43 stehen. ich stände / stünde
                     newText = newText.replacingOccurrences(of: radicalM, with: radicalV)
                 } else {
                     newText = ViewUtils.replaceFirst(newText, of: radicalM, with: radicalV)
                 }
                 
-                // if it's just one form, if it's a double form (like Je pay / paye) continue
+                // if it's just one form break. If it's a double form (like ich stände / stünde) continue
                 if (!text.contains("/")) {
                     break
                 }
@@ -1334,618 +1408,6 @@ class VerbDetailsViewController: UIViewController {
         }
         return newText
     }
-    
-    
-    /**
-     * Checks if the verb uses other auxiliar verb and replace it.
-     */ /*
-    private func reviewAuxiliar(_ c : Conjugation, _ isEtre : Bool, _ isAvoir : Bool) {
-        
-        if (!isEtre && !isAvoir) { return }
-        
-        let wordsAvoir : [String] = ["avoir", "ayant", "ayant", "aie", "ayons", "ayez",
-                                     "ai", "as", "a", "avons", "avez", "ont",                        // IndicatifPasseCompose
-            "avais", "avais", "avait", "avions", "aviez", "avaient",        // IndicatifPlusQueParfait
-            "eus", "eus", "eut", "eûmes", "eûtes", "eurent",                // IndicatifPasseAnterieur
-            "aurai", "auras", "aura", "aurons", "aurez", "auront",          // IndicatifFuturAnterieur
-            "aurais", "aurais", "aurait", "aurions", "auriez", "auraient",  // ConditionnelPasse
-            "aie", "aies", "ait", "ayons", "ayez", "aient",                 // SubjonctifPasse
-            "eusse", "eusses", "eût", "eussions", "eussiez", "eussent",     // SubjonctifPlusQueParfait
-        ]
-        let wordsEtre : [String] = ["être", "étant", "étant", "sois", "soyons", "soyez",
-                                    "suis", "es", "est", "sommes", "êtes", "sont",                  // IndicatifPasseCompose
-            "étais", "étais", "était", "étions", "étiez", "étaient",        // IndicatifPlusQueParfait
-            "fus", "fus", "fut", "fûmes", "fûtes", "furent",                // IndicatifPasseAnterieur
-            "serai", "seras", "sera", "serons", "serez", "seront",          // IndicatifFuturAnterieur
-            "serais", "serais", "serait", "serions", "seriez", "seraient",  // ConditionnelPasse
-            "sois", "sois", "soit", "soyons", "soyez", "soient",            // SubjonctifPasse
-            "fusse", "fusses", "fût", "fussions", "fussiez", "fussent",     // SubjonctifPlusQueParfait
-        ]
-        let wordsEtreAvoir : [String] = ["être ou avoir", "étant ou ayant", "étant ou ayant",
-                                         "sois ou aie", "soyons ou ayons", "soyez ou ayez",
-                                         "suis ou ai", "es ou as", "est ou a",
-                                         "sommes ou avons", "êtes ou avez", "sont ou ont",                   // IndicatifPasseCompose
-            "étais ou avais", "étais ou avais", "était ou avait",
-            "étions ou avions", "étiez ou aviez", "étaient ou avaient",         // IndicatifPlusQueParfait
-            "fus ou eus", "fus ou eus", "fut ou eut",
-            "fûmes ou eûmes", "fûtes ou eûtes", "furent ou eurent",             // IndicatifPasseAnterieur
-            "serai ou aurai", "seras ou auras", "sera ou aura",
-            "serons ou aurons", "serez ou aurez", "seront ou auront",           // IndicatifFuturAnterieur
-            "serais ou aurais", "serais ou aurais", "serait ou aurait",
-            "serions ou aurions", "seriez ou auriez", "seraient ou auraient",   // ConditionnelPasse
-            "sois ou aie", "sois ou aies", "soit ou ait",
-            "soyons ou ayons", "soyez ou ayez", "soient ou aient",              // SubjonctifPasse
-            "fusse ou eusse", "fusses ou eusses", "fût ou eût",
-            "fussions ou eussions", "fussiez ou eussiez", "fussent ou eussent", // SubjonctifPlusQueParfait
-        ]
-        
-        // change auxiliar verb
-        if (isAvoir && isEtre) {
-            if (c.infinitivPerfekt.contains("avoir")) {
-                //  Like: sortir, renter
-                //replaceAuxiliar(c, wordsAvoir, wordsEtreAvoir)
-            } else if (c.infinitivPerfekt.contains("être")) {
-                //replaceAuxiliar(c, wordsEtre, wordsEtreAvoir)
-            }
-        } else if (c.infinitivPerfekt.contains("avoir") && isEtre && !isAvoir) {
-            //  Like: partir, mourir, s'ecrier
-            //replaceAuxiliar(c, wordsAvoir, wordsEtre)
-        } else if (c.infinitivPerfekt.contains("être") && !isEtre && isAvoir) {
-            //replaceAuxiliar(c, wordsEtre, wordsAvoir)
-        }
-    }*/
-    
-    /**
-     * Replaces a list of strings with another list.
-     * Both list should refer to the same conjugation item in the same order.
-     */ /*
-    private func replaceAuxiliar(_ c : Conjugation, _ words : [String], _ replaces : [String]) {
-        // NOTE: Items to replace must come in the same order
-        for index in 0 ..< words.count {
-            let word : String = words[index]
-            let replace : String = replaces[index]
-            
-            switch (index) {
-            case 0:     c.infinitivPerfekt = ViewUtils.replaceFirst(c.infinitivPerfekt, of: word, with: replace)
-            case 1:     c.participePasse2 = ViewUtils.replaceFirst(c.participePasse2, of: word, with: replace)
-            case 2:     c.gerondifPasse = ViewUtils.replaceFirst(c.gerondifPasse, of: word, with: replace)
-            case 3:     c.imperatifPasseTu = ViewUtils.replaceFirst(c.imperatifPasseTu, of: word, with: replace)
-            case 4:     c.imperatifPasseNous = ViewUtils.replaceFirst(c.imperatifPasseNous, of: word, with: replace)
-            case 5:     c.imperatifPasseVous = ViewUtils.replaceFirst(c.imperatifPasseVous, of: word, with: replace)
-                
-            case 6:     c.indikativPrateritumIch = ViewUtils.replaceFirst(c.indikativPrateritumIch, of: word, with: replace)
-            case 7:     c.indikativPrateritumDu = ViewUtils.replaceFirst(c.indikativPrateritumDu, of: word, with: replace)
-            case 8:     c.indikativPrateritumEr = ViewUtils.replaceFirst(c.indikativPrateritumEr, of: word, with: replace)
-            case 9:     c.indikativPrateritumWir = ViewUtils.replaceFirst(c.indikativPrateritumWir, of: word, with: replace)
-            case 10:    c.indikativPrateritumIhr = ViewUtils.replaceFirst(c.indikativPrateritumIhr, of: word, with: replace)
-            case 11:    c.indikativPrateritumSie = ViewUtils.replaceFirst(c.indikativPrateritumSie, of: word, with: replace)
-                
-            case 12:    c.indikativPlusquamperfektIch = ViewUtils.replaceFirst(c.indikativPlusquamperfektIch, of: word, with: replace)
-            case 13:    c.indikativPlusquamperfektDu = ViewUtils.replaceFirst(c.indikativPlusquamperfektDu, of: word, with: replace)
-            case 14:    c.indikativPlusquamperfektEr = ViewUtils.replaceFirst(c.indikativPlusquamperfektEr, of: word, with: replace)
-            case 15:    c.indikativPlusquamperfektWir = ViewUtils.replaceFirst(c.indikativPlusquamperfektWir, of: word, with: replace)
-            case 16:    c.indikativPlusquamperfektIhr = ViewUtils.replaceFirst(c.indikativPlusquamperfektIhr, of: word, with: replace)
-            case 17:    c.indikativPlusquamperfektSie = ViewUtils.replaceFirst(c.indikativPlusquamperfektSie, of: word, with: replace)
-                
-            case 18:    c.indikativFutur2Ich = ViewUtils.replaceFirst(c.indikativFutur2Ich, of: word, with: replace)
-            case 19:    c.indikativFutur2Du = ViewUtils.replaceFirst(c.indikativFutur2Du, of: word, with: replace)
-            case 20:    c.indikativFutur2Er = ViewUtils.replaceFirst(c.indikativFutur2Er, of: word, with: replace)
-            case 21:    c.indikativFutur2Wir = ViewUtils.replaceFirst(c.indikativFutur2Wir, of: word, with: replace)
-            case 22:    c.indikativFutur2Ihr = ViewUtils.replaceFirst(c.indikativFutur2Ihr, of: word, with: replace)
-            case 23:    c.indikativFutur2Sie = ViewUtils.replaceFirst(c.indikativFutur2Sie, of: word, with: replace)
-                
-            case 24:    c.konjunktiv1PerfektIch = ViewUtils.replaceFirst(c.konjunktiv1PerfektIch, of: word, with: replace)
-            case 25:    c.konjunktiv1PerfektDu = ViewUtils.replaceFirst(c.konjunktiv1PerfektDu, of: word, with: replace)
-            case 26:    c.konjunktiv1PerfektEr = ViewUtils.replaceFirst(c.konjunktiv1PerfektEr, of: word, with: replace)
-            case 27:    c.konjunktiv1PerfektWir = ViewUtils.replaceFirst(c.konjunktiv1PerfektWir, of: word, with: replace)
-            case 28:    c.konjunktiv1PerfektIhr = ViewUtils.replaceFirst(c.konjunktiv1PerfektIhr, of: word, with: replace)
-            case 29:    c.konjunktiv1PerfektSie = ViewUtils.replaceFirst(c.konjunktiv1PerfektSie, of: word, with: replace)
-                
-            case 30:    c.konjunktiv2Futur2Ich = ViewUtils.replaceFirst(c.konjunktiv2Futur2Ich, of: word, with: replace)
-            case 31:    c.konjunktiv2Futur2Du = ViewUtils.replaceFirst(c.konjunktiv2Futur2Du, of: word, with: replace)
-            case 32:    c.konjunktiv2Futur2Er = ViewUtils.replaceFirst(c.konjunktiv2Futur2Er, of: word, with: replace)
-            case 33:    c.konjunktiv2Futur2Wir = ViewUtils.replaceFirst(c.konjunktiv2Futur2Wir, of: word, with: replace)
-            case 34:    c.konjunktiv2Futur2Ihr = ViewUtils.replaceFirst(c.konjunktiv2Futur2Ihr, of: word, with: replace)
-            case 35:    c.konjunktiv2Futur2Sie = ViewUtils.replaceFirst(c.konjunktiv2Futur2Sie, of: word, with: replace)
-                
-            case 36:    c.konjunktiv1Futur2Ich = ViewUtils.replaceFirst(c.konjunktiv1Futur2Ich, of: word, with: replace)
-            case 37:    c.konjunktiv1Futur2Du = ViewUtils.replaceFirst(c.konjunktiv1Futur2Du, of: word, with: replace)
-            case 38:    c.konjunktiv1Futur2Er = ViewUtils.replaceFirst(c.konjunktiv1Futur2Er, of: word, with: replace)
-            case 39:    c.konjunktiv1Futur2Wir = ViewUtils.replaceFirst(c.konjunktiv1Futur2Wir, of: word, with: replace)
-            case 40:    c.konjunktiv1Futur2Ihr = ViewUtils.replaceFirst(c.konjunktiv1Futur2Ihr, of: word, with: replace)
-            case 41:    c.konjunktiv1Futur2Sie = ViewUtils.replaceFirst(c.konjunktiv1Futur2Sie, of: word, with: replace)
-                
-            case 42:    c.konjunktiv2PlusquamperfektIch = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektIch, of: word, with: replace)
-            case 43:    c.konjunktiv2PlusquamperfektDu = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektDu, of: word, with: replace)
-            case 44:    c.konjunktiv2PlusquamperfektEr = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektEr, of: word, with: replace)
-            case 45:    c.konjunktiv2PlusquamperfektWir = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektWir, of: word, with: replace)
-            case 46:    c.konjunktiv2PlusquamperfektIhr = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektIhr, of: word, with: replace)
-            case 47:    c.konjunktiv2PlusquamperfektSie = ViewUtils.replaceFirst(c.konjunktiv2PlusquamperfektSie, of: word, with: replace)
-            default:    ()
-            }
-        }
-    } */
-    
-    
-    /**
-     * Ads the reflexive pronoms and accord of participe passe
-     */
-    private func addReflexive(_ c : Conjugation, _ ppInv : Bool) {
-        // Add pronoms
-        // TODO: Show pronoms in different color
-        /*addReflexiveIndicatifPresent(c)
-        addReflexiveIndicatifPasseCompose(c, ppInv)
-        addReflexiveIndicatifImperfait(c)
-        addReflexiveIndicatifPlusQueParfait(c, ppInv)
-        addReflexiveIndicatifPasseSimple(c)
-        addReflexiveIndicatifPasseAnterieur(c, ppInv)
-        addReflexiveIndicatifFuturSimple(c)
-        addReflexiveIndicatifFuturAnterieur(c, ppInv)
-        addReflexiveConditionnelPresent(c)
-        addReflexiveConditionnelPasse(c, ppInv)
-        addReflexiveSubjonctifPresent(c)
-        addReflexiveSubjonctifPasse(c, ppInv)
-        addReflexiveSubjonctifImperfait(c)
-        addReflexiveSubjonctifPlusQueParfait(c, ppInv)
-        addReflexiveImperatif(c, ppInv)
-        addReflexiveInfinitive(c, ppInv)
-        addReflexiveParticipe(c, ppInv)
-        addReflexiveGerondif(c, ppInv) */
-    }
-    
-    /*
-    private func addReflexiveGerondif(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.gerondifPresent.replacingOccurrences(of: "en ", with: "")
-        if (!text.elementsEqual("-")) {
-            c.gerondifPresent = ViewUtils.useApostrophe(text) ? "en " + Constants.SEA + text : "en " + Constants.SE + text
-        }
-        text = c.gerondifPasse.replacingOccurrences(of: "en ", with: "")
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? "en " + Constants.SEA + text : "en " + Constants.SE + text
-            c.gerondifPasse = ppInv ? text : text + "(e)(s)"
-        }
-    }
-    
-    private func addReflexiveParticipe(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.partizipPrasens
-        if (!text.elementsEqual("-")) {
-            c.partizipPrasens = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        text = c.partizipPerfekt
-        if (!text.elementsEqual("-")) {
-            c.partizipPerfekt = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        text = c.participePasse2
-        if (!text.elementsEqual("-")) {
-            c.participePasse2 = ppInv ? text : text + "(e)(s)"
-        }
-    }
-    
-    private func addReflexiveInfinitive(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.infinitivPerfekt
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.infinitivPerfekt = ppInv ? text : text + "(e)(s)"
-        }
-    }
-    
-    private func addReflexiveImperatif(_ c : Conjugation, _ ppInv : Bool) {
-        if (!c.imperativDu.elementsEqual("-")) {
-            c.imperativDu = c.imperativDu + "-toi"
-        }
-        if (!c.imperativIhr.elementsEqual("-")) {
-            c.imperativIhr = c.imperativIhr + "-nous"
-        }
-        if (!c.imperativSie.elementsEqual("-")) {
-            c.imperativSie = c.imperativSie + "-vous"
-        }
-        
-        var text : String = c.imperatifPasseTu
-        if (!text.elementsEqual("-")) {
-            c.imperatifPasseTu = ppInv ? text : text + "(e)"
-        }
-        text = c.imperatifPasseNous
-        if (!text.elementsEqual("-")) {
-            c.imperatifPasseNous = ppInv ? text : text + "(e)s"
-        }
-        text = c.imperatifPasseVous
-        if (!text.elementsEqual("-")) {
-            c.imperatifPasseVous = ppInv ? text : text + "(e)s"
-        }
-    }
-    
-    private func addReflexiveSubjonctifPlusQueParfait(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.konjunktiv2PlusquamperfektIch
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.konjunktiv2PlusquamperfektIch = ppInv ? text : text + "(e)"
-        }
-        text = c.konjunktiv2PlusquamperfektDu
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.konjunktiv2PlusquamperfektDu = ppInv ? text : text + "(e)"
-        }
-        text = c.konjunktiv2PlusquamperfektEr
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.konjunktiv2PlusquamperfektEr = ppInv ? text : text + "(e)"
-        }
-        if (!c.konjunktiv2PlusquamperfektWir.elementsEqual("-")) {
-            text = Constants.WIR + c.konjunktiv2PlusquamperfektWir
-            c.konjunktiv2PlusquamperfektWir = ppInv ? text : text + "(e)s"
-        }
-        if (!c.konjunktiv2PlusquamperfektIhr.elementsEqual("-")) {
-            text = Constants.IHR + c.konjunktiv2PlusquamperfektIhr
-            c.konjunktiv2PlusquamperfektIhr = ppInv ? text : text + "(e)s"
-        }
-        text = c.konjunktiv2PlusquamperfektSie
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.konjunktiv2PlusquamperfektSie = ppInv ? text : text + "(e)s"
-        }
-    }
-    
-    private func addReflexiveSubjonctifImperfait(_ c : Conjugation) {
-        var text : String = c.konjunktiv2PrateritumIch
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv2PrateritumIch = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-        }
-        text = c.konjunktiv2PrateritumDu
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv2PrateritumDu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-        }
-        text = c.konjunktiv2PrateritumEr
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv2PrateritumEr = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        if (!c.konjunktiv2PrateritumWir.elementsEqual("-")) {
-            c.konjunktiv2PrateritumWir = Constants.WIR + c.konjunktiv2PrateritumWir
-        }
-        if (!c.konjunktiv2PrateritumIhr.elementsEqual("-")) {
-            c.konjunktiv2PrateritumIhr = Constants.IHR + c.konjunktiv2PrateritumIhr
-        }
-        text = c.konjunktiv2PrateritumSie
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv2PrateritumSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-    }
-    
-    private func addReflexiveSubjonctifPasse(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.konjunktiv1Futur2Ich
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.konjunktiv1Futur2Ich = ppInv ? text : text + "(e)"
-        }
-        text = c.konjunktiv1Futur2Du
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.konjunktiv1Futur2Du = ppInv ? text : text + "(e)"
-        }
-        text = c.konjunktiv1Futur2Er
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.konjunktiv1Futur2Er = ppInv ? text : text + "(e)"
-        }
-        if (!c.konjunktiv1Futur2Wir.elementsEqual("-")) {
-            text = Constants.WIR + c.konjunktiv1Futur2Wir
-            c.konjunktiv1Futur2Wir = ppInv ? text : text + "(e)s"
-        }
-        if (!c.konjunktiv1Futur2Ihr.elementsEqual("-")) {
-            text = Constants.IHR + c.konjunktiv1Futur2Ihr
-            c.konjunktiv1Futur2Ihr = ppInv ? text : text + "(e)s"
-        }
-        text = c.konjunktiv1Futur2Sie
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.konjunktiv1Futur2Sie = ppInv ? text : text + "(e)s"
-        }
-    }
-    
-    private func addReflexiveSubjonctifPresent(_ c : Conjugation) {
-        var text : String = c.konjunktiv1Futur1Ich
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv1Futur1Ich = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-        }
-        text = c.konjunktiv1Futur1Du
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv1Futur1Du = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-        }
-        text = c.konjunktiv1Futur1Er
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv1Futur1Er = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        if (!c.konjunktiv1Futur1Wir.elementsEqual("-")) {
-            c.konjunktiv1Futur1Wir = Constants.WIR + c.konjunktiv1Futur1Wir
-        }
-        if (!c.konjunktiv1Futur1Ihr.elementsEqual("-")) {
-            c.konjunktiv1Futur1Ihr = Constants.IHR + c.konjunktiv1Futur1Ihr
-        }
-        text = c.konjunktiv1Futur1Sie
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv1Futur1Sie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-    }
-    
-    private func addReflexiveConditionnelPasse(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.konjunktiv2Futur2Ich
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.konjunktiv2Futur2Ich = ppInv ? text : text + "(e)"
-        }
-        text = c.konjunktiv2Futur2Du
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.konjunktiv2Futur2Du = ppInv ? text : text + "(e)"
-        }
-        text = c.konjunktiv2Futur2Er
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.konjunktiv2Futur2Er = ppInv ? text : text + "(e)"
-        }
-        if (!c.konjunktiv2Futur2Wir.elementsEqual("-")) {
-            text = Constants.WIR + c.konjunktiv2Futur2Wir
-            c.konjunktiv2Futur2Wir = ppInv ? text : text + "(e)s"
-        }
-        if (!c.konjunktiv2Futur2Ihr.elementsEqual("-")) {
-            text = Constants.IHR + c.konjunktiv2Futur2Ihr
-            c.konjunktiv2Futur2Ihr = ppInv ? text : text + "(e)s"
-        }
-        text = c.konjunktiv2Futur2Sie
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.konjunktiv2Futur2Sie = ppInv ? text : text + "(e)s"
-        }
-    }
-    
-    private func addReflexiveConditionnelPresent(_ c : Conjugation) {
-        var text : String = c.konjunktiv2Futur1Ich
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv2Futur1Ich = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-        }
-        text = c.konjunktiv2Futur1Du
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv2Futur1Du = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-        }
-        text = c.konjunktiv2Futur1Er
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv2Futur1Er = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        if (!c.konjunktiv2Futur1Wir.elementsEqual("-")) {
-            c.konjunktiv2Futur1Wir = Constants.WIR + c.konjunktiv2Futur1Wir
-        }
-        if (!c.konjunktiv2Futur1Ihr.elementsEqual("-")) {
-            c.konjunktiv2Futur1Ihr = Constants.IHR + c.konjunktiv2Futur1Ihr
-        }
-        text = c.konjunktiv2Futur1Sie
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv2Futur1Sie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-    }
-    
-    private func addReflexiveIndicatifFuturAnterieur(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.konjunktiv1PerfektIch
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.konjunktiv1PerfektIch = ppInv ? text : text + "(e)"
-        }
-        text = c.konjunktiv1PerfektDu
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.konjunktiv1PerfektDu = ppInv ? text : text + "(e)"
-        }
-        text = c.konjunktiv1PerfektEr
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.konjunktiv1PerfektEr = ppInv ? text : text + "(e)"
-        }
-        if (!c.konjunktiv1PerfektWir.elementsEqual("-")) {
-            text = Constants.WIR + c.konjunktiv1PerfektWir
-            c.konjunktiv1PerfektWir = ppInv ? text : text + "(e)s"
-        }
-        if (!c.konjunktiv1PerfektIhr.elementsEqual("-")) {
-            text = Constants.IHR + c.konjunktiv1PerfektIhr
-            c.konjunktiv1PerfektIhr = ppInv ? text : text + "(e)s"
-        }
-        text = c.konjunktiv1PerfektSie
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.konjunktiv1PerfektSie = ppInv ? text : text + "(e)s"
-        }
-    }
-    
-    private func addReflexiveIndicatifFuturSimple(_ c : Conjugation) {
-        var text : String = c.konjunktiv1PrasensIch
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv1PrasensIch = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-        }
-        text = c.konjunktiv1PrasensDu
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv1PrasensDu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-        }
-        text = c.konjunktiv1PrasensEr
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv1PrasensEr = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        if (!c.konjunktiv1PrasensWir.elementsEqual("-")) {
-            c.konjunktiv1PrasensWir = Constants.WIR + c.konjunktiv1PrasensWir
-        }
-        if (!c.konjunktiv1PrasensIhr.elementsEqual("-")) {
-            c.konjunktiv1PrasensIhr = Constants.IHR + c.konjunktiv1PrasensIhr
-        }
-        text = c.konjunktiv1PrasensSie
-        if (!text.elementsEqual("-")) {
-            c.konjunktiv1PrasensSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-    }
-    
-    private func addReflexiveIndicatifPasseAnterieur(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.indikativFutur2Ich
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.indikativFutur2Ich = ppInv ? text : text + "(e)"
-        }
-        text = c.indikativFutur2Du
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.indikativFutur2Du = ppInv ? text : text + "(e)"
-        }
-        text = c.indikativFutur2Er
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indikativFutur2Er = ppInv ? text : text + "(e)"
-        }
-        if (!c.indikativFutur2Wir.elementsEqual("-")) {
-            text = Constants.WIR + c.indikativFutur2Wir
-            c.indikativFutur2Wir = ppInv ? text : text + "(e)s"
-        }
-        if (!c.indikativFutur2Ihr.elementsEqual("-")) {
-            text = Constants.IHR + c.indikativFutur2Ihr
-            c.indikativFutur2Ihr = ppInv ? text : text + "(e)s"
-        }
-        text = c.indikativFutur2Sie
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indikativFutur2Sie = ppInv ? text : text + "(e)s"
-        }
-    }
-    
-    private func addReflexiveIndicatifPasseSimple(_ c : Conjugation) {
-        var text : String = c.indikativFutur1Ich
-        if (!text.elementsEqual("-")) {
-            c.indikativFutur1Ich = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-        }
-        text = c.indikativFutur1Du
-        if (!text.elementsEqual("-")) {
-            c.indikativFutur1Du = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-        }
-        text = c.indikativFutur1Er
-        if (!text.elementsEqual("-")) {
-            c.indikativFutur1Er = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        if (!c.indikativFutur1Wir.elementsEqual("-")) {
-            c.indikativFutur1Wir = Constants.WIR + c.indikativFutur1Wir
-        }
-        if (!c.indikativFutur1Ihr.elementsEqual("-")) {
-            c.indikativFutur1Ihr = Constants.IHR + c.indikativFutur1Ihr
-        }
-        text = c.indikativFutur1Sie
-        if (!text.elementsEqual("-")) {
-            c.indikativFutur1Sie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-    }
-    
-    private func addReflexiveIndicatifPlusQueParfait(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.indikativPlusquamperfektIch
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.indikativPlusquamperfektIch = ppInv ? text : text + "(e)"
-        }
-        text = c.indikativPlusquamperfektDu
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.indikativPlusquamperfektDu = ppInv ? text : text + "(e)"
-        }
-        text = c.indikativPlusquamperfektEr
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indikativPlusquamperfektEr = ppInv ? text : text + "(e)"
-        }
-        if (!c.indikativPlusquamperfektWir.elementsEqual("-")) {
-            text = Constants.WIR + c.indikativPlusquamperfektWir
-            c.indikativPlusquamperfektWir = ppInv ? text : text + "(e)s"
-        }
-        if (!c.indikativPlusquamperfektIhr.elementsEqual("-")) {
-            text = Constants.IHR + c.indikativPlusquamperfektIhr
-            c.indikativPlusquamperfektIhr = ppInv ? text : text + "(e)s"
-        }
-        text = c.indikativPlusquamperfektSie
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indikativPlusquamperfektSie = ppInv ? text : text + "(e)s"
-        }
-    }
-    
-    private func addReflexiveIndicatifImperfait(_ c : Conjugation) {
-        var text : String = c.indikativPerfektIch
-        if (!text.elementsEqual("-")) {
-            c.indikativPerfektIch = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-        }
-        text = c.indikativPerfektDu
-        if (!text.elementsEqual("-")) {
-            c.indikativPerfektDu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-        }
-        text = c.indikativPerfektEr
-        if (!text.elementsEqual("-")) {
-            c.indikativPerfektEr = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        if (!c.indikativPerfektWir.elementsEqual("-")) {
-            c.indikativPerfektWir = Constants.WIR + c.indikativPerfektWir
-        }
-        if (!c.indikativPerfektIhr.elementsEqual("-")) {
-            c.indikativPerfektIhr = Constants.IHR + c.indikativPerfektIhr
-        }
-        text = c.indikativPerfektSie
-        if (!text.elementsEqual("-")) {
-            c.indikativPerfektSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-    }
-    
-    private func addReflexiveIndicatifPasseCompose(_ c : Conjugation, _ ppInv : Bool) {
-        var text : String = c.indikativPrateritumIch
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-            c.indikativPrateritumIch = ppInv ? text : text + "(e)"
-        }
-        text = c.indikativPrateritumDu
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-            c.indikativPrateritumDu = ppInv ? text : text + "(e)"
-        }
-        text = c.indikativPrateritumEr
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indikativPrateritumEr = ppInv ? text : text + "(e)"
-        }
-        if (!c.indikativPrateritumWir.elementsEqual("-")) {
-            text = Constants.WIR + c.indikativPrateritumWir
-            c.indikativPrateritumWir = ppInv ? text : text + "(e)s"
-        }
-        if (!c.indikativPrateritumIhr.elementsEqual("-")) {
-            text = Constants.IHR + c.indikativPrateritumIhr
-            c.indikativPrateritumIhr = ppInv ? text : text + "(e)s"
-        }
-        text = c.indikativPrateritumSie
-        if (!text.elementsEqual("-")) {
-            text = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-            c.indikativPrateritumSie = ppInv ? text : text + "(e)s"
-        }
-    }
-    
-    private func addReflexiveIndicatifPresent(_ c : Conjugation) {
-        var text : String = c.indikativPrasensIch
-        if (!text.elementsEqual("-")) {
-            c.indikativPrasensIch = ViewUtils.useApostrophe(text) ? Constants.MEA + text : Constants.ME + text
-        }
-        text = c.indikativPrasensDu
-        if (!text.elementsEqual("-")) {
-            c.indikativPrasensDu = ViewUtils.useApostrophe(text) ? Constants.TEA + text : Constants.TE + text
-        }
-        text = c.indikativPrasensEr
-        if (!text.elementsEqual("-")) {
-            c.indikativPrasensEr = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-        if (!c.indikativPrasensWir.elementsEqual("-")) {
-            c.indikativPrasensWir = Constants.WIR + c.indikativPrasensWir
-        }
-        if (!c.indikativPrasensIhr.elementsEqual("-")) {
-            c.indikativPrasensIhr = Constants.IHR + c.indikativPrasensIhr
-        }
-        text = c.indikativPrasensSie
-        if (!text.elementsEqual("-")) {
-            c.indikativPrasensSie = ViewUtils.useApostrophe(text) ? Constants.SEA + text : Constants.SE + text
-        }
-    }*/
-    
     
     /**
      * Ads the pronoms
