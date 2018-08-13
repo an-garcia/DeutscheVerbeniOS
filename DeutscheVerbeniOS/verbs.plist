@@ -4,907 +4,1164 @@
 <dict>
 	<key>verbs</key>
 	<array>
-        <!-- TOP 25 -->
-        <dict>
-            <key>id</key>
-            <integer>1</integer>
-            <key>ta</key>
-            <integer>38</integer>
-            <key>in</key>
-            <string>sein</string>
-            <key>img</key>
-            <string>sein</string>
-            <key>pahe</key>
-            <string>war</string>
-            <key>pp</key>
-            <string>ist gewesen</string>
-            <key>prhe</key>
-            <string>ist</string>
-            <key>s1</key>
-            <string>&quot;Sein oder Nichtsein&quot; fragte sich Hamlet.</string>
-            <key>s2</key>
-            <string>Wo sind die Kinder? Ich weiß nicht, wo sie sein könnten. Ich dachte, sie waren bei dir.</string>
-            <key>s3</key>
-            <string>In Las Vegas haben wir Geld verloren, aber sei’s drum, wir haben uns gut amüsiert.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand/etwas ist etwas sich in einem bestimmten Zustand, in einer bestimmten Lage befinden \n2. jemandem ist (es) irgendwie unpersönlich verwendet von jemandem als eine bestimmte Empfindung wahrgenommen werden \n3. jemand/etwas ist jemand/etwas verwendet, um eine Gleichsetzung auszudrücken \n4. es ist unpersönlich verwendet verwendet, um eine bestimmte Uhrzeit anzugeben \n5. jemand/etwas ist irgendwo sich an einem bestimmten Ort befinden \n6. etwas ist irgendwann an einem bestimmten Ort zu einer bestimmten Zeit (unter bestimmten Umständen) stattfinden \n7. etwas darf/kann/... (nicht) sein (nicht) geschehen dürfen/können/... \n8. jemand/etwas ist irgendwo da sein, existieren \n\nHilfsverb \n1. ... werden können \n2. ... werden müssen \n3. dient der Bildung von Perfekt und Plusquamperfekt \n4. dient der Bildung des Zustandspassivs</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>be, have (with ‘sein’ verbs)</string>
-            <key>trfr</key>
-            <string>être, exister</string>
-            <key>tres</key>
-            <string>ser, estar, tener</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>2</integer>
-            <key>ta</key>
-            <integer>15</integer>
-            <key>in</key>
-            <string>haben</string>
-            <key>img</key>
-            <string>haben</string>
-            <key>pahe</key>
-            <string>hatte</string>
-            <key>pp</key>
-            <string>gehabt</string>
-            <key>prhe</key>
-            <string>hat</string>
-            <key>s1</key>
-            <string>Was hast du denn? Es hat nichts auf sich. Ich habe nur Angst vor der Zukunft, vor allem.</string>
-            <key>s2</key>
-            <string>Der Kaiser hatte nichts an—er war nackt.</string>
-            <key>s3</key>
-            <string>Für heute Abend haben wir nichts vor.</string>
-            <key>type</key>
-            <integer>3</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand hat etwas/ein Tier besitzen verwendet, um auszudrücken, dass jemand im Besitz von etwas ist \n2. jemand/etwas hat/hatte plus zu plus Inf. müssen Die Kinder haben zu gehorchen. \n3. jemand hat etwas/jemanden (als relativ inhaltsleereres Verb) verwendet, um auszudrücken, dass zwischen jemandem und jemandem oder etwas eine bestimmte Relation besteht \n4. jemand hat etwas verwendet, um auszudrücken, dass jemand in einer Situation über etwas verfügt \n5. jemand hat etwas verwendet, um auszudrücken, dass jemand etwas als Ware anbietet \n6. jemand hat etwas innehaben verwendet, um auszudrücken, dass jemand jemandem etwas verliehen oder als Aufgabe gegeben hat \n7. jemand hat etwas von etwas Dativ in bestimmter Weise von etwas profitieren oder in den Genuss von etwas kommen \n8. jemand hat etwas an etwas leiden \n9. jemand hat etwas mit einer Zeitangabe verwendet, um auszudrücken, dass es eine bestimmte Uhrzeit ist \n10. jemand hat etwas plus Inf. zur Umschreibung eines Zustandes \n11. jemand hat plus Inf. berechtigt sein \n12. jemand/etwas hat etwas ... jemand oder etwas besitzt in einem gewissen Maße die genannte Sache. \n\nals Hilfsverb verwendet zur Bildung der zusammengesetzten Zeiten</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>have</string>
-            <key>trfr</key>
-            <string>avoir</string>
-            <key>tres</key>
-            <string>tener, poseer</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>3</integer>
-            <key>ta</key>
-            <integer>50</integer>
-            <key>in</key>
-            <string>werden</string>
-            <key>img</key>
-            <string>werden</string>
-            <key>pahe</key>
-            <string>wurde</string>
-            <key>pp</key>
-            <string>ist geworden</string>
-            <key>prhe</key>
-            <string>wird</string>
-            <key>s1</key>
-            <string>Noch ist nichts daraus geworden, aber es wird schon werden.</string>
-            <key>s2</key>
-            <string>Sie tut ihr Bestes, den Anforderungen gerecht zu werden.</string>
-            <key>s3</key>
-            <string>Aus der Raupe wird ein Schmetterling.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. einen Zustand erreichen \n2. einen Beruf lernen, ein Amt bekommen \n3. ein bestimmtes Alter erlangen \n4. in einem Wettkampf eine bestimmte Position erreichen \n\nhilfsverb \n1. verwendet, um das Futur von Verben zu bilden \n2. verwendet, um das Vorgangspassiv zu bilden \n3. verwendet, um den Konjunktiv II zu bilden oder ersetzen \n4. verwendet, um eine Vermutung auszudrücken \n5. verwendet, um einen Wunsch oder eine Hoffnung auszudrücken \n6. verwendet, um einen Befehl auszudrücken</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>become; shall or will; be</string>
-            <key>trfr</key>
-            <string>devenir</string>
-            <key>tres</key>
-            <string>hacerse, volverse, ser</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>4</integer>
-            <key>ta</key>
-            <integer>23</integer>
-            <key>in</key>
-            <string>können</string>
-            <key>img</key>
-            <string>konnen</string>
-            <key>pahe</key>
-            <string>konnte</string>
-            <key>pp</key>
-            <string>gekonnt (können)</string>
-            <key>prhe</key>
-            <string>kann</string>
-            <key>s1</key>
-            <string>Wo können wir hier einen guten Mechaniker finden?</string>
-            <key>s2</key>
-            <string>Lisa kann das Gedicht auswendig.</string>
-            <key>s3</key>
-            <string>Das können Sie laut sagen!</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand kann (irgendwohin) umgangssprachlich dürfen \n2. jemand kann nicht mehr umgangssprachlich nicht weiterhin die Kraft oder Energie zu etwas haben \n\nHilfsverb \n1. willens sein, etwas zu tun \n2. die Möglichkeit haben, etwas zu tun \n3. die Erlaubnis haben, etwas zu tun, dürfen \n4. müssen \n5. einen Grund, eine Berechtigung haben, etwas zu tun \n6. verwendet, um auszudrücken, dass man etwas vermutet oder eine Möglichkeit in Betracht zieht \n7. eine logisch notwendige Folge ausdrückend \n8. sich etwas verbitten \n9. eine allgemeine Regel ausdrückend</string>
-            <key>no</key>
-            <string>changePPwFI</string>
-            <key>tren</key>
-            <string>be able (can); know (a language or how to do something)</string>
-            <key>trfr</key>
-            <string>pouvoir</string>
-            <key>tres</key>
-            <string>poder (hacer), saber</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>5</integer>
-            <key>ta</key>
-            <integer>57</integer>
-            <key>in</key>
-            <string>müssen</string>
-            <key>img</key>
-            <string>mussen</string>
-            <key>pahe</key>
-            <string>musste</string>
-            <key>pp</key>
-            <string>gemusst (müssen)</string>
-            <key>prhe</key>
-            <string>muss</string>
-            <key>s1</key>
-            <string>Karl hat seine Brauereiaktien verkaufen müssen. Er wird seiner Frau den Erlös geben müssen, denn sie muss sich um den Haushalt kümmern.</string>
-            <key>s2</key>
-            <string>Ich muss fort. Ja, es muss schon spät sein. Diese Pakete müssen heute zur Post. Können Sie sie mitnehmen?</string>
-            <key>s3</key>
-            <string>Ihre Großeltern mussten heiraten. Es war eine Mussheirat.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>jemand muss \n\nHilfsverb \n1. eine (unterschiedlich begründbare) Notwendigkeit ausdrückend. so dass man gezwungen ist, etwas zu tun \n2. eine Vermutung oder Wahrscheinlichkeit ausdrückend \n3. im Konjunktiv Prät. verwendet einen Wunsch ausdrückend</string>
-            <key>no</key>
-            <string>changePPwFI</string>
-            <key>tren</key>
-            <string>have to, must</string>
-            <key>trfr</key>
-            <string>devoir</string>
-            <key>tres</key>
-            <string>ser necesario +inf</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>6</integer>
-            <key>ta</key>
-            <integer>33</integer>
-            <key>in</key>
-            <string>sagen</string>
-            <key>img</key>
-            <string>sagen</string>
-            <key>pahe</key>
-            <string>sagte</string>
-            <key>pp</key>
-            <string>gesagt</string>
-            <key>prhe</key>
-            <string>sagt</string>
-            <key>s1</key>
-            <string>Ich sage nicht, dass Ihr Gemälde mir gefällt. Aber es sagt mir doch etwas. Nur ist mir der Preis zu hoch.</string>
-            <key>s2</key>
-            <string>Vielleicht will das aber nichts sagen.</string>
-            <key>s3</key>
-            <string>Sagen Sie es nicht weiter!</string>
-            <key>type</key>
-            <integer>1</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand sagt (jemandem) etwas als Satz oder Wort aussprechen \n2. jemand sagt (jemandem) etwas als Äußerung an jemanden richten \n3. jemand sagt (jemandem) etwas jemandem etwas mitteilen \n4. jemand sagt etwas zu etwas Dativ ein bestimmtes Wort benutzen \n5. jemand sagt etwas mit etwas Dativ Gedanken formulieren, etwas zum Ausdruck bringen \n6. jemand sagt etwas zu etwas Dativ eine Haltung mit Worten zum Ausdruck bringen \n7. etwas sagt, dass ... zum Inhalt haben \n8. jemand sagt etwas ... behaupten</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>say; tell; speak</string>
-            <key>trfr</key>
-            <string>dire</string>
-            <key>tres</key>
-            <string>decir, expresar, comunicar</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>7</integer>
-            <key>ta</key>
-            <integer>29</integer>
-            <key>in</key>
-            <string>machen</string>
-            <key>img</key>
-            <string>machen</string>
-            <key>pahe</key>
-            <string>machte</string>
-            <key>pp</key>
-            <string>gemacht</string>
-            <key>prhe</key>
-            <string>macht</string>
-            <key>s1</key>
-            <string>Kannst du dir einen Begriff von unserem jetztigen leben machen? Wir machen keine langen Reisen mehr. Lieber machen wir schöne Spaziergänge im Wald.</string>
-            <key>s2</key>
-            <string>Mach, dass du fortkommst. Ich mach dir die Tür auf.</string>
-            <key>s3</key>
-            <string>Das macht 30 Euro aus.</string>
-            <key>type</key>
-            <integer>1</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. eine Aktion, Handlung ausführen \n2. etwas Neues aus verschiedenen Materialien entstehen lassen \n3. Lärm, Licht, Musik entstehen lassen \n4. Abwasch, Arbeit, Versuch ausführen, durchführen \n5. Abitur, Führerschein, Prüfung an einer Prüfung teilnehmen, um etwas zu bekommen \n6. verwendet, um das Ergebnis einer Rechnung zu nennen \n7. in einen bestimmten Zustand bringen \n8. in Ordnung bringen \n9. mit einer Tätigkeit beginnen \n10. sich irgendwie entwickeln, irgendeinen Eindruck machen \n11. kein / viel / ... Interesse an jemandem / etwas haben \n12. umgangssprachlich irgendwo Kot oder Urin hinterlassen  umgangssprachlich den Darm / die Blase entleeren</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>make; do</string>
-            <key>trfr</key>
-            <string>faire</string>
-            <key>tres</key>
-            <string>hacer, causar, producir</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>8</integer>
-            <key>ta</key>
-            <integer>11</integer>
-            <key>in</key>
-            <string>geben</string>
-            <key>img</key>
-            <string>geben</string>
-            <key>pahe</key>
-            <string>gab</string>
-            <key>pp</key>
-            <string>gegeben</string>
-            <key>prhe</key>
-            <string>gibt</string>
-            <key>s1</key>
-            <string>Im Theater wird heute abend nichts gegeben. Aber wir geben sowieso zu viel Geld fürs Theater aus. Außerdem gibt’s nichts Neues im Spielplan.</string>
-            <key>s2</key>
-            <string>Ich geb dir den Wagen ganze zwei Wochen. Wenn du mir danach 900 Euro dafür gibst, gehört er dir.</string>
-            <key>s3</key>
-            <string>Wir hoffen, ihr Fieber wird sich geben.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand gibt (jemandem) etwas etwas, das man selbst hat, in die Hand eines anderen legen \n2. jemand gibt (jemandem) etwas schenken \n3. jemand gibt jemandem etwas für etwas Akkusativ bezahlen Sie haben mir für das alte Auto noch 500 Euro gegeben. \n4. jemand gibt etwas irgendwohin etwas irgendwohin bringen \n5. jemand gibt etwas bieten, gewähren \n6. jemand gibt jemandem etwas verleihen bewirken, dass jemand etwas hat \n7. ein Tier gibt Milch ein weibliches Säugetier produziert Milch \n8. etwas gibt etwas ergeben zum Ergebnis haben \n9. jemand gibt etwas aufführen \n10. jemand gibt etwas veranstalten \n11. jemand gibt etwas veralt. unterrichten \n12. jemand gibt etwas umgangssprachlich spielen \n13. jemand gibt zu Beginn eines Kartenspiels die Karten an die einzelnen Spieler austeilen \n14. jemand gibt sich (irgendwie) sich in bestimmter Weise verhalten \n15. etwas gibt sich nachlassen (und aufhören) \n16. existieren \n17. angeboten werden \n18. eintreten, kommen</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>give</string>
-            <key>trfr</key>
-            <string>donner</string>
-            <key>tres</key>
-            <string>dar</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>9</integer>
-            <key>ta</key>
-            <integer>22</integer>
-            <key>in</key>
-            <string>kommen</string>
-            <key>img</key>
-            <string>kommen</string>
-            <key>pahe</key>
-            <string>kam</string>
-            <key>pp</key>
-            <string>ist gekommen</string>
-            <key>prhe</key>
-            <string>kommt</string>
-            <key>s1</key>
-            <string>Leider konnte ich nicht kommen. Es ist etwas Furchtbares dazwischengekommen.</string>
-            <key>s2</key>
-            <string>Der Motor kommt nicht in Gang. Wie komme ich zu Fuß zum Bahnhof?</string>
-            <key>s3</key>
-            <string>Wann seid ihr nach Hause gekommen?</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand/etwas kommt eintreffen \n2. jemand/etwas kommt irgendwohin sich auf ein Ziel hin bewegen und dorthin gelangen \n3. jemand/etwas kommt irgendwoher irgendwoher eintreffen \n4. jemand kommt durch etwas Akkusativ durch etwas fahren oder gehen \n5. jemand kommt zu etwas Dativ an etwas teilnehmen \n6. jemand kommt zu jemandem besuchen \n7. etwas kommt gebracht werden \n8. jemand lässt jemanden/etwas kommen veranlassen, dass jemand kommt oder etwas gebracht wird \n9. etwas kommt jemandem irgendwie sich als Geschehen irgendwie darstellen \n10. etwas kommt in Erscheinung treten \n11. jemand kommt in etwas Akkusativ/zu etwas Dativ irgendwo aufgenommen oder eingestellt werden \n12. etwas kommt in etwas Akkusativ ordnungsgemäß aufgeräumt werden \n13. jemand/etwas kommt in etwas Akkusativ in einen Zustand oder in eine Lage geraten \n14. jemand kommt in etwas Akkusativ in eine Stimmung geraten \n15. etwas kommt über jemanden von einem (negativen) Gefühl ergriffen werden \n16. jemand kommt zu etwas Akkusativ Zeit, Gelegenheit für etwas finden \n17. etwas kommt irgendwie sich ereignen \n18. jemand kommt zu etwas Akkusativ (wieder)erlangen \n19. jemand kommt um etwas Akkusativ verlieren, einbüßen \n20. jemand kommt hinter etwas Akkusativ etwas erfahren \n21. etwas kommt irgendwann an der Reihe sein, folgen \n22. jemand kommt irgendwoher stammen \n23. etwas kommt von etwas Dativ seinen Ursprung, Grund in etwas haben \n24. jemand kommt zu etwas Dativ zu etwas gelangen \n25. eine Verteilung bezeichnend jemand/etwas kommt auf jemanden/etwas \n26. jemand kommt auf etwas Akkusativ einen Einfall haben \n27. umgangssprachlich jemand kommt zum Orgasmus kommen \n28. etwas kommt irgendwie/auf etwas Akkusativ kosten \n29. eine Idee/ein Einfall ... kommt jemandem jemand hat eine Idee, einen Einfall \n30. jemand kommt jemandem irgendwie umgangssprachlich jemand legt jemandem gegenüber ein bestimmtes (negatives) Verhalten an den Tag</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>come</string>
-            <key>trfr</key>
-            <string>venir, arriver, passer</string>
-            <key>tres</key>
-            <string>llegar, venir de, suceder</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>10</integer>
-            <key>ta</key>
-            <integer>40</integer>
-            <key>in</key>
-            <string>sollen</string>
-            <key>img</key>
-            <string>mussen</string>
-            <key>pahe</key>
-            <string>sollte</string>
-            <key>pp</key>
-            <string>gesollt (sollen)</string>
-            <key>prhe</key>
-            <string>soll</string>
-            <key>s1</key>
-            <string>Der Geschäftsführer soll sehr intelligent sein. Aber wie soll man sich sein albernes Benehmen erklären?</string>
-            <key>s2</key>
-            <string>Der Zug sollte um 18 Uhr ankommen.</string>
-            <key>s3</key>
-            <string>Wir hätten früher anfangen sollen.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand soll plus Inf. umgangssprachlich verwendet, um auszudrücken, dass von jemandem etwas verlangt wird \n2. jemand soll plus Inf. verwendet, um auszudrücken, dass etwas ein Gebot der Moral ist \n3. jemand/etwas soll plus Inf. verwendet, um auszudrücken, dass das Behauptete angeblich der Fall ist, aber man sich dessen nicht sicher ist oder es anzweifelt \n4. etwas soll irgendwohin verwendet, um auszudrücken, dass etwas an einen bestimmten Platz gebracht werden soll \n5. etwas soll etwas sein verwendet, um auszudrücken, dass man über etwas verärgert ist und es für schlecht hält \n\nHilfsverb \n1. oft im Konj. Prät. verwendet verwendet, um einen Ratschlag oder eine Empfehlung auszudrücken \n2. verwendet, um einen Ratschlag oder eine (Auf-)Forderung (mit verschiedenen Ursachen/Urhebern) auszudrücken \n3. verwendet, um einen Wunsch oder eine Absicht auszudrücken \n4. im Konj. Prät. verwendet verwendet, um eine Bedingung auszudrücken \n5. verwendet, um ein - aus der Perspektive der Vergangenheit gesehen - zukünftiges Ereignis auszudrücken \n6. drückt eine Behauptung, Vermutung, einen Zweifel aus</string>
-            <key>no</key>
-            <string>changePPwFI</string>
-            <key>tren</key>
-            <string>be; be supposed to; ought; be said to; be expected to</string>
-            <key>trfr</key>
-            <string>devoir</string>
-            <key>tres</key>
-            <string>deber</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>11</integer>
-            <key>ta</key>
-            <integer>54</integer>
-            <key>in</key>
-            <string>wollen</string>
-            <key>img</key>
-            <string>wollen</string>
-            <key>pahe</key>
-            <string>wollte</string>
-            <key>pp</key>
-            <string>gewollt (wollen)</string>
-            <key>prhe</key>
-            <string>will</string>
-            <key>s1</key>
-            <string>Wir wollen um die Welt fahren. Willst du mit? Ich will schon. Aber mein Mann will nicht.</string>
-            <key>s2</key>
-            <string>Was willst du noch von mir?</string>
-            <key>s3</key>
-            <string>Diesen Roman habe ich immer lesen wollen.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. den Wunsch nach etwas haben \n2. eine bestimmte Absicht haben \n\nModalverb + Infinitiv \n1. den Wunsch zu etwas haben \n2. die Absicht haben, etwas zu tun \n3. zum Ausdruck einer höflichen Bitte \n4. zum Ausdruck einer ungeduldigen Aufforderung \n5. etwas tut etwas nicht, geschieht nicht \n6. drückt aus, dass man die Aussage eines anderen bezweifelt</string>
-            <key>no</key>
-            <string>changePPwFI</string>
-            <key>tren</key>
-            <string>want; intend</string>
-            <key>trfr</key>
-            <string>vouloir</string>
-            <key>tres</key>
-            <string>querer, desear</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>12</integer>
-            <key>ta</key>
-            <integer>12</integer>
-            <key>in</key>
-            <string>gehen</string>
-            <key>img</key>
-            <string>gehen</string>
-            <key>pahe</key>
-            <string>ging</string>
-            <key>pp</key>
-            <string>ist gegangen</string>
-            <key>prhe</key>
-            <string>geht</string>
-            <key>s1</key>
-            <string>Einst ging Opa oft tanzen. Jetzt kann er kaum gehen. Es geht ihm gesundheitlich nicht gut.</string>
-            <key>s2</key>
-            <string>Gestern Abend sind wir ins Kino gegangen. Ich wollte zu Fuß gehen aber wir sind mit dem Bus gefahren.</string>
-            <key>s3</key>
-            <string>Sein Geschäft ging nicht mehr so gut. Daher ging er früh in den Ruhestand.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand geht sich aufrecht in mittlerem Tempo so fortbewegen, dass immer ein Fuß Kontakt mit dem Erdboden hat \n2. jemand geht irgendwohin gehen 1 und dabei ein bestimmtes Ziel anstreben oder einen bestimmten Zweck verfolgen \n3. jemand geht weggehen einen Ort verlassen \n4. jemand geht irgendwohin sich irgendwohin begeben, um dort eine Ausbildung zu machen, zu arbeiten, sich zu erholen \n5. jemand geht ... einen neuen Lebensabschnitt, ein bestimmtes Alter erreichen \n6. jemand geht als etwas eine bestimmte Verkleidung tragen \n7. jemand geht an etwas etwas unerlaubterweise benutzen \n8. etwas geht in etwas umgangssprachlich Platz haben \n9. jemand geht mit jemandem (als Jugendliche) eine Beziehung miteinander haben \n10. etwas geht jemandem irgendwohin reichen \n11. etwas geht irgendwohin fahrplanmäßig fahren oder fliegen \n12. etwas geht auf etwas in eine Richtung zeigen \n13. etwas geht irgendwohin treffen \n14. etwas geht (irgendwie) funktionieren \n15. etwas geht irgendwie ablaufen, verlaufen \n16. etwas geht läuten, klingeln \n17. etwas geht gegen jemanden/etwas gerichtet sein \n18. etwas geht über etwas übersteigen \n19. etwas geht in etwas in eine neue Phase, ein neues Stadium eintreten \n20. etwas geht irgendwie sich verkaufen lassen</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>go; walk</string>
-            <key>trfr</key>
-            <string>aller</string>
-            <key>tres</key>
-            <string>ir</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>13</integer>
-            <key>ta</key>
-            <integer>52</integer>
-            <key>in</key>
-            <string>wissen</string>
-            <key>img</key>
-            <string>wissen</string>
-            <key>pahe</key>
-            <string>wusste</string>
-            <key>pp</key>
-            <string>gewusst</string>
-            <key>prhe</key>
-            <string>weiß</string>
-            <key>s1</key>
-            <string>Weißt du, wie alt sie ist? Nein, ich weiß nicht.</string>
-            <key>s2</key>
-            <string>Was ich nicht weiß, macht mich nicht heiß.</string>
-            <key>s3</key>
-            <string>Wissen ist Macht. Wer nichts weiß, muss alles glauben.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand weiß etwas Kenntnisse von etwas haben \n2. jemand weiß etwas sich an etwas erinnern \n3. jemand weiß etwas Gewissheit über etwas haben \n4. jemand weiß etwas sich über etwas im Klaren sein \n5. jemand weiß etwas über jemanden/etwas Kentnisse über jemanden oder etwas haben \n6. jemand weiß (sich Dativ) etwas zu plus Inf. etwas können oder in der Lage sein, etwas zu tun \n7. jemand weiß um etwas Akkusativ gehoben sich etwas bewusst sein</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>know (a fact)</string>
-            <key>trfr</key>
-            <string>savoir, connaître</string>
-            <key>tres</key>
-            <string>saber</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>14</integer>
-            <key>ta</key>
-            <integer>37</integer>
-            <key>in</key>
-            <string>sehen</string>
-            <key>img</key>
-            <string>sehen</string>
-            <key>pahe</key>
-            <string>sah</string>
-            <key>pp</key>
-            <string>gesehen</string>
-            <key>prhe</key>
-            <string>sieht</string>
-            <key>s1</key>
-            <string>Du siehst heute besonders schön aus. Ich kann mich an dir nicht sattsehen.</string>
-            <key>s2</key>
-            <string>Ich sehe endlich ein, dass ich dich zur Frau haben will.</string>
-            <key>s3</key>
-            <string>Die Königin besah sich im Spiegel.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. mit den Augen erkennen \n2. ansehen \n3. jemanden (zufällig) treffen \n4. einschätzen \n5. irgendwie sehen \n6. irgendwohin sehen \n7. sich kümmern \n8. jemand sieht sich gezwungen/veranlasst, etwas zu tun meinen, etwas tun zu müssen</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>see; realize</string>
-            <key>trfr</key>
-            <string>voir, regarder</string>
-            <key>tres</key>
-            <string>ver, mirar, notar</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>15</integer>
-            <key>ta</key>
-            <integer>24</integer>
-            <key>in</key>
-            <string>lassen</string>
-            <key>img</key>
-            <string>lassen</string>
-            <key>pahe</key>
-            <string>ließ</string>
-            <key>pp</key>
-            <string>gelassen</string>
-            <key>prhe</key>
-            <string>lässt</string>
-            <key>s1</key>
-            <string>Frau Rose Neu schrie &quot;Das Kind kann ich keinen Augenblick aus den Augen lassen. Es lässt mir keine Ruhe.&quot;</string>
-            <key>s2</key>
-            <string>&quot;Ach, lass ihn doch! Du kannst mal fünf gerade sein lassen. Leben und leben lassen, das ist meine Devise&quot; sagt Herr Neu.</string>
-            <key>s3</key>
-            <string>Das lass ich mir nicht gefallen. Du musst mir mit dem Kind freien Lauf lassen.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand/etwas lässt jemanden/etwas plus Inf. jemandem/sich/einem Tier erlauben, etwas zu tun \n2. jemand lässt jemanden irgendwohin plus Inf. jemandem erlauben, irgendwohin zu gehen \n3. jemand lässt etwas (irgendwohin) plus Inf. bewirken, dass etwas irgendwohing gelangt \n4. jemand lässt etwas irgendwo etwas nicht von einer Stelle bewegen \n5. jemand lässt jemandem etwas jemand erlaubt jemandem, etwas zu behalten \n6. etwas (sein) lassen umgangssprachlich etwas nicht tun \n7. jemand lässt jemanden/etwas plus Inf. jemand gibt jemandem einen Auftrag oder zwingt ein Tier, etwas zu tun \n8. jemand lässt etwas plus Inf. jemand veranlasst, dass etwas gemacht wird \n9. jemand lässt jemanden/sich/etwas plus Inf. jemand lässt jemandem/sich/etwas plus Inf. jemand veranlasst, dass jemand etwas (meist gegen Bezahlung)</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>let; leave; allow; abandon; stop; have something done (with infinitive)</string>
-            <key>trfr</key>
-            <string>arrêter, laisser</string>
-            <key>tres</key>
-            <string>dejar, poderse, hacer +inf</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>16</integer>
-            <key>ta</key>
-            <integer>43</integer>
-            <key>in</key>
-            <string>stehen</string>
-            <key>img</key>
-            <string>stehen</string>
-            <key>pahe</key>
-            <string>stand</string>
-            <key>pp</key>
-            <string>gestanden</string>
-            <key>prhe</key>
-            <string>steht</string>
-            <key>s1</key>
-            <string>Sie stehen noch über mir. Ihnen untersteht die Abteilung.</string>
-            <key>s2</key>
-            <string>Alle wollen die Filmstars sehen. Die ganze Stadt steht Kopf. Die Fans stehen Schlange vor dem Kino.</string>
-            <key>s3</key>
-            <string>Annie stand vor dem Spiegel und dachte: &quot;Ja, der Hut steht mir gut.&quot;</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. sitzen jemand steht irgendwo mit aufrechtem Körper an einer Stelle bleiben \n2. etwas steht irgendwo sich befinden \n3. etwas steht nicht mehr funktionieren \n4. etwas steht irgendwo irgendwo gedruckt, geschrieben sein \n5. jemand steht vor etwas Dativ mit etwas Schwierigem konfrontiert sein \n6. etwas steht umgangssprachlich fertig sein \n7. etwas steht jemandem (irgendwie) jemandem gut passen und gut an jemandem aussehen \n8. jemand steht zu etwas Dativ die Verantwortung für etwas übernehmen \n9. jemand steht zu jemandem zu jemanden halten, jemandem helfen \n10. jemand steht zu etwas Dativ etwas beurteilen \n11. umgangssprachlich jemand steht auf jemanden/etwas umgangssprachlich jemanden oder etwas sehr mögen</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>stand; be located; mark</string>
-            <key>trfr</key>
-            <string>être debout, être arrêté(e)</string>
-            <key>tres</key>
-            <string>estar de pie, encontrarse, estar, marcar</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>17</integer>
-            <key>ta</key>
-            <integer>9</integer>
-            <key>in</key>
-            <string>finden</string>
-            <key>img</key>
-            <string>finden</string>
-            <key>pahe</key>
-            <string>fand</string>
-            <key>pp</key>
-            <string>gefunden</string>
-            <key>prhe</key>
-            <string>findet</string>
-            <key>s1</key>
-            <string>Wer meine Aktentasche findet, kriegt einen Finderlohn.</string>
-            <key>s2</key>
-            <string>Wie fanden Sie das Konzert? Wir konnten nicht herausfinden, um wie viel Uhr das Konzert stattfand.</string>
-            <key>s3</key>
-            <string>Ihr Ring war nicht zu finden. Endlich fand ihn die Zofe.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand findet etwas durch Suchen oder zufällig auf etwas stoßen \n2. jemand findet etwas gehoben in verblasster Bedeutung: bekommen \n3. jemand findet jemanden/etwas irgendwie eine bestimmte Einschätzung von etwas haben \n4. jemand findet irgendwohin irgendwohin gelangen \n5. etwas findet sich sich irgendwie einstellen \n6. jemand findet sich sein inneres Gleichgewicht herstellen</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>find</string>
-            <key>trfr</key>
-            <string>trouver</string>
-            <key>tres</key>
-            <string>encontrar, opinar</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>18</integer>
-            <key>ta</key>
-            <integer>3</integer>
-            <key>in</key>
-            <string>bleiben</string>
-            <key>img</key>
-            <string>bleiben</string>
-            <key>pahe</key>
-            <string>blieb</string>
-            <key>pp</key>
-            <string>ist geblieben</string>
-            <key>prhe</key>
-            <string>bleibt</string>
-            <key>s1</key>
-            <string>Er blieb nur kurze Zeit bei uns, aber wir bleiben noch in Verbindung.</string>
-            <key>s2</key>
-            <string>Das Geschäft bleibt heute geschlossen.</string>
-            <key>s3</key>
-            <string>Es blieb keine andere Wahl.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand bleibt (irgendwo) sich an dem Ort, wo man ist, weiter aufhalten \n2. jemand/etwas bleibt irgendwie sich nicht verändern \n3. jemand bleibt bei etwas Dativ an etwas festhalten; etwas nicht verändern \n4. etwas bleibt zu tun zu tun übrig sein</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>remain, stay; keep; be</string>
-            <key>trfr</key>
-            <string>rester</string>
-            <key>tres</key>
-            <string>quedarse, mantener, permanecer</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>19</integer>
-            <key>ta</key>
-            <integer>28</integer>
-            <key>in</key>
-            <string>liegen</string>
-            <key>img</key>
-            <string>liegen</string>
-            <key>pahe</key>
-            <string>lag</string>
-            <key>pp</key>
-            <string>gelegen</string>
-            <key>prhe</key>
-            <string>liegt</string>
-            <key>s1</key>
-            <string>Den ganzen Tag liegst du im Liegestuhl, du Faulpelz!</string>
-            <key>s2</key>
-            <string>Die Rolle/Arbeit liegt mir nicht.</string>
-            <key>s3</key>
-            <string>Fallen ist menschlich. Liegen bleiben ist teuflisch.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand/etwas liegt irgendwo/irgendwie stehen, sitzen sich in waagerechter Lage an einer Stelle oder in einer bestimmten Art befinden \n2. etwas liegt irgendwo etwas befindet sich an einem bestimmten Ort oder in einer geografischen Lage \n3. etwas liegt irgendwo etwas liegt oberhalb von etwas oder über etwas \n4. jemand/etwas liegt irgendwo jemand oder etwas befindet sich an einer bestimmten Stelle in einer Reihenfolge \n5. etwas liegt nach plus Ortsangabe/Richtungsangabe etwas ist in einer bestimmten Richtung \n5. etwas liegt nach plus Ortsangabe/Richtungsangabe etwas ist in einer bestimmten Richtung \n7. etwas liegt an jemandem/etwas jemand oder etwas verursacht etwas \n8. etwas liegt bei jemandem etwas wird von jemandem übernommen oder verursacht</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>lie; be situated; appeal to</string>
-            <key>trfr</key>
-            <string>être couché(e)</string>
-            <key>tres</key>
-            <string>estar acostado, estar, encontrarse, gustar, interesar</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>20</integer>
-            <key>ta</key>
-            <integer>17</integer>
-            <key>in</key>
-            <string>heißen</string>
-            <key>img</key>
-            <string>heissen</string>
-            <key>pahe</key>
-            <string>hieß</string>
-            <key>pp</key>
-            <string>geheißen</string>
-            <key>prhe</key>
-            <string>heißt</string>
-            <key>s1</key>
-            <string>Wie heißen Sie mit Vornamen? Ich heiße Fred und heiße Sie herzlichst willkomen in unserem Sprachverein.</string>
-            <key>s2</key>
-            <string>Der Richter hieß ihn schweigen.</string>
-            <key>s3</key>
-            <string>Wie heißt es bei Shakespeare: &quot;Der bessere Teil der Tapferkeit ist Vorsicht.&quot;</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand/etwas heißt irgendwie genannt werden \n2. etwas heißt etwas bedeuten eine bestimmte Bedeutung haben \n3. etwas heißt etwas auf etwas Akkusativ eine bestimmte Entsprechung in einer anderen Sprache haben \n4. etwas heißt etwas zur Folge haben \n5. behauptet werden \n6. notwendig sein \n7. jemand heißt jemanden etwas veralt. gehoben nennen; als etwas bezeichnen \n8. jemand heißt jemanden plus Inf. gehoben befehlen</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>be called or named; mean; command</string>
-            <key>trfr</key>
-            <string>s'appeler</string>
-            <key>tres</key>
-            <string>llamarse, significar, mandar</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>21</integer>
-            <key>ta</key>
-            <integer>6</integer>
-            <key>in</key>
-            <string>denken</string>
-            <key>img</key>
-            <string>denken</string>
-            <key>pahe</key>
-            <string>dachte</string>
-            <key>pp</key>
-            <string>gedacht</string>
-            <key>prhe</key>
-            <string>denkt</string>
-            <key>s1</key>
-            <string>Ich denke, morgen nach Paris zu reisen. Da werde ich mich gut amüsieren, denke ich. Denken Sie an uns und bringen Sie uns ein kleines Andenken mit zurück, vielleicht eine Kopie von Rodins Der Denker!</string>
-            <key>s2</key>
-            <string>Er predigt immer positives Denken. Im Grunde ist er aber ein Fanatiker. Den Fanatikern ist der Gedanke der Toleranz fremd. Das Denken der Aufklärung, die Denkweise der großen Philosophen lehnen sie ab.</string>
-            <key>s3</key>
-            <string>Mit ihrem Geld denkt sich die Milliardärin, uns alle kaufen zu können. Sie will, dass wir ihr ein Denkmal setzen. Aber daran ist nicht zu denken! Wir denken gar nicht daran!</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. etwas als Gegenstand seiner Gedanken haben \n2. jemand denkt etwas annehmen, glauben \n3. jemand denkt etwas von jemandem über jemanden eine bestimmte Meinung haben \n4. jemand denkt sich etwas (bei etwas Dativ) mit etwas eine bestimmte Absicht verfolgen \n5. jemand denkt überlegen durch die Aktivität des Verstands zu Aussagen, Gedanken und Schlussfolgerungen gelangen \n6. jemand denkt irgendwie eine bestimmte Gesinnung haben \n7. jemand denkt (über etwas Dativ) urteilen, meinen \n8. jemand denkt (an etwas Akkusativ) in seiner Erinnerung behalten und nicht vergessen \n9.  jemand denkt (an etwas Akkusativ) an etwas Interesse haben \n10. jemand denkt (an etwas Akkusativ) eine Absicht haben, planen</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>think; have in mind</string>
-            <key>trfr</key>
-            <string>penser</string>
-            <key>tres</key>
-            <string>pensar en de, reflexionar, recordar, querer</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>22</integer>
-            <key>ta</key>
-            <integer>32</integer>
-            <key>in</key>
-            <string>nehmen</string>
-            <key>img</key>
-            <string>nehmen</string>
-            <key>pahe</key>
-            <string>nahm</string>
-            <key>pp</key>
-            <string>genommen</string>
-            <key>prhe</key>
-            <string>nimmt</string>
-            <key>s1</key>
-            <string>Sie sagten, Sie wollten die Verantwortung auf sich nehmen, und ich habe Sie beim Wort genommen. Aber sie nehmen immer alles auf die leichte Schulter. Jetzt müssen Sie die Folgen auf sich nehmen.</string>
-            <key>s2</key>
-            <string>Warum nehmen Sie immer alles so genau?</string>
-            <key>s3</key>
-            <string>Meine Zeit ist zu sehr in Anspruch genommen, um mich um alles zu bekümmern.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand nimmt etwas jemand ergreift etwas mit der Hand, um es festzuhalten, um es aufzuheben, um es von irgendwo zu entfernen, um es zu sich heranzuholen \n2. jemand nimmt etwas jemand wählt unter verschiedenen Möglichkeiten eine bestimmte, um sie für eine bestimmte Absicht zu nutzen \n3. jemand/etwas nimmt jemanden/etwas annehmen ablehnen jemand oder etwas akzeptiert jemanden oder etwas \n4. jemand nimmt etwas (für etwas Akkusativ) jemand bekommt oder fordert etwas als Bezahlung/Gegenleistung oder ähnliches \n5. jemand nimmt etwas einnehmen jemand schluckt eine Medizin, Tabletten oder ähnliches \n6. jemand/etwas nimmt etwas jemand oder etwas bewältigt etwas, das schwierig oder ein Hindernis ist \n7. jemand nimmt etwas jemand stellt sich etwas als Beispiel vor \n8. jemand/etwas nimmt etwas milit.: einnehmen erobern \n9. jemand nimmt sich etwas jemand greift etwas, um es zu haben \n10. jemand nimmt sich etwas jemand macht von etwas, auf das er ein Recht hat, Gebrauch \n11. jemand nimmt sich jemanden jemand bezahlt jemanden, damit er eine Aufgabe erledigt \n12. jemand nimmt jemandem jemanden/etwas gehoben wegnehmen jemandem bewirkt, das jemand jemanden oder etwas nicht mehr hat \n13. jemand/etwas nimmt jemandem etwas jemand oder etwas verhindert, dass jemand etwas hat \n14. jemand/etwas nimmt etwas von jemandem jemand oder etwas befreit jemanden von etwas Unangenehmen \n15. jemand nimmt etwas an sich jemand bewahrt etwas auf \n16. jemand nimmt etwas auf sich jemand erträgt freiwillig etwas Unangenehmes \n17. jemand nimmt jemanden/etwas mit sich mitnehmen jemand hat jemanden oder etwas dabei, wenn er irgendwohin geht oder fährt \n18. jemand nimmt etwas zu sich jemand isst oder trinkt etwas \n19. jemand nimmt jemanden zu sich jemand lässt jemanden bei sich wohnen \n20. jemand nimmt jemanden/etwas für jemanden/etwas jemand hält jemanden/etwas für jemanden/etwas jemand glaubt, dass jemand oder etwas jemand anderes oder eine andere Sache ist \n21. jemand nimmt jemanden/sich/etwas irgendwie jemand versteht oder behandelt jemanden/sich/etwas in der beschriebenen Art und Weise \n22. jemand nimmt etwas als etwas jemand deutet etwas auf eine beschriebene Weise</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>take</string>
-            <key>trfr</key>
-            <string>prendre, demander</string>
-            <key>tres</key>
-            <string>agarrar, cobrar, sacar</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>23</integer>
-            <key>ta</key>
-            <integer>48</integer>
-            <key>in</key>
-            <string>tun</string>
-            <key>img</key>
-            <string>machen</string>
-            <key>pahe</key>
-            <string>tat</string>
-            <key>pp</key>
-            <string>getan</string>
-            <key>prhe</key>
-            <string>tut</string>
-            <key>s1</key>
-            <string>&quot;Soll ich noch mehr Bier in die Suppe tun?&quot; fragte die Hexe.</string>
-            <key>s2</key>
-            <string>Sie können tun und lassen, was Sie wollen. Bei Ihnen esse ich nichts. Es tut mir leid</string>
-            <key>s3</key>
-            <string>Mir ist um meine Gesundheit zu tun und Ihre Küche ist nicht sauber.</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand tut etwas umgangssprachlich arbeiten; leisten \n2. umgangssprachlich jemand tut etwas handeln; machen \n3. jemand tut etwas irgendwohin umgangssprachlich irgendwohin legen oder einordnen \n4. jemand tut jemandem etwas Leid zufügen \n5. jemand tut jemandem Gutes Gutes zufügen \n6. jemand tut etwas in verblasster Bedeutung: machen \n7. mit Inf. umgangssprachlich süddt. als Ausdruck einer Möglichkeit \n8. mit Inf. umgangssprachlich zur Hervorhebung der Aussage des Verbs \n9. etwas tut etwas etwas bewirkt etwas \n10. jemand tut irgendwie umgangssprachlich etwas vortäuschen; sich verstellen \n11. etwas tut jemandem irgendwie eine Empfindung auslösen \n12. es tut sich etwas/nichts geschehen \n13. etwas tut es ausreichen</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>do; make; put; act</string>
-            <key>trfr</key>
-            <string>faire</string>
-            <key>tres</key>
-            <string>hacer, poner</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>24</integer>
-            <key>ta</key>
-            <integer>56</integer>
-            <key>in</key>
-            <string>dürfen</string>
-            <key>img</key>
-            <string>durfen</string>
-            <key>pahe</key>
-            <string>durfte</string>
-            <key>pp</key>
-            <string>gedurft (dürfen)</string>
-            <key>prhe</key>
-            <string>darf</string>
-            <key>s1</key>
-            <string>In der Stadt Mahagonny durfte man fast alles.</string>
-            <key>s2</key>
-            <string>Heutzutage darf man alles, heißt es in einem Lied von Cole Porter.</string>
-            <key>s3</key>
-            <string>Darf ich Ihr Telefon benutzen?</string>
-            <key>type</key>
-            <integer>2</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. die Erlaubnis haben \n2. verwendet, um eine höfliche Bitte auszusprechen \n3. das Recht haben \n4. in die Lage versetzt sein</string>
-            <key>no</key>
-            <string>changePPwFI</string>
-            <key>tren</key>
-            <string>be permitted, be allowed, may</string>
-            <key>trfr</key>
-            <string>avoir la permission</string>
-            <key>tres</key>
-            <string>poder, tener permiso de/para</string>
-        </dict>
-        <dict>
-            <key>id</key>
-            <integer>25</integer>
-            <key>ta</key>
-            <integer>14</integer>
-            <key>in</key>
-            <string>glauben</string>
-            <key>img</key>
-            <string>glauben</string>
-            <key>pahe</key>
-            <string>glaubte</string>
-            <key>pp</key>
-            <string>geglaubt</string>
-            <key>prhe</key>
-            <string>glaubt</string>
-            <key>s1</key>
-            <string>Ernst, gläubiger Pantheist, glaubt an viele Götter. Hans hat keinen Glauben, aber viele Gläubiger. Er findet es unglaublich, dass sie nicht mehr an seine Zahlungsfähigkeit glauben.</string>
-            <key>s2</key>
-            <string>Glaub ihm nicht alles, was er dir erzählt. Seine Geschichten von fliegenden Untertassen sind kaum zu glauben.</string>
-            <key>s3</key>
-            <string>Jahrelang glaubte sie ihren Mann tot. Als er plötzlich wieder auftauchte, konnte sie es kaum glauben. Sie glaubte ein Gespenst zu sehen.</string>
-            <key>type</key>
-            <integer>1</integer>
-            <key>co</key>
-            <integer>1</integer>
-            <key>de</key>
-            <string>1. jemand glaubt (an) etwas Akkusativ etwas für wahr, richtig oder möglich halten \n2. jemand glaubt etwas Akkusativ meinen, der Ansicht sein \n3. jemand glaubt an etwas Akkusativ 1. vertrauen  2. aufgrund seiner religiösen Einstellung von der Existenz einer Person, Sache überzeugt sein</string>
-            <key>no</key>
-            <string></string>
-            <key>tren</key>
-            <string>believe</string>
-            <key>trfr</key>
-            <string>croire</string>
-            <key>tres</key>
-            <string>creer(se), pensar</string>
-        </dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>ta</key>
+			<integer>38</integer>
+			<key>in</key>
+			<string>sein</string>
+			<key>img</key>
+			<string>sein</string>
+			<key>pahe</key>
+			<string>war</string>
+			<key>pp</key>
+			<string>ist gewesen</string>
+			<key>prhe</key>
+			<string>ist</string>
+			<key>s1</key>
+			<string>&quot;Sein oder Nichtsein&quot; fragte sich Hamlet.</string>
+			<key>s2</key>
+			<string>Wo sind die Kinder? Ich weiß nicht, wo sie sein könnten. Ich dachte, sie waren bei dir.</string>
+			<key>s3</key>
+			<string>In Las Vegas haben wir Geld verloren, aber sei’s drum, wir haben uns gut amüsiert.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand/etwas ist etwas sich in einem bestimmten Zustand, in einer bestimmten Lage befinden
+2. jemandem ist (es) irgendwie unpersönlich verwendet von jemandem als eine bestimmte Empfindung wahrgenommen werden
+3. jemand/etwas ist jemand/etwas verwendet, um eine Gleichsetzung auszudrücken
+4. es ist unpersönlich verwendet verwendet, um eine bestimmte Uhrzeit anzugeben
+5. jemand/etwas ist irgendwo sich an einem bestimmten Ort befinden
+6. etwas ist irgendwann an einem bestimmten Ort zu einer bestimmten Zeit (unter bestimmten Umständen) stattfinden
+7. etwas darf/kann/... (nicht) sein (nicht) geschehen dürfen/können/...
+8. jemand/etwas ist irgendwo da sein, existieren
+
+Hilfsverb
+1. ... werden können
+2. ... werden müssen
+3. dient der Bildung von Perfekt und Plusquamperfekt
+4. dient der Bildung des Zustandspassivs</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>be, have (with ‘sein’ verbs)</string>
+			<key>trfr</key>
+			<string>être, exister</string>
+			<key>tres</key>
+			<string>ser, estar, tener</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>2</integer>
+			<key>ta</key>
+			<integer>15</integer>
+			<key>in</key>
+			<string>haben</string>
+			<key>img</key>
+			<string>haben</string>
+			<key>pahe</key>
+			<string>hatte</string>
+			<key>pp</key>
+			<string>gehabt</string>
+			<key>prhe</key>
+			<string>hat</string>
+			<key>s1</key>
+			<string>Was hast du denn? Es hat nichts auf sich. Ich habe nur Angst vor der Zukunft, vor allem.</string>
+			<key>s2</key>
+			<string>Der Kaiser hatte nichts an—er war nackt.</string>
+			<key>s3</key>
+			<string>Für heute Abend haben wir nichts vor.</string>
+			<key>type</key>
+			<integer>3</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand hat etwas/ein Tier besitzen verwendet, um auszudrücken, dass jemand im Besitz von etwas ist
+2. jemand/etwas hat/hatte plus zu plus Inf. müssen Die Kinder haben zu gehorchen.
+3. jemand hat etwas/jemanden (als relativ inhaltsleereres Verb) verwendet, um auszudrücken, dass zwischen jemandem und jemandem oder etwas eine bestimmte Relation besteht
+4. jemand hat etwas verwendet, um auszudrücken, dass jemand in einer Situation über etwas verfügt
+5. jemand hat etwas verwendet, um auszudrücken, dass jemand etwas als Ware anbietet
+6. jemand hat etwas innehaben verwendet, um auszudrücken, dass jemand jemandem etwas verliehen oder als Aufgabe gegeben hat
+7. jemand hat etwas von etwas Dativ in bestimmter Weise von etwas profitieren oder in den Genuss von etwas kommen
+8. jemand hat etwas an etwas leiden
+9. jemand hat etwas mit einer Zeitangabe verwendet, um auszudrücken, dass es eine bestimmte Uhrzeit ist
+10. jemand hat etwas plus Inf. zur Umschreibung eines Zustandes
+11. jemand hat plus Inf. berechtigt sein
+12. jemand/etwas hat etwas ... jemand oder etwas besitzt in einem gewissen Maße die genannte Sache.
+
+als Hilfsverb verwendet zur Bildung der zusammengesetzten Zeiten</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>have</string>
+			<key>trfr</key>
+			<string>avoir</string>
+			<key>tres</key>
+			<string>tener, poseer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>3</integer>
+			<key>ta</key>
+			<integer>50</integer>
+			<key>in</key>
+			<string>werden</string>
+			<key>img</key>
+			<string>werden</string>
+			<key>pahe</key>
+			<string>wurde</string>
+			<key>pp</key>
+			<string>ist geworden</string>
+			<key>prhe</key>
+			<string>wird</string>
+			<key>s1</key>
+			<string>Noch ist nichts daraus geworden, aber es wird schon werden.</string>
+			<key>s2</key>
+			<string>Sie tut ihr Bestes, den Anforderungen gerecht zu werden.</string>
+			<key>s3</key>
+			<string>Aus der Raupe wird ein Schmetterling.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. einen Zustand erreichen
+2. einen Beruf lernen, ein Amt bekommen
+3. ein bestimmtes Alter erlangen
+4. in einem Wettkampf eine bestimmte Position erreichen
+
+hilfsverb
+1. verwendet, um das Futur von Verben zu bilden
+2. verwendet, um das Vorgangspassiv zu bilden
+3. verwendet, um den Konjunktiv II zu bilden oder ersetzen
+4. verwendet, um eine Vermutung auszudrücken
+5. verwendet, um einen Wunsch oder eine Hoffnung auszudrücken
+6. verwendet, um einen Befehl auszudrücken</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>become; shall or will; be</string>
+			<key>trfr</key>
+			<string>devenir</string>
+			<key>tres</key>
+			<string>hacerse, volverse, ser</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>4</integer>
+			<key>ta</key>
+			<integer>23</integer>
+			<key>in</key>
+			<string>können</string>
+			<key>img</key>
+			<string>konnen</string>
+			<key>pahe</key>
+			<string>konnte</string>
+			<key>pp</key>
+			<string>gekonnt (können)</string>
+			<key>prhe</key>
+			<string>kann</string>
+			<key>s1</key>
+			<string>Wo können wir hier einen guten Mechaniker finden?</string>
+			<key>s2</key>
+			<string>Lisa kann das Gedicht auswendig.</string>
+			<key>s3</key>
+			<string>Das können Sie laut sagen!</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand kann (irgendwohin) umgangssprachlich dürfen
+2. jemand kann nicht mehr umgangssprachlich nicht weiterhin die Kraft oder Energie zu etwas haben
+
+Hilfsverb
+1. willens sein, etwas zu tun
+2. die Möglichkeit haben, etwas zu tun
+3. die Erlaubnis haben, etwas zu tun, dürfen
+4. müssen
+5. einen Grund, eine Berechtigung haben, etwas zu tun
+6. verwendet, um auszudrücken, dass man etwas vermutet oder eine Möglichkeit in Betracht zieht
+7. eine logisch notwendige Folge ausdrückend
+8. sich etwas verbitten
+9. eine allgemeine Regel ausdrückend</string>
+			<key>no</key>
+			<string>changePPwFI</string>
+			<key>tren</key>
+			<string>be able (can); know (a language or how to do something)</string>
+			<key>trfr</key>
+			<string>pouvoir</string>
+			<key>tres</key>
+			<string>poder (hacer), saber</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>5</integer>
+			<key>ta</key>
+			<integer>57</integer>
+			<key>in</key>
+			<string>müssen</string>
+			<key>img</key>
+			<string>mussen</string>
+			<key>pahe</key>
+			<string>musste</string>
+			<key>pp</key>
+			<string>gemusst (müssen)</string>
+			<key>prhe</key>
+			<string>muss</string>
+			<key>s1</key>
+			<string>Karl hat seine Brauereiaktien verkaufen müssen. Er wird seiner Frau den Erlös geben müssen, denn sie muss sich um den Haushalt kümmern.</string>
+			<key>s2</key>
+			<string>Ich muss fort. Ja, es muss schon spät sein. Diese Pakete müssen heute zur Post. Können Sie sie mitnehmen?</string>
+			<key>s3</key>
+			<string>Ihre Großeltern mussten heiraten. Es war eine Mussheirat.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>jemand muss
+
+Hilfsverb
+1. eine (unterschiedlich begründbare) Notwendigkeit ausdrückend. so dass man gezwungen ist, etwas zu tun
+2. eine Vermutung oder Wahrscheinlichkeit ausdrückend
+3. im Konjunktiv Prät. verwendet einen Wunsch ausdrückend</string>
+			<key>no</key>
+			<string>changePPwFI</string>
+			<key>tren</key>
+			<string>have to, must</string>
+			<key>trfr</key>
+			<string>devoir</string>
+			<key>tres</key>
+			<string>ser necesario +inf</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>6</integer>
+			<key>ta</key>
+			<integer>33</integer>
+			<key>in</key>
+			<string>sagen</string>
+			<key>img</key>
+			<string>sagen</string>
+			<key>pahe</key>
+			<string>sagte</string>
+			<key>pp</key>
+			<string>gesagt</string>
+			<key>prhe</key>
+			<string>sagt</string>
+			<key>s1</key>
+			<string>Ich sage nicht, dass Ihr Gemälde mir gefällt. Aber es sagt mir doch etwas. Nur ist mir der Preis zu hoch.</string>
+			<key>s2</key>
+			<string>Vielleicht will das aber nichts sagen.</string>
+			<key>s3</key>
+			<string>Sagen Sie es nicht weiter!</string>
+			<key>type</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand sagt (jemandem) etwas als Satz oder Wort aussprechen
+2. jemand sagt (jemandem) etwas als Äußerung an jemanden richten
+3. jemand sagt (jemandem) etwas jemandem etwas mitteilen
+4. jemand sagt etwas zu etwas Dativ ein bestimmtes Wort benutzen
+5. jemand sagt etwas mit etwas Dativ Gedanken formulieren, etwas zum Ausdruck bringen
+6. jemand sagt etwas zu etwas Dativ eine Haltung mit Worten zum Ausdruck bringen
+7. etwas sagt, dass ... zum Inhalt haben
+8. jemand sagt etwas ... behaupten</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>say; tell; speak</string>
+			<key>trfr</key>
+			<string>dire</string>
+			<key>tres</key>
+			<string>decir, expresar, comunicar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>7</integer>
+			<key>ta</key>
+			<integer>29</integer>
+			<key>in</key>
+			<string>machen</string>
+			<key>img</key>
+			<string>machen</string>
+			<key>pahe</key>
+			<string>machte</string>
+			<key>pp</key>
+			<string>gemacht</string>
+			<key>prhe</key>
+			<string>macht</string>
+			<key>s1</key>
+			<string>Kannst du dir einen Begriff von unserem jetztigen leben machen? Wir machen keine langen Reisen mehr. Lieber machen wir schöne Spaziergänge im Wald.</string>
+			<key>s2</key>
+			<string>Mach, dass du fortkommst. Ich mach dir die Tür auf.</string>
+			<key>s3</key>
+			<string>Das macht 30 Euro aus.</string>
+			<key>type</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. eine Aktion, Handlung ausführen
+2. etwas Neues aus verschiedenen Materialien entstehen lassen
+3. Lärm, Licht, Musik entstehen lassen
+4. Abwasch, Arbeit, Versuch ausführen, durchführen
+5. Abitur, Führerschein, Prüfung an einer Prüfung teilnehmen, um etwas zu bekommen
+6. verwendet, um das Ergebnis einer Rechnung zu nennen
+7. in einen bestimmten Zustand bringen
+8. in Ordnung bringen
+9. mit einer Tätigkeit beginnen
+10. sich irgendwie entwickeln, irgendeinen Eindruck machen
+11. kein / viel / ... Interesse an jemandem / etwas haben
+12. umgangssprachlich irgendwo Kot oder Urin hinterlassen  umgangssprachlich den Darm / die Blase entleeren</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>make; do</string>
+			<key>trfr</key>
+			<string>faire</string>
+			<key>tres</key>
+			<string>hacer, causar, producir</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>8</integer>
+			<key>ta</key>
+			<integer>11</integer>
+			<key>in</key>
+			<string>geben</string>
+			<key>img</key>
+			<string>geben</string>
+			<key>pahe</key>
+			<string>gab</string>
+			<key>pp</key>
+			<string>gegeben</string>
+			<key>prhe</key>
+			<string>gibt</string>
+			<key>s1</key>
+			<string>Im Theater wird heute abend nichts gegeben. Aber wir geben sowieso zu viel Geld fürs Theater aus. Außerdem gibt’s nichts Neues im Spielplan.</string>
+			<key>s2</key>
+			<string>Ich geb dir den Wagen ganze zwei Wochen. Wenn du mir danach 900 Euro dafür gibst, gehört er dir.</string>
+			<key>s3</key>
+			<string>Wir hoffen, ihr Fieber wird sich geben.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand gibt (jemandem) etwas etwas, das man selbst hat, in die Hand eines anderen legen
+2. jemand gibt (jemandem) etwas schenken
+3. jemand gibt jemandem etwas für etwas Akkusativ bezahlen Sie haben mir für das alte Auto noch 500 Euro gegeben.
+4. jemand gibt etwas irgendwohin etwas irgendwohin bringen
+5. jemand gibt etwas bieten, gewähren
+6. jemand gibt jemandem etwas verleihen bewirken, dass jemand etwas hat
+7. ein Tier gibt Milch ein weibliches Säugetier produziert Milch
+8. etwas gibt etwas ergeben zum Ergebnis haben
+9. jemand gibt etwas aufführen
+10. jemand gibt etwas veranstalten
+11. jemand gibt etwas veralt. unterrichten
+12. jemand gibt etwas umgangssprachlich spielen
+13. jemand gibt zu Beginn eines Kartenspiels die Karten an die einzelnen Spieler austeilen
+14. jemand gibt sich (irgendwie) sich in bestimmter Weise verhalten
+15. etwas gibt sich nachlassen (und aufhören)
+16. existieren
+17. angeboten werden
+18. eintreten, kommen</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>give</string>
+			<key>trfr</key>
+			<string>donner</string>
+			<key>tres</key>
+			<string>dar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>9</integer>
+			<key>ta</key>
+			<integer>22</integer>
+			<key>in</key>
+			<string>kommen</string>
+			<key>img</key>
+			<string>kommen</string>
+			<key>pahe</key>
+			<string>kam</string>
+			<key>pp</key>
+			<string>ist gekommen</string>
+			<key>prhe</key>
+			<string>kommt</string>
+			<key>s1</key>
+			<string>Leider konnte ich nicht kommen. Es ist etwas Furchtbares dazwischengekommen.</string>
+			<key>s2</key>
+			<string>Der Motor kommt nicht in Gang. Wie komme ich zu Fuß zum Bahnhof?</string>
+			<key>s3</key>
+			<string>Wann seid ihr nach Hause gekommen?</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand/etwas kommt eintreffen
+2. jemand/etwas kommt irgendwohin sich auf ein Ziel hin bewegen und dorthin gelangen
+3. jemand/etwas kommt irgendwoher irgendwoher eintreffen
+4. jemand kommt durch etwas Akkusativ durch etwas fahren oder gehen
+5. jemand kommt zu etwas Dativ an etwas teilnehmen
+6. jemand kommt zu jemandem besuchen
+7. etwas kommt gebracht werden
+8. jemand lässt jemanden/etwas kommen veranlassen, dass jemand kommt oder etwas gebracht wird
+9. etwas kommt jemandem irgendwie sich als Geschehen irgendwie darstellen
+10. etwas kommt in Erscheinung treten
+11. jemand kommt in etwas Akkusativ/zu etwas Dativ irgendwo aufgenommen oder eingestellt werden
+12. etwas kommt in etwas Akkusativ ordnungsgemäß aufgeräumt werden
+13. jemand/etwas kommt in etwas Akkusativ in einen Zustand oder in eine Lage geraten
+14. jemand kommt in etwas Akkusativ in eine Stimmung geraten
+15. etwas kommt über jemanden von einem (negativen) Gefühl ergriffen werden
+16. jemand kommt zu etwas Akkusativ Zeit, Gelegenheit für etwas finden
+17. etwas kommt irgendwie sich ereignen
+18. jemand kommt zu etwas Akkusativ (wieder)erlangen
+19. jemand kommt um etwas Akkusativ verlieren, einbüßen
+20. jemand kommt hinter etwas Akkusativ etwas erfahren
+21. etwas kommt irgendwann an der Reihe sein, folgen
+22. jemand kommt irgendwoher stammen
+23. etwas kommt von etwas Dativ seinen Ursprung, Grund in etwas haben
+24. jemand kommt zu etwas Dativ zu etwas gelangen
+25. eine Verteilung bezeichnend jemand/etwas kommt auf jemanden/etwas
+26. jemand kommt auf etwas Akkusativ einen Einfall haben
+27. umgangssprachlich jemand kommt zum Orgasmus kommen
+28. etwas kommt irgendwie/auf etwas Akkusativ kosten
+29. eine Idee/ein Einfall ... kommt jemandem jemand hat eine Idee, einen Einfall
+30. jemand kommt jemandem irgendwie umgangssprachlich jemand legt jemandem gegenüber ein bestimmtes (negatives) Verhalten an den Tag</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>come</string>
+			<key>trfr</key>
+			<string>venir, arriver, passer</string>
+			<key>tres</key>
+			<string>llegar, venir de, suceder</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>10</integer>
+			<key>ta</key>
+			<integer>40</integer>
+			<key>in</key>
+			<string>sollen</string>
+			<key>img</key>
+			<string>mussen</string>
+			<key>pahe</key>
+			<string>sollte</string>
+			<key>pp</key>
+			<string>gesollt (sollen)</string>
+			<key>prhe</key>
+			<string>soll</string>
+			<key>s1</key>
+			<string>Der Geschäftsführer soll sehr intelligent sein. Aber wie soll man sich sein albernes Benehmen erklären?</string>
+			<key>s2</key>
+			<string>Der Zug sollte um 18 Uhr ankommen.</string>
+			<key>s3</key>
+			<string>Wir hätten früher anfangen sollen.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand soll plus Inf. umgangssprachlich verwendet, um auszudrücken, dass von jemandem etwas verlangt wird
+2. jemand soll plus Inf. verwendet, um auszudrücken, dass etwas ein Gebot der Moral ist
+3. jemand/etwas soll plus Inf. verwendet, um auszudrücken, dass das Behauptete angeblich der Fall ist, aber man sich dessen nicht sicher ist oder es anzweifelt
+4. etwas soll irgendwohin verwendet, um auszudrücken, dass etwas an einen bestimmten Platz gebracht werden soll
+5. etwas soll etwas sein verwendet, um auszudrücken, dass man über etwas verärgert ist und es für schlecht hält
+
+Hilfsverb
+1. oft im Konj. Prät. verwendet verwendet, um einen Ratschlag oder eine Empfehlung auszudrücken
+2. verwendet, um einen Ratschlag oder eine (Auf-)Forderung (mit verschiedenen Ursachen/Urhebern) auszudrücken
+3. verwendet, um einen Wunsch oder eine Absicht auszudrücken
+4. im Konj. Prät. verwendet verwendet, um eine Bedingung auszudrücken
+5. verwendet, um ein - aus der Perspektive der Vergangenheit gesehen - zukünftiges Ereignis auszudrücken
+6. drückt eine Behauptung, Vermutung, einen Zweifel aus</string>
+			<key>no</key>
+			<string>changePPwFI</string>
+			<key>tren</key>
+			<string>be; be supposed to; ought; be said to; be expected to</string>
+			<key>trfr</key>
+			<string>devoir</string>
+			<key>tres</key>
+			<string>deber</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>11</integer>
+			<key>ta</key>
+			<integer>54</integer>
+			<key>in</key>
+			<string>wollen</string>
+			<key>img</key>
+			<string>wollen</string>
+			<key>pahe</key>
+			<string>wollte</string>
+			<key>pp</key>
+			<string>gewollt (wollen)</string>
+			<key>prhe</key>
+			<string>will</string>
+			<key>s1</key>
+			<string>Wir wollen um die Welt fahren. Willst du mit? Ich will schon. Aber mein Mann will nicht.</string>
+			<key>s2</key>
+			<string>Was willst du noch von mir?</string>
+			<key>s3</key>
+			<string>Diesen Roman habe ich immer lesen wollen.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. den Wunsch nach etwas haben
+2. eine bestimmte Absicht haben
+
+Modalverb + Infinitiv
+1. den Wunsch zu etwas haben
+2. die Absicht haben, etwas zu tun
+3. zum Ausdruck einer höflichen Bitte
+4. zum Ausdruck einer ungeduldigen Aufforderung
+5. etwas tut etwas nicht, geschieht nicht
+6. drückt aus, dass man die Aussage eines anderen bezweifelt</string>
+			<key>no</key>
+			<string>changePPwFI</string>
+			<key>tren</key>
+			<string>want; intend</string>
+			<key>trfr</key>
+			<string>vouloir</string>
+			<key>tres</key>
+			<string>querer, desear</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>12</integer>
+			<key>ta</key>
+			<integer>12</integer>
+			<key>in</key>
+			<string>gehen</string>
+			<key>img</key>
+			<string>gehen</string>
+			<key>pahe</key>
+			<string>ging</string>
+			<key>pp</key>
+			<string>ist gegangen</string>
+			<key>prhe</key>
+			<string>geht</string>
+			<key>s1</key>
+			<string>Einst ging Opa oft tanzen. Jetzt kann er kaum gehen. Es geht ihm gesundheitlich nicht gut.</string>
+			<key>s2</key>
+			<string>Gestern Abend sind wir ins Kino gegangen. Ich wollte zu Fuß gehen aber wir sind mit dem Bus gefahren.</string>
+			<key>s3</key>
+			<string>Sein Geschäft ging nicht mehr so gut. Daher ging er früh in den Ruhestand.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand geht sich aufrecht in mittlerem Tempo so fortbewegen, dass immer ein Fuß Kontakt mit dem Erdboden hat
+2. jemand geht irgendwohin gehen 1 und dabei ein bestimmtes Ziel anstreben oder einen bestimmten Zweck verfolgen
+3. jemand geht weggehen einen Ort verlassen
+4. jemand geht irgendwohin sich irgendwohin begeben, um dort eine Ausbildung zu machen, zu arbeiten, sich zu erholen
+5. jemand geht ... einen neuen Lebensabschnitt, ein bestimmtes Alter erreichen
+6. jemand geht als etwas eine bestimmte Verkleidung tragen
+7. jemand geht an etwas etwas unerlaubterweise benutzen
+8. etwas geht in etwas umgangssprachlich Platz haben
+9. jemand geht mit jemandem (als Jugendliche) eine Beziehung miteinander haben
+10. etwas geht jemandem irgendwohin reichen
+11. etwas geht irgendwohin fahrplanmäßig fahren oder fliegen
+12. etwas geht auf etwas in eine Richtung zeigen
+13. etwas geht irgendwohin treffen
+14. etwas geht (irgendwie) funktionieren
+15. etwas geht irgendwie ablaufen, verlaufen
+16. etwas geht läuten, klingeln
+17. etwas geht gegen jemanden/etwas gerichtet sein
+18. etwas geht über etwas übersteigen
+19. etwas geht in etwas in eine neue Phase, ein neues Stadium eintreten
+20. etwas geht irgendwie sich verkaufen lassen</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>go; walk</string>
+			<key>trfr</key>
+			<string>aller</string>
+			<key>tres</key>
+			<string>ir</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>13</integer>
+			<key>ta</key>
+			<integer>52</integer>
+			<key>in</key>
+			<string>wissen</string>
+			<key>img</key>
+			<string>wissen</string>
+			<key>pahe</key>
+			<string>wusste</string>
+			<key>pp</key>
+			<string>gewusst</string>
+			<key>prhe</key>
+			<string>weiß</string>
+			<key>s1</key>
+			<string>Weißt du, wie alt sie ist? Nein, ich weiß nicht.</string>
+			<key>s2</key>
+			<string>Was ich nicht weiß, macht mich nicht heiß.</string>
+			<key>s3</key>
+			<string>Wissen ist Macht. Wer nichts weiß, muss alles glauben.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand weiß etwas Kenntnisse von etwas haben
+2. jemand weiß etwas sich an etwas erinnern
+3. jemand weiß etwas Gewissheit über etwas haben
+4. jemand weiß etwas sich über etwas im Klaren sein
+5. jemand weiß etwas über jemanden/etwas Kentnisse über jemanden oder etwas haben
+6. jemand weiß (sich Dativ) etwas zu plus Inf. etwas können oder in der Lage sein, etwas zu tun
+7. jemand weiß um etwas Akkusativ gehoben sich etwas bewusst sein</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>know (a fact)</string>
+			<key>trfr</key>
+			<string>savoir, connaître</string>
+			<key>tres</key>
+			<string>saber</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>14</integer>
+			<key>ta</key>
+			<integer>37</integer>
+			<key>in</key>
+			<string>sehen</string>
+			<key>img</key>
+			<string>sehen</string>
+			<key>pahe</key>
+			<string>sah</string>
+			<key>pp</key>
+			<string>gesehen</string>
+			<key>prhe</key>
+			<string>sieht</string>
+			<key>s1</key>
+			<string>Du siehst heute besonders schön aus. Ich kann mich an dir nicht sattsehen.</string>
+			<key>s2</key>
+			<string>Ich sehe endlich ein, dass ich dich zur Frau haben will.</string>
+			<key>s3</key>
+			<string>Die Königin besah sich im Spiegel.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. mit den Augen erkennen
+2. ansehen
+3. jemanden (zufällig) treffen
+4. einschätzen
+5. irgendwie sehen
+6. irgendwohin sehen
+7. sich kümmern
+8. jemand sieht sich gezwungen/veranlasst, etwas zu tun meinen, etwas tun zu müssen</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>see; realize</string>
+			<key>trfr</key>
+			<string>voir, regarder</string>
+			<key>tres</key>
+			<string>ver, mirar, notar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>15</integer>
+			<key>ta</key>
+			<integer>24</integer>
+			<key>in</key>
+			<string>lassen</string>
+			<key>img</key>
+			<string>lassen</string>
+			<key>pahe</key>
+			<string>ließ</string>
+			<key>pp</key>
+			<string>gelassen</string>
+			<key>prhe</key>
+			<string>lässt</string>
+			<key>s1</key>
+			<string>Frau Rose Neu schrie &quot;Das Kind kann ich keinen Augenblick aus den Augen lassen. Es lässt mir keine Ruhe.&quot;</string>
+			<key>s2</key>
+			<string>&quot;Ach, lass ihn doch! Du kannst mal fünf gerade sein lassen. Leben und leben lassen, das ist meine Devise&quot; sagt Herr Neu.</string>
+			<key>s3</key>
+			<string>Das lass ich mir nicht gefallen. Du musst mir mit dem Kind freien Lauf lassen.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand/etwas lässt jemanden/etwas plus Inf. jemandem/sich/einem Tier erlauben, etwas zu tun
+2. jemand lässt jemanden irgendwohin plus Inf. jemandem erlauben, irgendwohin zu gehen
+3. jemand lässt etwas (irgendwohin) plus Inf. bewirken, dass etwas irgendwohing gelangt
+4. jemand lässt etwas irgendwo etwas nicht von einer Stelle bewegen
+5. jemand lässt jemandem etwas jemand erlaubt jemandem, etwas zu behalten
+6. etwas (sein) lassen umgangssprachlich etwas nicht tun
+7. jemand lässt jemanden/etwas plus Inf. jemand gibt jemandem einen Auftrag oder zwingt ein Tier, etwas zu tun
+8. jemand lässt etwas plus Inf. jemand veranlasst, dass etwas gemacht wird
+9. jemand lässt jemanden/sich/etwas plus Inf. jemand lässt jemandem/sich/etwas plus Inf. jemand veranlasst, dass jemand etwas (meist gegen Bezahlung)</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>let; leave; allow; abandon; stop; have something done (with infinitive)</string>
+			<key>trfr</key>
+			<string>arrêter, laisser</string>
+			<key>tres</key>
+			<string>dejar, poderse, hacer +inf</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>16</integer>
+			<key>ta</key>
+			<integer>43</integer>
+			<key>in</key>
+			<string>stehen</string>
+			<key>img</key>
+			<string>stehen</string>
+			<key>pahe</key>
+			<string>stand</string>
+			<key>pp</key>
+			<string>gestanden</string>
+			<key>prhe</key>
+			<string>steht</string>
+			<key>s1</key>
+			<string>Sie stehen noch über mir. Ihnen untersteht die Abteilung.</string>
+			<key>s2</key>
+			<string>Alle wollen die Filmstars sehen. Die ganze Stadt steht Kopf. Die Fans stehen Schlange vor dem Kino.</string>
+			<key>s3</key>
+			<string>Annie stand vor dem Spiegel und dachte: &quot;Ja, der Hut steht mir gut.&quot;</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. sitzen jemand steht irgendwo mit aufrechtem Körper an einer Stelle bleiben
+2. etwas steht irgendwo sich befinden
+3. etwas steht nicht mehr funktionieren
+4. etwas steht irgendwo irgendwo gedruckt, geschrieben sein
+5. jemand steht vor etwas Dativ mit etwas Schwierigem konfrontiert sein
+6. etwas steht umgangssprachlich fertig sein
+7. etwas steht jemandem (irgendwie) jemandem gut passen und gut an jemandem aussehen
+8. jemand steht zu etwas Dativ die Verantwortung für etwas übernehmen
+9. jemand steht zu jemandem zu jemanden halten, jemandem helfen
+10. jemand steht zu etwas Dativ etwas beurteilen
+11. umgangssprachlich jemand steht auf jemanden/etwas umgangssprachlich jemanden oder etwas sehr mögen</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>stand; be located; mark</string>
+			<key>trfr</key>
+			<string>être debout, être arrêté(e)</string>
+			<key>tres</key>
+			<string>estar de pie, encontrarse, estar, marcar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>17</integer>
+			<key>ta</key>
+			<integer>9</integer>
+			<key>in</key>
+			<string>finden</string>
+			<key>img</key>
+			<string>finden</string>
+			<key>pahe</key>
+			<string>fand</string>
+			<key>pp</key>
+			<string>gefunden</string>
+			<key>prhe</key>
+			<string>findet</string>
+			<key>s1</key>
+			<string>Wer meine Aktentasche findet, kriegt einen Finderlohn.</string>
+			<key>s2</key>
+			<string>Wie fanden Sie das Konzert? Wir konnten nicht herausfinden, um wie viel Uhr das Konzert stattfand.</string>
+			<key>s3</key>
+			<string>Ihr Ring war nicht zu finden. Endlich fand ihn die Zofe.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand findet etwas durch Suchen oder zufällig auf etwas stoßen
+2. jemand findet etwas gehoben in verblasster Bedeutung: bekommen
+3. jemand findet jemanden/etwas irgendwie eine bestimmte Einschätzung von etwas haben
+4. jemand findet irgendwohin irgendwohin gelangen
+5. etwas findet sich sich irgendwie einstellen
+6. jemand findet sich sein inneres Gleichgewicht herstellen</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>find</string>
+			<key>trfr</key>
+			<string>trouver</string>
+			<key>tres</key>
+			<string>encontrar, opinar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>18</integer>
+			<key>ta</key>
+			<integer>3</integer>
+			<key>in</key>
+			<string>bleiben</string>
+			<key>img</key>
+			<string>bleiben</string>
+			<key>pahe</key>
+			<string>blieb</string>
+			<key>pp</key>
+			<string>ist geblieben</string>
+			<key>prhe</key>
+			<string>bleibt</string>
+			<key>s1</key>
+			<string>Er blieb nur kurze Zeit bei uns, aber wir bleiben noch in Verbindung.</string>
+			<key>s2</key>
+			<string>Das Geschäft bleibt heute geschlossen.</string>
+			<key>s3</key>
+			<string>Es blieb keine andere Wahl.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand bleibt (irgendwo) sich an dem Ort, wo man ist, weiter aufhalten
+2. jemand/etwas bleibt irgendwie sich nicht verändern
+3. jemand bleibt bei etwas Dativ an etwas festhalten; etwas nicht verändern
+4. etwas bleibt zu tun zu tun übrig sein</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>remain, stay; keep; be</string>
+			<key>trfr</key>
+			<string>rester</string>
+			<key>tres</key>
+			<string>quedarse, mantener, permanecer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>19</integer>
+			<key>ta</key>
+			<integer>28</integer>
+			<key>in</key>
+			<string>liegen</string>
+			<key>img</key>
+			<string>liegen</string>
+			<key>pahe</key>
+			<string>lag</string>
+			<key>pp</key>
+			<string>gelegen</string>
+			<key>prhe</key>
+			<string>liegt</string>
+			<key>s1</key>
+			<string>Den ganzen Tag liegst du im Liegestuhl, du Faulpelz!</string>
+			<key>s2</key>
+			<string>Die Rolle/Arbeit liegt mir nicht.</string>
+			<key>s3</key>
+			<string>Fallen ist menschlich. Liegen bleiben ist teuflisch.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand/etwas liegt irgendwo/irgendwie stehen, sitzen sich in waagerechter Lage an einer Stelle oder in einer bestimmten Art befinden
+2. etwas liegt irgendwo etwas befindet sich an einem bestimmten Ort oder in einer geografischen Lage
+3. etwas liegt irgendwo etwas liegt oberhalb von etwas oder über etwas
+4. jemand/etwas liegt irgendwo jemand oder etwas befindet sich an einer bestimmten Stelle in einer Reihenfolge
+5. etwas liegt nach plus Ortsangabe/Richtungsangabe etwas ist in einer bestimmten Richtung
+5. etwas liegt nach plus Ortsangabe/Richtungsangabe etwas ist in einer bestimmten Richtung
+7. etwas liegt an jemandem/etwas jemand oder etwas verursacht etwas
+8. etwas liegt bei jemandem etwas wird von jemandem übernommen oder verursacht</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>lie; be situated; appeal to</string>
+			<key>trfr</key>
+			<string>être couché(e)</string>
+			<key>tres</key>
+			<string>estar acostado, estar, encontrarse, gustar, interesar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>20</integer>
+			<key>ta</key>
+			<integer>17</integer>
+			<key>in</key>
+			<string>heißen</string>
+			<key>img</key>
+			<string>heissen</string>
+			<key>pahe</key>
+			<string>hieß</string>
+			<key>pp</key>
+			<string>geheißen</string>
+			<key>prhe</key>
+			<string>heißt</string>
+			<key>s1</key>
+			<string>Wie heißen Sie mit Vornamen? Ich heiße Fred und heiße Sie herzlichst willkomen in unserem Sprachverein.</string>
+			<key>s2</key>
+			<string>Der Richter hieß ihn schweigen.</string>
+			<key>s3</key>
+			<string>Wie heißt es bei Shakespeare: &quot;Der bessere Teil der Tapferkeit ist Vorsicht.&quot;</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand/etwas heißt irgendwie genannt werden
+2. etwas heißt etwas bedeuten eine bestimmte Bedeutung haben
+3. etwas heißt etwas auf etwas Akkusativ eine bestimmte Entsprechung in einer anderen Sprache haben
+4. etwas heißt etwas zur Folge haben
+5. behauptet werden
+6. notwendig sein
+7. jemand heißt jemanden etwas veralt. gehoben nennen; als etwas bezeichnen
+8. jemand heißt jemanden plus Inf. gehoben befehlen</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>be called or named; mean; command</string>
+			<key>trfr</key>
+			<string>s&apos;appeler</string>
+			<key>tres</key>
+			<string>llamarse, significar, mandar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>21</integer>
+			<key>ta</key>
+			<integer>6</integer>
+			<key>in</key>
+			<string>denken</string>
+			<key>img</key>
+			<string>denken</string>
+			<key>pahe</key>
+			<string>dachte</string>
+			<key>pp</key>
+			<string>gedacht</string>
+			<key>prhe</key>
+			<string>denkt</string>
+			<key>s1</key>
+			<string>Ich denke, morgen nach Paris zu reisen. Da werde ich mich gut amüsieren, denke ich. Denken Sie an uns und bringen Sie uns ein kleines Andenken mit zurück, vielleicht eine Kopie von Rodins Der Denker!</string>
+			<key>s2</key>
+			<string>Er predigt immer positives Denken. Im Grunde ist er aber ein Fanatiker. Den Fanatikern ist der Gedanke der Toleranz fremd. Das Denken der Aufklärung, die Denkweise der großen Philosophen lehnen sie ab.</string>
+			<key>s3</key>
+			<string>Mit ihrem Geld denkt sich die Milliardärin, uns alle kaufen zu können. Sie will, dass wir ihr ein Denkmal setzen. Aber daran ist nicht zu denken! Wir denken gar nicht daran!</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. etwas als Gegenstand seiner Gedanken haben
+2. jemand denkt etwas annehmen, glauben
+3. jemand denkt etwas von jemandem über jemanden eine bestimmte Meinung haben
+4. jemand denkt sich etwas (bei etwas Dativ) mit etwas eine bestimmte Absicht verfolgen
+5. jemand denkt überlegen durch die Aktivität des Verstands zu Aussagen, Gedanken und Schlussfolgerungen gelangen
+6. jemand denkt irgendwie eine bestimmte Gesinnung haben
+7. jemand denkt (über etwas Dativ) urteilen, meinen
+8. jemand denkt (an etwas Akkusativ) in seiner Erinnerung behalten und nicht vergessen
+9.  jemand denkt (an etwas Akkusativ) an etwas Interesse haben
+10. jemand denkt (an etwas Akkusativ) eine Absicht haben, planen</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>think; have in mind</string>
+			<key>trfr</key>
+			<string>penser</string>
+			<key>tres</key>
+			<string>pensar en de, reflexionar, recordar, querer</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>22</integer>
+			<key>ta</key>
+			<integer>32</integer>
+			<key>in</key>
+			<string>nehmen</string>
+			<key>img</key>
+			<string>nehmen</string>
+			<key>pahe</key>
+			<string>nahm</string>
+			<key>pp</key>
+			<string>genommen</string>
+			<key>prhe</key>
+			<string>nimmt</string>
+			<key>s1</key>
+			<string>Sie sagten, Sie wollten die Verantwortung auf sich nehmen, und ich habe Sie beim Wort genommen. Aber sie nehmen immer alles auf die leichte Schulter. Jetzt müssen Sie die Folgen auf sich nehmen.</string>
+			<key>s2</key>
+			<string>Warum nehmen Sie immer alles so genau?</string>
+			<key>s3</key>
+			<string>Meine Zeit ist zu sehr in Anspruch genommen, um mich um alles zu bekümmern.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand nimmt etwas jemand ergreift etwas mit der Hand, um es festzuhalten, um es aufzuheben, um es von irgendwo zu entfernen, um es zu sich heranzuholen
+2. jemand nimmt etwas jemand wählt unter verschiedenen Möglichkeiten eine bestimmte, um sie für eine bestimmte Absicht zu nutzen
+3. jemand/etwas nimmt jemanden/etwas annehmen ablehnen jemand oder etwas akzeptiert jemanden oder etwas
+4. jemand nimmt etwas (für etwas Akkusativ) jemand bekommt oder fordert etwas als Bezahlung/Gegenleistung oder ähnliches
+5. jemand nimmt etwas einnehmen jemand schluckt eine Medizin, Tabletten oder ähnliches
+6. jemand/etwas nimmt etwas jemand oder etwas bewältigt etwas, das schwierig oder ein Hindernis ist
+7. jemand nimmt etwas jemand stellt sich etwas als Beispiel vor
+8. jemand/etwas nimmt etwas milit.: einnehmen erobern
+9. jemand nimmt sich etwas jemand greift etwas, um es zu haben
+10. jemand nimmt sich etwas jemand macht von etwas, auf das er ein Recht hat, Gebrauch
+11. jemand nimmt sich jemanden jemand bezahlt jemanden, damit er eine Aufgabe erledigt
+12. jemand nimmt jemandem jemanden/etwas gehoben wegnehmen jemandem bewirkt, das jemand jemanden oder etwas nicht mehr hat
+13. jemand/etwas nimmt jemandem etwas jemand oder etwas verhindert, dass jemand etwas hat
+14. jemand/etwas nimmt etwas von jemandem jemand oder etwas befreit jemanden von etwas Unangenehmen
+15. jemand nimmt etwas an sich jemand bewahrt etwas auf
+16. jemand nimmt etwas auf sich jemand erträgt freiwillig etwas Unangenehmes
+17. jemand nimmt jemanden/etwas mit sich mitnehmen jemand hat jemanden oder etwas dabei, wenn er irgendwohin geht oder fährt
+18. jemand nimmt etwas zu sich jemand isst oder trinkt etwas
+19. jemand nimmt jemanden zu sich jemand lässt jemanden bei sich wohnen
+20. jemand nimmt jemanden/etwas für jemanden/etwas jemand hält jemanden/etwas für jemanden/etwas jemand glaubt, dass jemand oder etwas jemand anderes oder eine andere Sache ist
+21. jemand nimmt jemanden/sich/etwas irgendwie jemand versteht oder behandelt jemanden/sich/etwas in der beschriebenen Art und Weise
+22. jemand nimmt etwas als etwas jemand deutet etwas auf eine beschriebene Weise</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>take</string>
+			<key>trfr</key>
+			<string>prendre, demander</string>
+			<key>tres</key>
+			<string>agarrar, cobrar, sacar</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>23</integer>
+			<key>ta</key>
+			<integer>48</integer>
+			<key>in</key>
+			<string>tun</string>
+			<key>img</key>
+			<string>machen</string>
+			<key>pahe</key>
+			<string>tat</string>
+			<key>pp</key>
+			<string>getan</string>
+			<key>prhe</key>
+			<string>tut</string>
+			<key>s1</key>
+			<string>&quot;Soll ich noch mehr Bier in die Suppe tun?&quot; fragte die Hexe.</string>
+			<key>s2</key>
+			<string>Sie können tun und lassen, was Sie wollen. Bei Ihnen esse ich nichts. Es tut mir leid</string>
+			<key>s3</key>
+			<string>Mir ist um meine Gesundheit zu tun und Ihre Küche ist nicht sauber.</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand tut etwas umgangssprachlich arbeiten; leisten
+2. umgangssprachlich jemand tut etwas handeln; machen
+3. jemand tut etwas irgendwohin umgangssprachlich irgendwohin legen oder einordnen
+4. jemand tut jemandem etwas Leid zufügen
+5. jemand tut jemandem Gutes Gutes zufügen
+6. jemand tut etwas in verblasster Bedeutung: machen
+7. mit Inf. umgangssprachlich süddt. als Ausdruck einer Möglichkeit
+8. mit Inf. umgangssprachlich zur Hervorhebung der Aussage des Verbs
+9. etwas tut etwas etwas bewirkt etwas
+10. jemand tut irgendwie umgangssprachlich etwas vortäuschen; sich verstellen
+11. etwas tut jemandem irgendwie eine Empfindung auslösen
+12. es tut sich etwas/nichts geschehen
+13. etwas tut es ausreichen</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>do; make; put; act</string>
+			<key>trfr</key>
+			<string>faire</string>
+			<key>tres</key>
+			<string>hacer, poner</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>24</integer>
+			<key>ta</key>
+			<integer>56</integer>
+			<key>in</key>
+			<string>dürfen</string>
+			<key>img</key>
+			<string>durfen</string>
+			<key>pahe</key>
+			<string>durfte</string>
+			<key>pp</key>
+			<string>gedurft (dürfen)</string>
+			<key>prhe</key>
+			<string>darf</string>
+			<key>s1</key>
+			<string>In der Stadt Mahagonny durfte man fast alles.</string>
+			<key>s2</key>
+			<string>Heutzutage darf man alles, heißt es in einem Lied von Cole Porter.</string>
+			<key>s3</key>
+			<string>Darf ich Ihr Telefon benutzen?</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. die Erlaubnis haben
+2. verwendet, um eine höfliche Bitte auszusprechen
+3. das Recht haben
+4. in die Lage versetzt sein</string>
+			<key>no</key>
+			<string>changePPwFI</string>
+			<key>tren</key>
+			<string>be permitted, be allowed, may</string>
+			<key>trfr</key>
+			<string>avoir la permission</string>
+			<key>tres</key>
+			<string>poder, tener permiso de/para</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>25</integer>
+			<key>ta</key>
+			<integer>14</integer>
+			<key>in</key>
+			<string>glauben</string>
+			<key>img</key>
+			<string>glauben</string>
+			<key>pahe</key>
+			<string>glaubte</string>
+			<key>pp</key>
+			<string>geglaubt</string>
+			<key>prhe</key>
+			<string>glaubt</string>
+			<key>s1</key>
+			<string>Ernst, gläubiger Pantheist, glaubt an viele Götter. Hans hat keinen Glauben, aber viele Gläubiger. Er findet es unglaublich, dass sie nicht mehr an seine Zahlungsfähigkeit glauben.</string>
+			<key>s2</key>
+			<string>Glaub ihm nicht alles, was er dir erzählt. Seine Geschichten von fliegenden Untertassen sind kaum zu glauben.</string>
+			<key>s3</key>
+			<string>Jahrelang glaubte sie ihren Mann tot. Als er plötzlich wieder auftauchte, konnte sie es kaum glauben. Sie glaubte ein Gespenst zu sehen.</string>
+			<key>type</key>
+			<integer>1</integer>
+			<key>co</key>
+			<integer>1</integer>
+			<key>de</key>
+			<string>1. jemand glaubt (an) etwas Akkusativ etwas für wahr, richtig oder möglich halten
+2. jemand glaubt etwas Akkusativ meinen, der Ansicht sein
+3. jemand glaubt an etwas Akkusativ 1. vertrauen  2. aufgrund seiner religiösen Einstellung von der Existenz einer Person, Sache überzeugt sein</string>
+			<key>no</key>
+			<string></string>
+			<key>tren</key>
+			<string>believe</string>
+			<key>trfr</key>
+			<string>croire</string>
+			<key>tres</key>
+			<string>creer(se), pensar</string>
+		</dict>
 	</array>
 </dict>
 </plist>
