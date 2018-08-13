@@ -15,7 +15,7 @@ class VerbDetailsViewController: UIViewController {
     // MARK: Properties
     var verb : Verb!
     var conjugation : Conjugation!
-    let speaker = Speaker("fr-FR")
+    let speaker = Speaker("de-DE")
     
     @IBOutlet weak var infinitive : UIButton!
     @IBOutlet weak var type : UILabel!
